@@ -1,0 +1,27 @@
+{
+  "promotion": {
+    "title": "11월 프로모션 상담 안내",
+    "description": "차종별 재고 및 적용 가능한 구매 조건은 상담 시 정확히 확인해 드리겠습니다.",
+    "updated": "2026-11-09"
+  },
+  "about": "메르세데스-벤츠 모터원 의정부 전시장에서 차량 선택부터 계약, 등록, 출고 이후까지 책임 있게 안내하겠습니다.",
+  "gallery": "고객 동의를 받은 출고 사진과 이야기를 순차적으로 소개하겠습니다.",
+  "models": [
+    {
+      "title": "세단",
+      "description": "C-Class · E-Class · S-Class"
+    },
+    {
+      "title": "SUV",
+      "description": "GLA · GLB · GLC · GLE · GLS"
+    },
+    {
+      "title": "전기차",
+      "description": "CLA Electric · GLC Electric 등"
+    },
+    {
+      "title": "AMG & 쿠페",
+      "description": "고성능 및 라이프스타일 모델"
+    }
+  ]
+}
