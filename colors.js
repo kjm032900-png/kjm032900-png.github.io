@@ -231,15 +231,6 @@
       img.loading = 'lazy';
       button.appendChild(img);
       button.addEventListener('click', () => expandPhoto(original));
-    } else if (false && embeddedOriginal(item)) {
-      const imageUrl = embeddedOriginal(item);
-      const img = document.createElement('img');
-      img.className = 'catalog-original';
-      img.src = imageUrl;
-      img.alt = item.code + ' ' + item.name + ' 공식 카탈로그 원본';
-      img.loading = 'lazy';
-      button.appendChild(img);
-      button.addEventListener('click', () => expandPhoto({...item, image:imageUrl, originalApproved:true}));
     } else if (sprite) {
       const swatch = document.createElement('div');
       swatch.className = 'photo-sprite';
