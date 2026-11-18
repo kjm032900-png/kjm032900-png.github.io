@@ -16,6 +16,7 @@
   let family = '';
   let activeTab = 'exterior';
   let requestedTrim = '';
+  let requestedMY = '';
   let selectedCatalogKey = '';
   const officialCatalog = 'https://www.mercedes-benz.co.kr/passengercars/models/catalog.html';
 
@@ -114,6 +115,7 @@
     if (item.code) info.appendChild(textNode('div', 'color-code', item.code));
     info.appendChild(textNode('h3', '', item.name));
     if (item.category) info.appendChild(textNode('p', 'meta', '구분: ' + item.category));
+    if (item.bodyStyle) info.appendChild(textNode('p', 'meta', '차체: ' + item.bodyStyle));
     if (item.material) info.appendChild(textNode('p', 'meta', '소재: ' + item.material));
     if (item.priceStatus) info.appendChild(textNode('p', 'meta', optionPriceStatus(item.priceStatus)));
     if (item.applicability) info.appendChild(textNode('p', 'meta', '카탈로그 적용: ' + item.applicability));
@@ -155,8 +157,13 @@
 
     const trims = vehicleData.models.filter((m) => m.family === family).map((m) => m.trim);
     const hasRequestedTrim = requestedTrim && trims.includes(requestedTrim);
-    byId('modelDetails').textContent = (hasRequestedTrim ? '선택한 트림: ' + requestedTrim + ' · ' : '')
-      + '같은 모델군은 카탈로그 색상 목록을 공유합니다. 트림별 실제 주문 가능 여부는 별도 확인이 필요합니다.';
+    const sourceMY = (catalog?.sourceEdition?.match(/(\d{2})년식/) || [])[1];
+    const mismatch = requestedMY && sourceMY && requestedMY.slice(0, 2) !== sourceMY;
+    const selectedLabel = (hasRequestedTrim ? '선택한 트림: ' + requestedTrim + ' · ' : '')
+      + (requestedMY ? '차량 ' + requestedMY + ' · ' : '');
+    byId('modelDetails').textContent = (mismatch
+      ? '⚠ 차량 ' + requestedMY + '와 색상 카탈로그 ' + sourceMY + 'MY의 연식이 다릅니다. 현재 연식의 적용 조건을 반드시 확인하세요. · ' : '')
+      + selectedLabel + '카탈로그의 전체 색상을 안내합니다. 트림별 실제 주문 가능 여부는 별도 확인이 필요합니다.';
 
     tabs.forEach((tab) => {
       const selected = tab.dataset.tab === activeTab;
@@ -192,7 +199,7 @@
     if (!vehicleData.models.some((model) => model.family === next)) return;
     family = next;
     familySelect.value = next;
-    if (resetTrim) requestedTrim = '';
+    if (resetTrim) { requestedTrim = ''; requestedMY = ''; }
     configureCatalogChoice();
     render();
   }
@@ -227,6 +234,7 @@
       });
       const params = new URLSearchParams(location.search);
       requestedTrim = params.get('trim') || '';
+      requestedMY = /^\d{2}MY$/.test(params.get('my') || '') ? params.get('my') : '';
       const requestedFamily = params.get('model') || '';
       selectFamily(list.includes(requestedFamily) ? requestedFamily : list[0], false);
       familySelect.addEventListener('change', () => selectFamily(familySelect.value, true));
