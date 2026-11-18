@@ -14,6 +14,20 @@ for (const family of families) {
   assert.equal(typeof key, 'string', 'Missing catalogue key for ' + family);
   assert.ok(colors.catalogGroups[key], 'Missing catalogue group for ' + family);
 }
+const familyChoices = colors.familyCatalogChoices || {};
+const trimOverrides = colors.trimCatalogOverrides || {};
+for (const [family, ids] of Object.entries(familyChoices)) {
+  assert.ok(families.includes(family), 'Unknown family with catalogue choices: ' + family);
+  assert.ok(Array.isArray(ids) && ids.length > 1, 'Multi-catalogue choices missing: ' + family);
+  for (const id of ids) assert.ok(colors.catalogGroups[id], 'Unknown catalogue choice: ' + id);
+}
+for (const [trim, id] of Object.entries(trimOverrides)) {
+  const matching = vehicles.models.filter((model) => model.trim === trim);
+  assert.equal(matching.length, 1, 'Ambiguous or missing trim mapping: ' + trim);
+  const family = matching[0].family;
+  assert.ok(colors.catalogGroups[id], 'Unknown catalogue for trim: ' + trim);
+  assert.ok(familyChoices[family]?.includes(id), 'Trim catalogue does not belong to family: ' + trim);
+}
 for (const [key, group] of Object.entries(colors.catalogGroups)) {
   assert.ok(group.title && group.sourceUrl, 'Missing title/source: ' + key);
   assert.ok(['pending', 'verified', 'unavailable'].includes(group.reviewStatus), 'Invalid reviewStatus: ' + key);
