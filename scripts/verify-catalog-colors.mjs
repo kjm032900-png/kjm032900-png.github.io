@@ -30,20 +30,28 @@ for (const [trim, id] of Object.entries(trimOverrides)) {
 }
 for (const [key, group] of Object.entries(colors.catalogGroups)) {
   assert.ok(group.title && group.sourceUrl, 'Missing title/source: ' + key);
-  assert.ok(['pending', 'verified', 'unavailable'].includes(group.reviewStatus), 'Invalid reviewStatus: ' + key);
+  assert.ok(['pending', 'text_verified', 'verified', 'unavailable'].includes(group.reviewStatus), 'Invalid reviewStatus: ' + key);
   assert.ok(['exterior', 'seats', 'interiorTrims'].every((k) => Array.isArray(group[k])), 'Invalid tab data: ' + key);
   const items = [...group.exterior, ...group.seats, ...group.interiorTrims];
-  if (group.reviewStatus !== 'verified') {
+  if (!['verified', 'text_verified'].includes(group.reviewStatus)) {
     assert.equal(items.length, 0, 'Unverified items must not publish: ' + key);
     continue;
   }
   assert.ok(group.sourceEdition, 'Catalogue edition required: ' + key);
-  assert.ok(group.sourceDocumentUrl && /^https:\/\/(www\.mercedes-benz\.co\.kr|dam\.oneweb\.mercedes-benz\.com)\//.test(group.sourceDocumentUrl), 'Official source document required: ' + key);
+  const officialWebSource = group.sourceDocumentUrl && /^https:\/\/(www\.mercedes-benz\.co\.kr|dam\.oneweb\.mercedes-benz\.com)\//.test(group.sourceDocumentUrl);
+  const localSource = group.sourceLibraryFileId && group.sourceFileName && group.sourceFileName.toLowerCase().endsWith('.pdf');
+  assert.ok(officialWebSource || localSource, 'Verified PDF source reference required: ' + key);
+  if (group.reviewStatus === 'text_verified') {
+    assert.ok(localSource, 'Text-only status needs a verified source PDF file: ' + key);
+    assert.ok(items.length > 0, 'Verified text status must contain entries: ' + key);
+    assert.ok(items.every((item) => !item.image), 'Do not attach photos before picture-level review: ' + key);
+  }
   assert.ok(items.length > 0, 'Verified group must have items: ' + key);
   for (const item of items) {
     assert.ok(typeof item.name === 'string' && item.name.trim(), 'Missing catalogue-exact name: ' + key);
     assert.ok(item.sourcePage, 'Source page required: ' + key + ' ' + item.name);
     assert.ok(!item.image || item.assetApproved === true, 'Do not publish unapproved image: ' + key + ' ' + item.name);
+    assert.ok(!item.priceStatus || ['standard', 'optional', 'paid', 'unknown', 'varies'].includes(item.priceStatus), 'Invalid option cost status: ' + key);
     if (item.image) {
       assert.ok(item.image.startsWith('images/catalog-colors/') && !item.image.includes('..'), 'Unsafe image path: ' + key);
       assert.ok(existsSync(new URL('../' + item.image, import.meta.url)), 'Missing image file: ' + item.image);
