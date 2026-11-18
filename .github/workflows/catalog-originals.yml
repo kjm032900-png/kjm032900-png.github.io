@@ -14,7 +14,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4
         with:
@@ -44,3 +44,28 @@ jobs:
             git commit -m "Publish 27MY AMG G 63 original colour seat and trim pages"
             git push
           fi
+      - name: Rebuild remaining catalogue groups one-by-one
+        shell: bash
+        run: |
+          python - <<'PY' > /tmp/remaining-catalog-groups.txt
+          import json
+          d=json.load(open("catalog-colors.json", encoding="utf-8"))
+          for key, group in d["catalogGroups"].items():
+              if key in ("e-class", "electric-g-class", "amg-g-class"):
+                  continue
+              if group.get("reviewStatus") in ("verified", "text_verified") and group.get("sourceFileName"):
+                  print(key)
+          PY
+          while IFS= read -r group; do
+            echo "::group::Full-resolution official catalogue: $group"
+            if python tools/rebuild_official_catalogs.py --groups "$group"; then
+              git add catalog-colors.json images/catalog-originals
+              if ! git diff --cached --quiet; then
+                git commit -m "Publish original official catalogue images for $group"
+                git push
+              fi
+            else
+              echo "::warning::Could not rebuild $group from exact official PDF; left existing verified data unchanged."
+            fi
+            echo "::endgroup::"
+          done < /tmp/remaining-catalog-groups.txt
