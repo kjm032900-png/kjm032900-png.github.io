@@ -2944,13 +2944,573 @@
       "title": "G-Class with EQ Technology",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 04월 24일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "26"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "26"
+        },
+        {
+          "code": "775U",
+          "name": "이리디움 실버",
+          "sourcePage": "26"
+        },
+        {
+          "code": "859U",
+          "name": "모하비 실버",
+          "sourcePage": "26"
+        },
+        {
+          "code": "842U",
+          "name": "소달라이트 블루",
+          "sourcePage": "26"
+        },
+        {
+          "code": "896U",
+          "name": "브릴리언트 블루",
+          "sourcePage": "27"
+        },
+        {
+          "code": "989U",
+          "name": "에메랄드 그린",
+          "sourcePage": "27"
+        },
+        {
+          "code": "992U",
+          "name": "셀레나이트 그레이",
+          "sourcePage": "27"
+        },
+        {
+          "code": "124U",
+          "name": "MANUFAKTUR 클래식 그레이 논-메탈릭",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "464U",
+          "name": "MANUFAKTUR 데저트 샌드 논-메탈릭",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "825U",
+          "name": "MANUFAKTUR 딥 그린 논-메탈릭",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "904U",
+          "name": "MANUFAKTUR 다크 블루 논-메탈릭",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "914U",
+          "name": "MANUFAKTUR 썬 옐로우 논-메탈릭",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "934U",
+          "name": "MANUFAKTUR 빈티지 블루 논-메탈릭",
+          "sourcePage": "29",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "026U",
+          "name": "MANUFAKTUR 오션 블루 메탈릭",
+          "sourcePage": "29",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "041U",
+          "name": "MANUFAKTUR 그라파이트 메탈릭",
+          "sourcePage": "29",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "162U",
+          "name": "MANUFAKTUR 사우스 씨 블루 메탈릭",
+          "sourcePage": "29",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "255U",
+          "name": "MANUFAKTUR 올리브 메탈릭",
+          "sourcePage": "29",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "660U",
+          "name": "MANUFAKTUR 루벨라이트 레드 메탈릭",
+          "sourcePage": "30",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "693U",
+          "name": "MANUFAKTUR 트레벌타인 베이지 메탈릭",
+          "sourcePage": "30",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "963U",
+          "name": "MANUFAKTUR 인디움 그레이 메탈릭",
+          "sourcePage": "30",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "996U",
+          "name": "MANUFAKTUR 하이신스 레드 메탈릭",
+          "sourcePage": "30",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "30",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "659U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 마그노",
+          "sourcePage": "31",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "051U",
+          "name": "MANUFAKTUR 플래티넘 마그노",
+          "sourcePage": "31",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "054U",
+          "name": "MANUFAKTUR 몬자 그레이 마그노",
+          "sourcePage": "31",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "056U",
+          "name": "MANUFAKTUR 나이트 블랙 마그노",
+          "sourcePage": "31",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "164U",
+          "name": "MANUFAKTUR 다크 올리브 마그노",
+          "sourcePage": "31",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "271U",
+          "name": "MANUFAKTUR 시트린 브라운 마그노",
+          "sourcePage": "32",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "658U",
+          "name": "MANUFAKTUR 쿠퍼 오렌지 마그노",
+          "sourcePage": "32",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "677U",
+          "name": "MANUFAKTUR 칼라하리 골드 마그노",
+          "sourcePage": "32",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "795U",
+          "name": "MANUFAKTUR 망가나이트 그레이 마그노",
+          "sourcePage": "32",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "739U",
+          "name": "MANUFAKTUR 올리브 마그노",
+          "sourcePage": "32",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "644U",
+          "name": "MANUFAKTUR 브릴리언트 블루 마그노",
+          "sourcePage": "33",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "823U",
+          "name": "MANUFAKTUR 히아신스 레드 마그노",
+          "sourcePage": "33",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        }
+      ],
+      "seats": [
+        {
+          "code": "501A",
+          "name": "나파 가죽 블랙",
+          "sourcePage": "16",
+          "applicability": "기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "545A",
+          "name": "나파 가죽 트러플 브라운/블랙",
+          "sourcePage": "16",
+          "applicability": "선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "575A",
+          "name": "나파 가죽 마키아토 베이지/블랙",
+          "sourcePage": "16",
+          "applicability": "선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "902A",
+          "name": "MANUFAKTUR 나파 가죽 블랙/블루 스티칭",
+          "sourcePage": "17",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "903A",
+          "name": "MANUFAKTUR 나파 가죽 블랙/화이트 스티칭",
+          "sourcePage": "17",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "904A",
+          "name": "MANUFAKTUR 나파 가죽 블랙/브론즈 스티칭",
+          "sourcePage": "17",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "906A",
+          "name": "MANUFAKTUR 나파 가죽 블랙/라임 그린 스티칭",
+          "sourcePage": "17",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "907A",
+          "name": "MANUFAKTUR 나파 가죽 블랙/레드 스티칭",
+          "sourcePage": "17",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "909A",
+          "name": "MANUFAKTUR 나파 가죽 블랙/골드 스티칭",
+          "sourcePage": "17",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "923A",
+          "name": "MANUFAKTUR 나파 가죽 플래티넘 화이트/블랙",
+          "sourcePage": "18",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "924A",
+          "name": "MANUFAKTUR 나파 가죽 에스프레소 브라운/블랙",
+          "sourcePage": "18",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "925A",
+          "name": "MANUFAKTUR 나파 가죽 카탈라나 베이지/블랙",
+          "sourcePage": "18",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "927A",
+          "name": "MANUFAKTUR 나파 가죽 벵갈 레드/블랙",
+          "sourcePage": "18",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "928A",
+          "name": "MANUFAKTUR 나파 가죽 티타늄 그레이 펄/블랙",
+          "sourcePage": "18",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "934A",
+          "name": "MANUFAKTUR 나파 가죽 새들 브라운/블랙",
+          "sourcePage": "18",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "937A",
+          "name": "MANUFAKTUR 나파 가죽 레드 페퍼/블랙",
+          "sourcePage": "19",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "938A",
+          "name": "MANUFAKTUR 나파 가죽 세이지 그레이/블랙",
+          "sourcePage": "19",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "944A",
+          "name": "MANUFAKTUR 나파 가죽 에스프레소 브라운/블랙 액센트 밴드",
+          "sourcePage": "19",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "947A",
+          "name": "MANUFAKTUR 나파 가죽 레드 페퍼/블랙 액센트 밴드",
+          "sourcePage": "19",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "948A",
+          "name": "MANUFAKTUR 나파 가죽 티타늄 그레이/블랙 액센트 밴드",
+          "sourcePage": "19",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "953A",
+          "name": "MANUFAKTUR 투톤 나파 가죽 플래티넘 화이트/블랙",
+          "sourcePage": "19",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "954A",
+          "name": "MANUFAKTUR 투톤 나파 가죽 에스프레소 브라운/블랙",
+          "sourcePage": "20",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "955A",
+          "name": "MANUFAKTUR 투톤 나파 가죽 카탈라나 베이지/블랙",
+          "sourcePage": "20",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "957A",
+          "name": "MANUFAKTUR 투톤 나파 가죽 뱅갈 레드/블랙",
+          "sourcePage": "20",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "958A",
+          "name": "MANUFAKTUR 투톤 나파 가죽 티타늄 펄 그레이/블랙",
+          "sourcePage": "20",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "964A",
+          "name": "MANUFAKTUR 투톤 나파 가죽 새들 브라운/블랙",
+          "sourcePage": "20",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "967A",
+          "name": "MANUFAKTUR 투톤 나파 가죽 레드 페퍼/블랙",
+          "sourcePage": "20",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "968A",
+          "name": "MANUFAKTUR 투톤 나파 가죽 세이지 그레이/블랙",
+          "sourcePage": "21",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "S39",
+          "name": "MANUFAKTUR 안전 벨트, 레드",
+          "sourcePage": "22",
+          "category": "시트벨트",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "S44",
+          "name": "MANUFAKTUR 안전 벨트, 마키아토 베이지",
+          "sourcePage": "22",
+          "category": "시트벨트",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "S46",
+          "name": "MANUFAKTUR 안전 벨트, 실버",
+          "sourcePage": "22",
+          "category": "시트벨트",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "VA5",
+          "name": "메탈 위브, 트림",
+          "sourcePage": "24",
+          "category": "인테리어 트림",
+          "applicability": "기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "VA2",
+          "name": "오픈 포어 월넛 우드, 트림",
+          "sourcePage": "24",
+          "category": "인테리어 트림",
+          "applicability": "선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "VA1",
+          "name": "MANUFAKTUR 블랙 오픈 포어 우드, 트림",
+          "sourcePage": "24",
+          "category": "인테리어 트림",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "VA4",
+          "name": "하이글로스 라이트 브라운 샌 우드, 트림",
+          "sourcePage": "24",
+          "category": "인테리어 트림",
+          "applicability": "선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "VA8",
+          "name": "MANUFAKTUR 오픈 포어 오크 우드, 트림",
+          "sourcePage": "24",
+          "category": "인테리어 트림",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "ZG2",
+          "name": "블랙 피아노 라커 센터 컨솔, 트림",
+          "sourcePage": "24",
+          "category": "인테리어 트림",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "ZG6",
+          "name": "AMG 카본파이버, 트림",
+          "sourcePage": "25",
+          "category": "인테리어 트림",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
       "sourceFileName": "G-Class with EQ Technology_Catalogue_20260424.pdf",
-      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
+      "verificationNote": "공식 G-Class with EQ Technology PDF 16~33쪽의 컬러/시트/트림 명칭·코드·조건 확인. MANUFAKTUR 시트는 인테리어 라인에 따라 사진 차이 가능. 이미지 게시 전 권한 확인.",
+      "sourceSha256": "207c18c8cbafe25ced76f25bfdeabbd7e124419cf3bc2a2ddccb3ca9819d14b9",
+      "exteriorDetails": [
+        {
+          "code": "RS2",
+          "name": "디자인 박스",
+          "sourcePage": "23",
+          "category": "외장 추가 구성",
+          "applicability": "기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "RR0",
+          "name": "스페어 휠 링 커버, 스테인리스",
+          "sourcePage": "23",
+          "category": "외장 추가 구성",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "RR1",
+          "name": "MANUFAKTUR 스페어 휠 링 커버, 차량 컬러",
+          "sourcePage": "23",
+          "category": "외장 추가 구성",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        }
+      ]
     },
     "amg-a-class": {
       "title": "AMG A-Class",
