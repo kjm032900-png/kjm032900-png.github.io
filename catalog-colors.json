@@ -63,11 +63,190 @@
       "title": "C-Class",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": []
+      "sourceEdition": "2026년 04월 24일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "040U",
+          "name": "블랙",
+          "sourcePage": "41"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "42"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "43"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "44"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이",
+          "sourcePage": "45"
+        },
+        {
+          "code": "842U",
+          "name": "소달라이트 블루",
+          "sourcePage": "46"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "47"
+        },
+        {
+          "code": "992U",
+          "name": "셀레나이트 그레이",
+          "sourcePage": "48"
+        },
+        {
+          "code": "818U",
+          "name": "MANUFAKTUR 그라파이트 그레이 마그노",
+          "sourcePage": "49",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "50",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이",
+          "sourcePage": "51",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드 브라이트",
+          "sourcePage": "52",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
+      "seats": [
+        {
+          "code": "101A",
+          "name": "아티코 인조 가죽, 블랙",
+          "sourcePage": "27",
+          "applicability": "C 200 AVANTGARDE 기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "104A",
+          "name": "아티코 가죽, 시에나 브라운/블랙",
+          "sourcePage": "28",
+          "applicability": "C 200 AVANTGARDE 유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "105A",
+          "name": "아티코 가죽, 마키아토 베이지/블랙",
+          "sourcePage": "29",
+          "applicability": "C 200 AVANTGARDE 유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "111A",
+          "name": "아티코 가죽, 블랙",
+          "sourcePage": "30",
+          "applicability": "C 200 AMG Line 기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "118A",
+          "name": "아티코 가죽, 네바 그레이/블랙",
+          "sourcePage": "31",
+          "applicability": "C 200 AMG Line 유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "194A",
+          "name": "아티코 가죽, 시에나 브라운/블랙",
+          "sourcePage": "32",
+          "applicability": "C 200 AMG Line 유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "297A",
+          "name": "가죽, 파워 레드/블랙",
+          "sourcePage": "33",
+          "applicability": "C 200 AMG Line 유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "34",
+          "applicability": "기본사양",
+          "category": "루프라이너",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "58U",
+          "name": "루프라이너, 크리스탈 그레이",
+          "sourcePage": "35",
+          "applicability": "선택사양",
+          "category": "루프라이너",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "H04",
+          "name": "블랙 오픈포어 알루미늄 라인 우드 트림",
+          "sourcePage": "36",
+          "applicability": "C 200 AVANTGARDE 기본사양, C 200 AMG Line 유료옵션",
+          "category": "인테리어 트림",
+          "priceStatus": "varies"
+        },
+        {
+          "code": "H08",
+          "name": "안트라사이트 라인스트럭처 라임 우드 트림",
+          "sourcePage": "37",
+          "applicability": "C 200 AVANTGARDE 선택사양, C 200 AMG Line 유료옵션",
+          "category": "인테리어 트림",
+          "priceStatus": "varies"
+        },
+        {
+          "code": "H64",
+          "name": "메탈 위브 트림",
+          "sourcePage": "38",
+          "applicability": "C 200 AMG Line 기본사양, C 200 AVANTGARDE 선택사양",
+          "category": "인테리어 트림",
+          "priceStatus": "varies"
+        },
+        {
+          "code": "757",
+          "name": "하이 글로스 블랙 센터콘솔",
+          "sourcePage": "39",
+          "applicability": "기본사양",
+          "category": "센터콘솔",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "795",
+          "name": "메탈 스트럭쳐 피니시 센터콘솔",
+          "sourcePage": "40",
+          "applicability": "유료옵션",
+          "category": "센터콘솔",
+          "priceStatus": "paid"
+        }
+      ],
+      "sourceFileName": "Mercedes-Benz_C-Class_Catalogue_20260424.pdf",
+      "sourceLibraryFileId": "libfile_c2e6c6c217a48191b3ea0df00b8cc19e",
+      "verificationNote": "공식 C-Class MY26 카탈로그 27~52쪽의 정식 명칭·적용 조건 확인. 컬러별 이미지 원본 확보 및 사용 권한 확인 전."
     },
     "cla": {
       "title": "CLA",
