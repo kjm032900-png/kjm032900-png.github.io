@@ -84,6 +84,8 @@
   }
 
   const PHOTO_GROUPS = new Set(["a-class","c-class","cla","s-class","gla","glb","glc","gle","gls","g-class","electric-cla","electric-glb","electric-glc","eqa","eqb","eqe","eqe-suv","eqs","eqs-suv","electric-g-class","amg-a-class","amg-cla","amg-e-class","amg-glb","amg-glc","amg-gle","amg-sl","amg-cle-coupe","amg-cle-cabriolet","amg-gt-coupe","amg-gt-4door","maybach-gls","maybach-sl","v-class","cle","maybach-s-class","maybach-eqs-suv"]);
+  const ORIGINAL_PAGE_GROUPS = new Set(["a-class","c-class","cla","e-class","s-class","gla","glb","glc","gle","gls","g-class","electric-cla","electric-glb","electric-glc","eqa","eqb","eqe","eqe-suv","eqs","eqs-suv","electric-g-class","amg-a-class","amg-cla","amg-e-class","amg-glb","amg-glc","amg-gle","amg-g-class","amg-sl","amg-cle-coupe","amg-cle-cabriolet","amg-gt-coupe","amg-gt-4door","maybach-gls","maybach-sl","v-class","cle","maybach-s-class","maybach-eqs-suv"]);
+  const pendingOriginalGroups = new Set();
   const pendingPhotoGroups = new Set();
   const ORIGINAL_BUNDLE_GROUPS = new Set(['a-class','amg-a-class','amg-cla','amg-cle-cabriolet','amg-cle-coupe','amg-e-class','amg-glb']);
   const ORIGINAL_PART_COUNTS = {'amg-glb': 5};
@@ -109,6 +111,18 @@
     loadPart(1);
   }
   function embeddedOriginal(item){return window.CATALOG_ORIGINAL_PAGES?.[selectedCatalogKey]?.[String(item.sourcePage)] || null;}
+
+  function requestOriginalPages() {
+    const key=selectedCatalogKey;
+    if (!key || !ORIGINAL_PAGE_GROUPS.has(key) || pendingOriginalGroups.has(key) || window.CATALOG_ORIGINAL_PAGES?.[key]) return;
+    pendingOriginalGroups.add(key);
+    const script=document.createElement('script');
+    script.src='./catalog-original-pages/'+encodeURIComponent(key)+'.js?v=20261119-all-originals1';
+    script.async=true;
+    script.onload=()=>{pendingOriginalGroups.delete(key);if(selectedCatalogKey===key)render();};
+    script.onerror=()=>{pendingOriginalGroups.delete(key);script.remove();};
+    document.head.appendChild(script);
+  }
 
   function requestPhotoGroup() {
     const key = selectedCatalogKey;
@@ -185,8 +199,17 @@
     button.type = 'button';
     button.className = 'photo-trigger';
     const sprite = getPhotoSprite(item);
+    const embeddedOriginal = window.CATALOG_ORIGINAL_PAGES?.[selectedCatalogKey]?.[String(item.sourcePage || '')];
     const original = typeof item.originalImage === 'string' && item.originalApproved === true && localApprovedImage({...item, assetApproved:true, image:item.originalImage}) ? {...item, image:item.originalImage} : null;
-    if (original) {
+    if (embeddedOriginal) {
+      const img = document.createElement('img');
+      img.src = embeddedOriginal;
+      img.className = 'catalog-original';
+      img.alt = item.code + ' ' + item.name + ' 공식 카탈로그 전체 원본';
+      img.loading = 'lazy';
+      button.appendChild(img);
+      button.addEventListener('click', () => expandPhoto({...item, image: embeddedOriginal, originalApproved:true}));
+    } else if (original) {
       const img = document.createElement('img');
       img.src = original.image;
       img.className = 'catalog-original';
