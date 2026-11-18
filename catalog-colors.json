@@ -83,11 +83,230 @@
       "title": "E-Class",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": []
+      "sourceEdition": "2026년 04월 24일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "65"
+        },
+        {
+          "code": "188U",
+          "name": "베르데 실버",
+          "sourcePage": "66"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "67"
+        },
+        {
+          "code": "595U",
+          "name": "노틱 블루",
+          "sourcePage": "68"
+        },
+        {
+          "code": "771U",
+          "name": "벨벳 브라운",
+          "sourcePage": "69"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이",
+          "sourcePage": "70"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "71"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트",
+          "sourcePage": "72",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이",
+          "sourcePage": "73",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "74",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
+      "seats": [
+        {
+          "code": "101A",
+          "name": "아티코 가죽, 블랙",
+          "sourcePage": "44",
+          "applicability": "E 200 AVANTGARDE, E 200 EXCLUSIVE, E 220 d 4MATIC EXCLUSIVE 기본사양 / E 200 EXCLUSIVE 선택사양",
+          "priceStatus": "varies"
+        },
+        {
+          "code": "104A",
+          "name": "아티코 가죽, 통카 브라운/블랙",
+          "sourcePage": "45",
+          "applicability": "E 200 AMG Line 기본사양 / E 200 AVANTGARDE 유료옵션",
+          "notes": "*루프라이너, 블랙 선택 시 적용 가능",
+          "priceStatus": "varies"
+        },
+        {
+          "code": "105A",
+          "name": "아티코 가죽, 마키아토 베이지/블랙",
+          "sourcePage": "46",
+          "applicability": "E 200 AMG Line 선택사양/E 200 AVANTGARDE 유료옵션",
+          "priceStatus": "varies"
+        },
+        {
+          "code": "114A",
+          "name": "아티코 가죽, 통카 브라운",
+          "sourcePage": "47",
+          "applicability": "E 200 EXCLUSIVE 기본사양 / E 220 d 4MATIC EXCLUSIVE 유료옵션",
+          "notes": "*루프라이너, 블랙 선택 시 적용 가능",
+          "priceStatus": "varies"
+        },
+        {
+          "code": "115A",
+          "name": "아티코 가죽, 마키아토 베이지",
+          "sourcePage": "48",
+          "applicability": "E 200 EXCLUSIVE 선택사양 / E 220 d 4MATIC EXCLUSIVE 유료옵션",
+          "priceStatus": "varies"
+        },
+        {
+          "code": "201A",
+          "name": "가죽, 블랙",
+          "sourcePage": "49",
+          "applicability": "E 300 4MATIC EXCLUSIVE, E 350 e 4MATIC EXCLUSIVE 기본사양 / E 300 4MATIC AMG Line, E 450 4MATIC AMG Line 선택사양",
+          "priceStatus": "varies"
+        },
+        {
+          "code": "221A",
+          "name": "가죽, 블랙",
+          "sourcePage": "50",
+          "applicability": "E 300 4MATIC AMG Line, E 450 4MATIC AMG Line 기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "205A",
+          "name": "가죽, 마키아토 베이지/블랙",
+          "sourcePage": "51",
+          "applicability": "E 300 4MATIC AMG Line, E 450 4MATIC AMG Line 유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "214A",
+          "name": "가죽, 통카 브라운",
+          "sourcePage": "52",
+          "applicability": "E 300 4MATIC EXCLUSIVE, E 300 4MATIC AMG Line, E 350 e 4MATIC EXCLUSIVE, E 450 4MATIC AMG Line 유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "215A",
+          "name": "가죽, 마키아토 베이지",
+          "sourcePage": "53",
+          "applicability": "E 300 4MATIC EXCLUSIVE, E 350 e 4MATIC EXCLUSIVE 유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "801A",
+          "name": "나파 가죽, 블랙",
+          "sourcePage": "54",
+          "applicability": "E 450 4MATIC EXCLUSIVE 기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "814A",
+          "name": "나파 가죽, 통카 브라운",
+          "sourcePage": "55",
+          "applicability": "E 450 4MATIC EXCLUSIVE 유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "808A",
+          "name": "나파가죽, 네바 그레이/블랙",
+          "sourcePage": "56",
+          "applicability": "E 300 4MATIC EXCLUSIVE, E 300 4MATIC AMG Line, E 350 e 4MATIC EXCLUSIVE, E 450 4MATIC EXCLUSIVE, E 450 4MATIC AMG Line 유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "10H",
+          "name": "블랙 오픈 포어 애쉬우드 트림",
+          "sourcePage": "57",
+          "applicability": "E 200 AVANTGARDE, E 200 EXCLUSIVE, E 200 AMG Line 기본사양",
+          "category": "인테리어 트림",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "11H",
+          "name": "블랙 오픈 포어 애쉬우드 백릿 트림, 메르세데스-벤츠 패턴",
+          "sourcePage": "58",
+          "applicability": "E 220 d 4MATIC EXCLUSIVE 기본사양",
+          "category": "인테리어 트림",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "14H",
+          "name": "브라운 오픈 포어 메이플 우드 알루미늄 라인 트림",
+          "sourcePage": "59",
+          "applicability": "E 300 4MATIC EXCLUSIVE, E 350 e 4MATIC EXCLUSIVE 기본사양",
+          "category": "인테리어 트림",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "753",
+          "name": "블랙 오픈 포어 센터콘솔",
+          "sourcePage": "60",
+          "applicability": "E 200 AVANTGARDE, E 200 EXCLUSIVE, E 200 AMG Line, E 220 d 4MATIC EXCLUSIVE, E 300 4MATIC AMG Line, E 450 4MATIC AMG Line 기본사양",
+          "category": "센터콘솔",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "667",
+          "name": "브라운 오픈 포어 메이플 우드 알루미늄 라인 센터콘솔",
+          "sourcePage": "61",
+          "applicability": "E 300 4MATIC EXCLUSIVE, E 350 e 4MATIC EXCLUSIVE, E 450 4MATIC EXCLUSIVE 기본사양",
+          "category": "센터콘솔",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "58U",
+          "name": "루프라이너, 네바그레이",
+          "sourcePage": "62",
+          "applicability": "E 200 AVANTGARDE, E 220 d 4MATIC EXCLUSIVE 기본사양",
+          "category": "루프라이너",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "63",
+          "applicability": "E 200 EXCLUSIVE, E 200 AMG Line, E 300 4MATIC EXCLUSIVE, E 300 4MATIC AMG Line, E 350 e 4MATIC EXCLUSIVE, E 450 4MATIC EXCLUSIVE, E 450 4MAITC AMG Line 기본사양 / E 200 AVANTGARDE, E 220 d 4MATIC EXCLUSIVE 유료옵션",
+          "category": "루프라이너",
+          "priceStatus": "varies"
+        },
+        {
+          "code": "55U",
+          "name": "루프라이너, 마키아토 베이지",
+          "sourcePage": "64",
+          "applicability": "E 200 AMG Line, E 300 4MATIC AMG Line 제외 선택사양",
+          "category": "루프라이너",
+          "priceStatus": "optional"
+        }
+      ],
+      "sourceFileName": "Mercedes-Benz_The new E-Class_Catalogue_20260424.pdf",
+      "sourceLibraryFileId": "libfile_cd2b43ae8ca881918d3141a8b81e62ec",
+      "verificationNote": "공식 카탈로그 본문 44~74쪽의 코드·정식 명칭·적용 조건을 추출하여 원문과 대조함. 이미지 재게시 및 원본 바이트 접근은 미확인 상태."
     },
     "s-class": {
       "title": "S-Class",
