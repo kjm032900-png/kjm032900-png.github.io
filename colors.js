@@ -113,7 +113,7 @@
   function embeddedOriginal(item){return window.CATALOG_ORIGINAL_PAGES?.[selectedCatalogKey]?.[String(item.sourcePage)] || null;}
 
   const ORIGINAL_PAGE_COUNTS = {"amg-gt-4door":5,"amg-gt-coupe":1,"amg-sl":4,"c-class":8,"cle":8,"e-class":11,"eqa":4,"eqb":4,"eqe":5,"eqe-suv":8,"eqs":7,"eqs-suv":10,"electric-g-class":5,"g-class":3,"gla":2,"glb":4,"glc":9,"maybach-eqs-suv":2,"maybach-gls":5,"maybach-s-class":3};
-  const ORIGINAL_STAGES = {"amg-sl":[3,4],"c-class":[4,5,6],"cle":[6,7,8],"e-class":[9,10,11,12],"eqa":[12,13],"eqb":["13b",14],"eqe":[14,15],"eqe-suv":["15b",16,17,"17b"],"eqs":[18,19,20],"eqs-suv":[20,21,"21b",22,"22b"],"electric-g-class":[23,24],"g-class":["24b"],"gla":[25],"glb":[25,26],"glc":[26,27,28,29],"maybach-eqs-suv":[29],"maybach-gls":[30,31],"maybach-s-class":[31,32]};
+  const ORIGINAL_STAGES = {"amg-sl":[3,4],"c-class":[4,5,6],"cle":[6,7,8],"e-class":[9,10,11,12],"eqa":[12,13],"eqb":["13b",14],"eqe":[14,15],"eqe-suv":["15b",16,17,"17b"],"eqs":[18,19,20],"eqs-suv":[20,21,"21b",22,"22b"],"electric-g-class":[23,24],"g-class":["24b"],"gla":[25],"glb":[25,26],"glc":["26b",27,28,29],"maybach-eqs-suv":[29],"maybach-gls":[30,31],"maybach-s-class":[31,32]};
   const loadedOriginalStages=new Set();
   const completedOriginalGroups = new Set();
   function requestOriginalPages() {
