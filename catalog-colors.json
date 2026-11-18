@@ -462,7 +462,9 @@
         {
           "code": "595U",
           "name": "노틱 블루",
-          "sourcePage": "68"
+          "sourcePage": "68",
+          "originalImage": "images/catalog-originals/e-class/page-068.webp",
+          "originalApproved": true
         },
         {
           "code": "771U",
