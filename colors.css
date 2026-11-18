@@ -24,3 +24,8 @@ a{color:inherit}button,select{font:inherit}.container{width:min(1120px,calc(100%
 .sprite-zoom{display:block;width:min(840px,calc(100vw - 72px));max-width:100%;aspect-ratio:280/144;background-color:#e8edf1;background-repeat:no-repeat;margin:auto;border-radius:8px;}
 .photo-dialog [hidden]{display:none!important}
 .color-card:has(.photo-sprite){border-color:#4b687a}
+
+/* Full catalogue pages are displayed without cropped option texts or forced 4:3 resizing. */
+.photo-trigger img.catalog-original{aspect-ratio:auto;height:auto;object-fit:contain;background:#1a2632}
+.photo-dialog:has(img.catalog-original:not([hidden])){max-width:min(1280px,calc(100vw - 18px));}
+.photo-dialog img.catalog-original{width:100%;height:auto;max-height:82vh;object-fit:contain;}
