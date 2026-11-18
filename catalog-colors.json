@@ -440,7 +440,7 @@
     "e-class": {
       "title": "E-Class",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/Mercedes-Benz_The%20new%20E-Class_Catalogue_20260424.pdf",
       "sourceEdition": "2026년 04월 24일, 26년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -2944,7 +2944,7 @@
     "electric-g-class": {
       "title": "G-Class with EQ Technology",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/G-Class%20with%20EQ%20Technology_Catalogue_20260424.pdf",
       "sourceEdition": "2026년 04월 24일, 26년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -4227,13 +4227,13 @@
     "amg-g-class": {
       "title": "Mercedes-AMG G-Class",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
-      "sourceEdition": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20new%20Mercedes-AMG%20G-Class_Catalogue_20261029.pdf",
+      "sourceEdition": "2026년 10월 29일, 27년식 (공식 PDF 경로 확인, 이미지 검수 중)",
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
       "interiorTrims": [],
-      "verificationNote": "25MY AMG G-Class PDF만 확보된 상태입니다. 27MY G 63 최신 공식 카탈로그 또는 업데이트된 판매 사양과 색상 일치 검증 전까지 색상 미게시.",
+      "verificationNote": "최신 27MY 공식 AMG G-Class 카탈로그 다운로드 경로 확인. 컬러·시트·트림 이미지 원본 업로드 및 항목별 검수 전이므로 임의 사진 게시하지 않음.",
       "historicalReference": {
         "sourceFileName": "Mercedes-AMG_G Class_Catalogue_20250123.pdf",
         "sourceEdition": "2025년 01월 23일, 25년식",
@@ -5164,7 +5164,7 @@
     "cle": {
       "title": "CLE Coupé & CLE Cabriolet",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20all%20new%20CLE%20Coupe%20n%20CLE%20Cabriolet_Catalogue_20260921.pdf",
       "sourceEdition": "2026년 09월 21일, 27년식",
       "reviewStatus": "text_verified",
       "exterior": [
