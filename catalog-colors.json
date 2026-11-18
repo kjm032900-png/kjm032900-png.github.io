@@ -663,7 +663,8 @@
         }
       ],
       "sourceFileName": "Mercedes-Benz_The new E-Class_Catalogue_20260424.pdf",
-      "verificationNote": "공식 카탈로그 본문 44~74쪽의 코드·정식 명칭·적용 조건을 추출하여 원문과 대조함. 이미지 재게시 및 원본 바이트 접근은 미확인 상태."
+      "verificationNote": "E-Class 공식 MY26 카탈로그 44~74쪽 총 31개 항목의 코드/명칭을 PDF 원문에 재대조: 불일치 0건. 색상별 차량, 시트, 트림 개별 크롭 로컬 시안 완료(사진 공개 재게시 권한 확인 전).",
+      "sourceSha256": "a307254d1ffc14d52dbaa7152262b983254083e86d7a032779cd4db621a681a3"
     },
     "s-class": {
       "title": "S-Class",
