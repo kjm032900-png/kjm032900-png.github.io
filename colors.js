@@ -121,6 +121,14 @@
     el.style.backgroundRepeat = 'no-repeat';
   }
 
+  function setOriginalPdfLink(item) {
+    const link = byId('openOriginalPage');
+    const group = getCatalog();
+    const base = group && group.sourceDocumentUrl;
+    link.hidden = !base;
+    if (base) link.href = base + (item.sourcePage ? '#page=' + encodeURIComponent(item.sourcePage) : '');
+  }
+
   function expandSprite(item, sprite) {
     const dlg = byId('photoDialog');
     byId('photo').hidden = true;
@@ -130,6 +138,7 @@
     setSpriteBackground(el, sprite);
     byId('photoName').textContent = item.code + ' · ' + item.name;
     byId('photoMeta').textContent = item.applicability || '';
+    setOriginalPdfLink(item);
     dlg.showModal();
   }
 
@@ -142,6 +151,7 @@
     byId('photo').alt = item.name + ' 공식 카탈로그 참고 이미지';
     byId('photoName').textContent = (item.code ? item.code + ' · ' : '') + item.name;
     byId('photoMeta').textContent = item.applicability || '';
+    setOriginalPdfLink(item);
     dlg.showModal();
   }
 
