@@ -47,7 +47,9 @@
 
   function localApprovedImage(item) {
     return item && item.assetApproved === true && typeof item.image === 'string'
-      && /^images\\/catalog-colors\\/[a-z0-9/_-]+\\.(?:webp|jpg|jpeg|png)$/.test(item.image);
+      && item.image.startsWith('images/catalog-colors/')
+      && !item.image.includes('..') && !item.image.includes('?')
+      && ['.webp', '.jpg', '.jpeg', '.png'].some((ext) => item.image.toLowerCase().endsWith(ext));
   }
 
   function expandPhoto(item) {
