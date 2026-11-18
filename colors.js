@@ -322,8 +322,10 @@
       renderStatus(supportedTabs[activeTab] + ' 자료가 아직 검증되지 않았습니다. 확인된 항목만 등록됩니다.', true);
       return;
     }
-    const availablePhotos = items.filter((item) => Boolean(getPhotoSprite(item) || localApprovedImage(item))).length;
-    if (catalog.reviewStatus === 'text_verified' && availablePhotos < items.length) {
+    const availablePhotos = items.filter((item) => Boolean(embeddedOriginal(item) || getPhotoSprite(item) || localApprovedImage(item))).length;
+    if (ORIGINAL_PAGE_GROUPS.has(selectedCatalogKey) && availablePhotos < items.length && (pendingOriginalGroups.has(selectedCatalogKey) || originalLoading.has(selectedCatalogKey))) {
+      renderStatus('공식 카탈로그의 고해상도 원본 이미지를 불러오는 중입니다.', true);
+    } else if (catalog.reviewStatus === 'text_verified' && availablePhotos < items.length) {
       renderStatus('공식 카탈로그의 ' + items.length + '개 항목 중 사진 ' + availablePhotos + '개를 확인할 수 있습니다. 사진이 없는 항목은 원문 명칭·옵션 코드로 안내합니다. 선택 가능 여부는 연식·트림에 따라 달라질 수 있습니다.', true);
     } else renderStatus('', false);
     items.filter((it) => it && typeof it.name === 'string' && it.name.trim()).forEach((it) => grid.appendChild(createColorCard(it)));
