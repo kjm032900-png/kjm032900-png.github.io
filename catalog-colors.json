@@ -57,7 +57,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "Mercedes-Benz_A-Class_Catalogue_20260424.pdf",
+      "sourceLibraryFileId": "libfile_185d6e95c8c481919c5ad7221dde1e8d",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "c-class": {
       "title": "C-Class",
@@ -256,7 +259,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The all-new CLA_catalogue_20261007.pdf",
+      "sourceLibraryFileId": "libfile_7bb2f060cb1881918278f4f63897e41f",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "e-class": {
       "title": "E-Class",
@@ -495,7 +501,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "Mercedes-Benz_S-Class_Catalogue_20260914.pdf",
+      "sourceLibraryFileId": "libfile_592b55d0a8088191af1ad9ab3c8e221c",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "gla": {
       "title": "GLA",
@@ -505,7 +514,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "Mercedes-Benz_GLA_Catalogue_20260707.pdf",
+      "sourceLibraryFileId": "libfile_278c4bc331a481918d56261c6565403f",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "glb": {
       "title": "GLB",
@@ -515,7 +527,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "Mercedes-Benz_The new GLB_Catalogue_20260813.pdf",
+      "sourceLibraryFileId": "libfile_6777ea17000081918dcbb622da727e46",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "glc": {
       "title": "GLC & GLC Coupé",
@@ -525,7 +540,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The new GLC n GLC Coupe_Catalogue_20260424.pdf",
+      "sourceLibraryFileId": "libfile_1b1b1bb3bdb8819183b3f722643f8236",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "gle": {
       "title": "GLE & GLE Coupé",
@@ -535,7 +553,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The new GLE_n_GLE_Coupe_Catalogue_20261116.pdf",
+      "sourceLibraryFileId": "libfile_b8bd7357b4d081918b1ac410119524b4",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "gls": {
       "title": "GLS",
@@ -545,7 +566,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "Mercedes-Benz_The new GLS_Catalogue_20261116.pdf",
+      "sourceLibraryFileId": "libfile_0b3081fa81e5798b4cf54f53",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "g-class": {
       "title": "G-Class",
@@ -555,7 +579,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The new G-Class_Catalogue_20260930(1).pdf",
+      "sourceLibraryFileId": "libfile_0f194716fe3881918aa4cdc8dd3b283d",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "electric-cla": {
       "title": "The all-new electric CLA",
@@ -565,7 +592,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The all new electric CLA_catalogue_20261021.pdf",
+      "sourceLibraryFileId": "libfile_8a4338af31648191b264513de0a2936b",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "electric-glb": {
       "title": "The all-new electric GLB",
@@ -575,7 +605,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The all-new electric GLB_catalogue_20261028.pdf",
+      "sourceLibraryFileId": "libfile_550bdc2c60b481918f8e49143ef146cb",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "electric-glc": {
       "title": "The all-new electric GLC",
@@ -585,7 +618,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The all-new electric GLC_catalogue_20261016.pdf",
+      "sourceLibraryFileId": "libfile_7bae4470c30c81918e2605b10de1a9ec",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "eqa": {
       "title": "EQA",
@@ -605,7 +641,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The new EQB_Catalogue_20260424.pdf",
+      "sourceLibraryFileId": "libfile_528273f228bc8191a2e4879e0c747f10",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "eqe": {
       "title": "EQE",
@@ -615,7 +654,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "Mercedes-Benz_EQE_Catalogue_20260429.pdf",
+      "sourceLibraryFileId": "libfile_b21c1c0da9148191ac45142f34598244",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "eqe-suv": {
       "title": "EQE SUV",
@@ -625,7 +667,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The new EQE SUV_Catalogue_20260424.pdf",
+      "sourceLibraryFileId": "libfile_031c5e65fc08819181d255798fc90357",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "eqs": {
       "title": "EQS",
@@ -635,7 +680,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The new EQS_Catalogue_20260424.pdf",
+      "sourceLibraryFileId": "libfile_72c711a3bb3c81918b1fa8cb32479903",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "eqs-suv": {
       "title": "EQS SUV",
@@ -655,7 +703,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "G-Class with EQ Technology_Catalogue_20260424.pdf",
+      "sourceLibraryFileId": "libfile_e9069271a8d0819189c774f4c2fde3f6",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "amg-a-class": {
       "title": "AMG A-Class",
@@ -665,7 +716,8 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "verificationNote": "찾은 AMG A-Class Sedan 카탈로그는 현재 홈페이지의 A 45 S(해치백)와 차체가 달라 사용하지 않습니다."
     },
     "amg-cla": {
       "title": "AMG CLA",
@@ -675,7 +727,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The new Mercedes-AMG CLA_Catalogue_20260424.pdf",
+      "sourceLibraryFileId": "libfile_8794ea856db481919c315249607bbe8c",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "amg-e-class": {
       "title": "AMG E-Class",
@@ -685,7 +740,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "Mercedes-AMG E-Class_Catalogue_20260519(1).pdf",
+      "sourceLibraryFileId": "libfile_8c6c9213567c81919387bc10f76e707c",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "amg-s-class": {
       "title": "AMG S-Class",
@@ -716,7 +774,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The new Mercedes-AMG GLC n GLC Coupe_Catalogue_20260424.pdf",
+      "sourceLibraryFileId": "libfile_75a7bbe3570c8191bb4e18f7bdb74c99",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "amg-gle": {
       "title": "Mercedes-AMG GLE & GLE Coupé",
@@ -726,7 +787,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "Mercedes-AMG GLE n GLE Coupe_Catalogue_20260619(1).pdf",
+      "sourceLibraryFileId": "libfile_a6b26a229b408191bd50d92f0ab06b01",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "amg-gls": {
       "title": "AMG GLS",
@@ -747,7 +811,8 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "verificationNote": "현재 찾은 AMG G-Class PDF는 2025-01-23 판본입니다. 홈페이지의 27MY G 63과 연식이 일치하지 않아 이 자료를 27MY 컬러 근거로 사용하지 않습니다."
     },
     "amg-sl": {
       "title": "AMG SL",
@@ -757,7 +822,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "Mercedes-AMG_SL_Catalogue_20261105(1).pdf",
+      "sourceLibraryFileId": "libfile_4a2144bf718c8191935c9c7537601a43",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "maybach-s-class": {
       "title": "Mercedes-Maybach S-Class",
@@ -767,7 +835,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The_new_Mercedes-Maybach_S-Class_Catalogue_20260811.pdf",
+      "sourceLibraryFileId": "libfile_da33582916d081918eecd75ada6fbc5a",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "maybach-gls": {
       "title": "Mercedes-Maybach GLS",
@@ -777,7 +848,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The new Mercedes-Maybach GLS_catalogue_20260622.pdf",
+      "sourceLibraryFileId": "libfile_414bfa7709708191b3bdb8882257279c",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "maybach-eqs-suv": {
       "title": "Mercedes-Maybach EQS SUV",
@@ -787,7 +861,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The all-new Mercedes-Maybach EQS SUV_Catalogue_20260519.pdf",
+      "sourceLibraryFileId": "libfile_a80d3559e24c819187345d4a1fe5415a",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "maybach-sl": {
       "title": "Mercedes-Maybach SL",
@@ -797,7 +874,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The all-new Mercedes-Maybach SL_Catalogue_20260424.pdf",
+      "sourceLibraryFileId": "libfile_a6c755c3956c81918243ff248b9f29fe",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "v-class": {
       "title": "V-Class",
@@ -807,7 +887,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The new V-Class_catalogue_20261029(2).pdf",
+      "sourceLibraryFileId": "libfile_dd74721ee38c81919d04b13112f38ac2",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "cle": {
       "title": "CLE Coupé & CLE Cabriolet",
@@ -817,7 +900,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The all new CLE Coupe n CLE Cabriolet_Catalogue_20260921.pdf",
+      "sourceLibraryFileId": "libfile_c56c4fe604148191a7fb73e98cdc6839",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "amg-cle-coupe": {
       "title": "Mercedes-AMG CLE Coupé",
@@ -827,7 +913,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The all-new AMG CLE Coupe_catalogue_20260921.pdf",
+      "sourceLibraryFileId": "libfile_71ba62034f7081919a8ce9430a31d1a6",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "amg-cle-cabriolet": {
       "title": "Mercedes-AMG CLE Cabriolet",
@@ -837,7 +926,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The all-new AMG CLE Cabriolet_catalogue_20260921(1).pdf",
+      "sourceLibraryFileId": "libfile_d49cd0fc8b508191a02bd50ea4977316",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "amg-gt-coupe": {
       "title": "Mercedes-AMG GT Coupé",
@@ -847,7 +939,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The new Mercedes-AMG GT Coupe_Catalogue_260424.pdf",
+      "sourceLibraryFileId": "libfile_de2ad50ae6148191a0c187931820c13d",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     },
     "amg-gt-4door": {
       "title": "Mercedes-AMG GT 4-Door Coupé",
@@ -857,7 +952,10 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "sourceFileName": "The new Mercedes-AMG GT 4Door_Catalogue_20260424.pdf",
+      "sourceLibraryFileId": "libfile_63d2a26b566881918a26bd9102664498",
+      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
     }
   },
   "familyCatalogChoices": {
