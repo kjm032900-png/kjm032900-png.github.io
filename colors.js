@@ -112,16 +112,24 @@
   }
   function embeddedOriginal(item){return window.CATALOG_ORIGINAL_PAGES?.[selectedCatalogKey]?.[String(item.sourcePage)] || null;}
 
+  const ORIGINAL_PAGE_COUNTS = {"amg-gt-4door":5,"amg-gt-coupe":1,"amg-sl":4,"c-class":8,"cle":8,"e-class":11,"eqa":4,"eqb":4,"eqe":5,"eqe-suv":8,"eqs":7,"eqs-suv":10,"electric-g-class":5,"g-class":3,"gla":2,"glb":4,"glc":9,"maybach-eqs-suv":2,"maybach-gls":5,"maybach-s-class":3};
+  const completedOriginalGroups = new Set();
   function requestOriginalPages() {
     const key=selectedCatalogKey;
-    if (!key || !ORIGINAL_PAGE_GROUPS.has(key) || pendingOriginalGroups.has(key) || window.CATALOG_ORIGINAL_PAGES?.[key]) return;
+    if (!key || !ORIGINAL_PAGE_GROUPS.has(key) || pendingOriginalGroups.has(key) || completedOriginalGroups.has(key)) return;
+    if (window.CATALOG_ORIGINAL_PAGES?.[key] && !ORIGINAL_PAGE_COUNTS[key]) { completedOriginalGroups.add(key);return; }
     pendingOriginalGroups.add(key);
-    const script=document.createElement('script');
-    script.src='./catalog-original-pages/'+encodeURIComponent(key)+'.js?v=20261119-all-originals1';
-    script.async=true;
-    script.onload=()=>{pendingOriginalGroups.delete(key);if(selectedCatalogKey===key)render();};
-    script.onerror=()=>{pendingOriginalGroups.delete(key);script.remove();};
-    document.head.appendChild(script);
+    const count=ORIGINAL_PAGE_COUNTS[key] || 1;
+    function loadPart(n) {
+      const script=document.createElement('script');
+      const filename=count>1 ? key+'-part'+n : key;
+      script.src='./catalog-original-pages/'+encodeURIComponent(filename)+'.js?v=20261119-all-originals3';
+      script.async=true;
+      script.onload=()=>{if(selectedCatalogKey===key)render();if(n<count)loadPart(n+1);else{pendingOriginalGroups.delete(key);completedOriginalGroups.add(key);}};
+      script.onerror=()=>{pendingOriginalGroups.delete(key);script.remove();console.warn('Original catalogue image missing:',filename);};
+      document.head.appendChild(script);
+    }
+    loadPart(1);
   }
 
   function requestPhotoGroup() {
