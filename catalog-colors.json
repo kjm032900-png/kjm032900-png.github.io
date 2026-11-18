@@ -53,13 +53,117 @@
       "title": "A-Class",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 04월 24일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "24"
+        },
+        {
+          "code": "696U",
+          "name": "나이트 블랙",
+          "sourcePage": "25"
+        },
+        {
+          "code": "191U",
+          "name": "코스모스 블랙",
+          "sourcePage": "26",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "787U",
+          "name": "마운틴 그레이",
+          "sourcePage": "27",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "28",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "662U",
+          "name": "MANUFAKTUR 마운틴 그레이 마그노",
+          "sourcePage": "29",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "30",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "카탈로그 주석: 해당 컬러는 연식에 따라 제공 여부가 달라질 수 있습니다."
+        }
+      ],
+      "seats": [
+        {
+          "code": "101A",
+          "name": "아티코 가죽, 블랙/블랙",
+          "sourcePage": "17",
+          "applicability": "기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "105A",
+          "name": "아티코 가죽, 마키아토 베이지/블랙",
+          "sourcePage": "18",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "19",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "category": "루프라이너"
+        },
+        {
+          "code": "58U",
+          "name": "루프라이너, 크리스탈 그레이",
+          "sourcePage": "20",
+          "applicability": "선택사양",
+          "priceStatus": "optional",
+          "category": "루프라이너"
+        },
+        {
+          "code": "52H",
+          "name": "다크 카본 파이버 룩 트림",
+          "sourcePage": "21",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H15",
+          "name": "블랙 오픈포어 우드 린덴 트림",
+          "sourcePage": "22",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H44",
+          "name": "라이트 그레인 알루미늄 트림",
+          "sourcePage": "23",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "category": "인테리어 트림"
+        }
+      ],
       "sourceFileName": "Mercedes-Benz_A-Class_Catalogue_20260424.pdf",
-      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
+      "verificationNote": "사용자가 직접 첨부한 메르세데스-벤츠 공식 PDF에서 색상/시트/내장 코드와 정식 명칭을 페이지별 대조. 개별 이미지 공개 권한은 미확인.",
+      "sourceSha256": "ce67cf30f8a2b5846101b26c3aeea85e91dc8a1a22957052b075a39c50f4f59c"
     },
     "c-class": {
       "title": "C-Class",
@@ -505,25 +609,150 @@
       "title": "GLA",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 07월 07일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "23"
+        },
+        {
+          "code": "696U",
+          "name": "나이트 블랙",
+          "sourcePage": "24"
+        },
+        {
+          "code": "787U",
+          "name": "마운틴 그레이",
+          "sourcePage": "25"
+        }
+      ],
+      "seats": [
+        {
+          "code": "651A",
+          "name": "아티코 가죽/마이크로컷 마이크로파이버 블랙",
+          "sourcePage": "18"
+        },
+        {
+          "code": "654A",
+          "name": "아티코 가죽/마이크로컷 마이크로파이버 바이아 브라운/블랙",
+          "sourcePage": "19"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "20",
+          "category": "루프라이너"
+        },
+        {
+          "code": "58U",
+          "name": "루프라이너, 크리스탈 그레이",
+          "sourcePage": "21",
+          "category": "루프라이너"
+        },
+        {
+          "code": "56H",
+          "name": "스타 패턴 및 백 발광 트림",
+          "sourcePage": "22",
+          "category": "인테리어 트림"
+        }
+      ],
       "sourceFileName": "Mercedes-Benz_GLA_Catalogue_20260707.pdf",
-      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
+      "verificationNote": "사용자가 직접 첨부한 메르세데스-벤츠 공식 PDF에서 색상/시트/내장 코드와 정식 명칭을 페이지별 대조. 개별 이미지 공개 권한은 미확인.",
+      "sourceSha256": "a0ca24bb46ebc46e7fba2a6a21203f864312a4b1a0309fef53b33054c6d6df2c"
     },
     "glb": {
       "title": "GLB",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 08월 13일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "25"
+        },
+        {
+          "code": "696U",
+          "name": "나이트 블랙",
+          "sourcePage": "26"
+        },
+        {
+          "code": "191U",
+          "name": "코스모스 블랙",
+          "sourcePage": "27"
+        },
+        {
+          "code": "787U",
+          "name": "마운틴 그레이",
+          "sourcePage": "28"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "29"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "30"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "31"
+        }
+      ],
+      "seats": [
+        {
+          "code": "651A",
+          "name": "아티코 가죽/다이나미카 블랙",
+          "sourcePage": "18"
+        },
+        {
+          "code": "158A",
+          "name": "아티코 가죽 세이지 그레이/블랙",
+          "sourcePage": "19"
+        },
+        {
+          "code": "654A",
+          "name": "아티코 가죽/마이크로컷 마이크로파이버 바이아 브라운/블랙",
+          "sourcePage": "20"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "21",
+          "category": "루프라이너"
+        },
+        {
+          "code": "58U",
+          "name": "루프라이너, 크리스탈 그레이",
+          "sourcePage": "22",
+          "category": "루프라이너"
+        },
+        {
+          "code": "56H",
+          "name": "스타 패턴 트림",
+          "sourcePage": "23",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H62",
+          "name": "카본 스트럭쳐 트림",
+          "sourcePage": "24",
+          "category": "인테리어 트림"
+        }
+      ],
       "sourceFileName": "Mercedes-Benz_The new GLB_Catalogue_20260813.pdf",
-      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
+      "verificationNote": "사용자가 직접 첨부한 메르세데스-벤츠 공식 PDF에서 색상/시트/내장 코드와 정식 명칭을 페이지별 대조. 개별 이미지 공개 권한은 미확인.",
+      "sourceSha256": "dac4c283aeca6dc9a419e489609dc2f971dd8150f1aa4837eafc66afce0f570d"
     },
     "glc": {
       "title": "GLC & GLC Coupé",
