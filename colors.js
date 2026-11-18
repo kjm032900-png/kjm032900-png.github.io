@@ -85,7 +85,7 @@
 
   const PHOTO_GROUPS = new Set(["a-class","c-class","cla","s-class","gla","glb","glc","gle","gls","g-class","electric-cla","electric-glb","electric-glc","eqa","eqb","eqe","eqe-suv","eqs","eqs-suv","electric-g-class","amg-a-class","amg-cla","amg-e-class","amg-glb","amg-glc","amg-gle","amg-sl","amg-cle-coupe","amg-cle-cabriolet","amg-gt-coupe","amg-gt-4door","maybach-gls","maybach-sl","v-class","cle","maybach-s-class","maybach-eqs-suv"]);
   const pendingPhotoGroups = new Set();
-  const ORIGINAL_BUNDLE_GROUPS = new Set(['a-class','amg-a-class','amg-cla']);
+  const ORIGINAL_BUNDLE_GROUPS = new Set(['a-class','amg-a-class','amg-cla','amg-cle-cabriolet','amg-cle-coupe','amg-e-class']);
   const originalLoading = new Set();
   function requestOriginalBundle() {
     const key = selectedCatalogKey;
