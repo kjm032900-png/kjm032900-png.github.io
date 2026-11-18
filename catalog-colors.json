@@ -813,13 +813,248 @@
       "title": "Mercedes-Maybach S-Class",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 08월 11일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "45"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "45"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "45"
+        },
+        {
+          "code": "802U",
+          "name": "MANUFAKTUR 칼라하리 골드 메탈릭",
+          "sourcePage": "45"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이",
+          "sourcePage": "45"
+        },
+        {
+          "code": "989U",
+          "name": "에메랄드 그린",
+          "sourcePage": "45"
+        },
+        {
+          "code": "040U",
+          "name": "블랙",
+          "sourcePage": "46"
+        },
+        {
+          "code": "188U",
+          "name": "베르데 실버",
+          "sourcePage": "46"
+        },
+        {
+          "code": "595U",
+          "name": "노틱 블루",
+          "sourcePage": "46"
+        },
+        {
+          "code": "715U",
+          "name": "웜 그레이 솔리드",
+          "sourcePage": "46"
+        },
+        {
+          "code": "771U",
+          "name": "벨벳 브라운",
+          "sourcePage": "46"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "46"
+        },
+        {
+          "code": "032U",
+          "name": "MANUFAKTUR 미스틱 블루",
+          "sourcePage": "47"
+        },
+        {
+          "code": "041U",
+          "name": "MANUFAKTUR 그라파이트 그레이",
+          "sourcePage": "47"
+        },
+        {
+          "code": "056U",
+          "name": "MANUFAKTUR 나이트 블랙 마그노",
+          "sourcePage": "47"
+        },
+        {
+          "code": "190U",
+          "name": "MANUFAKTUR 실리콘 그레이 솔리드",
+          "sourcePage": "47"
+        },
+        {
+          "code": "255U",
+          "name": "MANUFAKTUR 올리브 메탈릭",
+          "sourcePage": "47"
+        },
+        {
+          "code": "378U",
+          "name": "MANUFAKTUR 베르데 실버 마그노",
+          "sourcePage": "47"
+        },
+        {
+          "code": "659U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 마그노",
+          "sourcePage": "48"
+        },
+        {
+          "code": "677U",
+          "name": "MANUFAKTUR 칼라하리 골드 마그노",
+          "sourcePage": "48"
+        },
+        {
+          "code": "934U",
+          "name": "MANUFAKTUR 빈티지 블루",
+          "sourcePage": "48"
+        },
+        {
+          "code": "C12",
+          "name": "마이바흐 투톤 페인트, 옵시디안 블랙/셀레나이트 그레이",
+          "sourcePage": "48"
+        },
+        {
+          "code": "C23",
+          "name": "마이바흐 투톤 페인트, 옵시디안 블랙/칼라하리 골드",
+          "sourcePage": "48"
+        },
+        {
+          "code": "C24",
+          "name": "마이바흐 투톤 페인트, 에메랄드 그린/모하비 실버",
+          "sourcePage": "48"
+        },
+        {
+          "code": "C28",
+          "name": "마이바흐 투톤 페인트, 노틱 블루/하이-테크 실버",
+          "sourcePage": "49"
+        },
+        {
+          "code": "C31",
+          "name": "마이바흐 투톤 페인트, 하이-테크 실버/셀레나이트 그레이",
+          "sourcePage": "49"
+        },
+        {
+          "code": "C33",
+          "name": "마이바흐 투톤 페인트, 옵시디안 블랙/하이-테크 실버",
+          "sourcePage": "49"
+        },
+        {
+          "code": "C37",
+          "name": "마이바흐 투톤 페인트, 오팔라이트 화이트/옵시디안 블랙",
+          "sourcePage": "49"
+        },
+        {
+          "code": "C38",
+          "name": "마이바흐 투톤 페인트, 오팔라이트 화이트/베르데 실버",
+          "sourcePage": "49"
+        },
+        {
+          "code": "C41",
+          "name": "마이바흐 투톤 페인트, 옵시디안 블랙/벨벳 브라운",
+          "sourcePage": "49"
+        }
+      ],
+      "seats": [
+        {
+          "code": "533A",
+          "name": "마이바흐 익스클루시브 나파 가죽 블랙",
+          "sourcePage": "40"
+        },
+        {
+          "code": "534A",
+          "name": "마이바흐 익스클루시브 나파 가죽 브라운",
+          "sourcePage": "40"
+        },
+        {
+          "code": "535A",
+          "name": "마이바흐 익스클루시브 나파 가죽 마키아토 베이지/브론즈 브라운 펄",
+          "sourcePage": "40"
+        },
+        {
+          "code": "941A",
+          "name": "MANUFAKTUR 마이바흐 익스클루시브 나파 가죽 토바코/블랙",
+          "sourcePage": "41"
+        },
+        {
+          "code": "991A",
+          "name": "MANUFAKTUR 마이바흐 익스클루시브 나파 가죽 딥 화이트/블랙",
+          "sourcePage": "41"
+        },
+        {
+          "code": "992A",
+          "name": "MANUFAKTUR 마이바흐 익스클루시브 나파 가죽 요트 블루/블랙",
+          "sourcePage": "41"
+        },
+        {
+          "code": "993A",
+          "name": "MANUFAKTUR 마이바흐 익스클루시브 나파 가죽 콘 옐로우/블랙",
+          "sourcePage": "41"
+        },
+        {
+          "code": "996A",
+          "name": "MANUFAKTUR 마이바흐 익스클루시브 나파 가죽 레이크그린/블랙",
+          "sourcePage": "42"
+        },
+        {
+          "code": "997A",
+          "name": "MANUFAKTUR 마이바흐 익스클루시브 나파 가죽 카민 레드/블랙",
+          "sourcePage": "42"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "H17",
+          "name": "MANUFAKTUR 플로잉 라인 피아노 라커 트림, 블랙",
+          "sourcePage": "43",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H38",
+          "name": "MANUFAKTUR 브라운 오픈-포어 월넛 우드 트림, 알루미늄 라인",
+          "sourcePage": "43",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "61U",
+          "name": "마이크로컷 루프 라이너 블랙",
+          "sourcePage": "44",
+          "category": "루프라이너"
+        },
+        {
+          "code": "65U",
+          "name": "마이크로컷 루프 라이너 마키아토 베이지",
+          "sourcePage": "44",
+          "category": "루프라이너"
+        },
+        {
+          "code": "71U",
+          "name": "MANUFAKTUR 나파 가죽 루프 라이너 블랙",
+          "sourcePage": "44",
+          "category": "루프라이너"
+        },
+        {
+          "code": "75U",
+          "name": "MANUFAKTUR 나파 가죽 루프 라이너 마키아토 베이지",
+          "sourcePage": "44",
+          "category": "루프라이너"
+        }
+      ],
       "sourceFileName": "The_new_Mercedes-Maybach_S-Class_Catalogue_20260811.pdf",
-      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
+      "verificationNote": "업로드된 공식 카탈로그 40~49쪽의 시트·트림·루프라이너·단색·투톤 컬러의 공식 코드와 이름을 원문과 대조함. 27MY 기준. 사진은 홈페이지 재게시 권한 미확인.",
+      "sourceSha256": "39a1402296ee078aada8676bff38cc37d45350de11238713076383ad68816e22"
     },
     "maybach-gls": {
       "title": "Mercedes-Maybach GLS",
@@ -932,13 +1167,172 @@
       "title": "Mercedes-Maybach EQS SUV",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 05월 19일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "040U",
+          "name": "블랙",
+          "sourcePage": "24"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "24"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "24"
+        },
+        {
+          "code": "771U",
+          "name": "벨벳 브라운",
+          "sourcePage": "24"
+        },
+        {
+          "code": "842U",
+          "name": "소다라이트 블루",
+          "sourcePage": "24"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "25"
+        },
+        {
+          "code": "989U",
+          "name": "에메랄드 그린",
+          "sourcePage": "25"
+        },
+        {
+          "code": "992U",
+          "name": "셀레나이트 그레이",
+          "sourcePage": "25"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "25"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이 솔리드",
+          "sourcePage": "25"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "25"
+        },
+        {
+          "code": "C40",
+          "name": "마이바흐 투톤 페인트, 세틴 브라운/오닉스 블랙",
+          "sourcePage": "26"
+        },
+        {
+          "code": "C12",
+          "name": "마이바흐 투톤 페인트, 옵시디안 블랙/셀레나이트 그레이",
+          "sourcePage": "26"
+        },
+        {
+          "code": "C20",
+          "name": "마이바흐 투톤 페인트, 하이 테크 실버/노틱 블루",
+          "sourcePage": "26"
+        },
+        {
+          "code": "C23",
+          "name": "마이바흐 투톤 페인트, 옵시디안 블랙/MANUFAKTUR 칼라하리 골드",
+          "sourcePage": "26"
+        },
+        {
+          "code": "C35",
+          "name": "마이바흐 투톤 페인트, 하이 테크 실버/옵시디안 블랙",
+          "sourcePage": "26"
+        }
+      ],
+      "seats": [
+        {
+          "code": "515A",
+          "name": "마이바흐 익스클루시브 나파 가죽 마키아토 베이지/브론즈 브라운 펄",
+          "sourcePage": "20"
+        },
+        {
+          "code": "514A",
+          "name": "마이바흐 익스클루시브 나파 가죽 발라오 브라운 펄/에스프레소 브라운",
+          "sourcePage": "20"
+        },
+        {
+          "code": "519A",
+          "name": "마이바흐 익스클루시브 나파 가죽 크리스탈 화이트/실버 그레이 펄",
+          "sourcePage": "20"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "06H",
+          "name": "MANUFAKTUR 브라운 오픈 포어 월넛 우드",
+          "sourcePage": "21",
+          "category": "센터콘솔 / 트림"
+        },
+        {
+          "code": "05H",
+          "name": "MANUFAKTUR 브라운 오픈 포어 벌치 우드 트림",
+          "sourcePage": "21",
+          "category": "센터콘솔 / 트림"
+        },
+        {
+          "code": "H17",
+          "name": "MANUFAKTUR 플로잉 라인 피아노 라커 트림, 블랙",
+          "sourcePage": "21",
+          "category": "센터콘솔 / 트림"
+        },
+        {
+          "code": "65U",
+          "name": "MICROCUT 루프라이너, 마키아토 베이지",
+          "sourcePage": "22",
+          "category": "루프라이너"
+        },
+        {
+          "code": "61U",
+          "name": "MICROCUT 루프라이너, 블랙",
+          "sourcePage": "22",
+          "category": "루프라이너"
+        },
+        {
+          "code": "64U",
+          "name": "MICROCUT 루프라이너, 발라오 브라운 펄",
+          "sourcePage": "22",
+          "category": "루프라이너"
+        },
+        {
+          "code": "71U",
+          "name": "MANUFAKTUR 나파 가죽 루프라이너, 블랙",
+          "sourcePage": "23",
+          "category": "루프라이너"
+        },
+        {
+          "code": "74U",
+          "name": "MANUFAKTUR 나파 가죽 루프라이너, 발라오 브라운 펄",
+          "sourcePage": "23",
+          "category": "루프라이너"
+        },
+        {
+          "code": "75U",
+          "name": "MANUFAKTUR 나파 가죽 루프라이너, 마키아토 베이지",
+          "sourcePage": "23",
+          "category": "루프라이너"
+        },
+        {
+          "code": "78U",
+          "name": "MANUFAKTUR 나파 가죽 루프라이너, 실버 그레이 펄",
+          "sourcePage": "23",
+          "category": "루프라이너"
+        }
+      ],
       "sourceFileName": "The all-new Mercedes-Maybach EQS SUV_Catalogue_20260519.pdf",
-      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
+      "verificationNote": "업로드된 공식 카탈로그 20~26쪽 시트·트림·루프라이너·단색 및 투톤 페인트 코드와 공식 명칭을 원문과 대조함. 컬러별 개별 이미지 공개 권한 확인 전.",
+      "sourceSha256": "8fa7521540e71d36eb67c8946ee545f51909ff86d3e7b9ff48b23f8373a7b69e"
     },
     "maybach-sl": {
       "title": "Mercedes-Maybach SL",
