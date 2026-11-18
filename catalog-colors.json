@@ -1,0 +1,6161 @@
+{
+  "schemaVersion": 1,
+  "notice": "공식 벤츠코리아 카탈로그 원문과 이미지 권한 확인 전에는 추정 정보를 게시하지 않습니다. 일부 모델군(AMG CLE/GT)은 카탈로그 여러 종류가 있으므로 트림 링크 또는 카탈로그 선택으로 구분합니다.",
+  "sourcePolicy": "Mercedes-Benz Korea official catalogue only; do not infer colours, option cost, applicability or image rights.",
+  "familyToCatalog": {
+    "A-Class": "a-class",
+    "C-Class": "c-class",
+    "CLA": "cla",
+    "E-Class": "e-class",
+    "S-Class": "s-class",
+    "GLA": "gla",
+    "GLB": "glb",
+    "GLC": "glc",
+    "GLC Coupé": "glc",
+    "GLE": "gle",
+    "GLE Coupé": "gle",
+    "GLS": "gls",
+    "G-Class": "g-class",
+    "CLA Electric": "electric-cla",
+    "GLB Electric": "electric-glb",
+    "GLC Electric": "electric-glc",
+    "EQA": "eqa",
+    "EQB": "eqb",
+    "EQE": "eqe",
+    "EQE SUV": "eqe-suv",
+    "EQS": "eqs",
+    "EQS SUV": "eqs-suv",
+    "G 580 EQ": "electric-g-class",
+    "AMG A-Class": "amg-a-class",
+    "AMG CLA": "amg-cla",
+    "AMG E-Class": "amg-e-class",
+    "AMG S-Class": "amg-s-class",
+    "AMG CLE": "amg-cle-coupe",
+    "AMG GLB": "amg-glb",
+    "AMG GLC": "amg-glc",
+    "AMG GLC Coupé": "amg-glc",
+    "AMG GLE": "amg-gle",
+    "AMG GLE Coupé": "amg-gle",
+    "AMG GLS": "amg-gls",
+    "AMG G 63": "amg-g-class",
+    "AMG GT": "amg-gt-coupe",
+    "AMG SL": "amg-sl",
+    "Maybach S-Class": "maybach-s-class",
+    "Maybach GLS": "maybach-gls",
+    "Maybach EQS SUV": "maybach-eqs-suv",
+    "Maybach SL": "maybach-sl",
+    "V-Class": "v-class",
+    "CLE Coupé": "cle",
+    "CLE Cabriolet": "cle"
+  },
+  "catalogGroups": {
+    "a-class": {
+      "title": "A-Class",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 04월 24일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "24"
+        },
+        {
+          "code": "696U",
+          "name": "나이트 블랙",
+          "sourcePage": "25"
+        },
+        {
+          "code": "191U",
+          "name": "코스모스 블랙",
+          "sourcePage": "26",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "787U",
+          "name": "마운틴 그레이",
+          "sourcePage": "27",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "28",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "662U",
+          "name": "MANUFAKTUR 마운틴 그레이 마그노",
+          "sourcePage": "29",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "30",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "카탈로그 주석: 해당 컬러는 연식에 따라 제공 여부가 달라질 수 있습니다."
+        }
+      ],
+      "seats": [
+        {
+          "code": "101A",
+          "name": "아티코 가죽, 블랙/블랙",
+          "sourcePage": "17",
+          "applicability": "기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "105A",
+          "name": "아티코 가죽, 마키아토 베이지/블랙",
+          "sourcePage": "18",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "19",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "category": "루프라이너"
+        },
+        {
+          "code": "58U",
+          "name": "루프라이너, 크리스탈 그레이",
+          "sourcePage": "20",
+          "applicability": "선택사양",
+          "priceStatus": "optional",
+          "category": "루프라이너"
+        },
+        {
+          "code": "52H",
+          "name": "다크 카본 파이버 룩 트림",
+          "sourcePage": "21",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H15",
+          "name": "블랙 오픈포어 우드 린덴 트림",
+          "sourcePage": "22",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H44",
+          "name": "라이트 그레인 알루미늄 트림",
+          "sourcePage": "23",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "category": "인테리어 트림"
+        }
+      ],
+      "sourceFileName": "Mercedes-Benz_A-Class_Catalogue_20260424.pdf",
+      "verificationNote": "사용자가 직접 첨부한 메르세데스-벤츠 공식 PDF에서 색상/시트/내장 코드와 정식 명칭을 페이지별 대조. 개별 이미지 공개 권한은 미확인.",
+      "sourceSha256": "ce67cf30f8a2b5846101b26c3aeea85e91dc8a1a22957052b075a39c50f4f59c"
+    },
+    "c-class": {
+      "title": "C-Class",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 04월 24일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "040U",
+          "name": "블랙",
+          "sourcePage": "41"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "42"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "43"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "44"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이",
+          "sourcePage": "45"
+        },
+        {
+          "code": "842U",
+          "name": "소달라이트 블루",
+          "sourcePage": "46"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "47"
+        },
+        {
+          "code": "992U",
+          "name": "셀레나이트 그레이",
+          "sourcePage": "48"
+        },
+        {
+          "code": "818U",
+          "name": "MANUFAKTUR 그라파이트 그레이 마그노",
+          "sourcePage": "49",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "50",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이",
+          "sourcePage": "51",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드 브라이트",
+          "sourcePage": "52",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
+      "seats": [
+        {
+          "code": "101A",
+          "name": "아티코 인조 가죽, 블랙",
+          "sourcePage": "27",
+          "applicability": "C 200 AVANTGARDE 기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "104A",
+          "name": "아티코 가죽, 시에나 브라운/블랙",
+          "sourcePage": "28",
+          "applicability": "C 200 AVANTGARDE 유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "105A",
+          "name": "아티코 가죽, 마키아토 베이지/블랙",
+          "sourcePage": "29",
+          "applicability": "C 200 AVANTGARDE 유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "111A",
+          "name": "아티코 가죽, 블랙",
+          "sourcePage": "30",
+          "applicability": "C 200 AMG Line 기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "118A",
+          "name": "아티코 가죽, 네바 그레이/블랙",
+          "sourcePage": "31",
+          "applicability": "C 200 AMG Line 유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "194A",
+          "name": "아티코 가죽, 시에나 브라운/블랙",
+          "sourcePage": "32",
+          "applicability": "C 200 AMG Line 유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "297A",
+          "name": "가죽, 파워 레드/블랙",
+          "sourcePage": "33",
+          "applicability": "C 200 AMG Line 유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "34",
+          "applicability": "기본사양",
+          "category": "루프라이너",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "58U",
+          "name": "루프라이너, 크리스탈 그레이",
+          "sourcePage": "35",
+          "applicability": "선택사양",
+          "category": "루프라이너",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "H04",
+          "name": "블랙 오픈포어 알루미늄 라인 우드 트림",
+          "sourcePage": "36",
+          "applicability": "C 200 AVANTGARDE 기본사양, C 200 AMG Line 유료옵션",
+          "category": "인테리어 트림",
+          "priceStatus": "varies"
+        },
+        {
+          "code": "H08",
+          "name": "안트라사이트 라인스트럭처 라임 우드 트림",
+          "sourcePage": "37",
+          "applicability": "C 200 AVANTGARDE 선택사양, C 200 AMG Line 유료옵션",
+          "category": "인테리어 트림",
+          "priceStatus": "varies"
+        },
+        {
+          "code": "H64",
+          "name": "메탈 위브 트림",
+          "sourcePage": "38",
+          "applicability": "C 200 AMG Line 기본사양, C 200 AVANTGARDE 선택사양",
+          "category": "인테리어 트림",
+          "priceStatus": "varies"
+        },
+        {
+          "code": "757",
+          "name": "하이 글로스 블랙 센터콘솔",
+          "sourcePage": "39",
+          "applicability": "기본사양",
+          "category": "센터콘솔",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "795",
+          "name": "메탈 스트럭쳐 피니시 센터콘솔",
+          "sourcePage": "40",
+          "applicability": "유료옵션",
+          "category": "센터콘솔",
+          "priceStatus": "paid"
+        }
+      ],
+      "sourceFileName": "Mercedes-Benz_C-Class_Catalogue_20260424.pdf",
+      "verificationNote": "공식 C-Class MY26 카탈로그 27~52쪽의 정식 명칭·적용 조건 확인. 컬러별 이미지 원본 확보 및 사용 권한 확인 전."
+    },
+    "cla": {
+      "title": "CLA",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 10월 07일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "31"
+        },
+        {
+          "code": "341U",
+          "name": "아쿠아 민트",
+          "sourcePage": "31"
+        },
+        {
+          "code": "696U",
+          "name": "제트 블랙",
+          "sourcePage": "31"
+        },
+        {
+          "code": "809U",
+          "name": "시어 블루",
+          "sourcePage": "31"
+        },
+        {
+          "code": "922U",
+          "name": "하이테크 실버",
+          "sourcePage": "31"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "31"
+        }
+      ],
+      "seats": [
+        {
+          "code": "105A",
+          "name": "아티코 가죽 아이보리 베이지/블랙",
+          "sourcePage": "28"
+        },
+        {
+          "code": "101A",
+          "name": "아티코 가죽 블랙",
+          "sourcePage": "28"
+        },
+        {
+          "code": "681A",
+          "name": "아티코 가죽 마이크로컷 투톤 마이크로파이버 블랙/클린 화이트",
+          "sourcePage": "28"
+        },
+        {
+          "code": "224A",
+          "name": "가죽 브라운/블랙",
+          "sourcePage": "28"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "59H",
+          "name": "앤트러사이트 아노다이즈드 룩 트림",
+          "sourcePage": "29",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H43",
+          "name": "카본-그레인 알루미늄 트림",
+          "sourcePage": "29",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "30",
+          "category": "루프라이너"
+        }
+      ],
+      "sourceFileName": "The all-new CLA_catalogue_20261007.pdf",
+      "verificationNote": "제공된 공식 카탈로그에 인쇄된 외장/시트/내장 모형별 코드·명칭을 해당 페이지와 대조함. 사진 게시 전 권한 및 시각 검증 필요.",
+      "sourceSha256": "e3bef491be0aa6ea58fa0d68507003d126db5c676721d3f73bc4a0f8afaabe1d"
+    },
+    "e-class": {
+      "title": "E-Class",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 04월 24일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "65"
+        },
+        {
+          "code": "188U",
+          "name": "베르데 실버",
+          "sourcePage": "66"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "67"
+        },
+        {
+          "code": "595U",
+          "name": "노틱 블루",
+          "sourcePage": "68"
+        },
+        {
+          "code": "771U",
+          "name": "벨벳 브라운",
+          "sourcePage": "69"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이",
+          "sourcePage": "70"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "71"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트",
+          "sourcePage": "72",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이",
+          "sourcePage": "73",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "74",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
+      "seats": [
+        {
+          "code": "101A",
+          "name": "아티코 가죽, 블랙",
+          "sourcePage": "44",
+          "applicability": "E 200 AVANTGARDE, E 200 EXCLUSIVE, E 220 d 4MATIC EXCLUSIVE 기본사양 / E 200 EXCLUSIVE 선택사양",
+          "priceStatus": "varies"
+        },
+        {
+          "code": "104A",
+          "name": "아티코 가죽, 통카 브라운/블랙",
+          "sourcePage": "45",
+          "applicability": "E 200 AMG Line 기본사양 / E 200 AVANTGARDE 유료옵션",
+          "notes": "*루프라이너, 블랙 선택 시 적용 가능",
+          "priceStatus": "varies"
+        },
+        {
+          "code": "105A",
+          "name": "아티코 가죽, 마키아토 베이지/블랙",
+          "sourcePage": "46",
+          "applicability": "E 200 AMG Line 선택사양/E 200 AVANTGARDE 유료옵션",
+          "priceStatus": "varies"
+        },
+        {
+          "code": "114A",
+          "name": "아티코 가죽, 통카 브라운",
+          "sourcePage": "47",
+          "applicability": "E 200 EXCLUSIVE 기본사양 / E 220 d 4MATIC EXCLUSIVE 유료옵션",
+          "notes": "*루프라이너, 블랙 선택 시 적용 가능",
+          "priceStatus": "varies"
+        },
+        {
+          "code": "115A",
+          "name": "아티코 가죽, 마키아토 베이지",
+          "sourcePage": "48",
+          "applicability": "E 200 EXCLUSIVE 선택사양 / E 220 d 4MATIC EXCLUSIVE 유료옵션",
+          "priceStatus": "varies"
+        },
+        {
+          "code": "201A",
+          "name": "가죽, 블랙",
+          "sourcePage": "49",
+          "applicability": "E 300 4MATIC EXCLUSIVE, E 350 e 4MATIC EXCLUSIVE 기본사양 / E 300 4MATIC AMG Line, E 450 4MATIC AMG Line 선택사양",
+          "priceStatus": "varies"
+        },
+        {
+          "code": "221A",
+          "name": "가죽, 블랙",
+          "sourcePage": "50",
+          "applicability": "E 300 4MATIC AMG Line, E 450 4MATIC AMG Line 기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "205A",
+          "name": "가죽, 마키아토 베이지/블랙",
+          "sourcePage": "51",
+          "applicability": "E 300 4MATIC AMG Line, E 450 4MATIC AMG Line 유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "214A",
+          "name": "가죽, 통카 브라운",
+          "sourcePage": "52",
+          "applicability": "E 300 4MATIC EXCLUSIVE, E 300 4MATIC AMG Line, E 350 e 4MATIC EXCLUSIVE, E 450 4MATIC AMG Line 유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "215A",
+          "name": "가죽, 마키아토 베이지",
+          "sourcePage": "53",
+          "applicability": "E 300 4MATIC EXCLUSIVE, E 350 e 4MATIC EXCLUSIVE 유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "801A",
+          "name": "나파 가죽, 블랙",
+          "sourcePage": "54",
+          "applicability": "E 450 4MATIC EXCLUSIVE 기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "814A",
+          "name": "나파 가죽, 통카 브라운",
+          "sourcePage": "55",
+          "applicability": "E 450 4MATIC EXCLUSIVE 유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "808A",
+          "name": "나파가죽, 네바 그레이/블랙",
+          "sourcePage": "56",
+          "applicability": "E 300 4MATIC EXCLUSIVE, E 300 4MATIC AMG Line, E 350 e 4MATIC EXCLUSIVE, E 450 4MATIC EXCLUSIVE, E 450 4MATIC AMG Line 유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "10H",
+          "name": "블랙 오픈 포어 애쉬우드 트림",
+          "sourcePage": "57",
+          "applicability": "E 200 AVANTGARDE, E 200 EXCLUSIVE, E 200 AMG Line 기본사양",
+          "category": "인테리어 트림",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "11H",
+          "name": "블랙 오픈 포어 애쉬우드 백릿 트림, 메르세데스-벤츠 패턴",
+          "sourcePage": "58",
+          "applicability": "E 220 d 4MATIC EXCLUSIVE 기본사양",
+          "category": "인테리어 트림",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "14H",
+          "name": "브라운 오픈 포어 메이플 우드 알루미늄 라인 트림",
+          "sourcePage": "59",
+          "applicability": "E 300 4MATIC EXCLUSIVE, E 350 e 4MATIC EXCLUSIVE 기본사양",
+          "category": "인테리어 트림",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "753",
+          "name": "블랙 오픈 포어 센터콘솔",
+          "sourcePage": "60",
+          "applicability": "E 200 AVANTGARDE, E 200 EXCLUSIVE, E 200 AMG Line, E 220 d 4MATIC EXCLUSIVE, E 300 4MATIC AMG Line, E 450 4MATIC AMG Line 기본사양",
+          "category": "센터콘솔",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "667",
+          "name": "브라운 오픈 포어 메이플 우드 알루미늄 라인 센터콘솔",
+          "sourcePage": "61",
+          "applicability": "E 300 4MATIC EXCLUSIVE, E 350 e 4MATIC EXCLUSIVE, E 450 4MATIC EXCLUSIVE 기본사양",
+          "category": "센터콘솔",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "58U",
+          "name": "루프라이너, 네바그레이",
+          "sourcePage": "62",
+          "applicability": "E 200 AVANTGARDE, E 220 d 4MATIC EXCLUSIVE 기본사양",
+          "category": "루프라이너",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "63",
+          "applicability": "E 200 EXCLUSIVE, E 200 AMG Line, E 300 4MATIC EXCLUSIVE, E 300 4MATIC AMG Line, E 350 e 4MATIC EXCLUSIVE, E 450 4MATIC EXCLUSIVE, E 450 4MAITC AMG Line 기본사양 / E 200 AVANTGARDE, E 220 d 4MATIC EXCLUSIVE 유료옵션",
+          "category": "루프라이너",
+          "priceStatus": "varies"
+        },
+        {
+          "code": "55U",
+          "name": "루프라이너, 마키아토 베이지",
+          "sourcePage": "64",
+          "applicability": "E 200 AMG Line, E 300 4MATIC AMG Line 제외 선택사양",
+          "category": "루프라이너",
+          "priceStatus": "optional"
+        }
+      ],
+      "sourceFileName": "Mercedes-Benz_The new E-Class_Catalogue_20260424.pdf",
+      "verificationNote": "E-Class 공식 MY26 카탈로그 44~74쪽 총 31개 항목의 코드/명칭을 PDF 원문에 재대조: 불일치 0건. 색상별 차량, 시트, 트림 개별 크롭 로컬 시안 완료(사진 공개 재게시 권한 확인 전).",
+      "sourceSha256": "a307254d1ffc14d52dbaa7152262b983254083e86d7a032779cd4db621a681a3"
+    },
+    "s-class": {
+      "title": "S-Class",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 09월 14일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "032U",
+          "name": "MANUFAKTUR 미스틱 블루",
+          "sourcePage": "43"
+        },
+        {
+          "code": "040U",
+          "name": "블랙",
+          "sourcePage": "43"
+        },
+        {
+          "code": "041U",
+          "name": "MANUFAKTUR 그라파이트 그레이",
+          "sourcePage": "43"
+        },
+        {
+          "code": "056U",
+          "name": "MANUFAKTUR 나이트 블랙 마그노",
+          "sourcePage": "43"
+        },
+        {
+          "code": "188U",
+          "name": "베르데 실버",
+          "sourcePage": "43"
+        },
+        {
+          "code": "190U",
+          "name": "MANUFAKTUR 실리콘 그레이 솔리드",
+          "sourcePage": "43"
+        },
+        {
+          "code": "255U",
+          "name": "MANUFAKTUR 올리브 메탈릭",
+          "sourcePage": "44"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "44"
+        },
+        {
+          "code": "378U",
+          "name": "MANUFAKTUR 베르데 실버 마그노",
+          "sourcePage": "44"
+        },
+        {
+          "code": "595U",
+          "name": "노틱 블루",
+          "sourcePage": "44"
+        },
+        {
+          "code": "659U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 마그노",
+          "sourcePage": "44"
+        },
+        {
+          "code": "677U",
+          "name": "MANUFAKTUR 칼라하리 골드 마그노",
+          "sourcePage": "44"
+        },
+        {
+          "code": "715U",
+          "name": "웜 그레이 솔리드",
+          "sourcePage": "45"
+        },
+        {
+          "code": "771U",
+          "name": "벨벳 브라운",
+          "sourcePage": "45"
+        },
+        {
+          "code": "802U",
+          "name": "MANUFAKTUR 칼라하리 골드 메탈릭",
+          "sourcePage": "45"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이",
+          "sourcePage": "45"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "45"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "45"
+        },
+        {
+          "code": "934U",
+          "name": "MANUFAKTUR 빈티지 블루",
+          "sourcePage": "46"
+        },
+        {
+          "code": "989U",
+          "name": "에메랄드 그린",
+          "sourcePage": "46"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "46"
+        }
+      ],
+      "seats": [
+        {
+          "code": "213A",
+          "name": "가죽 블랙",
+          "sourcePage": "39"
+        },
+        {
+          "code": "214A",
+          "name": "가죽 브라운/블랙",
+          "sourcePage": "39"
+        },
+        {
+          "code": "215A",
+          "name": "가죽 마키아토 베이지/마그마 그레이",
+          "sourcePage": "39"
+        },
+        {
+          "code": "823A",
+          "name": "나파 가죽 블랙",
+          "sourcePage": "39"
+        },
+        {
+          "code": "824A",
+          "name": "나파 가죽 브라운/블랙",
+          "sourcePage": "39"
+        },
+        {
+          "code": "825A",
+          "name": "나파 가죽 마키아토 베이지/마그마 그레이",
+          "sourcePage": "39"
+        },
+        {
+          "code": "523A",
+          "name": "익스클루시브 나파 가죽 블랙",
+          "sourcePage": "40"
+        },
+        {
+          "code": "524A",
+          "name": "익스클루시브 나파 가죽 브라운/블랙",
+          "sourcePage": "40"
+        },
+        {
+          "code": "525A",
+          "name": "익스클루시브 나파 가죽 마키아토 베이지/마그마 그레이",
+          "sourcePage": "40"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "22H",
+          "name": "앤트러사이트 오픈-포어 우드 트림",
+          "sourcePage": "41",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "23H",
+          "name": "오픈-포어 브라운 우드 트림, 피시본 패턴",
+          "sourcePage": "41",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H17",
+          "name": "MANUFAKTUR 플로잉 라인 피아노 라커 트림, 블랙",
+          "sourcePage": "41",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H37",
+          "name": "유광 월넛 우드 트림, 블랙",
+          "sourcePage": "41",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H73",
+          "name": "하이-글로스 실버 메탈릭 믹스드 화이버 트림",
+          "sourcePage": "41",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "42",
+          "category": "루프라이너"
+        },
+        {
+          "code": "55U",
+          "name": "루프라이너, 마키아토 베이지",
+          "sourcePage": "42",
+          "category": "루프라이너"
+        },
+        {
+          "code": "61U",
+          "name": "마이크로컷 루프 라이너, 블랙",
+          "sourcePage": "42",
+          "category": "루프라이너"
+        },
+        {
+          "code": "65U",
+          "name": "마이크로컷 루프 라이너, 마키아토 베이지",
+          "sourcePage": "42",
+          "category": "루프라이너"
+        }
+      ],
+      "sourceFileName": "Mercedes-Benz_S-Class_Catalogue_20260914.pdf",
+      "verificationNote": "S-Class 27MY 공식 PDF 39~46쪽 색상 코드·시트·트림 원문 확인. 유료 여부는 본 카탈로그 색상 페이지에 명시되지 않은 경우 표시하지 않음. 사진 재게시 권한 검증 대기.",
+      "sourceSha256": "fbc0d0a42ccd2bc0462d6df9e610c4b8735b71bdea9b8cdc97c7c1c5b9da7da5"
+    },
+    "gla": {
+      "title": "GLA",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 07월 07일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "23"
+        },
+        {
+          "code": "696U",
+          "name": "나이트 블랙",
+          "sourcePage": "24"
+        },
+        {
+          "code": "787U",
+          "name": "마운틴 그레이",
+          "sourcePage": "25"
+        }
+      ],
+      "seats": [
+        {
+          "code": "651A",
+          "name": "아티코 가죽/마이크로컷 마이크로파이버 블랙",
+          "sourcePage": "18"
+        },
+        {
+          "code": "654A",
+          "name": "아티코 가죽/마이크로컷 마이크로파이버 바이아 브라운/블랙",
+          "sourcePage": "19"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "20",
+          "category": "루프라이너"
+        },
+        {
+          "code": "58U",
+          "name": "루프라이너, 크리스탈 그레이",
+          "sourcePage": "21",
+          "category": "루프라이너"
+        },
+        {
+          "code": "56H",
+          "name": "스타 패턴 및 백 발광 트림",
+          "sourcePage": "22",
+          "category": "인테리어 트림"
+        }
+      ],
+      "sourceFileName": "Mercedes-Benz_GLA_Catalogue_20260707.pdf",
+      "verificationNote": "사용자가 직접 첨부한 메르세데스-벤츠 공식 PDF에서 색상/시트/내장 코드와 정식 명칭을 페이지별 대조. 개별 이미지 공개 권한은 미확인.",
+      "sourceSha256": "a0ca24bb46ebc46e7fba2a6a21203f864312a4b1a0309fef53b33054c6d6df2c"
+    },
+    "glb": {
+      "title": "GLB",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 08월 13일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "25"
+        },
+        {
+          "code": "696U",
+          "name": "나이트 블랙",
+          "sourcePage": "26"
+        },
+        {
+          "code": "191U",
+          "name": "코스모스 블랙",
+          "sourcePage": "27"
+        },
+        {
+          "code": "787U",
+          "name": "마운틴 그레이",
+          "sourcePage": "28"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "29"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "30"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "31"
+        }
+      ],
+      "seats": [
+        {
+          "code": "651A",
+          "name": "아티코 가죽/다이나미카 블랙",
+          "sourcePage": "18"
+        },
+        {
+          "code": "158A",
+          "name": "아티코 가죽 세이지 그레이/블랙",
+          "sourcePage": "19"
+        },
+        {
+          "code": "654A",
+          "name": "아티코 가죽/마이크로컷 마이크로파이버 바이아 브라운/블랙",
+          "sourcePage": "20"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "21",
+          "category": "루프라이너"
+        },
+        {
+          "code": "58U",
+          "name": "루프라이너, 크리스탈 그레이",
+          "sourcePage": "22",
+          "category": "루프라이너"
+        },
+        {
+          "code": "56H",
+          "name": "스타 패턴 트림",
+          "sourcePage": "23",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H62",
+          "name": "카본 스트럭쳐 트림",
+          "sourcePage": "24",
+          "category": "인테리어 트림"
+        }
+      ],
+      "sourceFileName": "Mercedes-Benz_The new GLB_Catalogue_20260813.pdf",
+      "verificationNote": "사용자가 직접 첨부한 메르세데스-벤츠 공식 PDF에서 색상/시트/내장 코드와 정식 명칭을 페이지별 대조. 개별 이미지 공개 권한은 미확인.",
+      "sourceSha256": "dac4c283aeca6dc9a419e489609dc2f971dd8150f1aa4837eafc66afce0f570d"
+    },
+    "glc": {
+      "title": "GLC & GLC Coupé",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 04월 24일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "55",
+          "bodyStyle": "GLC"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "56",
+          "bodyStyle": "GLC"
+        },
+        {
+          "code": "188U",
+          "name": "베르데 실버",
+          "sourcePage": "57",
+          "bodyStyle": "GLC"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이",
+          "sourcePage": "58",
+          "bodyStyle": "GLC"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "59",
+          "bodyStyle": "GLC"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "60",
+          "notes": "*시에나 브라운/블랙 색상의 아티코 투톤 인조 가죽 선택 시 적용 불가",
+          "bodyStyle": "GLC"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "61",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "bodyStyle": "GLC"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이",
+          "sourcePage": "62",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "bodyStyle": "GLC"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드 메탈릭",
+          "sourcePage": "63",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "bodyStyle": "GLC"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "64",
+          "bodyStyle": "GLC Coupé"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "65",
+          "bodyStyle": "GLC Coupé"
+        },
+        {
+          "code": "188U",
+          "name": "베르데 실버",
+          "sourcePage": "66",
+          "bodyStyle": "GLC Coupé"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이",
+          "sourcePage": "67",
+          "bodyStyle": "GLC Coupé"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "68",
+          "bodyStyle": "GLC Coupé"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "69",
+          "notes": "*시에나 브라운/블랙 색상의 아티코 투톤 인조 가죽 선택 시 적용 불가",
+          "bodyStyle": "GLC Coupé"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "70",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "bodyStyle": "GLC Coupé"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이",
+          "sourcePage": "71",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "bodyStyle": "GLC Coupé"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드 메탈릭",
+          "sourcePage": "72",
+          "applicability": "유료옵션",
+          "notes": "*시에나 브라운/블랙 색상의 아티코 투톤 인조 가죽 선택 시 적용 불가",
+          "priceStatus": "paid",
+          "bodyStyle": "GLC Coupé"
+        }
+      ],
+      "seats": [
+        {
+          "code": "101A",
+          "name": "아티코 인조 가죽, 블랙",
+          "sourcePage": "40",
+          "applicability": "GLC 220 d 4MATIC, GLC 300 4MAITC AVANTGARDE / GLC 300 4MATIC Coupé AVANTGARDE 기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "104A",
+          "name": "아티코 인조 가죽, 시에나 브라운/블랙",
+          "sourcePage": "41",
+          "applicability": "GLC 220 d 4MATIC, GLC 300 4MAITC AVANTGARDE / GLC 300 4MATIC Coupé AVANTGARDE 유료옵션",
+          "notes": "*루프라이너, 크리스탈 그레이 선택 시 적용 불가",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "105A",
+          "name": "아티코 인조 가죽, 마키아토 베이지/블랙",
+          "sourcePage": "42",
+          "applicability": "GLC 220 d 4MATIC, GLC 300 4MAITC AVANTGARDE / GLC 300 4MATIC Coupé AVANTGARDE 유료옵션",
+          "notes": "*루프라이너, 크리스탈 그레이 선택 시 적용 불가",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "111A",
+          "name": "아티코 인조 가죽, 블랙",
+          "sourcePage": "43",
+          "applicability": "GLC 300 4MATIC AMG Line / GLC 300 4MATIC Coupé AMG Line 기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "118A",
+          "name": "아티코 인조 가죽, 네바 그레이/블랙",
+          "sourcePage": "44",
+          "applicability": "GLC 300 4MATIC AMG Line / GLC 300 4MATIC Coupé AMG Line 유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "194A",
+          "name": "아티코 투톤 인조 가죽, 시에나 브라운/블랙",
+          "sourcePage": "45",
+          "applicability": "GLC 300 4MATIC AMG Line / GLC 300 4MATIC Coupé AMG Line 유료옵션",
+          "notes": "*루프라이너, 크리스탈 그레이 선택 시 적용 불가",
+          "priceStatus": "paid"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "46",
+          "notes": "- 기본사양 : GLC 300 4MAITC AVANTGARDE, GLC 300 4MATIC AMG Line / GLC 300 4MATIC Coupé AVANTGARDE, GLC 300 4MATIC Coupé AMG Line / - 유료옵션 : GLC 220 d 4MATIC",
+          "priceStatus": "varies",
+          "category": "루프라이너"
+        },
+        {
+          "code": "58U",
+          "name": "루프라이너 크리스탈 그레이",
+          "sourcePage": "47",
+          "notes": "- 기본사양 : GLC 220 d 4MATIC / - 선택사양 : GLC 300 4MAITC AVANTGARDE, GLC 300 4MATIC AMG Line / GLC 300 4MATIC Coupé AVANTGARDE, GLC 300 4MATIC Coupé AMG Line / *GLC 220 d 4MATIC : 시에나브라운/블랙 색상, 마키아토 베이지/블랙 색상의 아티코 인조 가죽 선택 시 적용 불가",
+          "priceStatus": "varies",
+          "category": "루프라이너"
+        },
+        {
+          "code": "H08",
+          "name": "안트라사이트 라인스트럭쳐 라임 우드 트림",
+          "sourcePage": "48",
+          "notes": "- 기본사양 : GLC 220 d 4MATIC / - 선택사양 : GLC 300 4MATIC AVANTGARDE, GLC 300 4MAITC AMG Line / GLC 300 4MATIC Coupé AVANTGARDE, GLC 300 4MATIC Coupé AMG Line",
+          "priceStatus": "varies",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H50",
+          "name": "실버 그레이 다이아몬드 패턴 트림",
+          "sourcePage": "49",
+          "notes": "- 기본사양 : GLC 300 4MATIC AVANTGARDE / GLC 300 4MATIC Coupé AVANTGARDE / - 선택사양 : GLC 220 d 4MATIC, GLC 300 4MATIC AMG Line / GLC 300 4MATIC Coupé AMG Line",
+          "priceStatus": "varies",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H04",
+          "name": "블랙 오픈포어 알루미늄 라인 우드 트림",
+          "sourcePage": "50",
+          "applicability": "GLC 300 4MATIC AMG Line / GLC 300 4MATIC Coupé AMG Line 기본사양",
+          "priceStatus": "standard",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H33",
+          "name": "월넛 브라운 우드 오픈 포어 트림",
+          "sourcePage": "51",
+          "applicability": "선택사양",
+          "priceStatus": "optional",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "757",
+          "name": "하이 글로스 블랙 센터콘솔",
+          "sourcePage": "52",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "category": "센터콘솔"
+        },
+        {
+          "code": "794",
+          "name": "크리스 크로스 룩 실버 그레이 센터콘솔",
+          "sourcePage": "53",
+          "applicability": "유료옵션",
+          "notes": "*실버 그레이 다이아몬드 패턴 트림 선택 시 적용 가능",
+          "priceStatus": "paid",
+          "category": "센터콘솔"
+        },
+        {
+          "code": "795",
+          "name": "메탈 스트럭쳐 피니시 센터콘솔",
+          "sourcePage": "54",
+          "applicability": "유료옵션",
+          "notes": "*안트라사이트 라인스트럭쳐 라임 우드 트림, 블랙 오픈포어 알루미늄 라인 우드 트림 선택 시 적용 가능",
+          "priceStatus": "paid",
+          "category": "센터콘솔"
+        }
+      ],
+      "sourceFileName": "The new GLC n GLC Coupe_Catalogue_20260424.pdf",
+      "verificationNote": "공식 PDF 40~72쪽: GLC/GLC Coupé 각각 실제 차량 외장 컬러 모형, 실내 코드·원문 적용 차종 대조. 사진 재게시 권한 검증 대기.",
+      "sourceSha256": "3c94ae37f544eabd2c2183fcd7cc4b469142c5b653b9a8aae0bbb795731dbfb1"
+    },
+    "gle": {
+      "title": "GLE & GLE Coupé",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 11월 16일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "43",
+          "bodyStyle": "GLE"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "43",
+          "bodyStyle": "GLE"
+        },
+        {
+          "code": "489U",
+          "name": "다크 페트롤",
+          "sourcePage": "43",
+          "bodyStyle": "GLE"
+        },
+        {
+          "code": "842U",
+          "name": "소달라이트 블루",
+          "sourcePage": "43",
+          "bodyStyle": "GLE"
+        },
+        {
+          "code": "922U",
+          "name": "하이테크 실버",
+          "sourcePage": "43",
+          "bodyStyle": "GLE"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "44",
+          "bodyStyle": "GLE Coupé"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "44",
+          "bodyStyle": "GLE Coupé"
+        },
+        {
+          "code": "489U",
+          "name": "다크 페트롤",
+          "sourcePage": "44",
+          "bodyStyle": "GLE Coupé"
+        },
+        {
+          "code": "842U",
+          "name": "소달라이트 블루",
+          "sourcePage": "44",
+          "bodyStyle": "GLE Coupé"
+        },
+        {
+          "code": "922U",
+          "name": "하이테크 실버",
+          "sourcePage": "44",
+          "bodyStyle": "GLE Coupé"
+        }
+      ],
+      "seats": [
+        {
+          "code": "231A",
+          "name": "가죽 블랙",
+          "sourcePage": "39"
+        },
+        {
+          "code": "234A",
+          "name": "가죽 비치 브라운/블랙",
+          "sourcePage": "39"
+        },
+        {
+          "code": "235A",
+          "name": "가죽 마키아토 베이지/블랙",
+          "sourcePage": "39"
+        },
+        {
+          "code": "801A",
+          "name": "나파 가죽 블랙",
+          "sourcePage": "39"
+        },
+        {
+          "code": "804A",
+          "name": "나파 가죽 비치 브라운/블랙",
+          "sourcePage": "39"
+        },
+        {
+          "code": "885A",
+          "name": "나파 가죽 투톤 화이트/블랙",
+          "sourcePage": "39"
+        },
+        {
+          "code": "887A",
+          "name": "나파 가죽 투톤 클래식 레드/블랙",
+          "sourcePage": "40"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "28H",
+          "name": "오픈포어 다크 브라운 버치 우드 트림",
+          "sourcePage": "41",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "29H",
+          "name": "오픈포어 월넛 브라운 피쉬본 우드 트림",
+          "sourcePage": "41",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "44H",
+          "name": "플로잉 라인 알루미늄 트림",
+          "sourcePage": "41",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H31",
+          "name": "앤트러사이트 오픈 포어 오크 우드 트림",
+          "sourcePage": "41",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "42",
+          "category": "루프라이너"
+        },
+        {
+          "code": "55U",
+          "name": "루프라이너, 마키아토 베이지",
+          "sourcePage": "42",
+          "category": "루프라이너"
+        },
+        {
+          "code": "58U",
+          "name": "루프라이너, 크리스탈 그레이",
+          "sourcePage": "42",
+          "category": "루프라이너"
+        }
+      ],
+      "sourceFileName": "The new GLE_n_GLE_Coupe_Catalogue_20261116.pdf",
+      "verificationNote": "공식 GLE/GLE Coupé 27MY PDF 39~44쪽 대조; 외장색은 차체별 차량 이미지 5개씩. 재게시 이미지 권한 확인 전.",
+      "sourceSha256": "db10e5e64c5ea1a47d023eff92b3ed0a6e5ae6863debda2c72d23a656c3ce791"
+    },
+    "gls": {
+      "title": "GLS",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 11월 16일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "50"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "50"
+        },
+        {
+          "code": "489U",
+          "name": "다크 페트롤",
+          "sourcePage": "50"
+        },
+        {
+          "code": "842U",
+          "name": "소달라이트 블루",
+          "sourcePage": "50"
+        },
+        {
+          "code": "922U",
+          "name": "하이테크 실버",
+          "sourcePage": "50"
+        }
+      ],
+      "seats": [
+        {
+          "code": "231A",
+          "name": "가죽 블랙",
+          "sourcePage": "47"
+        },
+        {
+          "code": "234A",
+          "name": "가죽 비치 브라운/블랙",
+          "sourcePage": "47"
+        },
+        {
+          "code": "235A",
+          "name": "가죽 마키아토 베이지/블랙",
+          "sourcePage": "47"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "28H",
+          "name": "오픈포어 다크 브라운 버치 우드 트림",
+          "sourcePage": "48",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "29H",
+          "name": "오픈포어 월넛 브라운 피쉬본 우드 트림",
+          "sourcePage": "48",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "44H",
+          "name": "플로잉 라인 알루미늄 트림",
+          "sourcePage": "48",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H31",
+          "name": "앤트러사이트 오픈 포어 오크 우드 트림",
+          "sourcePage": "48",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "49",
+          "category": "루프라이너"
+        },
+        {
+          "code": "55U",
+          "name": "루프라이너, 마키아토 베이지",
+          "sourcePage": "49",
+          "category": "루프라이너"
+        },
+        {
+          "code": "58U",
+          "name": "루프라이너, 크리스탈 그레이",
+          "sourcePage": "49",
+          "category": "루프라이너"
+        }
+      ],
+      "sourceFileName": "Mercedes-Benz_The new GLS_Catalogue_20261116.pdf",
+      "verificationNote": "공식 GLS 27MY PDF 47~50쪽 대조. 이미지 재게시 권한 확인 전.",
+      "sourceSha256": "fc53a0d47517a06b86207ce66fff201e345f42222a6ad00aaf67be9a56c643b1"
+    },
+    "g-class": {
+      "title": "G-Class",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 09월 30일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "30"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "30"
+        },
+        {
+          "code": "992U",
+          "name": "셀레나이트 그레이",
+          "sourcePage": "30"
+        },
+        {
+          "code": "775U",
+          "name": "이리디움 실버",
+          "sourcePage": "30"
+        },
+        {
+          "code": "842U",
+          "name": "소달라이트 블루",
+          "sourcePage": "30"
+        },
+        {
+          "code": "859U",
+          "name": "모하비 실버",
+          "sourcePage": "30"
+        },
+        {
+          "code": "896U",
+          "name": "브릴리언트 블루",
+          "sourcePage": "31"
+        },
+        {
+          "code": "989U",
+          "name": "에메랄드 그린",
+          "sourcePage": "31"
+        },
+        {
+          "code": "041U",
+          "name": "MANUFAKTUR 그라파이트 메탈릭",
+          "sourcePage": "31"
+        },
+        {
+          "code": "124U",
+          "name": "MANUFAKTUR 클래식 그레이 논-메탈릭",
+          "sourcePage": "31"
+        },
+        {
+          "code": "693U",
+          "name": "MANUFAKTUR 트레벌타인 베이지 메탈릭",
+          "sourcePage": "31"
+        },
+        {
+          "code": "825U",
+          "name": "MANUFAKTUR 딥 그린 논-메탈릭",
+          "sourcePage": "31"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "32"
+        },
+        {
+          "code": "904U",
+          "name": "MANUFAKTUR 다크 블루 논-메탈릭",
+          "sourcePage": "32"
+        },
+        {
+          "code": "934U",
+          "name": "MANUFAKTUR 빈티지 블루 논-메탈릭",
+          "sourcePage": "32"
+        },
+        {
+          "code": "963U",
+          "name": "MANUFAKTUR 인디움 그레이 메탈릭",
+          "sourcePage": "32"
+        },
+        {
+          "code": "026U",
+          "name": "MANUFAKTUR 오션 블루 메탈릭",
+          "sourcePage": "32"
+        },
+        {
+          "code": "162U",
+          "name": "MANUFAKTUR 사우스 씨 블루 메탈릭",
+          "sourcePage": "32"
+        },
+        {
+          "code": "255U",
+          "name": "MANUFAKTUR 올리브 메탈릭",
+          "sourcePage": "33"
+        },
+        {
+          "code": "464U",
+          "name": "MANUFAKTUR 데저트 샌드 논-메탈릭",
+          "sourcePage": "33"
+        },
+        {
+          "code": "660U",
+          "name": "MANUFAKTUR 루벨라이트 레드 메탈릭",
+          "sourcePage": "33"
+        },
+        {
+          "code": "914U",
+          "name": "MANUFAKTUR 썬 옐로우 논-메탈릭",
+          "sourcePage": "33"
+        },
+        {
+          "code": "996U",
+          "name": "MANUFAKTUR 하이신스 레드 메탈릭",
+          "sourcePage": "33"
+        }
+      ],
+      "seats": [
+        {
+          "code": "501A",
+          "name": "나파 가죽 블랙",
+          "sourcePage": "24"
+        },
+        {
+          "code": "545A",
+          "name": "나파 가죽 트러플 브라운/블랙",
+          "sourcePage": "24"
+        },
+        {
+          "code": "575A",
+          "name": "나파 가죽 마키아토 베이지/블랙",
+          "sourcePage": "24"
+        },
+        {
+          "code": "801A",
+          "name": "나파 가죽 블랙",
+          "sourcePage": "24"
+        },
+        {
+          "code": "808A",
+          "name": "나파 가죽 마키아토 베이지/마그마 그레이",
+          "sourcePage": "24"
+        },
+        {
+          "code": "825A",
+          "name": "나파 가죽 트러플 브라운/블랙",
+          "sourcePage": "24"
+        },
+        {
+          "code": "923A",
+          "name": "MANUFAKTUR 나파 가죽 플래티넘 화이트/블랙",
+          "sourcePage": "25"
+        },
+        {
+          "code": "924A",
+          "name": "MANUFAKTUR 나파 가죽 에스프레소 브라운/블랙",
+          "sourcePage": "25"
+        },
+        {
+          "code": "925A",
+          "name": "MANUFAKTUR 나파 가죽 카탈라나 베이지/블랙",
+          "sourcePage": "25"
+        },
+        {
+          "code": "927A",
+          "name": "MANUFAKTUR 나파 가죽 뱅갈 레드/블랙",
+          "sourcePage": "25"
+        },
+        {
+          "code": "928A",
+          "name": "MANUFAKTUR 나파 가죽 티타늄 그레이 펄/블랙",
+          "sourcePage": "25"
+        },
+        {
+          "code": "934A",
+          "name": "MANUFAKTUR 나파 가죽 새들 브라운/블랙",
+          "sourcePage": "25"
+        },
+        {
+          "code": "937A",
+          "name": "MANUFAKTUR 나파 가죽 레드 페퍼/블랙",
+          "sourcePage": "26"
+        },
+        {
+          "code": "938A",
+          "name": "MANUFAKTUR 나파 가죽 세이지 그레이/블랙",
+          "sourcePage": "26"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "S39",
+          "name": "MANUFAKTUR 시트 벨트 레드",
+          "sourcePage": "27",
+          "category": "시트벨트"
+        },
+        {
+          "code": "S44",
+          "name": "MANUFAKTUR 시트 벨트 마키아토 베이지",
+          "sourcePage": "27",
+          "category": "시트벨트"
+        },
+        {
+          "code": "S46",
+          "name": "MANUFAKTUR 시트 벨트 실버",
+          "sourcePage": "27",
+          "category": "시트벨트"
+        },
+        {
+          "code": "VA1",
+          "name": "MANUFAKTUR 블랙 오픈 포어 우드, 트림",
+          "sourcePage": "28",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "VA2",
+          "name": "오픈 포어 월넛 우드, 트림",
+          "sourcePage": "28",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "VA5",
+          "name": "메탈 위브, 트림",
+          "sourcePage": "28",
+          "category": "인테리어 트림"
+        }
+      ],
+      "sourceFileName": "The new G-Class_Catalogue_20260930.pdf",
+      "verificationNote": "공식 일반 G-Class 27MY PDF 24~33쪽 대조. AMG G 63에는 이 일반 G-Class 색상 자료를 전용 카탈로그처럼 적용하지 않음. 사진 공개 검증 전.",
+      "sourceSha256": "bb95d565993683706548b92139a9561f5f14fcfff5672ff2c4cbd8a8a379804f",
+      "exteriorDetails": [
+        {
+          "code": "RR0",
+          "name": "스페어 휠 링 커버, 스테인리스",
+          "sourcePage": "29"
+        },
+        {
+          "code": "RR1",
+          "name": "MANUFAKTUR 스페어 휠 링 커버, 차량 컬러",
+          "sourcePage": "29"
+        },
+        {
+          "code": "RR3",
+          "name": "스페어 휠 링 커버, 나이트 블랙 마그노",
+          "sourcePage": "29"
+        },
+        {
+          "code": "RR4",
+          "name": "스페어 휠 링 커버, 옵시디안 블랙",
+          "sourcePage": "29"
+        }
+      ]
+    },
+    "electric-cla": {
+      "title": "The all-new electric CLA",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 10월 21일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "41"
+        },
+        {
+          "code": "341U",
+          "name": "아쿠아 민트",
+          "sourcePage": "41"
+        },
+        {
+          "code": "696U",
+          "name": "제트 블랙",
+          "sourcePage": "41"
+        },
+        {
+          "code": "809U",
+          "name": "시어 블루",
+          "sourcePage": "41"
+        },
+        {
+          "code": "922U",
+          "name": "하이테크 실버",
+          "sourcePage": "41"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "41"
+        }
+      ],
+      "seats": [
+        {
+          "code": "105A",
+          "name": "ARTICO 가죽 아이보리 베이지/블랙",
+          "sourcePage": "38"
+        },
+        {
+          "code": "101A",
+          "name": "ARTICO 가죽 블랙",
+          "sourcePage": "38"
+        },
+        {
+          "code": "681A",
+          "name": "ARTICO 가죽 마이크로컷 투톤 마이크로파이버 블랙/클린 화이트",
+          "sourcePage": "38"
+        },
+        {
+          "code": "224A",
+          "name": "가죽 브라운/블랙",
+          "sourcePage": "38"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "59H",
+          "name": "앤트러사이트 아노다이즈드 룩 트림",
+          "sourcePage": "39",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H43",
+          "name": "카본-그레인 알루미늄 트림",
+          "sourcePage": "39",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "40",
+          "category": "루프라이너"
+        }
+      ],
+      "sourceFileName": "The all new electric CLA_catalogue_20261021.pdf",
+      "verificationNote": "제공된 공식 카탈로그에 인쇄된 외장/시트/내장 모형별 코드·명칭을 해당 페이지와 대조함. 사진 게시 전 권한 및 시각 검증 필요.",
+      "sourceSha256": "725633e24bb42b146a8e95dbf7fe8aff9dbe473c986e0cbe28a2eb74cdf4b035"
+    },
+    "electric-glb": {
+      "title": "The all-new electric GLB",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 10월 28일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "35"
+        },
+        {
+          "code": "341U",
+          "name": "아쿠아 민트",
+          "sourcePage": "35"
+        },
+        {
+          "code": "696U",
+          "name": "제트 블랙",
+          "sourcePage": "35"
+        }
+      ],
+      "seats": [
+        {
+          "code": "101A",
+          "name": "ARTICO 가죽 블랙",
+          "sourcePage": "32"
+        },
+        {
+          "code": "105A",
+          "name": "ARTICO 가죽 아이보리 베이지/블랙",
+          "sourcePage": "32"
+        },
+        {
+          "code": "224A",
+          "name": "가죽 라운/블랙",
+          "sourcePage": "32",
+          "notes": "원문 PDF 32쪽에 '라운/블랙'으로 인쇄되어 있습니다. 별도 공식 정정 자료 확인 전 원문 표기를 유지합니다."
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "59H",
+          "name": "앤트러사이트 아노다이즈드 룩 트림",
+          "sourcePage": "33",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "34",
+          "category": "루프라이너"
+        }
+      ],
+      "sourceFileName": "The all-new electric GLB_catalogue_20261028.pdf",
+      "verificationNote": "제공된 공식 카탈로그에 인쇄된 외장/시트/내장 모형별 코드·명칭을 해당 페이지와 대조함. 사진 게시 전 권한 및 시각 검증 필요.",
+      "sourceSha256": "b56aafeb69fa78f69378b15308d25841978bfb9b7b341201a9a3a0098321bed5"
+    },
+    "electric-glc": {
+      "title": "The all-new electric GLC",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 10월 16일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "35"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "35"
+        },
+        {
+          "code": "689U",
+          "name": "라벤더 실버",
+          "sourcePage": "35"
+        },
+        {
+          "code": "809U",
+          "name": "시어 블루",
+          "sourcePage": "35"
+        },
+        {
+          "code": "842U",
+          "name": "소달라이트 블루",
+          "sourcePage": "35"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "35"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이",
+          "sourcePage": "36"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트",
+          "sourcePage": "36"
+        }
+      ],
+      "seats": [
+        {
+          "code": "211A",
+          "name": "가죽 블랙",
+          "sourcePage": "32"
+        },
+        {
+          "code": "111A",
+          "name": "ARTICO 가죽 블랙",
+          "sourcePage": "32"
+        },
+        {
+          "code": "214A",
+          "name": "가죽 비치 브라운/블랙",
+          "sourcePage": "32"
+        },
+        {
+          "code": "114A",
+          "name": "ARTICO 가죽 비치 브라운/블랙",
+          "sourcePage": "32"
+        },
+        {
+          "code": "215A",
+          "name": "가죽 아이보리 베이지/블랙",
+          "sourcePage": "32"
+        },
+        {
+          "code": "115A",
+          "name": "ARTICO 가죽 아이보리 베이지/블랙",
+          "sourcePage": "32"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "26H",
+          "name": "브라운 오픈포어 파인라인 버치 우드 트림",
+          "sourcePage": "33",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "73H",
+          "name": "하이 글로스 실버 메탈릭 혼방 패브릭 트림",
+          "sourcePage": "33",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H75",
+          "name": "블랙/실버 메탈릭 혼방 패브릭 트림",
+          "sourcePage": "33",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "34",
+          "category": "루프라이너"
+        }
+      ],
+      "sourceFileName": "The all-new electric GLC_catalogue_20261016.pdf",
+      "verificationNote": "제공된 공식 카탈로그에 인쇄된 외장/시트/내장 모형별 코드·명칭을 해당 페이지와 대조함. 사진 게시 전 권한 및 시각 검증 필요.",
+      "sourceSha256": "487d7c36e3db55261ca33a457ba6ca5cdefc6c2cba03d07a0999edaf2b59a6d8"
+    },
+    "eqa": {
+      "title": "EQA",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 09월 02일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "191U",
+          "name": "코스모스 블랙",
+          "sourcePage": "34"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "35"
+        },
+        {
+          "code": "696U",
+          "name": "나이트 블랙",
+          "sourcePage": "36"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "37"
+        },
+        {
+          "code": "787U",
+          "name": "마운틴 그레이",
+          "sourcePage": "38"
+        }
+      ],
+      "seats": [
+        {
+          "code": "105A",
+          "name": "아티코 가죽, 마키아토 베이지/블랙",
+          "sourcePage": "25"
+        },
+        {
+          "code": "101A",
+          "name": "아티코 가죽, 블랙/블랙",
+          "sourcePage": "26"
+        },
+        {
+          "code": "651A",
+          "name": "아티코 가죽/마이크로컷 마이크로파이버 블랙",
+          "sourcePage": "27"
+        },
+        {
+          "code": "158A",
+          "name": "아티코 가죽 세이지 그레이/블랙",
+          "sourcePage": "28"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "29",
+          "category": "루프라이너"
+        },
+        {
+          "code": "55U",
+          "name": "루프라이너 , 베이지",
+          "sourcePage": "30",
+          "category": "루프라이너"
+        },
+        {
+          "code": "58U",
+          "name": "루프라이너, 크리스탈 그레이",
+          "sourcePage": "31",
+          "category": "루프라이너"
+        },
+        {
+          "code": "55H",
+          "name": "스타 패턴 트림",
+          "sourcePage": "32",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "56H",
+          "name": "스타 패턴 트림",
+          "sourcePage": "33",
+          "category": "인테리어 트림"
+        }
+      ],
+      "sourceFileName": "The new EQA_Catalogue_20260902.pdf",
+      "verificationNote": "사용자가 첨부한 공식 카탈로그에서 각 옵션 페이지의 명칭·코드·명시된 적용 조건 확인. 외장/시트 사진 공개 권한과 이미지별 검수 대기.",
+      "sourceSha256": "5ea8ea746d05cc719746207f0fbd8ae6bcca13b9852126dff23a8558809e35c8"
+    },
+    "eqb": {
+      "title": "EQB",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 04월 24일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "191U",
+          "name": "코스모스 블랙",
+          "sourcePage": "31"
+        },
+        {
+          "code": "696U",
+          "name": "나이트 블랙",
+          "sourcePage": "32"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "33"
+        },
+        {
+          "code": "787U",
+          "name": "마운틴 그레이",
+          "sourcePage": "34"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "35"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "36"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "37",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
+      "seats": [
+        {
+          "code": "105A",
+          "name": "아티코 가죽, 마키아토 베이지/블랙",
+          "sourcePage": "25",
+          "applicability": "EQB 300 4MATIC Progressive 기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "651A",
+          "name": "아티코 가죽 / 마이크로컷 마이크로파이버 블랙",
+          "sourcePage": "26",
+          "applicability": "EQB 300 4MATIC AMG Line 기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "101A",
+          "name": "아티코 가죽, 블랙/블랙",
+          "sourcePage": "27",
+          "applicability": "EQB 300 4MATIC Progressive 선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "158A",
+          "name": "아티코 가죽 세이지 그레이/블랙",
+          "sourcePage": "28",
+          "applicability": "EQB 300 4MATIC Progressive 선택사양, EQB 300 4MATIC AMG Line 유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "55H",
+          "name": "스타 패턴 트림",
+          "sourcePage": "29",
+          "applicability": "EQB 300 4MATIC Progressive 기본사양",
+          "priceStatus": "standard",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "56H",
+          "name": "스타 패턴 트림",
+          "sourcePage": "30",
+          "applicability": "EQB 300 4MATIC AMG Line 기본사양, EQB 300 4MATIC Progressive 유료옵션",
+          "priceStatus": "varies",
+          "category": "인테리어 트림"
+        }
+      ],
+      "sourceFileName": "The new EQB_Catalogue_20260424.pdf",
+      "verificationNote": "사용자가 첨부한 공식 카탈로그에서 각 옵션 페이지의 명칭·코드·명시된 적용 조건 확인. 외장/시트 사진 공개 권한과 이미지별 검수 대기.",
+      "sourceSha256": "9a5242812433cd4c4f11a3427c13cb8eadf742b5c5ddb92b12fcb3279d0f0785"
+    },
+    "eqe": {
+      "title": "EQE",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 04월 29일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "040U",
+          "name": "블랙",
+          "sourcePage": "27"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "28"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "29"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이 메탈릭",
+          "sourcePage": "30"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버 메탈릭",
+          "sourcePage": "31"
+        },
+        {
+          "code": "842U",
+          "name": "소다라이트 블루",
+          "sourcePage": "32"
+        },
+        {
+          "code": "992U",
+          "name": "셀레나이트 그레이 메탈릭",
+          "sourcePage": "33"
+        }
+      ],
+      "seats": [
+        {
+          "code": "201A",
+          "name": "가죽, 블랙/스페이스 그레이",
+          "sourcePage": "17",
+          "applicability": "기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "209A",
+          "name": "가죽, 네바 그레이/발라오 브라운",
+          "sourcePage": "18",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "211A",
+          "name": "가죽, 블랙/발라오 브라운",
+          "sourcePage": "19",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "219A",
+          "name": "가죽, 네바 그레이/비스케이 블루",
+          "sourcePage": "20",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "221A",
+          "name": "가죽, 블랙/비스케이 블루",
+          "sourcePage": "21",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "블랙",
+          "sourcePage": "22",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "notes": "*네바 그레이/발라오 브라운 색상의 가죽, 네바 그레이/비스케이 블루 색상의 가죽 선택 시 적용 불가",
+          "category": "루프라이너"
+        },
+        {
+          "code": "59U",
+          "name": "네바 그레이",
+          "sourcePage": "23",
+          "applicability": "선택사양",
+          "priceStatus": "optional",
+          "category": "루프라이너"
+        },
+        {
+          "code": "51H",
+          "name": "레이저 컷 백릿 트림, 메르세데스-벤츠 패턴",
+          "sourcePage": "24",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "757",
+          "name": "하이 글로스 블랙",
+          "sourcePage": "25",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "category": "센터콘솔"
+        },
+        {
+          "code": "661",
+          "name": "블랙 파인 스트럭쳐룩",
+          "sourcePage": "26",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "category": "센터콘솔"
+        }
+      ],
+      "sourceFileName": "Mercedes-Benz_EQE_Catalogue_20260429.pdf",
+      "verificationNote": "사용자가 첨부한 공식 카탈로그에서 각 옵션 페이지의 명칭·코드·명시된 적용 조건 확인. 외장/시트 사진 공개 권한과 이미지별 검수 대기.",
+      "sourceSha256": "597fc81c29af37b97b8da4c05262c2346c75a79b435f51fadbe8dfde8441b67c"
+    },
+    "eqe-suv": {
+      "title": "EQE SUV",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 04월 24일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "43"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "44"
+        },
+        {
+          "code": "040U",
+          "name": "블랙",
+          "sourcePage": "45"
+        },
+        {
+          "code": "771U",
+          "name": "벨벳 브라운",
+          "sourcePage": "46"
+        },
+        {
+          "code": "842U",
+          "name": "소다라이트 블루",
+          "sourcePage": "47"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "48"
+        },
+        {
+          "code": "992U",
+          "name": "셀레나이트 그레이",
+          "sourcePage": "49"
+        }
+      ],
+      "seats": [
+        {
+          "code": "111A",
+          "name": "NEOTEX/ARTICO, 블랙/스페이스 그레이",
+          "sourcePage": "23",
+          "applicability": "EQE 350+ SUV 선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "109A",
+          "name": "NEOTEX/ARTICO, 네바 그레이/발라오 브라운",
+          "sourcePage": "24",
+          "applicability": "EQE 350+ SUV 선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "119A",
+          "name": "NEOTEX/ARTICO, 네바 그레이/비스케이 블루",
+          "sourcePage": "25",
+          "applicability": "EQE 350+ SUV 선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "121A",
+          "name": "NEOTEX/ARTICO, 블랙/발라오 브라운",
+          "sourcePage": "26",
+          "applicability": "EQE 350+ SUV 기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "131A",
+          "name": "NEOTEX/ARTICO 블랙/비스케이 블루",
+          "sourcePage": "27",
+          "applicability": "EQE 350+ SUV 선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "201A",
+          "name": "가죽, 블랙/스페이스 그레이",
+          "sourcePage": "28",
+          "applicability": "EQE 500 4MATIC SUV 선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "209A",
+          "name": "가죽, 네바 그레이/발라오 브라운",
+          "sourcePage": "29",
+          "applicability": "EQE 500 4MATIC SUV 선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "211A",
+          "name": "가죽, 블랙/발라오 브라운",
+          "sourcePage": "30",
+          "applicability": "EQE 500 4MATIC SUV 기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "219A",
+          "name": "가죽, 네바 그레이/비스케이 블루",
+          "sourcePage": "31",
+          "applicability": "EQE 500 4MATIC SUV 선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "221A",
+          "name": "가죽, 블랙/비스케이 블루",
+          "sourcePage": "32",
+          "applicability": "EQE 500 4MATIC SUV 선택사양",
+          "priceStatus": "optional"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "33",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "category": "루프라이너"
+        },
+        {
+          "code": "59U",
+          "name": "루프라이너, 네바 그레이",
+          "sourcePage": "34",
+          "applicability": "선택사양",
+          "priceStatus": "optional",
+          "category": "루프라이너"
+        },
+        {
+          "code": "61U",
+          "name": "MICROCUT 루프라이너, 블랙",
+          "sourcePage": "35",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "*네바 그레이/발라오 브라운 색상, 네바 그레이/비스케이 블루 색상의 NEOTEX/ARTICO/가죽, 네바 그레이/발라오 브라운 색상, 네바 그레이/비스케이 블루 색상의 가죽 선택 불가",
+          "category": "루프라이너"
+        },
+        {
+          "code": "51H",
+          "name": "레이저 컷 백릿 트림, 메르세데스-벤츠 패턴",
+          "sourcePage": "36",
+          "applicability": "EQE 350+ SUV 기본사양",
+          "priceStatus": "standard",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H51",
+          "name": "블랙 파인 스트럭쳐-룩 트림",
+          "sourcePage": "37",
+          "applicability": "EQE 350+ SUV 선택사양",
+          "priceStatus": "optional",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H20",
+          "name": "브라운 오픈-포어 마그놀리아 우드 트림, 메르세데스-벤츠 패턴",
+          "sourcePage": "38",
+          "applicability": "EQE 350+ SUV 유료옵션",
+          "priceStatus": "paid",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H08",
+          "name": "앤트러사이트 라임 우드 트림",
+          "sourcePage": "39",
+          "applicability": "EQE 500 4MATIC SUV 기본사양",
+          "priceStatus": "standard",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "757",
+          "name": "센터콘솔, 하이 글로스 블랙",
+          "sourcePage": "40",
+          "applicability": "EQE 350+ SUV 기본사양",
+          "priceStatus": "standard",
+          "category": "센터콘솔"
+        },
+        {
+          "code": "661",
+          "name": "센터콘솔, 블랙 파인 스트럭처룩",
+          "sourcePage": "41",
+          "applicability": "EQE 350+ SUV 유료옵션",
+          "priceStatus": "paid",
+          "category": "센터콘솔"
+        },
+        {
+          "code": "775",
+          "name": "센터콘솔, 앤트러사이트 라임 우드",
+          "sourcePage": "42",
+          "applicability": "EQE 500 4MATIC SUV 기본사양",
+          "priceStatus": "standard",
+          "category": "센터콘솔"
+        }
+      ],
+      "sourceFileName": "The new EQE SUV_Catalogue_20260424.pdf",
+      "verificationNote": "사용자가 첨부한 공식 카탈로그에서 각 옵션 페이지의 명칭·코드·명시된 적용 조건 확인. 외장/시트 사진 공개 권한과 이미지별 검수 대기.",
+      "sourceSha256": "845bb5dc01cb7719b58cc296acec47d389733d3b1e329e949d7a15507ef8a380"
+    },
+    "eqs": {
+      "title": "EQS",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 04월 24일, 25년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "51"
+        },
+        {
+          "code": "346U",
+          "name": "오닉스 블랙",
+          "sourcePage": "52"
+        },
+        {
+          "code": "595U",
+          "name": "노틱 블루",
+          "sourcePage": "53"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이",
+          "sourcePage": "54"
+        },
+        {
+          "code": "842U",
+          "name": "소다라이트 블루",
+          "sourcePage": "55"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "56"
+        },
+        {
+          "code": "040U",
+          "name": "블랙",
+          "sourcePage": "57"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "58"
+        }
+      ],
+      "seats": [
+        {
+          "code": "203A",
+          "name": "가죽, 블랙/스페이스 그레이",
+          "sourcePage": "33",
+          "applicability": "기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "213A",
+          "name": "가죽, 블랙/발라오 브라운",
+          "sourcePage": "34",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "215A",
+          "name": "가죽, 마키아토 베이지/스페이스 그레이",
+          "sourcePage": "35",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "219A",
+          "name": "가죽, 네바 그레이/발라오 브라운",
+          "sourcePage": "36",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "223A",
+          "name": "가죽, 블랙/비스케이 블루",
+          "sourcePage": "37",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "803A",
+          "name": "나파 가죽, 블랙/스페이스 그레이",
+          "sourcePage": "38",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "813A",
+          "name": "나파 가죽, 블랙/발라오 브라운",
+          "sourcePage": "39",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "815A",
+          "name": "나파 가죽, 마키아토 베이지/스페이스 그레이",
+          "sourcePage": "40",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "823A",
+          "name": "나파 가죽, 블랙/비스케이 블루",
+          "sourcePage": "41",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "42",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "category": "루프라이너"
+        },
+        {
+          "code": "55U",
+          "name": "루프라이너, 마키아토 베이지",
+          "sourcePage": "43",
+          "applicability": "선택사양",
+          "priceStatus": "optional",
+          "category": "루프라이너"
+        },
+        {
+          "code": "59U",
+          "name": "루프라이너, 네바 그레이",
+          "sourcePage": "44",
+          "applicability": "선택사양",
+          "priceStatus": "optional",
+          "category": "루프라이너"
+        },
+        {
+          "code": "61U",
+          "name": "MICROCUT 루프라이너, 블랙",
+          "sourcePage": "45",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "category": "루프라이너"
+        },
+        {
+          "code": "69U",
+          "name": "MICROCUT 루프라이너, 네바 그레이",
+          "sourcePage": "46",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "category": "루프라이너"
+        },
+        {
+          "code": "H08",
+          "name": "앤트러사이트 라임 우드 트림",
+          "sourcePage": "47",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H12",
+          "name": "브라운 오픈포어 월넛 우드 트림",
+          "sourcePage": "48",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "51H",
+          "name": "레이저 컷 백릿 트림, 메르세데스-벤츠 패턴",
+          "sourcePage": "49",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "661",
+          "name": "센터콘솔, 블랙 파인 스트럭쳐룩",
+          "sourcePage": "50",
+          "applicability": "기본옵션",
+          "category": "센터콘솔"
+        }
+      ],
+      "sourceFileName": "The new EQS_Catalogue_20260424.pdf",
+      "verificationNote": "사용자가 첨부한 공식 카탈로그에서 각 옵션 페이지의 명칭·코드·명시된 적용 조건 확인. 외장/시트 사진 공개 권한과 이미지별 검수 대기.",
+      "sourceSha256": "9d0b21992fdd3305b05a3ad496e8fea075b85f5af6043ba7905aa15a26527852"
+    },
+    "eqs-suv": {
+      "title": "EQS SUV",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 09월 07일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "55"
+        },
+        {
+          "code": "040U",
+          "name": "블랙",
+          "sourcePage": "56"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "57"
+        },
+        {
+          "code": "842U",
+          "name": "소다라이트 블루",
+          "sourcePage": "58"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "59"
+        },
+        {
+          "code": "992U",
+          "name": "셀레나이트 그레이",
+          "sourcePage": "60"
+        },
+        {
+          "code": "771U",
+          "name": "벨벳 브라운",
+          "sourcePage": "61"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "62"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이 솔리드",
+          "sourcePage": "63"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "64"
+        }
+      ],
+      "seats": [
+        {
+          "code": "201A",
+          "name": "가죽, 블랙/스페이스 그레이",
+          "sourcePage": "35"
+        },
+        {
+          "code": "211A",
+          "name": "가죽, 블랙/발라오 브라운",
+          "sourcePage": "36"
+        },
+        {
+          "code": "221A",
+          "name": "가죽, 블랙/비스케이 블루",
+          "sourcePage": "37"
+        },
+        {
+          "code": "205A",
+          "name": "가죽, 마키아토 베이지/스페이스 그레이",
+          "sourcePage": "38"
+        },
+        {
+          "code": "209A",
+          "name": "가죽, 네바 그레이/발라오 브라운",
+          "sourcePage": "39"
+        },
+        {
+          "code": "801A",
+          "name": "나파 가죽, 블랙/스페이스 그레이",
+          "sourcePage": "40"
+        },
+        {
+          "code": "811A",
+          "name": "나파 가죽, 블랙/발라오 브라운",
+          "sourcePage": "41"
+        },
+        {
+          "code": "821A",
+          "name": "나파 가죽, 블랙/비스케이 블루",
+          "sourcePage": "42"
+        },
+        {
+          "code": "805A",
+          "name": "나파 가죽, 마키아토 베이지/스페이스 그레이",
+          "sourcePage": "43"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "44",
+          "category": "루프라이너"
+        },
+        {
+          "code": "55U",
+          "name": "루프라이너, 마키아토 베이지",
+          "sourcePage": "45",
+          "category": "루프라이너"
+        },
+        {
+          "code": "59U",
+          "name": "루프라이너, 네바 그레이",
+          "sourcePage": "46",
+          "category": "루프라이너"
+        },
+        {
+          "code": "61U",
+          "name": "MICROCUT 루프라이너, 블랙",
+          "sourcePage": "47",
+          "category": "루프라이너"
+        },
+        {
+          "code": "69U",
+          "name": "MICROCUT 루프라이너, 네바 그레이",
+          "sourcePage": "48",
+          "category": "루프라이너"
+        },
+        {
+          "code": "H08",
+          "name": "앤트러사이트 라임 우드 트림",
+          "sourcePage": "49",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "07H",
+          "name": "선상 오픈-포어 메이플 우드 트림",
+          "sourcePage": "50",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H20",
+          "name": "브라운 오픈-포어 마그놀리아 우드 트림, 메르세데스-벤츠 패턴",
+          "sourcePage": "51",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H39",
+          "name": "선상 오픈-포어 월넛 우드 트림",
+          "sourcePage": "52",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "775",
+          "name": "센터콘솔, 앤트러상이트 라임 우드",
+          "sourcePage": "53",
+          "category": "센터콘솔"
+        },
+        {
+          "code": "689",
+          "name": "센터콘솔, 선상 오픈-포어 메이플 우드 트림",
+          "sourcePage": "54",
+          "category": "센터콘솔"
+        }
+      ],
+      "sourceFileName": "Mercedes-Benz_The new EQS SUV_Catalogue_20260907.pdf",
+      "verificationNote": "공식 PDF 원문에서 모델별 컬러/시트/트림 페이지의 코드·명칭 확인; CLE는 Coupé/Cabriolet 색상별 차량 사진 차체 구분. 사진 외부 게시 권한 및 화질 QA 대기.",
+      "sourceSha256": "b077dc2c9f08772d9acdf3927b11659a80651a06f904c384ec296d039c887a39",
+      "exteriorDetails": []
+    },
+    "electric-g-class": {
+      "title": "G-Class with EQ Technology",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 04월 24일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "26"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "26"
+        },
+        {
+          "code": "775U",
+          "name": "이리디움 실버",
+          "sourcePage": "26"
+        },
+        {
+          "code": "859U",
+          "name": "모하비 실버",
+          "sourcePage": "26"
+        },
+        {
+          "code": "842U",
+          "name": "소달라이트 블루",
+          "sourcePage": "26"
+        },
+        {
+          "code": "896U",
+          "name": "브릴리언트 블루",
+          "sourcePage": "27"
+        },
+        {
+          "code": "989U",
+          "name": "에메랄드 그린",
+          "sourcePage": "27"
+        },
+        {
+          "code": "992U",
+          "name": "셀레나이트 그레이",
+          "sourcePage": "27"
+        },
+        {
+          "code": "124U",
+          "name": "MANUFAKTUR 클래식 그레이 논-메탈릭",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "464U",
+          "name": "MANUFAKTUR 데저트 샌드 논-메탈릭",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "825U",
+          "name": "MANUFAKTUR 딥 그린 논-메탈릭",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "904U",
+          "name": "MANUFAKTUR 다크 블루 논-메탈릭",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "914U",
+          "name": "MANUFAKTUR 썬 옐로우 논-메탈릭",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "934U",
+          "name": "MANUFAKTUR 빈티지 블루 논-메탈릭",
+          "sourcePage": "29",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "026U",
+          "name": "MANUFAKTUR 오션 블루 메탈릭",
+          "sourcePage": "29",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "041U",
+          "name": "MANUFAKTUR 그라파이트 메탈릭",
+          "sourcePage": "29",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "162U",
+          "name": "MANUFAKTUR 사우스 씨 블루 메탈릭",
+          "sourcePage": "29",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "255U",
+          "name": "MANUFAKTUR 올리브 메탈릭",
+          "sourcePage": "29",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "660U",
+          "name": "MANUFAKTUR 루벨라이트 레드 메탈릭",
+          "sourcePage": "30",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "693U",
+          "name": "MANUFAKTUR 트레벌타인 베이지 메탈릭",
+          "sourcePage": "30",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "963U",
+          "name": "MANUFAKTUR 인디움 그레이 메탈릭",
+          "sourcePage": "30",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "996U",
+          "name": "MANUFAKTUR 하이신스 레드 메탈릭",
+          "sourcePage": "30",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "30",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "659U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 마그노",
+          "sourcePage": "31",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "051U",
+          "name": "MANUFAKTUR 플래티넘 마그노",
+          "sourcePage": "31",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "054U",
+          "name": "MANUFAKTUR 몬자 그레이 마그노",
+          "sourcePage": "31",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "056U",
+          "name": "MANUFAKTUR 나이트 블랙 마그노",
+          "sourcePage": "31",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "164U",
+          "name": "MANUFAKTUR 다크 올리브 마그노",
+          "sourcePage": "31",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "271U",
+          "name": "MANUFAKTUR 시트린 브라운 마그노",
+          "sourcePage": "32",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "658U",
+          "name": "MANUFAKTUR 쿠퍼 오렌지 마그노",
+          "sourcePage": "32",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "677U",
+          "name": "MANUFAKTUR 칼라하리 골드 마그노",
+          "sourcePage": "32",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "795U",
+          "name": "MANUFAKTUR 망가나이트 그레이 마그노",
+          "sourcePage": "32",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "739U",
+          "name": "MANUFAKTUR 올리브 마그노",
+          "sourcePage": "32",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "644U",
+          "name": "MANUFAKTUR 브릴리언트 블루 마그노",
+          "sourcePage": "33",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "823U",
+          "name": "MANUFAKTUR 히아신스 레드 마그노",
+          "sourcePage": "33",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        }
+      ],
+      "seats": [
+        {
+          "code": "501A",
+          "name": "나파 가죽 블랙",
+          "sourcePage": "16",
+          "applicability": "기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "545A",
+          "name": "나파 가죽 트러플 브라운/블랙",
+          "sourcePage": "16",
+          "applicability": "선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "575A",
+          "name": "나파 가죽 마키아토 베이지/블랙",
+          "sourcePage": "16",
+          "applicability": "선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "902A",
+          "name": "MANUFAKTUR 나파 가죽 블랙/블루 스티칭",
+          "sourcePage": "17",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "903A",
+          "name": "MANUFAKTUR 나파 가죽 블랙/화이트 스티칭",
+          "sourcePage": "17",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "904A",
+          "name": "MANUFAKTUR 나파 가죽 블랙/브론즈 스티칭",
+          "sourcePage": "17",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "906A",
+          "name": "MANUFAKTUR 나파 가죽 블랙/라임 그린 스티칭",
+          "sourcePage": "17",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "907A",
+          "name": "MANUFAKTUR 나파 가죽 블랙/레드 스티칭",
+          "sourcePage": "17",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "909A",
+          "name": "MANUFAKTUR 나파 가죽 블랙/골드 스티칭",
+          "sourcePage": "17",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "923A",
+          "name": "MANUFAKTUR 나파 가죽 플래티넘 화이트/블랙",
+          "sourcePage": "18",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "924A",
+          "name": "MANUFAKTUR 나파 가죽 에스프레소 브라운/블랙",
+          "sourcePage": "18",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "925A",
+          "name": "MANUFAKTUR 나파 가죽 카탈라나 베이지/블랙",
+          "sourcePage": "18",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "927A",
+          "name": "MANUFAKTUR 나파 가죽 벵갈 레드/블랙",
+          "sourcePage": "18",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "928A",
+          "name": "MANUFAKTUR 나파 가죽 티타늄 그레이 펄/블랙",
+          "sourcePage": "18",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "934A",
+          "name": "MANUFAKTUR 나파 가죽 새들 브라운/블랙",
+          "sourcePage": "18",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "937A",
+          "name": "MANUFAKTUR 나파 가죽 레드 페퍼/블랙",
+          "sourcePage": "19",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "938A",
+          "name": "MANUFAKTUR 나파 가죽 세이지 그레이/블랙",
+          "sourcePage": "19",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "944A",
+          "name": "MANUFAKTUR 나파 가죽 에스프레소 브라운/블랙 액센트 밴드",
+          "sourcePage": "19",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "947A",
+          "name": "MANUFAKTUR 나파 가죽 레드 페퍼/블랙 액센트 밴드",
+          "sourcePage": "19",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "948A",
+          "name": "MANUFAKTUR 나파 가죽 티타늄 그레이/블랙 액센트 밴드",
+          "sourcePage": "19",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "953A",
+          "name": "MANUFAKTUR 투톤 나파 가죽 플래티넘 화이트/블랙",
+          "sourcePage": "19",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "954A",
+          "name": "MANUFAKTUR 투톤 나파 가죽 에스프레소 브라운/블랙",
+          "sourcePage": "20",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "955A",
+          "name": "MANUFAKTUR 투톤 나파 가죽 카탈라나 베이지/블랙",
+          "sourcePage": "20",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "957A",
+          "name": "MANUFAKTUR 투톤 나파 가죽 뱅갈 레드/블랙",
+          "sourcePage": "20",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "958A",
+          "name": "MANUFAKTUR 투톤 나파 가죽 티타늄 펄 그레이/블랙",
+          "sourcePage": "20",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "964A",
+          "name": "MANUFAKTUR 투톤 나파 가죽 새들 브라운/블랙",
+          "sourcePage": "20",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "967A",
+          "name": "MANUFAKTUR 투톤 나파 가죽 레드 페퍼/블랙",
+          "sourcePage": "20",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        },
+        {
+          "code": "968A",
+          "name": "MANUFAKTUR 투톤 나파 가죽 세이지 그레이/블랙",
+          "sourcePage": "21",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "S39",
+          "name": "MANUFAKTUR 안전 벨트, 레드",
+          "sourcePage": "22",
+          "category": "시트벨트",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "S44",
+          "name": "MANUFAKTUR 안전 벨트, 마키아토 베이지",
+          "sourcePage": "22",
+          "category": "시트벨트",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "S46",
+          "name": "MANUFAKTUR 안전 벨트, 실버",
+          "sourcePage": "22",
+          "category": "시트벨트",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "VA5",
+          "name": "메탈 위브, 트림",
+          "sourcePage": "24",
+          "category": "인테리어 트림",
+          "applicability": "기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "VA2",
+          "name": "오픈 포어 월넛 우드, 트림",
+          "sourcePage": "24",
+          "category": "인테리어 트림",
+          "applicability": "선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "VA1",
+          "name": "MANUFAKTUR 블랙 오픈 포어 우드, 트림",
+          "sourcePage": "24",
+          "category": "인테리어 트림",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "VA4",
+          "name": "하이글로스 라이트 브라운 샌 우드, 트림",
+          "sourcePage": "24",
+          "category": "인테리어 트림",
+          "applicability": "선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "VA8",
+          "name": "MANUFAKTUR 오픈 포어 오크 우드, 트림",
+          "sourcePage": "24",
+          "category": "인테리어 트림",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "ZG2",
+          "name": "블랙 피아노 라커 센터 컨솔, 트림",
+          "sourcePage": "24",
+          "category": "인테리어 트림",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "ZG6",
+          "name": "AMG 카본파이버, 트림",
+          "sourcePage": "25",
+          "category": "인테리어 트림",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
+      "sourceFileName": "G-Class with EQ Technology_Catalogue_20260424.pdf",
+      "verificationNote": "공식 G-Class with EQ Technology PDF 16~33쪽의 컬러/시트/트림 명칭·코드·조건 확인. MANUFAKTUR 시트는 인테리어 라인에 따라 사진 차이 가능. 이미지 게시 전 권한 확인.",
+      "sourceSha256": "207c18c8cbafe25ced76f25bfdeabbd7e124419cf3bc2a2ddccb3ca9819d14b9",
+      "exteriorDetails": [
+        {
+          "code": "RS2",
+          "name": "디자인 박스",
+          "sourcePage": "23",
+          "category": "외장 추가 구성",
+          "applicability": "기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "RR0",
+          "name": "스페어 휠 링 커버, 스테인리스",
+          "sourcePage": "23",
+          "category": "외장 추가 구성",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "RR1",
+          "name": "MANUFAKTUR 스페어 휠 링 커버, 차량 컬러",
+          "sourcePage": "23",
+          "category": "외장 추가 구성",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        }
+      ]
+    },
+    "amg-a-class": {
+      "title": "AMG A-Class",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 05월 22일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "19"
+        },
+        {
+          "code": "191U",
+          "name": "코스모스 블랙",
+          "sourcePage": "19"
+        },
+        {
+          "code": "696U",
+          "name": "나이트 블랙",
+          "sourcePage": "19"
+        },
+        {
+          "code": "787U",
+          "name": "마운틴 그레이",
+          "sourcePage": "19"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "19"
+        },
+        {
+          "code": "662U",
+          "name": "MANUFAKTUR 마운틴 그레이 마그노",
+          "sourcePage": "20"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "20"
+        }
+      ],
+      "seats": [
+        {
+          "code": "671A",
+          "name": "아티코 가죽 마이크로컷 마이크로파이버 AMG 블랙",
+          "sourcePage": "17"
+        },
+        {
+          "code": "277A",
+          "name": "가죽 투톤 레드 페퍼/블랙",
+          "sourcePage": "17"
+        },
+        {
+          "code": "654A",
+          "name": "아티코 가죽 마이크로컷 마이크로파이버 바이아 브라운/블랙",
+          "sourcePage": "17"
+        },
+        {
+          "code": "651A",
+          "name": "아티코 가죽 마이크로컷 마이크로파이버 블랙",
+          "sourcePage": "17"
+        },
+        {
+          "code": "158A",
+          "name": "아티코 가죽 세이지 그레이/블랙",
+          "sourcePage": "17"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "H95",
+          "name": "AMG 디자인 알루미늄 트림, 블랙/실버",
+          "sourcePage": "18"
+        },
+        {
+          "code": "H15",
+          "name": "블랙 오픈포어 우드 린덴 트림",
+          "sourcePage": "18"
+        },
+        {
+          "code": "H44",
+          "name": "라이트 그레인 알루미늄 트림",
+          "sourcePage": "18"
+        }
+      ],
+      "verificationNote": "이번 채팅에 첨부된 벤츠코리아 카탈로그의 컬러·시트·내장 명칭 및 옵션 코드 원문 대조. 판본별 차이와 사진 재게시 권한 확인 필요.",
+      "sourceFileName": "The new Mercedes-AMG A-Class_Catalogue_20260522.pdf",
+      "sourceSha256": "264424a149536af5b7a4e07a29d84035cd331826c4eca144562e914e71bf4507",
+      "extraSourceNote": "Mercedes-AMG A-Class Sedan (25MY) 카탈로그는 별도 파일로 받았으나 현재 홈페이지 AMG A-Class 가족은 A 45 S 해치백이므로 세단 색상을 혼합하지 않음.",
+      "historicalReference": {
+        "sourceFileName": "The new Mercedes-AMG A-Class Sedan_Catalogue_20260424.pdf",
+        "sourceEdition": "2026년 04월 24일, 25년식",
+        "sourceSha256": "3541ebfa6f796bcd8ebdb1550ba7f6af37e729e0afbb46f66cdf72875a5a1501",
+        "status": "different_body_style",
+        "note": "현재 사이트 AMG A-Class는 A 45 S 해치백으로, 세단 공식 카탈로그는 해당 차량 색상 정보와 혼합하지 않습니다."
+      }
+    },
+    "amg-cla": {
+      "title": "AMG CLA",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 04월 24일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "191U",
+          "name": "코스모스 블랙",
+          "sourcePage": "17"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "17"
+        },
+        {
+          "code": "662U",
+          "name": "MANUFAKTUR 마운틴 그레이 마그노",
+          "sourcePage": "17",
+          "priceStatus": "paid"
+        }
+      ],
+      "seats": [
+        {
+          "code": "671A",
+          "name": "아티코 가죽 마이크로컷 마이크로파이버 AMG 블랙",
+          "sourcePage": "15",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "158A",
+          "name": "아티코 가죽 세이지 그레이/블랙",
+          "sourcePage": "15",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "651A",
+          "name": "아티코 가죽 마이크로컷 마이크로파이버 블랙",
+          "sourcePage": "15",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "277A",
+          "name": "가죽 투톤 레드 페퍼/블랙",
+          "sourcePage": "15",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "654A",
+          "name": "아티코 가죽 마이크로컷 마이크로파이버 바이아 브라운/블랙",
+          "sourcePage": "15",
+          "priceStatus": "paid"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "H95",
+          "name": "AMG 디자인 알루미늄 트림, 블랙/실버",
+          "sourcePage": "16",
+          "priceStatus": "standard"
+        }
+      ],
+      "sourceFileName": "The new Mercedes-AMG CLA_Catalogue_20260424.pdf",
+      "verificationNote": "이번 채팅에 첨부된 벤츠코리아 카탈로그의 컬러·시트·내장 명칭 및 옵션 코드 원문 대조. 판본별 차이와 사진 재게시 권한 확인 필요.",
+      "sourceSha256": "bc6f8de0145984dbc3c14b45c20f4ad0a10db3f2394d708a9cf9c8da4ae77855"
+    },
+    "amg-e-class": {
+      "title": "AMG E-Class",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 05월 19일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "20"
+        },
+        {
+          "code": "188U",
+          "name": "베르데 실버",
+          "sourcePage": "20"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "20"
+        },
+        {
+          "code": "595U",
+          "name": "노틱 블루",
+          "sourcePage": "20"
+        },
+        {
+          "code": "771U",
+          "name": "벨벳 브라운",
+          "sourcePage": "20"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이",
+          "sourcePage": "20"
+        },
+        {
+          "code": "659U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 마그노",
+          "sourcePage": "21"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "21"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이",
+          "sourcePage": "21"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드 브라이트",
+          "sourcePage": "21"
+        }
+      ],
+      "seats": [
+        {
+          "code": "851A",
+          "name": "AMG 나파 가죽 블랙",
+          "sourcePage": "17"
+        },
+        {
+          "code": "854A",
+          "name": "AMG 투톤 나파 가죽 통카 브라운/블랙",
+          "sourcePage": "17"
+        },
+        {
+          "code": "858A",
+          "name": "AMG 투톤 나파 가죽 실버 펄/블랙",
+          "sourcePage": "17"
+        },
+        {
+          "code": "861A",
+          "name": "AMG 나파 가죽 블랙",
+          "sourcePage": "17"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "671",
+          "name": "라이트 실버 메탈릭 패브릭 센터 콘솔",
+          "sourcePage": "18"
+        },
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "19"
+        }
+      ],
+      "sourceFileName": "Mercedes-AMG E-Class_Catalogue_20260519.pdf",
+      "verificationNote": "이번 채팅에 첨부된 벤츠코리아 카탈로그의 컬러·시트·내장 명칭 및 옵션 코드 원문 대조. 판본별 차이와 사진 재게시 권한 확인 필요.",
+      "sourceSha256": "205af0f7b1c04862a4614eb2c2c72a052cf954ec403c7d4e4c224a0b951ca4b2"
+    },
+    "amg-s-class": {
+      "title": "AMG S-Class",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": null,
+      "reviewStatus": "pending",
+      "exterior": [],
+      "seats": [],
+      "interiorTrims": [],
+      "officialCatalogueNote": "현재 공식 카탈로그 목록에서 Mercedes-AMG S-Class 전용 항목 미확인. 일반 S-Class 자료로 임의 대체 금지."
+    },
+    "amg-glb": {
+      "title": "AMG GLB",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 07월 16일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "191U",
+          "name": "코스모스 블랙",
+          "sourcePage": "25"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "26"
+        },
+        {
+          "code": "696U",
+          "name": "나이트 블랙",
+          "sourcePage": "27"
+        },
+        {
+          "code": "787U",
+          "name": "마운틴 그레이",
+          "sourcePage": "28"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "29"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "30"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "31"
+        }
+      ],
+      "seats": [
+        {
+          "code": "651A",
+          "name": "아티코 가죽/마이크로컷 마이크로파이버 블랙",
+          "sourcePage": "17"
+        },
+        {
+          "code": "158A",
+          "name": "아티코 가죽 세이지 그레이/블랙",
+          "sourcePage": "18"
+        },
+        {
+          "code": "277A",
+          "name": "가죽, 투톤 레드 페퍼/블랙",
+          "sourcePage": "19"
+        },
+        {
+          "code": "654A",
+          "name": "아티코 가죽/마이크로컷 마이크로파이버 바이아 브라운/블랙",
+          "sourcePage": "20"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "21",
+          "category": "루프라이너"
+        },
+        {
+          "code": "58U",
+          "name": "루프라이너, 크리스탈 그레이",
+          "sourcePage": "22",
+          "category": "루프라이너"
+        },
+        {
+          "code": "H62",
+          "name": "카본 스트럭쳐 트림",
+          "sourcePage": "23",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "56H",
+          "name": "스타 패턴 및 백 발광 트림",
+          "sourcePage": "24",
+          "category": "인테리어 트림"
+        }
+      ],
+      "sourceFileName": "The new Mercedes-AMG GLB_20260716.pdf",
+      "verificationNote": "이번 채팅에 직접 첨부된 벤츠 공식 카탈로그 원본에서 옵션별 페이지·명칭·코드를 대조. 실제 사진 재게시 권한 검토 전.",
+      "sourceSha256": "6ba4b1b1c193d54243cf4a85dcebdf8dff1bd7b9a35554e054eae1fb061f9a28",
+      "exteriorDetails": []
+    },
+    "amg-glc": {
+      "title": "Mercedes-AMG GLC & GLC Coupé",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 04월 24일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "36",
+          "bodyStyle": "Mercedes-AMG GLC"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "37",
+          "bodyStyle": "Mercedes-AMG GLC"
+        },
+        {
+          "code": "188U",
+          "name": "베르데 실버",
+          "sourcePage": "38",
+          "bodyStyle": "Mercedes-AMG GLC"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이",
+          "sourcePage": "39",
+          "bodyStyle": "Mercedes-AMG GLC"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "40",
+          "bodyStyle": "Mercedes-AMG GLC"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "41",
+          "bodyStyle": "Mercedes-AMG GLC"
+        },
+        {
+          "code": "734U",
+          "name": "MANUFAKTUR 하이 테크 실버 마그노",
+          "sourcePage": "42",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "bodyStyle": "Mercedes-AMG GLC"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "43",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "bodyStyle": "Mercedes-AMG GLC"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이",
+          "sourcePage": "44",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "bodyStyle": "Mercedes-AMG GLC"
+        },
+        {
+          "code": "818U",
+          "name": "MANUFAKTUR 그라파이트 그레이 마그노",
+          "sourcePage": "45",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "bodyStyle": "Mercedes-AMG GLC"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드 메탈릭",
+          "sourcePage": "46",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "bodyStyle": "Mercedes-AMG GLC"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "47",
+          "bodyStyle": "Mercedes-AMG GLC Coupé"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "48",
+          "bodyStyle": "Mercedes-AMG GLC Coupé"
+        },
+        {
+          "code": "188U",
+          "name": "베르데 실버",
+          "sourcePage": "49",
+          "bodyStyle": "Mercedes-AMG GLC Coupé"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이",
+          "sourcePage": "50",
+          "bodyStyle": "Mercedes-AMG GLC Coupé"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "51",
+          "bodyStyle": "Mercedes-AMG GLC Coupé"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "52",
+          "bodyStyle": "Mercedes-AMG GLC Coupé"
+        },
+        {
+          "code": "734U",
+          "name": "MANUFAKTUR 하이 테크 실버 마그노",
+          "sourcePage": "53",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "bodyStyle": "Mercedes-AMG GLC Coupé"
+        },
+        {
+          "code": "818U",
+          "name": "MANUFAKTUR 그라파이트 그레이 마그노",
+          "sourcePage": "54",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "bodyStyle": "Mercedes-AMG GLC Coupé"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "55",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "bodyStyle": "Mercedes-AMG GLC Coupé"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이",
+          "sourcePage": "56",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "bodyStyle": "Mercedes-AMG GLC Coupé"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드 메탈릭",
+          "sourcePage": "57",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "bodyStyle": "Mercedes-AMG GLC Coupé"
+        }
+      ],
+      "seats": [
+        {
+          "code": "251A",
+          "name": "블랙, AMG 가죽",
+          "sourcePage": "31",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "notes": "*해당 이미지는 AMG 퍼포먼스 시트 패키지가 장착되었을 시의 이미지입니다."
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "32",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "category": "루프라이너"
+        },
+        {
+          "code": "H64",
+          "name": "메탈 스트럭쳐 트림",
+          "sourcePage": "33",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "795",
+          "name": "메탈 스트럭쳐 피니시 센터콘솔",
+          "sourcePage": "34",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "category": "센터콘솔"
+        },
+        {
+          "code": "757",
+          "name": "하이 글로스 블랙 센터콘솔",
+          "sourcePage": "35",
+          "applicability": "선택사양",
+          "priceStatus": "optional",
+          "category": "센터콘솔"
+        }
+      ],
+      "sourceFileName": "The new Mercedes-AMG GLC n GLC Coupe_Catalogue_20260424.pdf",
+      "verificationNote": "이번 채팅에 직접 첨부된 벤츠 공식 카탈로그 원본에서 옵션별 페이지·명칭·코드를 대조. 실제 사진 재게시 권한 검토 전.",
+      "sourceSha256": "1f39e0fa7d82eb672b0d68444faf717c28c7a28bfbcd9f8131cf226873468c84",
+      "exteriorDetails": []
+    },
+    "amg-gle": {
+      "title": "Mercedes-AMG GLE & GLE Coupé",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 06월 19일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "43",
+          "bodyStyle": "Mercedes-AMG GLE"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "44",
+          "bodyStyle": "Mercedes-AMG GLE"
+        },
+        {
+          "code": "842U",
+          "name": "소달라이트 블루",
+          "sourcePage": "45",
+          "bodyStyle": "Mercedes-AMG GLE"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "46",
+          "bodyStyle": "Mercedes-AMG GLE"
+        },
+        {
+          "code": "992U",
+          "name": "셀레나이트 그레이",
+          "sourcePage": "47",
+          "bodyStyle": "Mercedes-AMG GLE"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "48",
+          "bodyStyle": "Mercedes-AMG GLE Coupé"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "49",
+          "bodyStyle": "Mercedes-AMG GLE Coupé"
+        },
+        {
+          "code": "842U",
+          "name": "소달라이트 블루",
+          "sourcePage": "50",
+          "bodyStyle": "Mercedes-AMG GLE Coupé"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "51",
+          "bodyStyle": "Mercedes-AMG GLE Coupé"
+        },
+        {
+          "code": "992U",
+          "name": "셀레나이트 그레이",
+          "sourcePage": "52",
+          "bodyStyle": "Mercedes-AMG GLE Coupé"
+        }
+      ],
+      "seats": [
+        {
+          "code": "851A",
+          "name": "AMG 나파 가죽, 블랙",
+          "sourcePage": "34"
+        },
+        {
+          "code": "855A",
+          "name": "AMG 나파 가죽, 마키아토 베이지/블랙",
+          "sourcePage": "35"
+        },
+        {
+          "code": "857A",
+          "name": "AMG 나파 가죽, 레드 페퍼/블랙",
+          "sourcePage": "36"
+        },
+        {
+          "code": "874A",
+          "name": "AMG 나파 가죽, 내추럴 베이지",
+          "sourcePage": "37"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "39",
+          "category": "루프라이너"
+        },
+        {
+          "code": "55U",
+          "name": "루프라이너, 마키아토 베이지",
+          "sourcePage": "40",
+          "category": "루프라이너"
+        },
+        {
+          "code": "58U",
+          "name": "루프라이너, 크리스탈 그레이",
+          "sourcePage": "41",
+          "category": "루프라이너"
+        },
+        {
+          "code": "H86",
+          "name": "AMG 카본파이버, 트림",
+          "sourcePage": "42",
+          "category": "인테리어 트림"
+        }
+      ],
+      "sourceFileName": "Mercedes-AMG GLE n GLE Coupe_Catalogue_20260619.pdf",
+      "verificationNote": "이번 채팅에 직접 첨부된 벤츠 공식 카탈로그 원본에서 옵션별 페이지·명칭·코드를 대조. 실제 사진 재게시 권한 검토 전.",
+      "sourceSha256": "e4c044916117698b8c99eed367ea807ee5a35bb123ef9a678bc126d6173e2d1e",
+      "exteriorDetails": []
+    },
+    "amg-gls": {
+      "title": "AMG GLS",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": null,
+      "reviewStatus": "pending",
+      "exterior": [],
+      "seats": [],
+      "interiorTrims": [],
+      "officialCatalogueNote": "현재 공식 카탈로그 목록에서 Mercedes-AMG GLS 전용 항목 미확인. 일반 GLS 자료로 임의 대체 금지."
+    },
+    "amg-g-class": {
+      "title": "Mercedes-AMG G-Class",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": null,
+      "reviewStatus": "pending",
+      "exterior": [],
+      "seats": [],
+      "interiorTrims": [],
+      "verificationNote": "25MY AMG G-Class PDF만 확보된 상태입니다. 27MY G 63 최신 공식 카탈로그 또는 업데이트된 판매 사양과 색상 일치 검증 전까지 색상 미게시.",
+      "historicalReference": {
+        "sourceFileName": "Mercedes-AMG_G Class_Catalogue_20250123.pdf",
+        "sourceEdition": "2025년 01월 23일, 25년식",
+        "sourceSha256": "9ed132a47d6e5e32b95915e11263d7f0f73b24853689989a3d763070a1850e2e",
+        "status": "not_applicable_to_27MY",
+        "note": "현재 홈페이지 G 63은 27MY입니다. 이 자료는 25MY이므로 현재 색상 제공 근거로 사용하지 않습니다."
+      }
+    },
+    "amg-sl": {
+      "title": "AMG SL",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 11월 05일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "68",
+          "notes": "*선택하는 루프 라이너 옵션에 따라 해당 컬러와의 조합이 제한될 수 있습니다."
+        },
+        {
+          "code": "888U",
+          "name": "하이퍼 블루",
+          "sourcePage": "69",
+          "notes": "*선택하는 루프 라이너 옵션에 따라 해당 컬러와의 조합이 제한될 수 있습니다."
+        },
+        {
+          "code": "914U",
+          "name": "썬 옐로우",
+          "sourcePage": "70",
+          "notes": "*선택하는 루프 라이너 옵션에 따라 해당 컬러와의 조합이 제한될 수 있습니다."
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "71",
+          "notes": "*선택하는 루프 라이너 옵션에 따라 해당 컬러와의 조합이 제한될 수 있습니다."
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "72",
+          "notes": "*선택하는 루프 라이너 옵션에 따라 해당 컬러와의 조합이 제한될 수 있습니다."
+        },
+        {
+          "code": "992U",
+          "name": "셀레나이트 그레이",
+          "sourcePage": "73",
+          "notes": "*선택하는 루프 라이너 옵션에 따라 해당 컬러와의 조합이 제한될 수 있습니다."
+        },
+        {
+          "code": "054U",
+          "name": "AMG 몬자 그레이 마그노",
+          "sourcePage": "74",
+          "notes": "*선택하는 루프 라이너 옵션에 따라 해당 컬러와의 조합이 제한될 수 있습니다."
+        },
+        {
+          "code": "056U",
+          "name": "MANUFAKTUR 나이트 블랙 마그노",
+          "sourcePage": "75",
+          "notes": "*선택하는 루프 라이너 옵션에 따라 해당 컬러와의 조합이 제한될 수 있습니다."
+        },
+        {
+          "code": "190U",
+          "name": "MANUFAKTUR 실리콘 그레이",
+          "sourcePage": "76",
+          "notes": "*선택하는 루프 라이너 옵션에 따라 해당 컬러와의 조합이 제한될 수 있습니다."
+        },
+        {
+          "code": "385U",
+          "name": "MANUFAKTUR 코트다쥐르 라이트 블루",
+          "sourcePage": "77",
+          "notes": "*선택하는 루프 라이너 옵션에 따라 해당 컬러와의 조합이 제한될 수 있습니다."
+        },
+        {
+          "code": "593U",
+          "name": "MANUFAKTUR 스펙트럴 블루 마그노",
+          "sourcePage": "78",
+          "notes": "*선택하는 루프 라이너 옵션에 따라 해당 컬러와의 조합이 제한될 수 있습니다."
+        },
+        {
+          "code": "599U",
+          "name": "MANUFAKTUR 아일랜드 미드 그린 마그노",
+          "sourcePage": "79",
+          "notes": "*선택하는 루프 라이너 옵션에 따라 해당 컬러와의 조합이 제한될 수 있습니다."
+        },
+        {
+          "code": "659U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 마그노",
+          "sourcePage": "80",
+          "notes": "*선택하는 루프 라이너 옵션에 따라 해당 컬러와의 조합이 제한될 수 있습니다."
+        },
+        {
+          "code": "660U",
+          "name": "MANUFAKTUR 루벨라이트 레드",
+          "sourcePage": "81",
+          "notes": "*선택하는 루프 라이너 옵션에 따라 해당 컬러와의 조합이 제한될 수 있습니다."
+        },
+        {
+          "code": "734U",
+          "name": "MANUFAKTUR 하이 테크 실버 마그노",
+          "sourcePage": "82",
+          "notes": "*선택하는 루프 라이너 옵션에 따라 해당 컬러와의 조합이 제한될 수 있습니다."
+        },
+        {
+          "code": "818U",
+          "name": "MANUFAKTUR 그라파이트 그레이 마그노",
+          "sourcePage": "83",
+          "notes": "*선택하는 루프 라이너 옵션에 따라 해당 컬러와의 조합이 제한될 수 있습니다."
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "84",
+          "notes": "*선택하는 루프 라이너 옵션에 따라 해당 컬러와의 조합이 제한될 수 있습니다."
+        },
+        {
+          "code": "934U",
+          "name": "MANUFAKTUR 빈티지 블루 솔리드",
+          "sourcePage": "85",
+          "notes": "*선택하는 루프 라이너 옵션에 따라 해당 컬러와의 조합이 제한될 수 있습니다."
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이 솔리드",
+          "sourcePage": "86",
+          "notes": "*선택하는 루프 라이너 옵션에 따라 해당 컬러와의 조합이 제한될 수 있습니다."
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드 브라이트",
+          "sourcePage": "87",
+          "notes": "*선택하는 루프 라이너 옵션에 따라 해당 컬러와의 조합이 제한될 수 있습니다."
+        }
+      ],
+      "seats": [
+        {
+          "code": "807A",
+          "name": "나파 가죽, 레드 페퍼/블랙",
+          "sourcePage": "46"
+        },
+        {
+          "code": "801A",
+          "name": "나파 가죽, 블랙",
+          "sourcePage": "47"
+        },
+        {
+          "code": "804A",
+          "name": "나파 가죽, 시에나 브라운/블랙",
+          "sourcePage": "48"
+        },
+        {
+          "code": "808A",
+          "name": "나파 가죽, 세이지 그레이/블랙",
+          "sourcePage": "49"
+        },
+        {
+          "code": "824A",
+          "name": "MANUFAKTUR, 트러플 브라운/블랙",
+          "sourcePage": "50"
+        },
+        {
+          "code": "825A",
+          "name": "MANUFAKTUR, 크리스탈 화이트/블랙",
+          "sourcePage": "51"
+        },
+        {
+          "code": "835A",
+          "name": "MANUFAKTUR, 마키아토 베이지/티타늄 그레이",
+          "sourcePage": "52"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "57",
+          "category": "루프라이너"
+        },
+        {
+          "code": "61U",
+          "name": "MANUFAKTUR 마이크로컷 루프 라이너, 블랙",
+          "sourcePage": "58",
+          "category": "루프라이너"
+        },
+        {
+          "code": "65U",
+          "name": "MANUFAKTUR 마이크로컷 루프 라이너, 마키아토 베이지",
+          "sourcePage": "59",
+          "category": "루프라이너"
+        },
+        {
+          "code": "69U",
+          "name": "MANUFAKTUR 마이크로컷 루프 라이너, 네바 그레이",
+          "sourcePage": "60",
+          "category": "루프라이너"
+        },
+        {
+          "code": "H70",
+          "name": "AMG 알루미늄 트림",
+          "sourcePage": "61",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H73",
+          "name": "AMG 카본 트림",
+          "sourcePage": "62",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H94",
+          "name": "MANUFAKTUR 블랙 크롬 트림",
+          "sourcePage": "63",
+          "category": "인테리어 트림"
+        }
+      ],
+      "sourceFileName": "Mercedes-AMG_SL_Catalogue_20261105.pdf",
+      "verificationNote": "이번 채팅에 직접 첨부된 벤츠 공식 카탈로그 원본에서 옵션별 페이지·명칭·코드를 대조. 실제 사진 재게시 권한 검토 전.",
+      "sourceSha256": "e42035fc0a2cf8bfbaa2bffb4737d64ed79f4acfa4c3580337f7f5e69b6e0e61",
+      "exteriorDetails": [
+        {
+          "code": "740",
+          "name": "패브릭 소프트 탑, 블랙",
+          "sourcePage": "64",
+          "category": "소프트톱"
+        },
+        {
+          "code": "744",
+          "name": "MANUFAKTUR 소프트 탑, 미드나이트 블루",
+          "sourcePage": "65",
+          "category": "소프트톱"
+        },
+        {
+          "code": "747",
+          "name": "패브릭 소프트 탑, 레드",
+          "sourcePage": "66",
+          "category": "소프트톱"
+        },
+        {
+          "code": "751",
+          "name": "패브릭 소프트 탑, 그레이",
+          "sourcePage": "67",
+          "category": "소프트톱"
+        }
+      ]
+    },
+    "maybach-s-class": {
+      "title": "Mercedes-Maybach S-Class",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 08월 11일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "45"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "45"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "45"
+        },
+        {
+          "code": "802U",
+          "name": "MANUFAKTUR 칼라하리 골드 메탈릭",
+          "sourcePage": "45"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이",
+          "sourcePage": "45"
+        },
+        {
+          "code": "989U",
+          "name": "에메랄드 그린",
+          "sourcePage": "45"
+        },
+        {
+          "code": "040U",
+          "name": "블랙",
+          "sourcePage": "46"
+        },
+        {
+          "code": "188U",
+          "name": "베르데 실버",
+          "sourcePage": "46"
+        },
+        {
+          "code": "595U",
+          "name": "노틱 블루",
+          "sourcePage": "46"
+        },
+        {
+          "code": "715U",
+          "name": "웜 그레이 솔리드",
+          "sourcePage": "46"
+        },
+        {
+          "code": "771U",
+          "name": "벨벳 브라운",
+          "sourcePage": "46"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "46"
+        },
+        {
+          "code": "032U",
+          "name": "MANUFAKTUR 미스틱 블루",
+          "sourcePage": "47"
+        },
+        {
+          "code": "041U",
+          "name": "MANUFAKTUR 그라파이트 그레이",
+          "sourcePage": "47"
+        },
+        {
+          "code": "056U",
+          "name": "MANUFAKTUR 나이트 블랙 마그노",
+          "sourcePage": "47"
+        },
+        {
+          "code": "190U",
+          "name": "MANUFAKTUR 실리콘 그레이 솔리드",
+          "sourcePage": "47"
+        },
+        {
+          "code": "255U",
+          "name": "MANUFAKTUR 올리브 메탈릭",
+          "sourcePage": "47"
+        },
+        {
+          "code": "378U",
+          "name": "MANUFAKTUR 베르데 실버 마그노",
+          "sourcePage": "47"
+        },
+        {
+          "code": "659U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 마그노",
+          "sourcePage": "48"
+        },
+        {
+          "code": "677U",
+          "name": "MANUFAKTUR 칼라하리 골드 마그노",
+          "sourcePage": "48"
+        },
+        {
+          "code": "934U",
+          "name": "MANUFAKTUR 빈티지 블루",
+          "sourcePage": "48"
+        },
+        {
+          "code": "C12",
+          "name": "마이바흐 투톤 페인트, 옵시디안 블랙/셀레나이트 그레이",
+          "sourcePage": "48"
+        },
+        {
+          "code": "C23",
+          "name": "마이바흐 투톤 페인트, 옵시디안 블랙/칼라하리 골드",
+          "sourcePage": "48"
+        },
+        {
+          "code": "C24",
+          "name": "마이바흐 투톤 페인트, 에메랄드 그린/모하비 실버",
+          "sourcePage": "48"
+        },
+        {
+          "code": "C28",
+          "name": "마이바흐 투톤 페인트, 노틱 블루/하이-테크 실버",
+          "sourcePage": "49"
+        },
+        {
+          "code": "C31",
+          "name": "마이바흐 투톤 페인트, 하이-테크 실버/셀레나이트 그레이",
+          "sourcePage": "49"
+        },
+        {
+          "code": "C33",
+          "name": "마이바흐 투톤 페인트, 옵시디안 블랙/하이-테크 실버",
+          "sourcePage": "49"
+        },
+        {
+          "code": "C37",
+          "name": "마이바흐 투톤 페인트, 오팔라이트 화이트/옵시디안 블랙",
+          "sourcePage": "49"
+        },
+        {
+          "code": "C38",
+          "name": "마이바흐 투톤 페인트, 오팔라이트 화이트/베르데 실버",
+          "sourcePage": "49"
+        },
+        {
+          "code": "C41",
+          "name": "마이바흐 투톤 페인트, 옵시디안 블랙/벨벳 브라운",
+          "sourcePage": "49"
+        }
+      ],
+      "seats": [
+        {
+          "code": "533A",
+          "name": "마이바흐 익스클루시브 나파 가죽 블랙",
+          "sourcePage": "40"
+        },
+        {
+          "code": "534A",
+          "name": "마이바흐 익스클루시브 나파 가죽 브라운",
+          "sourcePage": "40"
+        },
+        {
+          "code": "535A",
+          "name": "마이바흐 익스클루시브 나파 가죽 마키아토 베이지/브론즈 브라운 펄",
+          "sourcePage": "40"
+        },
+        {
+          "code": "941A",
+          "name": "MANUFAKTUR 마이바흐 익스클루시브 나파 가죽 토바코/블랙",
+          "sourcePage": "41"
+        },
+        {
+          "code": "991A",
+          "name": "MANUFAKTUR 마이바흐 익스클루시브 나파 가죽 딥 화이트/블랙",
+          "sourcePage": "41"
+        },
+        {
+          "code": "992A",
+          "name": "MANUFAKTUR 마이바흐 익스클루시브 나파 가죽 요트 블루/블랙",
+          "sourcePage": "41"
+        },
+        {
+          "code": "993A",
+          "name": "MANUFAKTUR 마이바흐 익스클루시브 나파 가죽 콘 옐로우/블랙",
+          "sourcePage": "41"
+        },
+        {
+          "code": "996A",
+          "name": "MANUFAKTUR 마이바흐 익스클루시브 나파 가죽 레이크그린/블랙",
+          "sourcePage": "42"
+        },
+        {
+          "code": "997A",
+          "name": "MANUFAKTUR 마이바흐 익스클루시브 나파 가죽 카민 레드/블랙",
+          "sourcePage": "42"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "H17",
+          "name": "MANUFAKTUR 플로잉 라인 피아노 라커 트림, 블랙",
+          "sourcePage": "43",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H38",
+          "name": "MANUFAKTUR 브라운 오픈-포어 월넛 우드 트림, 알루미늄 라인",
+          "sourcePage": "43",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "61U",
+          "name": "마이크로컷 루프 라이너 블랙",
+          "sourcePage": "44",
+          "category": "루프라이너"
+        },
+        {
+          "code": "65U",
+          "name": "마이크로컷 루프 라이너 마키아토 베이지",
+          "sourcePage": "44",
+          "category": "루프라이너"
+        },
+        {
+          "code": "71U",
+          "name": "MANUFAKTUR 나파 가죽 루프 라이너 블랙",
+          "sourcePage": "44",
+          "category": "루프라이너"
+        },
+        {
+          "code": "75U",
+          "name": "MANUFAKTUR 나파 가죽 루프 라이너 마키아토 베이지",
+          "sourcePage": "44",
+          "category": "루프라이너"
+        }
+      ],
+      "sourceFileName": "The_new_Mercedes-Maybach_S-Class_Catalogue_20260811.pdf",
+      "verificationNote": "업로드된 공식 카탈로그 40~49쪽의 시트·트림·루프라이너·단색·투톤 컬러의 공식 코드와 이름을 원문과 대조함. 27MY 기준. 사진은 홈페이지 재게시 권한 미확인.",
+      "sourceSha256": "39a1402296ee078aada8676bff38cc37d45350de11238713076383ad68816e22"
+    },
+    "maybach-gls": {
+      "title": "Mercedes-Maybach GLS",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 06월 22일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "47"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "48"
+        },
+        {
+          "code": "842U",
+          "name": "소달라이트 블루",
+          "sourcePage": "49"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "50"
+        },
+        {
+          "code": "992U",
+          "name": "셀레나이트 그레이",
+          "sourcePage": "51"
+        },
+        {
+          "code": "C20",
+          "name": "마이바흐 투톤 페인트, 하이 테크 실버/노틱 블루",
+          "sourcePage": "52"
+        },
+        {
+          "code": "C21",
+          "name": "마이바흐 투톤 페인트, 옵시디안 블랙/루벨라이트 레드",
+          "sourcePage": "53"
+        },
+        {
+          "code": "C23",
+          "name": "옵시디안 블랙/MANUFAKTUR 칼라하리 골드",
+          "sourcePage": "54"
+        },
+        {
+          "code": "C35",
+          "name": "마이바흐 투톤 페인트, 하이 테크 실버/옵시디안 블랙",
+          "sourcePage": "55"
+        }
+      ],
+      "seats": [
+        {
+          "code": "511A",
+          "name": "익스클루시브 나파 가죽, 블랙",
+          "sourcePage": "39"
+        },
+        {
+          "code": "514A",
+          "name": "익스클루시브 나파 가죽, 자바",
+          "sourcePage": "40"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "71U",
+          "name": "나파가죽 MANUFAKTUR 루프라이너, 블랙",
+          "sourcePage": "41",
+          "category": "루프라이너"
+        },
+        {
+          "code": "65U",
+          "name": "마이크로컷 마이크로파이버 MANUFAKTUR 루프라이너, 마키아토 베이지",
+          "sourcePage": "42",
+          "category": "루프라이너"
+        },
+        {
+          "code": "75U",
+          "name": "나파가죽 MANUFATUR 루프라이너, 마키아토 베이지",
+          "sourcePage": "43",
+          "category": "루프라이너"
+        },
+        {
+          "code": "79U",
+          "name": "나파가죽 MANUFAKTUR 루프 라이너, 크리스탈 화이트",
+          "sourcePage": "44",
+          "category": "루프라이너"
+        },
+        {
+          "code": "H11",
+          "name": "MANUFAKTUR 플로잉 라인 블랙 피아노 라커, 트림",
+          "sourcePage": "45",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H31",
+          "name": "엔트러사이트 오픈 포어 오크 우드, 트림",
+          "sourcePage": "46",
+          "category": "인테리어 트림"
+        }
+      ],
+      "sourceFileName": "The new Mercedes-Maybach GLS_catalogue_20260622.pdf",
+      "verificationNote": "업로드된 공식 카탈로그 39~55쪽 텍스트·코드 원문 대조. 차량·시트 이미지 추출 및 공개 재게시 권한 확인 전.",
+      "sourceSha256": "45edafd111cbc4bb6822fe22c4adddb849f57a91efa2c21dfe09fd6aad14ec59"
+    },
+    "maybach-eqs-suv": {
+      "title": "Mercedes-Maybach EQS SUV",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 05월 19일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "040U",
+          "name": "블랙",
+          "sourcePage": "24"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "24"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "24"
+        },
+        {
+          "code": "771U",
+          "name": "벨벳 브라운",
+          "sourcePage": "24"
+        },
+        {
+          "code": "842U",
+          "name": "소다라이트 블루",
+          "sourcePage": "24"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "25"
+        },
+        {
+          "code": "989U",
+          "name": "에메랄드 그린",
+          "sourcePage": "25"
+        },
+        {
+          "code": "992U",
+          "name": "셀레나이트 그레이",
+          "sourcePage": "25"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "25"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이 솔리드",
+          "sourcePage": "25"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "25"
+        },
+        {
+          "code": "C40",
+          "name": "마이바흐 투톤 페인트, 세틴 브라운/오닉스 블랙",
+          "sourcePage": "26"
+        },
+        {
+          "code": "C12",
+          "name": "마이바흐 투톤 페인트, 옵시디안 블랙/셀레나이트 그레이",
+          "sourcePage": "26"
+        },
+        {
+          "code": "C20",
+          "name": "마이바흐 투톤 페인트, 하이 테크 실버/노틱 블루",
+          "sourcePage": "26"
+        },
+        {
+          "code": "C23",
+          "name": "마이바흐 투톤 페인트, 옵시디안 블랙/MANUFAKTUR 칼라하리 골드",
+          "sourcePage": "26"
+        },
+        {
+          "code": "C35",
+          "name": "마이바흐 투톤 페인트, 하이 테크 실버/옵시디안 블랙",
+          "sourcePage": "26"
+        }
+      ],
+      "seats": [
+        {
+          "code": "515A",
+          "name": "마이바흐 익스클루시브 나파 가죽 마키아토 베이지/브론즈 브라운 펄",
+          "sourcePage": "20"
+        },
+        {
+          "code": "514A",
+          "name": "마이바흐 익스클루시브 나파 가죽 발라오 브라운 펄/에스프레소 브라운",
+          "sourcePage": "20"
+        },
+        {
+          "code": "519A",
+          "name": "마이바흐 익스클루시브 나파 가죽 크리스탈 화이트/실버 그레이 펄",
+          "sourcePage": "20"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "06H",
+          "name": "MANUFAKTUR 브라운 오픈 포어 월넛 우드",
+          "sourcePage": "21",
+          "category": "센터콘솔 / 트림"
+        },
+        {
+          "code": "05H",
+          "name": "MANUFAKTUR 브라운 오픈 포어 벌치 우드 트림",
+          "sourcePage": "21",
+          "category": "센터콘솔 / 트림"
+        },
+        {
+          "code": "H17",
+          "name": "MANUFAKTUR 플로잉 라인 피아노 라커 트림, 블랙",
+          "sourcePage": "21",
+          "category": "센터콘솔 / 트림"
+        },
+        {
+          "code": "65U",
+          "name": "MICROCUT 루프라이너, 마키아토 베이지",
+          "sourcePage": "22",
+          "category": "루프라이너"
+        },
+        {
+          "code": "61U",
+          "name": "MICROCUT 루프라이너, 블랙",
+          "sourcePage": "22",
+          "category": "루프라이너"
+        },
+        {
+          "code": "64U",
+          "name": "MICROCUT 루프라이너, 발라오 브라운 펄",
+          "sourcePage": "22",
+          "category": "루프라이너"
+        },
+        {
+          "code": "71U",
+          "name": "MANUFAKTUR 나파 가죽 루프라이너, 블랙",
+          "sourcePage": "23",
+          "category": "루프라이너"
+        },
+        {
+          "code": "74U",
+          "name": "MANUFAKTUR 나파 가죽 루프라이너, 발라오 브라운 펄",
+          "sourcePage": "23",
+          "category": "루프라이너"
+        },
+        {
+          "code": "75U",
+          "name": "MANUFAKTUR 나파 가죽 루프라이너, 마키아토 베이지",
+          "sourcePage": "23",
+          "category": "루프라이너"
+        },
+        {
+          "code": "78U",
+          "name": "MANUFAKTUR 나파 가죽 루프라이너, 실버 그레이 펄",
+          "sourcePage": "23",
+          "category": "루프라이너"
+        }
+      ],
+      "sourceFileName": "The all-new Mercedes-Maybach EQS SUV_Catalogue_20260519.pdf",
+      "verificationNote": "업로드된 공식 카탈로그 20~26쪽 시트·트림·루프라이너·단색 및 투톤 페인트 코드와 공식 명칭을 원문과 대조함. 컬러별 개별 이미지 공개 권한 확인 전.",
+      "sourceSha256": "8fa7521540e71d36eb67c8946ee545f51909ff86d3e7b9ff48b23f8373a7b69e"
+    },
+    "maybach-sl": {
+      "title": "Mercedes-Maybach SL",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 04월 24일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "393U",
+          "name": "MANUFAKTUR 가넷 레드 메탈릭",
+          "sourcePage": "32",
+          "notes": "카탈로그 주석: *모든 컬러는 옵시디언 블랙 컬러의 보닛으로 투톤 적용됩니다. 327 MAYBACH 패턴이 적용된 보닛은 선택사양(31쪽)."
+        },
+        {
+          "code": "659U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 마그노",
+          "sourcePage": "32",
+          "notes": "카탈로그 주석: *모든 컬러는 옵시디언 블랙 컬러의 보닛으로 투톤 적용됩니다. 327 MAYBACH 패턴이 적용된 보닛은 선택사양(31쪽)."
+        }
+      ],
+      "seats": [
+        {
+          "code": "509A",
+          "name": "MANUFAKTUR 익스클루시브 나파 가죽 크리스탈 화이트",
+          "sourcePage": "27",
+          "priceStatus": "standard",
+          "applicability": "기본사양"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "72H",
+          "name": "실버 크롬 트림",
+          "sourcePage": "28",
+          "category": "인테리어 트림",
+          "priceStatus": "standard",
+          "applicability": "기본사양"
+        },
+        {
+          "code": "60U",
+          "name": "MANUFAKTUR 마이크로컷 루프라이너 크리스탈 화이트",
+          "sourcePage": "29",
+          "category": "루프라이너",
+          "priceStatus": "standard",
+          "applicability": "기본사양"
+        }
+      ],
+      "sourceFileName": "The all-new Mercedes-Maybach SL_Catalogue_20260424.pdf",
+      "verificationNote": "공식 카탈로그 27~32쪽, 509A 시트/72H 트림/60U 루프라이너와 2개 외장색의 원문 대조. 페이지 30의 756 소프트탑(기본), 페이지 31의 327 패턴 보닛(선택) 별도 주석으로 유지. 이미지 공개 권한 확인 전.",
+      "sourceSha256": "6b3ef6fb8d193ea2da55f1f34cd3b117027872854cc8cc7078ceb9027c300c55",
+      "exteriorDetails": [
+        {
+          "code": "756",
+          "name": "MAYBACH 패턴이 적용된 패브릭 소프트 탑 블랙",
+          "sourcePage": "30",
+          "priceStatus": "standard",
+          "applicability": "기본사양"
+        },
+        {
+          "code": "327",
+          "name": "MAYBACH 패턴이 적용된 보닛",
+          "sourcePage": "31",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "옵션 미선택 시 기본 단색의 옵시디안 블랙 컬러 적용"
+        }
+      ]
+    },
+    "v-class": {
+      "title": "V-Class",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 10월 29일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "9197",
+          "name": "옵시디안 블랙(메탈릭)",
+          "sourcePage": "37"
+        },
+        {
+          "code": "7831",
+          "name": "그라파이트 그레이(메탈릭)",
+          "sourcePage": "37"
+        },
+        {
+          "code": "1802",
+          "name": "칼라하리 골드(메탈릭)",
+          "sourcePage": "37"
+        },
+        {
+          "code": "9134",
+          "name": "락 크리스탈 화이트(메탈릭)",
+          "sourcePage": "37"
+        },
+        {
+          "code": "9922",
+          "name": "하이 테크 실버(메탈릭)",
+          "sourcePage": "37"
+        }
+      ],
+      "seats": [
+        {
+          "code": "VY7",
+          "name": "나파 가죽 블랙",
+          "sourcePage": "34"
+        },
+        {
+          "code": "VY9",
+          "name": "나파 가죽 실크 베이지",
+          "sourcePage": "34"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "F3T",
+          "name": "오픈포어 우드룩 트림",
+          "sourcePage": "35",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "FB2",
+          "name": "익스클루시브 트림",
+          "sourcePage": "35",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "VD9",
+          "name": "루프 라이너, 블랙(MICROCUT)",
+          "sourcePage": "36",
+          "category": "루프라이너"
+        },
+        {
+          "code": "VD7",
+          "name": "루프 라이너, 블랙",
+          "sourcePage": "36",
+          "category": "루프라이너"
+        },
+        {
+          "code": "VD8",
+          "name": "루프 라이너, 포슬린(MICROCUT)",
+          "sourcePage": "36",
+          "category": "루프라이너"
+        },
+        {
+          "code": "VD6",
+          "name": "루프 라이너, 포슬린",
+          "sourcePage": "36",
+          "category": "루프라이너"
+        }
+      ],
+      "sourceFileName": "The new V-Class_catalogue_20261029.pdf",
+      "verificationNote": "제공된 공식 카탈로그에 인쇄된 외장/시트/내장 모형별 코드·명칭을 해당 페이지와 대조함. 사진 게시 전 권한 및 시각 검증 필요.",
+      "sourceSha256": "9dffd32fda18edb7a1b9aadb2513977e593cccf2f0775c67530f8790075c4ae6"
+    },
+    "cle": {
+      "title": "CLE Coupé & CLE Cabriolet",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 09월 21일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "44",
+          "bodyStyle": "CLE Coupé"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "45",
+          "bodyStyle": "CLE Coupé"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이",
+          "sourcePage": "46",
+          "bodyStyle": "CLE Coupé"
+        },
+        {
+          "code": "914U",
+          "name": "썬 옐로우",
+          "sourcePage": "47",
+          "bodyStyle": "CLE Coupé"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "48",
+          "bodyStyle": "CLE Coupé"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "49",
+          "bodyStyle": "CLE Coupé"
+        },
+        {
+          "code": "818U",
+          "name": "MANUFAKTUR 그라파이트 그레이 마그노",
+          "sourcePage": "50",
+          "bodyStyle": "CLE Coupé"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "51",
+          "bodyStyle": "CLE Coupé"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이",
+          "sourcePage": "52",
+          "bodyStyle": "CLE Coupé"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드 브라이트",
+          "sourcePage": "53",
+          "bodyStyle": "CLE Coupé"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "54",
+          "bodyStyle": "CLE Cabriolet"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "55",
+          "bodyStyle": "CLE Cabriolet"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이",
+          "sourcePage": "56",
+          "bodyStyle": "CLE Cabriolet"
+        },
+        {
+          "code": "914U",
+          "name": "썬 옐로우",
+          "sourcePage": "57",
+          "bodyStyle": "CLE Cabriolet"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "58",
+          "bodyStyle": "CLE Cabriolet"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "59",
+          "bodyStyle": "CLE Cabriolet"
+        },
+        {
+          "code": "818U",
+          "name": "MANUFAKTUR 그라파이트 그레이 마그노",
+          "sourcePage": "60",
+          "bodyStyle": "CLE Cabriolet"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "61",
+          "bodyStyle": "CLE Cabriolet"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이",
+          "sourcePage": "62",
+          "bodyStyle": "CLE Cabriolet"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드 브라이트",
+          "sourcePage": "63",
+          "bodyStyle": "CLE Cabriolet"
+        }
+      ],
+      "seats": [
+        {
+          "code": "101A",
+          "name": "아티코 가죽, 블랙",
+          "sourcePage": "32"
+        },
+        {
+          "code": "104A",
+          "name": "아티코 가죽, 통카 브라운/블랙",
+          "sourcePage": "33"
+        },
+        {
+          "code": "105A",
+          "name": "아티코 가죽, 마키아토 베이지/블랙",
+          "sourcePage": "34"
+        },
+        {
+          "code": "201A",
+          "name": "가죽, 블랙",
+          "sourcePage": "35"
+        },
+        {
+          "code": "204A",
+          "name": "가죽, 새들 브라운/블랙",
+          "sourcePage": "36"
+        },
+        {
+          "code": "205A",
+          "name": "가죽, 마키아토 베이지/블랙",
+          "sourcePage": "37"
+        },
+        {
+          "code": "207A",
+          "name": "가죽, 파워 레드/블랙",
+          "sourcePage": "38"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "H64",
+          "name": "메탈 스트럭처 트림",
+          "sourcePage": "39",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H04",
+          "name": "블랙 오픈포어 알루미늄 라인 우드 트림",
+          "sourcePage": "40",
+          "category": "인테리어 트림"
+        }
+      ],
+      "sourceFileName": "The all new CLE Coupe n CLE Cabriolet_Catalogue_20260921.pdf",
+      "verificationNote": "공식 PDF 원문에서 모델별 컬러/시트/트림 페이지의 코드·명칭 확인; CLE는 Coupé/Cabriolet 색상별 차량 사진 차체 구분. 사진 외부 게시 권한 및 화질 QA 대기.",
+      "sourceSha256": "d6e8046bf4bde9977a46513eb4374215f95c7f38856e24ff4364a015aaf796b8",
+      "exteriorDetails": [
+        {
+          "code": "740",
+          "name": "패브릭 소프트 탑, 블랙",
+          "sourcePage": "41",
+          "category": "소프트톱"
+        },
+        {
+          "code": "747",
+          "name": "패브릭 소프트 탑, 레드",
+          "sourcePage": "42",
+          "category": "소프트톱"
+        },
+        {
+          "code": "754",
+          "name": "소프트탑, 그레이",
+          "sourcePage": "43",
+          "category": "소프트톱"
+        }
+      ]
+    },
+    "amg-cle-coupe": {
+      "title": "Mercedes-AMG CLE Coupé",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 09월 21일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "25"
+        },
+        {
+          "code": "914U",
+          "name": "썬 옐로우",
+          "sourcePage": "25"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "25"
+        },
+        {
+          "code": "818U",
+          "name": "MANUFAKTUR 그라파이트 그레이 마그노",
+          "sourcePage": "25"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "25"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이",
+          "sourcePage": "26"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드 브라이트",
+          "sourcePage": "26"
+        }
+      ],
+      "seats": [
+        {
+          "code": "251A",
+          "name": "AMG 가죽 블랙",
+          "sourcePage": "21"
+        },
+        {
+          "code": "851A",
+          "name": "AMG 나파 가죽 블랙",
+          "sourcePage": "21"
+        },
+        {
+          "code": "861A",
+          "name": "AMG 나파 가죽 블랙",
+          "sourcePage": "21"
+        },
+        {
+          "code": "887A",
+          "name": "AMG 나파 가죽 투톤 파워 레드/ 블랙",
+          "sourcePage": "21"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "H64",
+          "name": "메탈 스트럭처 트림",
+          "sourcePage": "22"
+        },
+        {
+          "code": "661",
+          "name": "파인 스트럭쳐 블랙 센터콘솔",
+          "sourcePage": "23"
+        }
+      ],
+      "sourceFileName": "The all-new AMG CLE Coupe_catalogue_20260921.pdf",
+      "verificationNote": "첨부 카탈로그 코드/색상/시트 대조 완료, H44 트림 원문 이미지 텍스트 불명확으로 보류. 확인된 항목만 표시. 사진 재게시 권한 미검증.",
+      "sourceSha256": "161d2158fae9a4116972badd1ea547ad4d0085b290659493b35d9127bd3a77fc"
+    },
+    "amg-cle-cabriolet": {
+      "title": "Mercedes-AMG CLE Cabriolet",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 09월 21일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "26"
+        },
+        {
+          "code": "914U",
+          "name": "썬 옐로우",
+          "sourcePage": "26"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "26"
+        },
+        {
+          "code": "818U",
+          "name": "MANUFAKTUR 그라파이트 그레이 마그노",
+          "sourcePage": "26"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "26"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이",
+          "sourcePage": "27"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드 브라이트",
+          "sourcePage": "27"
+        }
+      ],
+      "seats": [
+        {
+          "code": "251A",
+          "name": "AMG 가죽 블랙",
+          "sourcePage": "21"
+        },
+        {
+          "code": "851A",
+          "name": "AMG 나파 가죽 블랙",
+          "sourcePage": "21"
+        },
+        {
+          "code": "861A",
+          "name": "AMG 나파 가죽 블랙",
+          "sourcePage": "21"
+        },
+        {
+          "code": "887A",
+          "name": "AMG 나파 가죽 투톤 파워 레드/ 블랙",
+          "sourcePage": "21"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "H64",
+          "name": "메탈 스트럭처 트림",
+          "sourcePage": "22"
+        },
+        {
+          "code": "661",
+          "name": "파인 스트럭쳐 블랙 센터콘솔",
+          "sourcePage": "23"
+        }
+      ],
+      "sourceFileName": "The all-new AMG CLE Cabriolet_catalogue_20260921.pdf",
+      "verificationNote": "첨부 카탈로그 코드/색상/시트 대조 완료, H44 트림 원문 이미지 텍스트 불명확으로 보류. 확인된 항목만 표시. 사진 재게시 권한 미검증.",
+      "sourceSha256": "10174cf79c7d8e8d21d4ceb72b0116c08cf7c9d73a7b3b4b5fd3f2dd5147194f",
+      "exteriorDetails": [
+        {
+          "code": "747",
+          "name": "패브릭 소프트 탑, 레드",
+          "sourcePage": "25"
+        },
+        {
+          "code": "740",
+          "name": "패브릭 소프트 탑, 블랙",
+          "sourcePage": "25"
+        },
+        {
+          "code": "754",
+          "name": "패브릭 소프트 탑, 그레이",
+          "sourcePage": "25"
+        }
+      ]
+    },
+    "amg-gt-coupe": {
+      "title": "Mercedes-AMG GT Coupé",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 04월 24일, 25년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "26"
+        },
+        {
+          "code": "914U",
+          "name": "썬 옐로우",
+          "sourcePage": "26"
+        },
+        {
+          "code": "922U",
+          "name": "하이테크 실버",
+          "sourcePage": "26"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "26"
+        },
+        {
+          "code": "992U",
+          "name": "셀레나이트 그레이",
+          "sourcePage": "26"
+        },
+        {
+          "code": "056U",
+          "name": "MANUFAKTUR 나이트 블랙 마그노",
+          "sourcePage": "26",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "190U",
+          "name": "MANUFAKTUR 실리콘 그레이",
+          "sourcePage": "27",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "376U",
+          "name": "MANUFAKTUR 그린 헬 마그노",
+          "sourcePage": "27",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "379U",
+          "name": "MANUFAKTUR 오렌지 플레임",
+          "sourcePage": "27",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "464U",
+          "name": "MANUFAKTUR 데저트 샌드",
+          "sourcePage": "27",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "593U",
+          "name": "MANUFAKTUR 스펙트럴 블루 마그노",
+          "sourcePage": "27",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "658U",
+          "name": "MANUFAKTUR 코퍼 오렌지 마그노",
+          "sourcePage": "27",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "659U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 마그노",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "660U",
+          "name": "MANUFAKTUR 루벨라이트 레드",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "734U",
+          "name": "MANUFAKTUR 하이테크 실버 마그노",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "818U",
+          "name": "MANUFAKTUR 그라파이트 그레이 마그노",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "934U",
+          "name": "MANUFAKTUR 빈티지 블루 솔리드",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이 솔리드",
+          "sourcePage": "29",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "964U",
+          "name": "MANUFAKTUR 하이퍼 블루 마그노",
+          "sourcePage": "29",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드 브라이트",
+          "sourcePage": "29",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        }
+      ],
+      "seats": [
+        {
+          "code": "807A",
+          "name": "나파 가죽 레드페퍼/블랙",
+          "sourcePage": "20",
+          "priceStatus": "standard",
+          "applicability": "기본사양",
+          "notes": "카탈로그: 마키아토 베이지 MANUFAKTUR 마이크로컷 루프 라이너 및 마키아토 색상 안전벨트 선택 시 적용 불가"
+        },
+        {
+          "code": "801A",
+          "name": "나파 가죽 블랙",
+          "sourcePage": "20",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "카탈로그: 마키아토 베이지 MANUFAKTUR 마이크로컷 루프 라이너 및 마키아토 색상 안전벨트 선택 시 적용 불가"
+        },
+        {
+          "code": "804A",
+          "name": "나파 가죽 시에나 브라운/블랙",
+          "sourcePage": "20",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "카탈로그: 마키아토 베이지 MANUFAKTUR 마이크로컷 루프 라이너 및 마키아토 색상 안전벨트 선택 시 적용 불가"
+        },
+        {
+          "code": "808A",
+          "name": "나파 가죽 세이지 그레이/블랙",
+          "sourcePage": "20",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "카탈로그: 마키아토 베이지 MANUFAKTUR 마이크로컷 루프 라이너 및 마키아토 색상 안전벨트 선택 시 적용 불가"
+        },
+        {
+          "code": "952A",
+          "name": "MANUFAKTUR 나파 가죽 요트 블루/블랙",
+          "sourcePage": "21",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "카탈로그: MANUFAKTUR 인테리어 패키지 선택 시 적용 가능"
+        },
+        {
+          "code": "954A",
+          "name": "MANUFAKTUR 나파 가죽 토바코 브라운/블랙",
+          "sourcePage": "21",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "카탈로그: MANUFAKTUR 인테리어 패키지 선택 시 적용 가능"
+        },
+        {
+          "code": "955A",
+          "name": "MANUFAKTUR 나파 가죽 사바나 베이지/블랙",
+          "sourcePage": "21",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "카탈로그: MANUFAKTUR 인테리어 패키지 선택 시 적용 가능"
+        },
+        {
+          "code": "956A",
+          "name": "MANUFAKTUR 나파 가죽 셰이디 그린/블랙",
+          "sourcePage": "21",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "카탈로그: MANUFAKTUR 인테리어 패키지 선택 시 적용 가능"
+        },
+        {
+          "code": "957A",
+          "name": "MANUFAKTUR 나파 가죽 미스틱 레드/블랙",
+          "sourcePage": "21",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "카탈로그: MANUFAKTUR 인테리어 패키지 선택 시 적용 가능"
+        },
+        {
+          "code": "958A",
+          "name": "MANUFAKTUR 나파 가죽 로제 그레이/블랙",
+          "sourcePage": "21",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "카탈로그: MANUFAKTUR 인테리어 패키지 선택 시 적용 가능"
+        },
+        {
+          "code": "967A",
+          "name": "MANUFAKTUR 나파 가죽 클래식 레드/블랙",
+          "sourcePage": "22",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "카탈로그: MANUFAKTUR 인테리어 패키지 선택 시 적용 가능"
+        },
+        {
+          "code": "824A",
+          "name": "MANUFAKTUR 나파 가죽 트러플 브라운/블랙",
+          "sourcePage": "22",
+          "priceStatus": "paid",
+          "applicability": "유료옵션",
+          "notes": "카탈로그: 블랙 색상 루프라이너 및 네바 그레이 색상 MANUFAKTUR 마이크로컷 루프 라이너 선택 시 적용 불가"
+        },
+        {
+          "code": "825A",
+          "name": "MANUFAKTUR 나파 가죽 크리스탈 화이트/블랙",
+          "sourcePage": "22",
+          "priceStatus": "paid",
+          "applicability": "유료옵션",
+          "notes": "카탈로그: 블랙 색상 루프라이너 및 마키아토 베이지 색상 MANUFAKTUR 마이크로컷 루프 라이너 선택 시 적용 불가"
+        },
+        {
+          "code": "835A",
+          "name": "MANUFAKTUR 나파 가죽 마키아토 베이지/티타늄 그레이",
+          "sourcePage": "22",
+          "priceStatus": "paid",
+          "applicability": "유료옵션",
+          "notes": "카탈로그: 블랙 색상 루프라이너 및 네바 그레이 색상 MANUFAKTUR 마이크로컷 루프 라이너 선택 시 적용 불가"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "H70",
+          "name": "AMG 알루미늄 트림",
+          "sourcePage": "23",
+          "priceStatus": "standard",
+          "applicability": "기본사양",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H73",
+          "name": "AMG 카본 트림",
+          "sourcePage": "23",
+          "priceStatus": "paid",
+          "applicability": "유료옵션",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H94",
+          "name": "MANUFAKTUR 블랙 크롬 트림",
+          "sourcePage": "23",
+          "priceStatus": "paid",
+          "applicability": "유료옵션",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H97",
+          "name": "오픈 포어 그레이 우드 트림",
+          "sourcePage": "23",
+          "priceStatus": "paid",
+          "applicability": "유료옵션",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H98",
+          "name": "오픈 포어 브라운 애쉬 우드 트림, 알루미늄 라인",
+          "sourcePage": "23",
+          "priceStatus": "paid",
+          "applicability": "유료옵션",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "58H",
+          "name": "MANUFAKTUR 코퍼 오렌지 마그노 트림",
+          "sourcePage": "23",
+          "priceStatus": "paid",
+          "applicability": "유료옵션",
+          "category": "인테리어 트림",
+          "notes": "카탈로그: MANUFAKTUR 코퍼 오렌지 마그노 선택 시 적용 가능"
+        },
+        {
+          "code": "61U",
+          "name": "MANUFAKTUR 마이크로컷 루프 라이너 블랙",
+          "sourcePage": "24",
+          "priceStatus": "standard",
+          "applicability": "기본사양",
+          "category": "루프라이너"
+        },
+        {
+          "code": "65U",
+          "name": "MANUFAKTUR 마이크로컷 루프 라이너 마키아토 베이지",
+          "sourcePage": "24",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "category": "루프라이너"
+        },
+        {
+          "code": "69U",
+          "name": "MANUFAKTUR 마이크로컷 루프 라이너 블랙",
+          "sourcePage": "24",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "category": "루프라이너"
+        }
+      ],
+      "sourceFileName": "The new Mercedes-AMG GT Coupe_Catalogue_260424.pdf",
+      "verificationNote": "25MY 공식 GT Coupé 카탈로그 20~29쪽 기준. 현재 홈페이지의 GT 쿠페 일부는 27MY이므로 주문 가능 여부 및 최신 변경 사항 별도 확인 필수. 재게시 사진 권한 미확인.",
+      "sourceSha256": "26276c8c89821d2c24fd1678d180a1cfac9acb5d39507c065391a4ad67618fdc"
+    },
+    "amg-gt-4door": {
+      "title": "Mercedes-AMG GT 4-Door Coupé",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2026년 04월 24일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "71"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "72"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "73"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이",
+          "sourcePage": "74"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "75"
+        },
+        {
+          "code": "124U",
+          "name": "MANUFAKTUR 클래식 그레이 솔리드",
+          "sourcePage": "76",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "255U",
+          "name": "MANUFAKTUR 올리브 메탈릭",
+          "sourcePage": "77",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "297U",
+          "name": "MANUFAKTUR 셀레나이트 그레이 마그노",
+          "sourcePage": "78",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "385U",
+          "name": "MANUFAKTUR 코트다쥐르 라이트 블루 메탈릭",
+          "sourcePage": "79",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "593U",
+          "name": "MANUFAKTUR 스펙트럴 블루 마그노",
+          "sourcePage": "80",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "658U",
+          "name": "MANUFAKTUR 쿠퍼 오렌지 마그노",
+          "sourcePage": "81",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "660U",
+          "name": "MANUFAKTUR 루벨라이트 레드",
+          "sourcePage": "82",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "677U",
+          "name": "MANUFAKTUR 칼라하리 골드 마그노",
+          "sourcePage": "83",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "685U",
+          "name": "MANUFAKTUR 옐로우스톤 솔리드",
+          "sourcePage": "84",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "818U",
+          "name": "MANUFAKTUR 그라파이트 그레이 마그노",
+          "sourcePage": "85",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "86",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "934U",
+          "name": "MANUFAKTUR 빈티지 블루 솔리드",
+          "sourcePage": "87",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "88",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "376U",
+          "name": "AMG 그린 헬 마그노",
+          "sourcePage": "89",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
+      "seats": [
+        {
+          "code": "801A",
+          "name": "나파 가죽, 블랙",
+          "sourcePage": "55",
+          "applicability": "기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "501A",
+          "name": "익스클루시브 나파 가죽, 블랙",
+          "sourcePage": "56",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "507A",
+          "name": "익스클루시브 나파 가죽, 레드 페퍼/블랙",
+          "sourcePage": "57",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "*해당 이미지는 퍼포먼스 시트가 장착되었을 시의 이미지입니다."
+        },
+        {
+          "code": "528A",
+          "name": "익스클루시브 나파 가죽, 투톤 블랙/티타늄 그레이 펄",
+          "sourcePage": "58",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "*해당 이미지는 퍼포먼스 시트가 장착되었을 시의 이미지입니다."
+        },
+        {
+          "code": "554A",
+          "name": "MANUFAKTUR 익스클루시브 나파 가죽, 새들 브라운/ 블랙",
+          "sourcePage": "59",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "*해당 이미지는 퍼포먼스 시트가 장착되었을 시의 이미지입니다."
+        },
+        {
+          "code": "564A",
+          "name": "MANUFAKTUR 익스클루시브 나파 가죽, 트러플 브라운/블랙",
+          "sourcePage": "60",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "565A",
+          "name": "MANUFAKTUR 익스클루시브 나파 가죽, 마키아토 베이지/마그마 그레이",
+          "sourcePage": "61",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "952A",
+          "name": "MANUFAKTUR 익스클루시브 나파 가죽, 요트 블루/블랙",
+          "sourcePage": "62",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "954A",
+          "name": "MANUFAKTUR 익스클루시브 나파 가죽, 시에나 브라운/블랙",
+          "sourcePage": "63",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "957A",
+          "name": "MANUFAKTUR 익스클루시브 나파 가죽, 클래식 레드/블랙",
+          "sourcePage": "64",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "*해당 이미지는 퍼포먼스 시트가 장착되었을 시의 이미지입니다."
+        },
+        {
+          "code": "958A",
+          "name": "MANUFAKTUR 익스클루시브 나파 가죽, 네바 그레이/블랙",
+          "sourcePage": "65",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "*해당 이미지는 퍼포먼스 시트가 장착되었을 시의 이미지입니다."
+        },
+        {
+          "code": "959A",
+          "name": "MANUFAKTUR 익스클루시브 나파 가죽, 딥 화이트/블랙",
+          "sourcePage": "66",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "H32",
+          "name": "오픈 포어 애쉬우드 트림, 그레이",
+          "sourcePage": "67",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H80",
+          "name": "피아노 라커 트림, 블랙",
+          "sourcePage": "68",
+          "applicability": "선택사양",
+          "priceStatus": "optional",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H73",
+          "name": "AMG 카본 트림",
+          "sourcePage": "69",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H77",
+          "name": "AMG 무광 카본 트림",
+          "sourcePage": "70",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "category": "인테리어 트림"
+        }
+      ],
+      "sourceFileName": "The new Mercedes-AMG GT 4Door_Catalogue_20260424.pdf",
+      "verificationNote": "이번 채팅에 직접 첨부된 벤츠 공식 카탈로그 원본에서 옵션별 페이지·명칭·코드를 대조. 실제 사진 재게시 권한 검토 전.",
+      "sourceSha256": "5e2e0a4029ee79f729f8b7fb2018b11c928e71ed395a8db32844fe2d584f1811",
+      "exteriorDetails": []
+    }
+  },
+  "familyCatalogChoices": {
+    "AMG CLE": [
+      "amg-cle-coupe",
+      "amg-cle-cabriolet"
+    ],
+    "AMG GT": [
+      "amg-gt-coupe",
+      "amg-gt-4door"
+    ]
+  },
+  "trimCatalogOverrides": {
+    "Mercedes-AMG CLE 53 4MATIC+ Coupé": "amg-cle-coupe",
+    "Mercedes-AMG CLE 53 4MATIC+ Cabriolet": "amg-cle-cabriolet",
+    "Mercedes-AMG GT 43 4MATIC+ 4-Door": "amg-gt-4door"
+  }
+}

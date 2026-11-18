@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="메르세데스-벤츠 의정부 전시장 김중모 차장 상담용 차량 컬러 안내">
+<title>차량 외장·실내 컬러 | Mercedes-Benz 의정부</title>
+<link rel="stylesheet" href="./colors.css">
+<script src="./eclass-sprites.js" defer></script>
+<script src="./colors.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar-inner"><a class="brand" href="./index.html">Mercedes-Benz <span>의정부 · 김중모 차장</span></a><a class="back-link" href="./index.html#models">← 차량 목록</a></div>
+</header>
+<main class="container">
+  <div class="intro"><p class="eyebrow">CATALOGUE COLOR GUIDE</p><h1>외장 컬러 · 실내 시트</h1><p>차량을 선택하면 해당 모델군의 <strong>공식 카탈로그에서 검증한 컬러 정보</strong>를 확인할 수 있습니다. 일반 모델과 AMG·마이바흐는 별도로 관리합니다.</p></div>
+  <section class="selector" aria-label="차량 선택">
+    <label for="family">차종 선택</label>
+    <select id="family" aria-label="차종 선택"><option>불러오는 중…</option></select>
+    <div id="catalogChooser" class="catalog-chooser" hidden><label for="catalogKind">카탈로그 종류</label><select id="catalogKind" aria-label="AMG 차체 종류에 따른 공식 카탈로그 선택"></select></div>
+    <div id="modelDetails" class="model-details" aria-live="polite"></div>
+  </section>
+  <section class="guide" aria-label="컬러 가이드">
+    <div class="guide-head">
+      <div><p class="eyebrow">OFFICIAL CATALOGUE REFERENCE</p><h2 id="guideTitle">차종을 선택해 주세요</h2><p class="guide-caption" id="guideSubtitle"></p></div>
+      <a id="catalogSource" class="source-link" href="https://www.mercedes-benz.co.kr/passengercars/models/catalog.html" target="_blank" rel="noopener noreferrer">공식 카탈로그 목록 ↗</a>
+    </div>
+    <div class="tabs" role="tablist" aria-label="컬러 종류">
+      <button type="button" id="tab-exterior" class="tab is-active" role="tab" aria-controls="colorPanel" aria-selected="true" data-tab="exterior">외장 컬러</button>
+      <button type="button" id="tab-seats" class="tab" role="tab" aria-controls="colorPanel" aria-selected="false" data-tab="seats">실내 시트</button>
+      <button type="button" id="tab-interiorTrims" class="tab" role="tab" aria-controls="colorPanel" aria-selected="false" data-tab="interiorTrims">인테리어 트림</button>
+    </div>
+    <div id="status" class="status" role="status" aria-live="polite">자료를 불러오는 중입니다.</div>
+    <div id="colorPanel" role="tabpanel" aria-labelledby="tab-exterior">
+      <div class="color-grid" id="colorGrid"></div>
+      <div id="exteriorExtras" class="exterior-extras" hidden></div>
+    </div>
+    <div class="catalog-footer">
+      <p>※ 카탈로그의 전체 색상 목록은 <strong>특정 차량 트림의 주문 가능 여부</strong>를 보장하지 않습니다. 기본·유료·선택 사양과 적용 모델은 해당 카탈로그에 명시된 경우에만 표시됩니다.</p>
+      <p>※ 메르세데스-벤츠 공식 카탈로그에서 발췌한 상담 참고 이미지입니다. 사진 저작권은 각 권리자에게 있으며 외부 사이트 재게시에 관한 전시장·본사 지침은 별도 확인이 필요합니다. 확인되지 않은 색상에 임의 사진은 사용하지 않습니다.</p>
+    </div>
+  </section>
+</main>
+<dialog id="photoDialog" class="photo-dialog" aria-label="컬러 이미지 확대">
+  <div class="photo-dialog-inner"><button id="photoClose" class="photo-close" type="button" aria-label="이미지 닫기">닫기 ×</button><img id="photo" alt=""><div id="spriteZoom" class="sprite-zoom" role="img" hidden></div><h3 id="photoName"></h3><p id="photoMeta"></p></div>
+</dialog>
+</body>
+</html>

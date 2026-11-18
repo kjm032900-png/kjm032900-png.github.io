@@ -1,0 +1,298 @@
+{
+  "group": "maybach-eqs-suv",
+  "pdf_sha256": "8fa7521540e71d36eb67c8946ee545f51909ff86d3e7b9ff48b23f8373a7b69e",
+  "sourceFileName": "The all-new Mercedes-Maybach EQS SUV_Catalogue_20260519.pdf",
+  "crops": [
+    {
+      "page": 24,
+      "rect": [
+        195,
+        820,
+        625,
+        1010
+      ],
+      "filename": "exterior-040u"
+    },
+    {
+      "page": 24,
+      "rect": [
+        765,
+        820,
+        1195,
+        1010
+      ],
+      "filename": "exterior-149u"
+    },
+    {
+      "page": 24,
+      "rect": [
+        1340,
+        820,
+        1770,
+        1010
+      ],
+      "filename": "exterior-197u"
+    },
+    {
+      "page": 24,
+      "rect": [
+        470,
+        1105,
+        900,
+        1315
+      ],
+      "filename": "exterior-771u"
+    },
+    {
+      "page": 24,
+      "rect": [
+        1050,
+        1105,
+        1480,
+        1315
+      ],
+      "filename": "exterior-842u"
+    },
+    {
+      "page": 25,
+      "rect": [
+        195,
+        820,
+        625,
+        1010
+      ],
+      "filename": "exterior-922u"
+    },
+    {
+      "page": 25,
+      "rect": [
+        765,
+        820,
+        1195,
+        1010
+      ],
+      "filename": "exterior-989u"
+    },
+    {
+      "page": 25,
+      "rect": [
+        1340,
+        820,
+        1770,
+        1010
+      ],
+      "filename": "exterior-992u"
+    },
+    {
+      "page": 25,
+      "rect": [
+        195,
+        1105,
+        625,
+        1315
+      ],
+      "filename": "exterior-885u"
+    },
+    {
+      "page": 25,
+      "rect": [
+        765,
+        1105,
+        1195,
+        1315
+      ],
+      "filename": "exterior-956u"
+    },
+    {
+      "page": 25,
+      "rect": [
+        1340,
+        1105,
+        1770,
+        1315
+      ],
+      "filename": "exterior-993u"
+    },
+    {
+      "page": 26,
+      "rect": [
+        195,
+        820,
+        625,
+        1010
+      ],
+      "filename": "exterior-c40"
+    },
+    {
+      "page": 26,
+      "rect": [
+        765,
+        820,
+        1195,
+        1010
+      ],
+      "filename": "exterior-c12"
+    },
+    {
+      "page": 26,
+      "rect": [
+        1340,
+        820,
+        1770,
+        1010
+      ],
+      "filename": "exterior-c20"
+    },
+    {
+      "page": 26,
+      "rect": [
+        470,
+        1105,
+        900,
+        1315
+      ],
+      "filename": "exterior-c23"
+    },
+    {
+      "page": 26,
+      "rect": [
+        1050,
+        1105,
+        1480,
+        1315
+      ],
+      "filename": "exterior-c35"
+    },
+    {
+      "page": 20,
+      "rect": [
+        880,
+        170,
+        1160,
+        525
+      ],
+      "filename": "seats-515a"
+    },
+    {
+      "page": 20,
+      "rect": [
+        1390,
+        170,
+        1670,
+        525
+      ],
+      "filename": "seats-514a"
+    },
+    {
+      "page": 20,
+      "rect": [
+        880,
+        600,
+        1160,
+        955
+      ],
+      "filename": "seats-519a"
+    },
+    {
+      "page": 21,
+      "rect": [
+        880,
+        170,
+        1160,
+        525
+      ],
+      "filename": "interiorTrims-06h"
+    },
+    {
+      "page": 21,
+      "rect": [
+        1390,
+        170,
+        1670,
+        525
+      ],
+      "filename": "interiorTrims-05h"
+    },
+    {
+      "page": 21,
+      "rect": [
+        880,
+        600,
+        1160,
+        955
+      ],
+      "filename": "interiorTrims-h17"
+    },
+    {
+      "page": 22,
+      "rect": [
+        880,
+        170,
+        1160,
+        525
+      ],
+      "filename": "interiorTrims-65u"
+    },
+    {
+      "page": 22,
+      "rect": [
+        1390,
+        170,
+        1670,
+        525
+      ],
+      "filename": "interiorTrims-61u"
+    },
+    {
+      "page": 22,
+      "rect": [
+        880,
+        600,
+        1160,
+        955
+      ],
+      "filename": "interiorTrims-64u"
+    },
+    {
+      "page": 23,
+      "rect": [
+        880,
+        170,
+        1160,
+        525
+      ],
+      "filename": "interiorTrims-71u"
+    },
+    {
+      "page": 23,
+      "rect": [
+        1390,
+        170,
+        1670,
+        525
+      ],
+      "filename": "interiorTrims-74u"
+    },
+    {
+      "page": 23,
+      "rect": [
+        880,
+        600,
+        1160,
+        955
+      ],
+      "filename": "interiorTrims-75u"
+    },
+    {
+      "page": 23,
+      "rect": [
+        1390,
+        600,
+        1670,
+        955
+      ],
+      "filename": "interiorTrims-78u"
+    }
+  ],
+  "note": "Crop rectangles are preview-based and require human visual QA; no permission to republish is asserted."
+}

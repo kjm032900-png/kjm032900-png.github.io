@@ -1,0 +1,318 @@
+{
+  "group": "e-class",
+  "pdf_sha256": "a307254d1ffc14d52dbaa7152262b983254083e86d7a032779cd4db621a681a3",
+  "sourceFileName": "Mercedes-Benz_The new E-Class_Catalogue_20260424.pdf",
+  "crops": [
+    {
+      "page": 65,
+      "filename": "exterior-149u",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 66,
+      "filename": "exterior-188u",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 67,
+      "filename": "exterior-197u",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 68,
+      "filename": "exterior-595u",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 69,
+      "filename": "exterior-771u",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 70,
+      "filename": "exterior-831u",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 71,
+      "filename": "exterior-922u",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 72,
+      "filename": "exterior-885u",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 73,
+      "filename": "exterior-956u",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 74,
+      "filename": "exterior-993u",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 44,
+      "filename": "seats-101a",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 45,
+      "filename": "seats-104a",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 46,
+      "filename": "seats-105a",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 47,
+      "filename": "seats-114a",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 48,
+      "filename": "seats-115a",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 49,
+      "filename": "seats-201a",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 50,
+      "filename": "seats-221a",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 51,
+      "filename": "seats-205a",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 52,
+      "filename": "seats-214a",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 53,
+      "filename": "seats-215a",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 54,
+      "filename": "seats-801a",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 55,
+      "filename": "seats-814a",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 56,
+      "filename": "seats-808a",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 57,
+      "filename": "interiorTrims-10h",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 58,
+      "filename": "interiorTrims-11h",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 59,
+      "filename": "interiorTrims-14h",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 60,
+      "filename": "interiorTrims-753",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 61,
+      "filename": "interiorTrims-667",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 62,
+      "filename": "interiorTrims-58u",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 63,
+      "filename": "interiorTrims-51u",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    },
+    {
+      "page": 64,
+      "filename": "interiorTrims-55u",
+      "rect": [
+        95,
+        315,
+        1825,
+        1185
+      ]
+    }
+  ],
+  "note": "31 E-Class MY26 official PDF photo regions individually reviewed in private local preview; do not publish without confirmed photo reuse rights."
+}

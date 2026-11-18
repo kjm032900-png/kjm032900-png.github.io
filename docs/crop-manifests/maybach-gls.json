@@ -1,0 +1,178 @@
+{
+  "group": "maybach-gls",
+  "pdf_sha256": "45edafd111cbc4bb6822fe22c4adddb849f57a91efa2c21dfe09fd6aad14ec59",
+  "sourceFileName": "The new Mercedes-Maybach GLS_catalogue_20260622.pdf",
+  "crops": [
+    {
+      "page": 47,
+      "rect": [
+        320,
+        380,
+        1650,
+        1140
+      ],
+      "filename": "exterior-885u"
+    },
+    {
+      "page": 48,
+      "rect": [
+        320,
+        380,
+        1650,
+        1140
+      ],
+      "filename": "exterior-197u"
+    },
+    {
+      "page": 49,
+      "rect": [
+        320,
+        380,
+        1650,
+        1140
+      ],
+      "filename": "exterior-842u"
+    },
+    {
+      "page": 50,
+      "rect": [
+        320,
+        380,
+        1650,
+        1140
+      ],
+      "filename": "exterior-922u"
+    },
+    {
+      "page": 51,
+      "rect": [
+        320,
+        380,
+        1650,
+        1140
+      ],
+      "filename": "exterior-992u"
+    },
+    {
+      "page": 52,
+      "rect": [
+        320,
+        380,
+        1650,
+        1140
+      ],
+      "filename": "exterior-c20"
+    },
+    {
+      "page": 53,
+      "rect": [
+        320,
+        380,
+        1650,
+        1140
+      ],
+      "filename": "exterior-c21"
+    },
+    {
+      "page": 54,
+      "rect": [
+        320,
+        380,
+        1650,
+        1140
+      ],
+      "filename": "exterior-c23"
+    },
+    {
+      "page": 55,
+      "rect": [
+        320,
+        380,
+        1650,
+        1140
+      ],
+      "filename": "exterior-c35"
+    },
+    {
+      "page": 39,
+      "rect": [
+        150,
+        360,
+        1820,
+        1220
+      ],
+      "filename": "seats-511a"
+    },
+    {
+      "page": 40,
+      "rect": [
+        150,
+        360,
+        1820,
+        1220
+      ],
+      "filename": "seats-514a"
+    },
+    {
+      "page": 41,
+      "rect": [
+        150,
+        360,
+        1820,
+        1220
+      ],
+      "filename": "interiorTrims-71u"
+    },
+    {
+      "page": 42,
+      "rect": [
+        150,
+        360,
+        1820,
+        1220
+      ],
+      "filename": "interiorTrims-65u"
+    },
+    {
+      "page": 43,
+      "rect": [
+        150,
+        360,
+        1820,
+        1220
+      ],
+      "filename": "interiorTrims-75u"
+    },
+    {
+      "page": 44,
+      "rect": [
+        150,
+        360,
+        1820,
+        1220
+      ],
+      "filename": "interiorTrims-79u"
+    },
+    {
+      "page": 45,
+      "rect": [
+        150,
+        360,
+        1820,
+        1220
+      ],
+      "filename": "interiorTrims-h11"
+    },
+    {
+      "page": 46,
+      "rect": [
+        150,
+        360,
+        1820,
+        1220
+      ],
+      "filename": "interiorTrims-h31"
+    }
+  ],
+  "note": "Crop rectangles are preview-based and require human visual QA; no permission to republish is asserted."
+}
