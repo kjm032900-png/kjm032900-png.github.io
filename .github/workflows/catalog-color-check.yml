@@ -1,0 +1,28 @@
+name: Catalogue colour guide checks
+on:
+  pull_request:
+    paths:
+      - 'catalog-colors.json'
+      - 'colors.js'
+      - 'colors.html'
+      - 'colors.css'
+      - 'content.json'
+      - 'index.html'
+      - 'scripts/verify-catalog-colors.mjs'
+      - '.github/workflows/catalog-color-check.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify JavaScript syntax
+        run: |
+          node --check colors.js
+          node --check scripts/verify-catalog-colors.mjs
+      - name: Verify catalogue grouping, provenance and approved assets
+        run: node scripts/verify-catalog-colors.mjs
