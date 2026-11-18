@@ -18,3 +18,9 @@ a{color:inherit}button,select{font:inherit}.container{width:min(1120px,calc(100%
 @media(max-width:520px){.catalog-chooser{grid-template-columns:1fr;gap:6px}}
 
 .exterior-extras{margin-top:22px;padding:16px;border:1px solid var(--line);background:#1b2a38;border-radius:10px}.extras-heading{margin:0 0 8px;font-size:15px}.exterior-extra{font-size:13px;padding:9px 0;border-top:1px solid #35495b}.exterior-extra strong{color:#f5f7f9}.exterior-extra span{color:var(--muted)}.exterior-extra p{margin:4px 0 0}
+
+/* Original catalogue photographs preserved in compact per-tab atlases. */
+.photo-sprite{display:block;width:100%;aspect-ratio:280/144;background-color:#e8edf1;background-repeat:no-repeat;}
+.sprite-zoom{display:block;width:min(840px,calc(100vw - 72px));max-width:100%;aspect-ratio:280/144;background-color:#e8edf1;background-repeat:no-repeat;margin:auto;border-radius:8px;}
+.photo-dialog [hidden]{display:none!important}
+.color-card:has(.photo-sprite){border-color:#4b687a}
