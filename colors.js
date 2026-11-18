@@ -83,9 +83,31 @@
       && ['.webp', '.jpg', '.jpeg', '.png'].some((ext) => item.image.toLowerCase().endsWith(ext));
   }
 
+  const PHOTO_GROUPS = new Set(["a-class","c-class","cla","s-class","gla","glb","glc","gle","gls","g-class","electric-cla","electric-glb","electric-glc","eqa","eqb","eqe","eqe-suv","eqs","eqs-suv","electric-g-class","amg-a-class","amg-cla","amg-e-class","amg-glb","amg-glc","amg-gle","amg-sl","amg-cle-coupe","amg-cle-cabriolet","amg-gt-coupe","amg-gt-4door","maybach-gls","maybach-sl","v-class","cle"]);
+  const pendingPhotoGroups = new Set();
+
+  function requestPhotoGroup() {
+    const key = selectedCatalogKey;
+    if (!key || !PHOTO_GROUPS.has(key) || pendingPhotoGroups.has(key) || window.CATALOG_IMAGE_ATLASES?.[key]) return;
+    pendingPhotoGroups.add(key);
+    const script = document.createElement('script');
+    script.src = './catalog-photo-atlases/' + encodeURIComponent(key) + '.js';
+    script.async = true;
+    script.onload = () => {
+      pendingPhotoGroups.delete(key);
+      if (selectedCatalogKey === key) render();
+    };
+    script.onerror = () => {
+      pendingPhotoGroups.delete(key);
+      script.remove();
+      if (selectedCatalogKey === key) renderStatus('차량 이미지 파일을 불러오지 못했습니다. 새로고침해 주세요.', true);
+    };
+    document.head.appendChild(script);
+  }
+
   function getPhotoSprite(item) {
     const group = window.CATALOG_IMAGE_ATLASES?.[selectedCatalogKey]?.[activeTab];
-    const idx = group?.codes?.indexOf(item.code);
+    const idx = group?.keys ? group.keys.indexOf(item.sourcePage + '|' + item.code) : group?.codes?.indexOf(item.code);
     return idx >= 0 ? { group, idx } : null;
   }
 
@@ -228,8 +250,9 @@
       renderStatus(supportedTabs[activeTab] + ' 자료가 아직 검증되지 않았습니다. 확인된 항목만 등록됩니다.', true);
       return;
     }
-    if (catalog.reviewStatus === 'text_verified' && !window.CATALOG_IMAGE_ATLASES?.[selectedCatalogKey]) {
-      renderStatus('공식 카탈로그의 정식 명칭·코드·적용 조건은 등록됐습니다. 색상별 차량·시트 이미지는 차종별로 추가하고 있습니다. 카탈로그 판본(' + catalog.sourceEdition + ')을 확인해 주세요.', true);
+    const availablePhotos = items.filter((item) => Boolean(getPhotoSprite(item) || localApprovedImage(item))).length;
+    if (catalog.reviewStatus === 'text_verified' && availablePhotos < items.length) {
+      renderStatus('공식 카탈로그의 ' + items.length + '개 항목 중 사진 ' + availablePhotos + '개를 확인할 수 있습니다. 사진이 없는 항목은 원문 명칭·옵션 코드로 안내합니다. 선택 가능 여부는 연식·트림에 따라 달라질 수 있습니다.', true);
     } else renderStatus('', false);
     items.filter((it) => it && typeof it.name === 'string' && it.name.trim()).forEach((it) => grid.appendChild(createColorCard(it)));
     renderExteriorExtras(catalog);
@@ -242,6 +265,7 @@
     if (resetTrim) { requestedTrim = ''; requestedMY = ''; }
     configureCatalogChoice();
     render();
+    requestPhotoGroup();
   }
 
   function boot() {
@@ -284,6 +308,7 @@
   byId('catalogKind').addEventListener('change', (event) => {
     selectedCatalogKey = event.target.value;
     render();
+    requestPhotoGroup();
   });
 
   tabs.forEach((tab) => {
