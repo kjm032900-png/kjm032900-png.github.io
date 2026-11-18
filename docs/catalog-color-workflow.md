@@ -55,6 +55,27 @@ Do not commit the example as a live colour. Values for real items must come from
 - Combined verified text tally so far: 6 groups, **79 exterior**, **35 seats**, **39 interior finishes** = **153 items**, plus 2 SL exterior construction details.
 - **No photographs have been committed** to public GitHub: reuse / redistribution permission for the dealer's public website has not been established. This draft is not production ready.
 
+## AMG official-PDF upload — 2026-11-18
+
+- 13 Mercedes-AMG official PDF catalogues received as original files and checked for catalogue date/MY.
+- 11 showroom-mapped AMG catalogue groups now hold verified textual options:
+  - AMG A-Class hatchback 26MY: 7 exterior / 5 seats / 3 trims
+  - AMG CLA 26MY: 3 exterior / 5 seats / 1 trim
+  - AMG E-Class 26MY: 10 exterior / 4 seats / 2 trims
+  - AMG GLB 26MY: 7 exterior / 4 seats / 4 trims
+  - AMG GLC & Coupé 26MY: 22 exterior image entries (11 SUV + 11 Coupé), 1 seat / 4 trims
+  - AMG GLE & Coupé 26MY: 10 exterior image entries (5 SUV + 5 Coupé), 4 seats / 4 trims
+  - AMG GT 4-Door 26MY: 19 exterior / 12 seats / 4 trims
+  - AMG SL 27MY: 20 exterior / 7 seats / 7 trims; four soft tops as exterior details
+  - AMG CLE Coupé 27MY: 7 exterior / 4 seats / 2 documented finishes; H44 trim needs extra source inspection
+  - AMG CLE Cabriolet 27MY: 7 exterior / 4 seats / 2 documented finishes; three soft tops as exterior details, H44 needs extra inspection
+  - AMG GT Coupé **25MY**: 21 exterior / 14 seats / 9 trims, but homepage lists certain GT Coupé variants as 27MY; **show an explicit MY mismatch warning**
+- The Mercedes-AMG A-Class Sedan 25MY PDF is **not** substituted for the A 45 S hatchback; the AMG G-Class 25MY PDF is **not** applied to current 27MY G 63. They are recorded as historic/other-body references only.
+- Brochure text is extracted only where readable and visually confirmed. No photo or body style is invented.
+- **Combined text-sourced registered total: 17 catalogue groups, 212 exterior image entries, 99 upholstery entries, 81 interior finishes = 392 items**, plus 9 optional exterior-detail records. Of 41 total catalogue groups, 24 remain pending text verification. 3 are still missing current-matching PDF candidates (AMG S-Class, AMG GLS and AMG G-Class 27MY).
+- Source PDFs are individually SHA-256 pinned. AMG GLC/GLE codes repeat for SUV and Coupé as *separate image entries* because each body has its own vehicle photograph in the official brochure.
+- The current customer-facing UI displays verified names, codes, catalogue page numbers and stated price/applicability. Images remain restricted pending explicit redistribution approval and full visual QA.
+
 ## Current blockers
 
 - Older Library PDFs remain restricted for raw-byte materialization, but the four Maybach PDFs were uploaded directly in this conversation and their original bytes can now be used for local image crops. This does not grant public redistribution rights.
