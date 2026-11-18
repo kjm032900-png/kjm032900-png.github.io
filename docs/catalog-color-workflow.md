@@ -1,3 +1,15 @@
+# Latest status — 2026-11-18
+
+**38/41 catalogue groups have page-sourced text records.** Verified totals: **433 exterior image entries**, **240 upholstery entries**, **203 trim / console / roof-liner entries**, **876 records** in the common colour guide, plus **19 extra exterior details** (soft tops, bonnet / spare-wheel choices). These represent image/model-body choices, not necessarily unique paint colours or real-time orderability.
+
+**Three exceptions remain pending:** `amg-s-class`, `amg-gls`, `amg-g-class`. A 25MY AMG G-Class brochure exists but the showroom site lists 27MY G 63; never silently substitute its colours. User uploaded all 41 available official PDFs, and there is no need to request them again.
+
+**E-Class 26MY pilot (local, unpublished):** extracted exactly 10 vehicle paint images, 13 seat images and 8 trim images as individual WebP photographs from the supplied PDF, not complete PDF pages. All 31 displayed options exactly matched the code, name and page in the original. Responsive desktop and 390px mobile browser tests passed: 10/13/8 cards, photo zoom dialog works, zero script errors. Crop regions are now recorded in `docs/crop-manifests/e-class.json`, pinned to the original source file SHA-256. A user-downloadable ZIP proof-of-concept was produced in chat; it is **not** the live GitHub site.
+
+**Publication/rights gate:** none of the official colour/seat photographs are yet committed to the public repository. The user wants a photo-first dealership consultation page; status remains Draft until photo reuse permission and source-by-source visual QA are resolved and the actual site is tested. Do not misrepresent text-only data as a completed live photo feature. Existing price, promotions, contacts and SEO configuration remain unchanged.
+
+---
+
 # Official Mercedes-Benz Korea catalogue colour guide — data workflow
 
 This is a **draft** workflow for the salesperson's private-branch consultation UI. No catalogue pages, photographs or color options are fabricated.
