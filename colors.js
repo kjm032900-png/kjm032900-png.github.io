@@ -70,7 +70,8 @@
       standard: '기본사양',
       optional: '선택사양',
       paid: '유료옵션',
-      unknown: '카탈로그에 비용 구분 없음'
+      unknown: '카탈로그에 비용 구분 없음',
+      varies: '트림별 기본·선택·유료 조건 상이'
     }[value] || '카탈로그 표기 확인';
   }
 
@@ -112,9 +113,11 @@
     const info = textNode('div', 'color-info', '');
     if (item.code) info.appendChild(textNode('div', 'color-code', item.code));
     info.appendChild(textNode('h3', '', item.name));
+    if (item.category) info.appendChild(textNode('p', 'meta', '구분: ' + item.category));
     if (item.material) info.appendChild(textNode('p', 'meta', '소재: ' + item.material));
     if (item.priceStatus) info.appendChild(textNode('p', 'meta', optionPriceStatus(item.priceStatus)));
     if (item.applicability) info.appendChild(textNode('p', 'meta', '카탈로그 적용: ' + item.applicability));
+    if (item.notes) info.appendChild(textNode('p', 'meta', item.notes));
     if (item.sourcePage) info.appendChild(textNode('p', 'meta', '출처: 카탈로그 ' + item.sourcePage + '쪽'));
     card.appendChild(info);
     return card;
@@ -125,7 +128,7 @@
     const title = catalog && catalog.title ? catalog.title : family;
     byId('guideTitle').textContent = title;
     const subtitle = catalog && catalog.sourceEdition
-      ? '자료 판본: ' + catalog.sourceEdition
+      ? '자료 판본: ' + catalog.sourceEdition + (catalog.reviewStatus === 'text_verified' ? ' · 이미지 미등록' : '')
       : '카탈로그 판본·컬러 자료 대조 중';
     byId('guideSubtitle').textContent = subtitle;
 
@@ -150,7 +153,7 @@
       renderStatus('이 모델군은 공식 카탈로그가 둘 이상입니다. 위에서 쿠페·카브리올레 또는 GT 쿠페·4도어 중 해당 카탈로그를 선택해 주세요.', true);
       return;
     }
-    if (!catalog || catalog.reviewStatus !== 'verified' || !catalog.sourceEdition || !catalog.sourceDocumentUrl) {
+    if (!catalog || !['verified','text_verified'].includes(catalog.reviewStatus) || !catalog.sourceEdition || !(catalog.sourceDocumentUrl || catalog.sourceLibraryFileId)) {
       renderStatus('공식 카탈로그의 해당 판본·정식 명칭·사진 사용 권한을 확인 중입니다. 검증 전에는 임의 색상이나 유사 사진을 표시하지 않습니다.', true);
       return;
     }
@@ -159,7 +162,9 @@
       renderStatus(supportedTabs[activeTab] + ' 자료가 아직 검증되지 않았습니다. 확인된 항목만 등록됩니다.', true);
       return;
     }
-    renderStatus('', false);
+    if (catalog.reviewStatus === 'text_verified') {
+      renderStatus('공식 카탈로그의 정식 명칭·코드·적용 조건만 먼저 등록했습니다. 컬러별 차량·시트 이미지는 재게시 권한과 원본 검증 후 추가합니다. 카탈로그 판본(' + catalog.sourceEdition + ')을 확인해 주세요.', true);
+    } else renderStatus('', false);
     items.filter((it) => it && typeof it.name === 'string' && it.name.trim()).forEach((it) => grid.appendChild(createColorCard(it)));
   }
 
