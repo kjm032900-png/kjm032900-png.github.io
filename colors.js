@@ -150,7 +150,7 @@
     button.type = 'button';
     button.className = 'photo-trigger';
     const sprite = getPhotoSprite(item);
-    const original = typeof item.originalImage === 'string' && localApprovedImage({...item, image:item.originalImage}) ? {...item, image:item.originalImage} : null;
+    const original = typeof item.originalImage === 'string' && item.originalApproved === true && localApprovedImage({...item, assetApproved:true, image:item.originalImage}) ? {...item, image:item.originalImage} : null;
     if (original) {
       const img = document.createElement('img');
       img.src = original.image;
