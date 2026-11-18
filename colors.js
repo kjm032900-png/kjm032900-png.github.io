@@ -113,23 +113,29 @@
   function embeddedOriginal(item){return window.CATALOG_ORIGINAL_PAGES?.[selectedCatalogKey]?.[String(item.sourcePage)] || null;}
 
   const ORIGINAL_PAGE_COUNTS = {"amg-gt-4door":5,"amg-gt-coupe":1,"amg-sl":4,"c-class":8,"cle":8,"e-class":11,"eqa":4,"eqb":4,"eqe":5,"eqe-suv":8,"eqs":7,"eqs-suv":10,"electric-g-class":5,"g-class":3,"gla":2,"glb":4,"glc":9,"maybach-eqs-suv":2,"maybach-gls":5,"maybach-s-class":3};
+  const ORIGINAL_STAGES = {"amg-sl":[3,4],"c-class":[4,5,6],"cle":[6,7,8],"e-class":[9,10,11,12],"eqa":[12,13],"eqb":[13,14],"eqe":[14,15],"eqe-suv":[15,16,17],"eqs":[18,19,20],"eqs-suv":[20,21,22],"electric-g-class":[23,24],"g-class":[24],"gla":[25],"glb":[25,26],"glc":[26,27,28,29],"maybach-eqs-suv":[29],"maybach-gls":[30,31],"maybach-s-class":[31,32]};
+  const loadedOriginalStages=new Set();
   const completedOriginalGroups = new Set();
   function requestOriginalPages() {
     const key=selectedCatalogKey;
     if (!key || !ORIGINAL_PAGE_GROUPS.has(key) || pendingOriginalGroups.has(key) || completedOriginalGroups.has(key)) return;
-    if (window.CATALOG_ORIGINAL_PAGES?.[key] && !ORIGINAL_PAGE_COUNTS[key]) { completedOriginalGroups.add(key);return; }
+    const stages=ORIGINAL_STAGES[key];
+    if(!stages && window.CATALOG_ORIGINAL_PAGES?.[key]){completedOriginalGroups.add(key);return;}
     pendingOriginalGroups.add(key);
-    const count=ORIGINAL_PAGE_COUNTS[key] || 1;
-    function loadPart(n) {
+    const files=stages ? stages.map(n=>'stage-'+String(n).padStart(2,'0')) :
+      Array.from({length:ORIGINAL_PAGE_COUNTS[key]||1},(_,i)=>(ORIGINAL_PAGE_COUNTS[key]||1)>1?key+'-part'+(i+1):key);
+    function next(i){
+      if(i>=files.length){pendingOriginalGroups.delete(key);completedOriginalGroups.add(key);if(selectedCatalogKey===key)render();return;}
+      const filename=files[i];
+      if(loadedOriginalStages.has(filename)){next(i+1);return;}
       const script=document.createElement('script');
-      const filename=count>1 ? key+'-part'+n : key;
-      script.src='./catalog-original-pages/'+encodeURIComponent(filename)+'.js?v=20261119-all-originals3';
+      script.src='./catalog-original-pages/'+encodeURIComponent(filename)+'.js?v=20261119-all-originals4';
       script.async=true;
-      script.onload=()=>{if(selectedCatalogKey===key)render();if(n<count)loadPart(n+1);else{pendingOriginalGroups.delete(key);completedOriginalGroups.add(key);}};
+      script.onload=()=>{loadedOriginalStages.add(filename);if(selectedCatalogKey===key)render();next(i+1);};
       script.onerror=()=>{pendingOriginalGroups.delete(key);script.remove();console.warn('Original catalogue image missing:',filename);};
       document.head.appendChild(script);
     }
-    loadPart(1);
+    next(0);
   }
 
   function requestPhotoGroup() {
