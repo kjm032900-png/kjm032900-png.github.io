@@ -4,6 +4,9 @@ on:
     paths:
       - 'catalog-colors.json'
       - 'colors.js'
+      - 'eclass-sprites.js'
+      - 'catalog-photo-atlases/**'
+      - 'scripts/verify-photo-atlases.mjs'
       - 'colors.html'
       - 'colors.css'
       - 'content.json'
@@ -24,8 +27,13 @@ jobs:
       - name: Verify JavaScript syntax
         run: |
           node --check colors.js
+          node --check eclass-sprites.js
+          node --check scripts/verify-photo-atlases.mjs
+          for file in catalog-photo-atlases/*.js; do node --check "$file"; done
           node --check scripts/verify-catalog-colors.mjs
       - name: Verify PDF crop helper Python syntax
         run: python -m py_compile scripts/catalog_crop.py
+      - name: Check original PDF photo atlases, page references and WebP payloads
+        run: node scripts/verify-photo-atlases.mjs
       - name: Verify catalogue grouping, provenance and approved assets
         run: node scripts/verify-catalog-colors.mjs
