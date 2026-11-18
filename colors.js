@@ -85,6 +85,19 @@
 
   const PHOTO_GROUPS = new Set(["a-class","c-class","cla","s-class","gla","glb","glc","gle","gls","g-class","electric-cla","electric-glb","electric-glc","eqa","eqb","eqe","eqe-suv","eqs","eqs-suv","electric-g-class","amg-a-class","amg-cla","amg-e-class","amg-glb","amg-glc","amg-gle","amg-sl","amg-cle-coupe","amg-cle-cabriolet","amg-gt-coupe","amg-gt-4door","maybach-gls","maybach-sl","v-class","cle","maybach-s-class","maybach-eqs-suv"]);
   const pendingPhotoGroups = new Set();
+  const ORIGINAL_BUNDLE_GROUPS = new Set(['a-class']);
+  const originalLoading = new Set();
+  function requestOriginalBundle() {
+    const key = selectedCatalogKey;
+    if (!ORIGINAL_BUNDLE_GROUPS.has(key) || originalLoading.has(key) || window.CATALOG_ORIGINAL_PAGES?.[key]) return;
+    originalLoading.add(key);
+    const script = document.createElement('script');
+    script.src = './catalog-originals-bundles/' + encodeURIComponent(key) + '.js?v=20261119';
+    script.onload = () => {originalLoading.delete(key);if(selectedCatalogKey===key)render();};
+    script.onerror = () => {originalLoading.delete(key);console.warn('Could not load full resolution originals:',key);};
+    document.head.appendChild(script);
+  }
+  function embeddedOriginal(item){return window.CATALOG_ORIGINAL_PAGES?.[selectedCatalogKey]?.[String(item.sourcePage)] || null;}
 
   function requestPhotoGroup() {
     const key = selectedCatalogKey;
@@ -170,6 +183,15 @@
       img.loading = 'lazy';
       button.appendChild(img);
       button.addEventListener('click', () => expandPhoto(original));
+    } else if (embeddedOriginal(item)) {
+      const imageUrl = embeddedOriginal(item);
+      const img = document.createElement('img');
+      img.className = 'catalog-original';
+      img.src = imageUrl;
+      img.alt = item.code + ' ' + item.name + ' 공식 카탈로그 원본';
+      img.loading = 'lazy';
+      button.appendChild(img);
+      button.addEventListener('click', () => expandPhoto({...item, image:imageUrl, originalApproved:true}));
     } else if (sprite) {
       const swatch = document.createElement('div');
       swatch.className = 'photo-sprite';
@@ -286,6 +308,7 @@
     configureCatalogChoice();
     render();
     requestPhotoGroup();
+    requestOriginalBundle();
   }
 
   function boot() {
@@ -329,6 +352,7 @@
     selectedCatalogKey = event.target.value;
     render();
     requestPhotoGroup();
+    requestOriginalBundle();
   });
 
   tabs.forEach((tab) => {
