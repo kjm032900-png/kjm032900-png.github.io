@@ -276,6 +276,15 @@
     container.hidden = false;
   }
 
+  function matchesSelectedBodyStyle(item) {
+    if (!item || !item.bodyStyle) return true;
+    const isCoupe = (v) => /Coupé|Coupe/i.test(v);
+    const isCabriolet = (v) => /Cabriolet/i.test(v);
+    if (/CLE/i.test(family)) return isCabriolet(family) === isCabriolet(item.bodyStyle);
+    if (/GLC|GLE/i.test(family)) return isCoupe(family) === isCoupe(item.bodyStyle);
+    return true;
+  }
+
   function render() {
     const catalog = getCatalog();
     const title = catalog && catalog.title ? catalog.title : family;
@@ -317,7 +326,7 @@
       renderStatus('공식 카탈로그의 해당 판본·정식 명칭·사진 사용 권한을 확인 중입니다. 검증 전에는 임의 색상이나 유사 사진을 표시하지 않습니다.', true);
       return;
     }
-    const items = Array.isArray(catalog[activeTab]) ? catalog[activeTab] : [];
+    const items = (Array.isArray(catalog[activeTab]) ? catalog[activeTab] : []).filter(matchesSelectedBodyStyle);
     if (!items.length) {
       renderStatus(supportedTabs[activeTab] + ' 자료가 아직 검증되지 않았습니다. 확인된 항목만 등록됩니다.', true);
       return;
