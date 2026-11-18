@@ -16,6 +16,7 @@
   let family = '';
   let activeTab = 'exterior';
   let requestedTrim = '';
+  let selectedCatalogKey = '';
   const officialCatalog = 'https://www.mercedes-benz.co.kr/passengercars/models/catalog.html';
 
   function textNode(tag, cssClass, value) {
@@ -32,8 +33,36 @@
   }
 
   function getCatalog() {
-    const key = catalogData.familyToCatalog[family];
+    const key = selectedCatalogKey || catalogData.familyToCatalog[family];
+    if (catalogData.familyCatalogChoices?.[family] && !selectedCatalogKey) return null;
     return key ? catalogData.catalogGroups[key] : null;
+  }
+
+  function configureCatalogChoice() {
+    const choices = catalogData.familyCatalogChoices?.[family] || [];
+    const wrapper = byId('catalogChooser');
+    const select = byId('catalogKind');
+    wrapper.hidden = !choices.length;
+    select.replaceChildren();
+    if (!choices.length) {
+      selectedCatalogKey = catalogData.familyToCatalog[family] || '';
+      return;
+    }
+    const hint = document.createElement('option');
+    hint.value = '';
+    hint.textContent = '차체 유형을 선택해 주세요';
+    select.appendChild(hint);
+    for (const id of choices) {
+      const group = catalogData.catalogGroups[id];
+      if (!group) continue;
+      const option = document.createElement('option');
+      option.value = id;
+      option.textContent = group.title;
+      select.appendChild(option);
+    }
+    const override = catalogData.trimCatalogOverrides?.[requestedTrim];
+    selectedCatalogKey = choices.includes(override) ? override : '';
+    select.value = selectedCatalogKey;
   }
 
   function optionPriceStatus(value) {
@@ -109,7 +138,12 @@
     byId('modelDetails').textContent = (hasRequestedTrim ? '선택한 트림: ' + requestedTrim + ' · ' : '')
       + '같은 모델군은 카탈로그 색상 목록을 공유합니다. 트림별 실제 주문 가능 여부는 별도 확인이 필요합니다.';
 
-    tabs.forEach((tab) => {
+    byId('catalogKind').addEventListener('change', (event) => {
+    selectedCatalogKey = event.target.value;
+    render();
+  });
+
+  tabs.forEach((tab) => {
       const selected = tab.dataset.tab === activeTab;
       tab.classList.toggle('is-active', selected);
       tab.setAttribute('aria-selected', String(selected));
@@ -117,6 +151,10 @@
     byId('colorPanel').setAttribute('aria-labelledby', 'tab-' + activeTab);
 
     grid.replaceChildren();
+    if (catalogData.familyCatalogChoices?.[family] && !selectedCatalogKey) {
+      renderStatus('이 모델군은 공식 카탈로그가 둘 이상입니다. 위에서 쿠페·카브리올레 또는 GT 쿠페·4도어 중 해당 카탈로그를 선택해 주세요.', true);
+      return;
+    }
     if (!catalog || catalog.reviewStatus !== 'verified' || !catalog.sourceEdition || !catalog.sourceDocumentUrl) {
       renderStatus('공식 카탈로그의 해당 판본·정식 명칭·사진 사용 권한을 확인 중입니다. 검증 전에는 임의 색상이나 유사 사진을 표시하지 않습니다.', true);
       return;
@@ -135,6 +173,7 @@
     family = next;
     familySelect.value = next;
     if (resetTrim) requestedTrim = '';
+    configureCatalogChoice();
     render();
   }
 
