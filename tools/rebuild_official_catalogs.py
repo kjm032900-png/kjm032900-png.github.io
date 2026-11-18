@@ -73,11 +73,11 @@ def rebuild_g63(group, pdf):
         # A G-Class catalogue has repeated navigation headings on each page.
         # Require actual equipment codes, not a navigation heading alone.
         kind = None
-        if re.search(r"(?<![A-Z0-9])\\d{3}U\\s*[-–]", text):
+        if re.search(r"(?<![A-Z0-9])\d{3}U\s*[-–]", text):
             kind = "exterior"
-        elif re.search(r"(?<![A-Z0-9])\\d{3}A\\s*[-–]", text):
+        elif re.search(r"(?<![A-Z0-9])\d{3}A\s*[-–]", text):
             kind = "seats"
-        elif re.search(r"(?<![A-Z0-9])(?:ZG\\d|VA\\d|H\\d{2})\\s*[-–]", text):
+        elif re.search(r"(?<![A-Z0-9])(?:ZG\d|VA\d|H\d{2})\s*[-–]", text):
             kind = "interiorTrims"
         if kind is None:
             continue
