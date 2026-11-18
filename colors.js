@@ -118,7 +118,7 @@
   const completedOriginalGroups = new Set();
   function requestOriginalPages() {
     const key=selectedCatalogKey;
-    if (!key || !ORIGINAL_PAGE_GROUPS.has(key) || pendingOriginalGroups.has(key) || completedOriginalGroups.has(key)) return;
+    if (!key || ORIGINAL_BUNDLE_GROUPS.has(key) || !ORIGINAL_PAGE_GROUPS.has(key) || pendingOriginalGroups.has(key) || completedOriginalGroups.has(key)) return;
     const stages=ORIGINAL_STAGES[key];
     if(!stages && window.CATALOG_ORIGINAL_PAGES?.[key]){completedOriginalGroups.add(key);return;}
     pendingOriginalGroups.add(key);
