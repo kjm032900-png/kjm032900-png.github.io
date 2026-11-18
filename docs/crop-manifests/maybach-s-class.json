@@ -1,0 +1,458 @@
+{
+  "group": "maybach-s-class",
+  "pdf_sha256": "39a1402296ee078aada8676bff38cc37d45350de11238713076383ad68816e22",
+  "sourceFileName": "The_new_Mercedes-Maybach_S-Class_Catalogue_20260811.pdf",
+  "crops": [
+    {
+      "page": 45,
+      "rect": [
+        150,
+        735,
+        625,
+        955
+      ],
+      "filename": "exterior-197u"
+    },
+    {
+      "page": 45,
+      "rect": [
+        750,
+        735,
+        1225,
+        955
+      ],
+      "filename": "exterior-885u"
+    },
+    {
+      "page": 45,
+      "rect": [
+        1335,
+        735,
+        1810,
+        955
+      ],
+      "filename": "exterior-993u"
+    },
+    {
+      "page": 45,
+      "rect": [
+        150,
+        1085,
+        625,
+        1300
+      ],
+      "filename": "exterior-802u"
+    },
+    {
+      "page": 45,
+      "rect": [
+        750,
+        1085,
+        1225,
+        1300
+      ],
+      "filename": "exterior-831u"
+    },
+    {
+      "page": 45,
+      "rect": [
+        1335,
+        1085,
+        1810,
+        1300
+      ],
+      "filename": "exterior-989u"
+    },
+    {
+      "page": 46,
+      "rect": [
+        150,
+        735,
+        625,
+        955
+      ],
+      "filename": "exterior-040u"
+    },
+    {
+      "page": 46,
+      "rect": [
+        750,
+        735,
+        1225,
+        955
+      ],
+      "filename": "exterior-188u"
+    },
+    {
+      "page": 46,
+      "rect": [
+        1335,
+        735,
+        1810,
+        955
+      ],
+      "filename": "exterior-595u"
+    },
+    {
+      "page": 46,
+      "rect": [
+        150,
+        1085,
+        625,
+        1300
+      ],
+      "filename": "exterior-715u"
+    },
+    {
+      "page": 46,
+      "rect": [
+        750,
+        1085,
+        1225,
+        1300
+      ],
+      "filename": "exterior-771u"
+    },
+    {
+      "page": 46,
+      "rect": [
+        1335,
+        1085,
+        1810,
+        1300
+      ],
+      "filename": "exterior-922u"
+    },
+    {
+      "page": 47,
+      "rect": [
+        150,
+        735,
+        625,
+        955
+      ],
+      "filename": "exterior-032u"
+    },
+    {
+      "page": 47,
+      "rect": [
+        750,
+        735,
+        1225,
+        955
+      ],
+      "filename": "exterior-041u"
+    },
+    {
+      "page": 47,
+      "rect": [
+        1335,
+        735,
+        1810,
+        955
+      ],
+      "filename": "exterior-056u"
+    },
+    {
+      "page": 47,
+      "rect": [
+        150,
+        1085,
+        625,
+        1300
+      ],
+      "filename": "exterior-190u"
+    },
+    {
+      "page": 47,
+      "rect": [
+        750,
+        1085,
+        1225,
+        1300
+      ],
+      "filename": "exterior-255u"
+    },
+    {
+      "page": 47,
+      "rect": [
+        1335,
+        1085,
+        1810,
+        1300
+      ],
+      "filename": "exterior-378u"
+    },
+    {
+      "page": 48,
+      "rect": [
+        150,
+        735,
+        625,
+        955
+      ],
+      "filename": "exterior-659u"
+    },
+    {
+      "page": 48,
+      "rect": [
+        750,
+        735,
+        1225,
+        955
+      ],
+      "filename": "exterior-677u"
+    },
+    {
+      "page": 48,
+      "rect": [
+        1335,
+        735,
+        1810,
+        955
+      ],
+      "filename": "exterior-934u"
+    },
+    {
+      "page": 48,
+      "rect": [
+        150,
+        1085,
+        625,
+        1300
+      ],
+      "filename": "exterior-c12"
+    },
+    {
+      "page": 48,
+      "rect": [
+        750,
+        1085,
+        1225,
+        1300
+      ],
+      "filename": "exterior-c23"
+    },
+    {
+      "page": 48,
+      "rect": [
+        1335,
+        1085,
+        1810,
+        1300
+      ],
+      "filename": "exterior-c24"
+    },
+    {
+      "page": 49,
+      "rect": [
+        150,
+        735,
+        625,
+        955
+      ],
+      "filename": "exterior-c28"
+    },
+    {
+      "page": 49,
+      "rect": [
+        750,
+        735,
+        1225,
+        955
+      ],
+      "filename": "exterior-c31"
+    },
+    {
+      "page": 49,
+      "rect": [
+        1335,
+        735,
+        1810,
+        955
+      ],
+      "filename": "exterior-c33"
+    },
+    {
+      "page": 49,
+      "rect": [
+        150,
+        1085,
+        625,
+        1300
+      ],
+      "filename": "exterior-c37"
+    },
+    {
+      "page": 49,
+      "rect": [
+        750,
+        1085,
+        1225,
+        1300
+      ],
+      "filename": "exterior-c38"
+    },
+    {
+      "page": 49,
+      "rect": [
+        1335,
+        1085,
+        1810,
+        1300
+      ],
+      "filename": "exterior-c41"
+    },
+    {
+      "page": 40,
+      "rect": [
+        880,
+        170,
+        1160,
+        525
+      ],
+      "filename": "seats-533a"
+    },
+    {
+      "page": 40,
+      "rect": [
+        1390,
+        170,
+        1670,
+        525
+      ],
+      "filename": "seats-534a"
+    },
+    {
+      "page": 40,
+      "rect": [
+        880,
+        600,
+        1160,
+        955
+      ],
+      "filename": "seats-535a"
+    },
+    {
+      "page": 41,
+      "rect": [
+        880,
+        170,
+        1160,
+        525
+      ],
+      "filename": "seats-941a"
+    },
+    {
+      "page": 41,
+      "rect": [
+        1390,
+        170,
+        1670,
+        525
+      ],
+      "filename": "seats-991a"
+    },
+    {
+      "page": 41,
+      "rect": [
+        880,
+        600,
+        1160,
+        955
+      ],
+      "filename": "seats-992a"
+    },
+    {
+      "page": 41,
+      "rect": [
+        1390,
+        600,
+        1670,
+        955
+      ],
+      "filename": "seats-993a"
+    },
+    {
+      "page": 42,
+      "rect": [
+        880,
+        170,
+        1160,
+        525
+      ],
+      "filename": "seats-996a"
+    },
+    {
+      "page": 42,
+      "rect": [
+        1390,
+        170,
+        1670,
+        525
+      ],
+      "filename": "seats-997a"
+    },
+    {
+      "page": 43,
+      "rect": [
+        880,
+        170,
+        1160,
+        525
+      ],
+      "filename": "interiorTrims-h17"
+    },
+    {
+      "page": 43,
+      "rect": [
+        1390,
+        170,
+        1670,
+        525
+      ],
+      "filename": "interiorTrims-h38"
+    },
+    {
+      "page": 44,
+      "rect": [
+        880,
+        170,
+        1160,
+        525
+      ],
+      "filename": "interiorTrims-61u"
+    },
+    {
+      "page": 44,
+      "rect": [
+        1390,
+        170,
+        1670,
+        525
+      ],
+      "filename": "interiorTrims-65u"
+    },
+    {
+      "page": 44,
+      "rect": [
+        880,
+        600,
+        1160,
+        955
+      ],
+      "filename": "interiorTrims-71u"
+    },
+    {
+      "page": 44,
+      "rect": [
+        1390,
+        600,
+        1670,
+        955
+      ],
+      "filename": "interiorTrims-75u"
+    }
+  ],
+  "note": "Crop rectangles are preview-based and require human visual QA; no permission to republish is asserted."
+}
