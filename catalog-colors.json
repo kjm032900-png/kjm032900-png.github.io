@@ -2447,13 +2447,339 @@
       "title": "Mercedes-AMG GT Coupé",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 04월 24일, 25년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "26"
+        },
+        {
+          "code": "914U",
+          "name": "썬 옐로우",
+          "sourcePage": "26"
+        },
+        {
+          "code": "922U",
+          "name": "하이테크 실버",
+          "sourcePage": "26"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "26"
+        },
+        {
+          "code": "992U",
+          "name": "셀레나이트 그레이",
+          "sourcePage": "26"
+        },
+        {
+          "code": "056U",
+          "name": "MANUFAKTUR 나이트 블랙 마그노",
+          "sourcePage": "26",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "190U",
+          "name": "MANUFAKTUR 실리콘 그레이",
+          "sourcePage": "27",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "376U",
+          "name": "MANUFAKTUR 그린 헬 마그노",
+          "sourcePage": "27",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "379U",
+          "name": "MANUFAKTUR 오렌지 플레임",
+          "sourcePage": "27",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "464U",
+          "name": "MANUFAKTUR 데저트 샌드",
+          "sourcePage": "27",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "593U",
+          "name": "MANUFAKTUR 스펙트럴 블루 마그노",
+          "sourcePage": "27",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "658U",
+          "name": "MANUFAKTUR 코퍼 오렌지 마그노",
+          "sourcePage": "27",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "659U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 마그노",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "660U",
+          "name": "MANUFAKTUR 루벨라이트 레드",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "734U",
+          "name": "MANUFAKTUR 하이테크 실버 마그노",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "818U",
+          "name": "MANUFAKTUR 그라파이트 그레이 마그노",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "934U",
+          "name": "MANUFAKTUR 빈티지 블루 솔리드",
+          "sourcePage": "28",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이 솔리드",
+          "sourcePage": "29",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "964U",
+          "name": "MANUFAKTUR 하이퍼 블루 마그노",
+          "sourcePage": "29",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드 브라이트",
+          "sourcePage": "29",
+          "priceStatus": "paid",
+          "applicability": "유료옵션"
+        }
+      ],
+      "seats": [
+        {
+          "code": "807A",
+          "name": "나파 가죽 레드페퍼/블랙",
+          "sourcePage": "20",
+          "priceStatus": "standard",
+          "applicability": "기본사양",
+          "notes": "카탈로그: 마키아토 베이지 MANUFAKTUR 마이크로컷 루프 라이너 및 마키아토 색상 안전벨트 선택 시 적용 불가"
+        },
+        {
+          "code": "801A",
+          "name": "나파 가죽 블랙",
+          "sourcePage": "20",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "카탈로그: 마키아토 베이지 MANUFAKTUR 마이크로컷 루프 라이너 및 마키아토 색상 안전벨트 선택 시 적용 불가"
+        },
+        {
+          "code": "804A",
+          "name": "나파 가죽 시에나 브라운/블랙",
+          "sourcePage": "20",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "카탈로그: 마키아토 베이지 MANUFAKTUR 마이크로컷 루프 라이너 및 마키아토 색상 안전벨트 선택 시 적용 불가"
+        },
+        {
+          "code": "808A",
+          "name": "나파 가죽 세이지 그레이/블랙",
+          "sourcePage": "20",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "카탈로그: 마키아토 베이지 MANUFAKTUR 마이크로컷 루프 라이너 및 마키아토 색상 안전벨트 선택 시 적용 불가"
+        },
+        {
+          "code": "952A",
+          "name": "MANUFAKTUR 나파 가죽 요트 블루/블랙",
+          "sourcePage": "21",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "카탈로그: MANUFAKTUR 인테리어 패키지 선택 시 적용 가능"
+        },
+        {
+          "code": "954A",
+          "name": "MANUFAKTUR 나파 가죽 토바코 브라운/블랙",
+          "sourcePage": "21",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "카탈로그: MANUFAKTUR 인테리어 패키지 선택 시 적용 가능"
+        },
+        {
+          "code": "955A",
+          "name": "MANUFAKTUR 나파 가죽 사바나 베이지/블랙",
+          "sourcePage": "21",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "카탈로그: MANUFAKTUR 인테리어 패키지 선택 시 적용 가능"
+        },
+        {
+          "code": "956A",
+          "name": "MANUFAKTUR 나파 가죽 셰이디 그린/블랙",
+          "sourcePage": "21",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "카탈로그: MANUFAKTUR 인테리어 패키지 선택 시 적용 가능"
+        },
+        {
+          "code": "957A",
+          "name": "MANUFAKTUR 나파 가죽 미스틱 레드/블랙",
+          "sourcePage": "21",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "카탈로그: MANUFAKTUR 인테리어 패키지 선택 시 적용 가능"
+        },
+        {
+          "code": "958A",
+          "name": "MANUFAKTUR 나파 가죽 로제 그레이/블랙",
+          "sourcePage": "21",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "카탈로그: MANUFAKTUR 인테리어 패키지 선택 시 적용 가능"
+        },
+        {
+          "code": "967A",
+          "name": "MANUFAKTUR 나파 가죽 클래식 레드/블랙",
+          "sourcePage": "22",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "카탈로그: MANUFAKTUR 인테리어 패키지 선택 시 적용 가능"
+        },
+        {
+          "code": "824A",
+          "name": "MANUFAKTUR 나파 가죽 트러플 브라운/블랙",
+          "sourcePage": "22",
+          "priceStatus": "paid",
+          "applicability": "유료옵션",
+          "notes": "카탈로그: 블랙 색상 루프라이너 및 네바 그레이 색상 MANUFAKTUR 마이크로컷 루프 라이너 선택 시 적용 불가"
+        },
+        {
+          "code": "825A",
+          "name": "MANUFAKTUR 나파 가죽 크리스탈 화이트/블랙",
+          "sourcePage": "22",
+          "priceStatus": "paid",
+          "applicability": "유료옵션",
+          "notes": "카탈로그: 블랙 색상 루프라이너 및 마키아토 베이지 색상 MANUFAKTUR 마이크로컷 루프 라이너 선택 시 적용 불가"
+        },
+        {
+          "code": "835A",
+          "name": "MANUFAKTUR 나파 가죽 마키아토 베이지/티타늄 그레이",
+          "sourcePage": "22",
+          "priceStatus": "paid",
+          "applicability": "유료옵션",
+          "notes": "카탈로그: 블랙 색상 루프라이너 및 네바 그레이 색상 MANUFAKTUR 마이크로컷 루프 라이너 선택 시 적용 불가"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "H70",
+          "name": "AMG 알루미늄 트림",
+          "sourcePage": "23",
+          "priceStatus": "standard",
+          "applicability": "기본사양",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H73",
+          "name": "AMG 카본 트림",
+          "sourcePage": "23",
+          "priceStatus": "paid",
+          "applicability": "유료옵션",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H94",
+          "name": "MANUFAKTUR 블랙 크롬 트림",
+          "sourcePage": "23",
+          "priceStatus": "paid",
+          "applicability": "유료옵션",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H97",
+          "name": "오픈 포어 그레이 우드 트림",
+          "sourcePage": "23",
+          "priceStatus": "paid",
+          "applicability": "유료옵션",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H98",
+          "name": "오픈 포어 브라운 애쉬 우드 트림, 알루미늄 라인",
+          "sourcePage": "23",
+          "priceStatus": "paid",
+          "applicability": "유료옵션",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "58H",
+          "name": "MANUFAKTUR 코퍼 오렌지 마그노 트림",
+          "sourcePage": "23",
+          "priceStatus": "paid",
+          "applicability": "유료옵션",
+          "category": "인테리어 트림",
+          "notes": "카탈로그: MANUFAKTUR 코퍼 오렌지 마그노 선택 시 적용 가능"
+        },
+        {
+          "code": "61U",
+          "name": "MANUFAKTUR 마이크로컷 루프 라이너 블랙",
+          "sourcePage": "24",
+          "priceStatus": "standard",
+          "applicability": "기본사양",
+          "category": "루프라이너"
+        },
+        {
+          "code": "65U",
+          "name": "MANUFAKTUR 마이크로컷 루프 라이너 마키아토 베이지",
+          "sourcePage": "24",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "category": "루프라이너"
+        },
+        {
+          "code": "69U",
+          "name": "MANUFAKTUR 마이크로컷 루프 라이너 블랙",
+          "sourcePage": "24",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "category": "루프라이너"
+        }
+      ],
       "sourceFileName": "The new Mercedes-AMG GT Coupe_Catalogue_260424.pdf",
-      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
+      "verificationNote": "25MY 공식 GT Coupé 카탈로그 20~29쪽 기준. 현재 홈페이지의 GT 쿠페 일부는 27MY이므로 주문 가능 여부 및 최신 변경 사항 별도 확인 필수. 재게시 사진 권한 미확인.",
+      "sourceSha256": "26276c8c89821d2c24fd1678d180a1cfac9acb5d39507c065391a4ad67618fdc"
     },
     "amg-gt-4door": {
       "title": "Mercedes-AMG GT 4-Door Coupé",
