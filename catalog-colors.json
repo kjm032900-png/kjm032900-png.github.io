@@ -2477,13 +2477,179 @@
       "title": "EQS SUV",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 09월 07일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "55"
+        },
+        {
+          "code": "040U",
+          "name": "블랙",
+          "sourcePage": "56"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "57"
+        },
+        {
+          "code": "842U",
+          "name": "소다라이트 블루",
+          "sourcePage": "58"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "59"
+        },
+        {
+          "code": "992U",
+          "name": "셀레나이트 그레이",
+          "sourcePage": "60"
+        },
+        {
+          "code": "771U",
+          "name": "벨벳 브라운",
+          "sourcePage": "61"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "62"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이 솔리드",
+          "sourcePage": "63"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "64"
+        }
+      ],
+      "seats": [
+        {
+          "code": "201A",
+          "name": "가죽, 블랙/스페이스 그레이",
+          "sourcePage": "35"
+        },
+        {
+          "code": "211A",
+          "name": "가죽, 블랙/발라오 브라운",
+          "sourcePage": "36"
+        },
+        {
+          "code": "221A",
+          "name": "가죽, 블랙/비스케이 블루",
+          "sourcePage": "37"
+        },
+        {
+          "code": "205A",
+          "name": "가죽, 마키아토 베이지/스페이스 그레이",
+          "sourcePage": "38"
+        },
+        {
+          "code": "209A",
+          "name": "가죽, 네바 그레이/발라오 브라운",
+          "sourcePage": "39"
+        },
+        {
+          "code": "801A",
+          "name": "나파 가죽, 블랙/스페이스 그레이",
+          "sourcePage": "40"
+        },
+        {
+          "code": "811A",
+          "name": "나파 가죽, 블랙/발라오 브라운",
+          "sourcePage": "41"
+        },
+        {
+          "code": "821A",
+          "name": "나파 가죽, 블랙/비스케이 블루",
+          "sourcePage": "42"
+        },
+        {
+          "code": "805A",
+          "name": "나파 가죽, 마키아토 베이지/스페이스 그레이",
+          "sourcePage": "43"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "44",
+          "category": "루프라이너"
+        },
+        {
+          "code": "55U",
+          "name": "루프라이너, 마키아토 베이지",
+          "sourcePage": "45",
+          "category": "루프라이너"
+        },
+        {
+          "code": "59U",
+          "name": "루프라이너, 네바 그레이",
+          "sourcePage": "46",
+          "category": "루프라이너"
+        },
+        {
+          "code": "61U",
+          "name": "MICROCUT 루프라이너, 블랙",
+          "sourcePage": "47",
+          "category": "루프라이너"
+        },
+        {
+          "code": "69U",
+          "name": "MICROCUT 루프라이너, 네바 그레이",
+          "sourcePage": "48",
+          "category": "루프라이너"
+        },
+        {
+          "code": "H08",
+          "name": "앤트러사이트 라임 우드 트림",
+          "sourcePage": "49",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "07H",
+          "name": "선상 오픈-포어 메이플 우드 트림",
+          "sourcePage": "50",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H20",
+          "name": "브라운 오픈-포어 마그놀리아 우드 트림, 메르세데스-벤츠 패턴",
+          "sourcePage": "51",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H39",
+          "name": "선상 오픈-포어 월넛 우드 트림",
+          "sourcePage": "52",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "775",
+          "name": "센터콘솔, 앤트러상이트 라임 우드",
+          "sourcePage": "53",
+          "category": "센터콘솔"
+        },
+        {
+          "code": "689",
+          "name": "센터콘솔, 선상 오픈-포어 메이플 우드 트림",
+          "sourcePage": "54",
+          "category": "센터콘솔"
+        }
+      ],
       "sourceFileName": "Mercedes-Benz_The new EQS SUV_Catalogue_20260907.pdf",
-      "verificationNote": "사용자 자료 보관함에서 카탈로그 PDF 발견. 판본/컬러명/이미지/적용 조건 및 재게시 권한 확인 전(pending)."
+      "verificationNote": "공식 PDF 원문에서 모델별 컬러/시트/트림 페이지의 코드·명칭 확인; CLE는 Coupé/Cabriolet 색상별 차량 사진 차체 구분. 사진 외부 게시 권한 및 화질 QA 대기.",
+      "sourceSha256": "b077dc2c9f08772d9acdf3927b11659a80651a06f904c384ec296d039c887a39",
+      "exteriorDetails": []
     },
     "electric-g-class": {
       "title": "G-Class with EQ Technology",
@@ -4074,13 +4240,204 @@
       "title": "CLE Coupé & CLE Cabriolet",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 09월 21일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "44",
+          "bodyStyle": "CLE Coupé"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "45",
+          "bodyStyle": "CLE Coupé"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이",
+          "sourcePage": "46",
+          "bodyStyle": "CLE Coupé"
+        },
+        {
+          "code": "914U",
+          "name": "썬 옐로우",
+          "sourcePage": "47",
+          "bodyStyle": "CLE Coupé"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "48",
+          "bodyStyle": "CLE Coupé"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "49",
+          "bodyStyle": "CLE Coupé"
+        },
+        {
+          "code": "818U",
+          "name": "MANUFAKTUR 그라파이트 그레이 마그노",
+          "sourcePage": "50",
+          "bodyStyle": "CLE Coupé"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "51",
+          "bodyStyle": "CLE Coupé"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이",
+          "sourcePage": "52",
+          "bodyStyle": "CLE Coupé"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드 브라이트",
+          "sourcePage": "53",
+          "bodyStyle": "CLE Coupé"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "54",
+          "bodyStyle": "CLE Cabriolet"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "55",
+          "bodyStyle": "CLE Cabriolet"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이",
+          "sourcePage": "56",
+          "bodyStyle": "CLE Cabriolet"
+        },
+        {
+          "code": "914U",
+          "name": "썬 옐로우",
+          "sourcePage": "57",
+          "bodyStyle": "CLE Cabriolet"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "58",
+          "bodyStyle": "CLE Cabriolet"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "59",
+          "bodyStyle": "CLE Cabriolet"
+        },
+        {
+          "code": "818U",
+          "name": "MANUFAKTUR 그라파이트 그레이 마그노",
+          "sourcePage": "60",
+          "bodyStyle": "CLE Cabriolet"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "61",
+          "bodyStyle": "CLE Cabriolet"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이",
+          "sourcePage": "62",
+          "bodyStyle": "CLE Cabriolet"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드 브라이트",
+          "sourcePage": "63",
+          "bodyStyle": "CLE Cabriolet"
+        }
+      ],
+      "seats": [
+        {
+          "code": "101A",
+          "name": "아티코 가죽, 블랙",
+          "sourcePage": "32"
+        },
+        {
+          "code": "104A",
+          "name": "아티코 가죽, 통카 브라운/블랙",
+          "sourcePage": "33"
+        },
+        {
+          "code": "105A",
+          "name": "아티코 가죽, 마키아토 베이지/블랙",
+          "sourcePage": "34"
+        },
+        {
+          "code": "201A",
+          "name": "가죽, 블랙",
+          "sourcePage": "35"
+        },
+        {
+          "code": "204A",
+          "name": "가죽, 새들 브라운/블랙",
+          "sourcePage": "36"
+        },
+        {
+          "code": "205A",
+          "name": "가죽, 마키아토 베이지/블랙",
+          "sourcePage": "37"
+        },
+        {
+          "code": "207A",
+          "name": "가죽, 파워 레드/블랙",
+          "sourcePage": "38"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "H64",
+          "name": "메탈 스트럭처 트림",
+          "sourcePage": "39",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H04",
+          "name": "블랙 오픈포어 알루미늄 라인 우드 트림",
+          "sourcePage": "40",
+          "category": "인테리어 트림"
+        }
+      ],
       "sourceFileName": "The all new CLE Coupe n CLE Cabriolet_Catalogue_20260921.pdf",
-      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
+      "verificationNote": "공식 PDF 원문에서 모델별 컬러/시트/트림 페이지의 코드·명칭 확인; CLE는 Coupé/Cabriolet 색상별 차량 사진 차체 구분. 사진 외부 게시 권한 및 화질 QA 대기.",
+      "sourceSha256": "d6e8046bf4bde9977a46513eb4374215f95c7f38856e24ff4364a015aaf796b8",
+      "exteriorDetails": [
+        {
+          "code": "740",
+          "name": "패브릭 소프트 탑, 블랙",
+          "sourcePage": "41",
+          "category": "소프트톱"
+        },
+        {
+          "code": "747",
+          "name": "패브릭 소프트 탑, 레드",
+          "sourcePage": "42",
+          "category": "소프트톱"
+        },
+        {
+          "code": "754",
+          "name": "소프트탑, 그레이",
+          "sourcePage": "43",
+          "category": "소프트톱"
+        }
+      ]
     },
     "amg-cle-coupe": {
       "title": "Mercedes-AMG CLE Coupé",
