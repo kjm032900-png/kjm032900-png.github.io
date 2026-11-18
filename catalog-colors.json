@@ -447,17 +447,23 @@
         {
           "code": "149U",
           "name": "폴라 화이트",
-          "sourcePage": "65"
+          "sourcePage": "65",
+          "originalImage": "images/catalog-originals/e-class/page-065.webp",
+          "originalApproved": true
         },
         {
           "code": "188U",
           "name": "베르데 실버",
-          "sourcePage": "66"
+          "sourcePage": "66",
+          "originalImage": "images/catalog-originals/e-class/page-066.webp",
+          "originalApproved": true
         },
         {
           "code": "197U",
           "name": "옵시디안 블랙",
-          "sourcePage": "67"
+          "sourcePage": "67",
+          "originalImage": "images/catalog-originals/e-class/page-067.webp",
+          "originalApproved": true
         },
         {
           "code": "595U",
