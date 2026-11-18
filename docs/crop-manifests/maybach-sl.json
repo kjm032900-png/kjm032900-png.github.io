@@ -1,0 +1,58 @@
+{
+  "group": "maybach-sl",
+  "pdf_sha256": "6b3ef6fb8d193ea2da55f1f34cd3b117027872854cc8cc7078ceb9027c300c55",
+  "sourceFileName": "The all-new Mercedes-Maybach SL_Catalogue_20260424.pdf",
+  "crops": [
+    {
+      "page": 32,
+      "rect": [
+        430,
+        945,
+        905,
+        1145
+      ],
+      "filename": "exterior-393u"
+    },
+    {
+      "page": 32,
+      "rect": [
+        1020,
+        945,
+        1500,
+        1145
+      ],
+      "filename": "exterior-659u"
+    },
+    {
+      "page": 27,
+      "rect": [
+        880,
+        170,
+        1160,
+        525
+      ],
+      "filename": "seats-509a"
+    },
+    {
+      "page": 28,
+      "rect": [
+        880,
+        170,
+        1160,
+        525
+      ],
+      "filename": "interiorTrims-72h"
+    },
+    {
+      "page": 29,
+      "rect": [
+        880,
+        170,
+        1160,
+        525
+      ],
+      "filename": "interiorTrims-60u"
+    }
+  ],
+  "note": "Crop rectangles are preview-based and require human visual QA; no permission to republish is asserted."
+}
