@@ -153,7 +153,7 @@
       renderStatus('이 모델군은 공식 카탈로그가 둘 이상입니다. 위에서 쿠페·카브리올레 또는 GT 쿠페·4도어 중 해당 카탈로그를 선택해 주세요.', true);
       return;
     }
-    if (!catalog || !['verified','text_verified'].includes(catalog.reviewStatus) || !catalog.sourceEdition || !(catalog.sourceDocumentUrl || catalog.sourceLibraryFileId)) {
+    if (!catalog || !['verified','text_verified'].includes(catalog.reviewStatus) || !catalog.sourceEdition || !(catalog.sourceDocumentUrl || catalog.sourceFileName)) {
       renderStatus('공식 카탈로그의 해당 판본·정식 명칭·사진 사용 권한을 확인 중입니다. 검증 전에는 임의 색상이나 유사 사진을 표시하지 않습니다.', true);
       return;
     }
