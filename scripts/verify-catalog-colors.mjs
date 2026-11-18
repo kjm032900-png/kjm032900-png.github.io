@@ -33,13 +33,14 @@ for (const [key, group] of Object.entries(colors.catalogGroups)) {
   assert.ok(['pending', 'text_verified', 'verified', 'unavailable'].includes(group.reviewStatus), 'Invalid reviewStatus: ' + key);
   assert.ok(['exterior', 'seats', 'interiorTrims'].every((k) => Array.isArray(group[k])), 'Invalid tab data: ' + key);
   const items = [...group.exterior, ...group.seats, ...group.interiorTrims];
+  assert.ok(!Object.hasOwn(group, 'sourceLibraryFileId'), 'Private Library file ID must never be committed: ' + key);
   if (!['verified', 'text_verified'].includes(group.reviewStatus)) {
     assert.equal(items.length, 0, 'Unverified items must not publish: ' + key);
     continue;
   }
   assert.ok(group.sourceEdition, 'Catalogue edition required: ' + key);
   const officialWebSource = group.sourceDocumentUrl && /^https:\/\/(www\.mercedes-benz\.co\.kr|dam\.oneweb\.mercedes-benz\.com)\//.test(group.sourceDocumentUrl);
-  const localSource = group.sourceLibraryFileId && group.sourceFileName && group.sourceFileName.toLowerCase().endsWith('.pdf');
+  const localSource = group.sourceFileName && group.sourceFileName.toLowerCase().endsWith('.pdf');
   assert.ok(officialWebSource || localSource, 'Verified PDF source reference required: ' + key);
   if (group.reviewStatus === 'text_verified') {
     assert.ok(localSource, 'Text-only status needs a verified source PDF file: ' + key);
