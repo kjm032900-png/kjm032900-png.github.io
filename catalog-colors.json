@@ -475,38 +475,50 @@
         {
           "code": "771U",
           "name": "벨벳 브라운",
-          "sourcePage": "69"
+          "sourcePage": "69",
+          "originalImage": "images/catalog-originals/e-class/page-069.webp",
+          "originalApproved": true
         },
         {
           "code": "831U",
           "name": "그라파이트 그레이",
-          "sourcePage": "70"
+          "sourcePage": "70",
+          "originalImage": "images/catalog-originals/e-class/page-070.webp",
+          "originalApproved": true
         },
         {
           "code": "922U",
           "name": "하이 테크 실버",
-          "sourcePage": "71"
+          "sourcePage": "71",
+          "originalImage": "images/catalog-originals/e-class/page-071.webp",
+          "originalApproved": true
         },
         {
           "code": "885U",
           "name": "MANUFAKTUR 오팔라이트 화이트",
           "sourcePage": "72",
           "applicability": "유료옵션",
-          "priceStatus": "paid"
+          "priceStatus": "paid",
+          "originalImage": "images/catalog-originals/e-class/page-072.webp",
+          "originalApproved": true
         },
         {
           "code": "956U",
           "name": "MANUFAKTUR 알파인 그레이",
           "sourcePage": "73",
           "applicability": "유료옵션",
-          "priceStatus": "paid"
+          "priceStatus": "paid",
+          "originalImage": "images/catalog-originals/e-class/page-073.webp",
+          "originalApproved": true
         },
         {
           "code": "993U",
           "name": "MANUFAKTUR 파타고니아 레드",
           "sourcePage": "74",
           "applicability": "유료옵션",
-          "priceStatus": "paid"
+          "priceStatus": "paid",
+          "originalImage": "images/catalog-originals/e-class/page-074.webp",
+          "originalApproved": true
         }
       ],
       "seats": [
@@ -515,7 +527,9 @@
           "name": "아티코 가죽, 블랙",
           "sourcePage": "44",
           "applicability": "E 200 AVANTGARDE, E 200 EXCLUSIVE, E 220 d 4MATIC EXCLUSIVE 기본사양 / E 200 EXCLUSIVE 선택사양",
-          "priceStatus": "varies"
+          "priceStatus": "varies",
+          "originalImage": "images/catalog-originals/e-class/page-044.webp",
+          "originalApproved": true
         },
         {
           "code": "104A",
@@ -523,14 +537,18 @@
           "sourcePage": "45",
           "applicability": "E 200 AMG Line 기본사양 / E 200 AVANTGARDE 유료옵션",
           "notes": "*루프라이너, 블랙 선택 시 적용 가능",
-          "priceStatus": "varies"
+          "priceStatus": "varies",
+          "originalImage": "images/catalog-originals/e-class/page-045.webp",
+          "originalApproved": true
         },
         {
           "code": "105A",
           "name": "아티코 가죽, 마키아토 베이지/블랙",
           "sourcePage": "46",
           "applicability": "E 200 AMG Line 선택사양/E 200 AVANTGARDE 유료옵션",
-          "priceStatus": "varies"
+          "priceStatus": "varies",
+          "originalImage": "images/catalog-originals/e-class/page-046.webp",
+          "originalApproved": true
         },
         {
           "code": "114A",
@@ -538,70 +556,90 @@
           "sourcePage": "47",
           "applicability": "E 200 EXCLUSIVE 기본사양 / E 220 d 4MATIC EXCLUSIVE 유료옵션",
           "notes": "*루프라이너, 블랙 선택 시 적용 가능",
-          "priceStatus": "varies"
+          "priceStatus": "varies",
+          "originalImage": "images/catalog-originals/e-class/page-047.webp",
+          "originalApproved": true
         },
         {
           "code": "115A",
           "name": "아티코 가죽, 마키아토 베이지",
           "sourcePage": "48",
           "applicability": "E 200 EXCLUSIVE 선택사양 / E 220 d 4MATIC EXCLUSIVE 유료옵션",
-          "priceStatus": "varies"
+          "priceStatus": "varies",
+          "originalImage": "images/catalog-originals/e-class/page-048.webp",
+          "originalApproved": true
         },
         {
           "code": "201A",
           "name": "가죽, 블랙",
           "sourcePage": "49",
           "applicability": "E 300 4MATIC EXCLUSIVE, E 350 e 4MATIC EXCLUSIVE 기본사양 / E 300 4MATIC AMG Line, E 450 4MATIC AMG Line 선택사양",
-          "priceStatus": "varies"
+          "priceStatus": "varies",
+          "originalImage": "images/catalog-originals/e-class/page-049.webp",
+          "originalApproved": true
         },
         {
           "code": "221A",
           "name": "가죽, 블랙",
           "sourcePage": "50",
           "applicability": "E 300 4MATIC AMG Line, E 450 4MATIC AMG Line 기본사양",
-          "priceStatus": "standard"
+          "priceStatus": "standard",
+          "originalImage": "images/catalog-originals/e-class/page-050.webp",
+          "originalApproved": true
         },
         {
           "code": "205A",
           "name": "가죽, 마키아토 베이지/블랙",
           "sourcePage": "51",
           "applicability": "E 300 4MATIC AMG Line, E 450 4MATIC AMG Line 유료옵션",
-          "priceStatus": "paid"
+          "priceStatus": "paid",
+          "originalImage": "images/catalog-originals/e-class/page-051.webp",
+          "originalApproved": true
         },
         {
           "code": "214A",
           "name": "가죽, 통카 브라운",
           "sourcePage": "52",
           "applicability": "E 300 4MATIC EXCLUSIVE, E 300 4MATIC AMG Line, E 350 e 4MATIC EXCLUSIVE, E 450 4MATIC AMG Line 유료옵션",
-          "priceStatus": "paid"
+          "priceStatus": "paid",
+          "originalImage": "images/catalog-originals/e-class/page-052.webp",
+          "originalApproved": true
         },
         {
           "code": "215A",
           "name": "가죽, 마키아토 베이지",
           "sourcePage": "53",
           "applicability": "E 300 4MATIC EXCLUSIVE, E 350 e 4MATIC EXCLUSIVE 유료옵션",
-          "priceStatus": "paid"
+          "priceStatus": "paid",
+          "originalImage": "images/catalog-originals/e-class/page-053.webp",
+          "originalApproved": true
         },
         {
           "code": "801A",
           "name": "나파 가죽, 블랙",
           "sourcePage": "54",
           "applicability": "E 450 4MATIC EXCLUSIVE 기본사양",
-          "priceStatus": "standard"
+          "priceStatus": "standard",
+          "originalImage": "images/catalog-originals/e-class/page-054.webp",
+          "originalApproved": true
         },
         {
           "code": "814A",
           "name": "나파 가죽, 통카 브라운",
           "sourcePage": "55",
           "applicability": "E 450 4MATIC EXCLUSIVE 유료옵션",
-          "priceStatus": "paid"
+          "priceStatus": "paid",
+          "originalImage": "images/catalog-originals/e-class/page-055.webp",
+          "originalApproved": true
         },
         {
           "code": "808A",
           "name": "나파가죽, 네바 그레이/블랙",
           "sourcePage": "56",
           "applicability": "E 300 4MATIC EXCLUSIVE, E 300 4MATIC AMG Line, E 350 e 4MATIC EXCLUSIVE, E 450 4MATIC EXCLUSIVE, E 450 4MATIC AMG Line 유료옵션",
-          "priceStatus": "paid"
+          "priceStatus": "paid",
+          "originalImage": "images/catalog-originals/e-class/page-056.webp",
+          "originalApproved": true
         }
       ],
       "interiorTrims": [
@@ -611,7 +649,9 @@
           "sourcePage": "57",
           "applicability": "E 200 AVANTGARDE, E 200 EXCLUSIVE, E 200 AMG Line 기본사양",
           "category": "인테리어 트림",
-          "priceStatus": "standard"
+          "priceStatus": "standard",
+          "originalImage": "images/catalog-originals/e-class/page-057.webp",
+          "originalApproved": true
         },
         {
           "code": "11H",
@@ -619,7 +659,9 @@
           "sourcePage": "58",
           "applicability": "E 220 d 4MATIC EXCLUSIVE 기본사양",
           "category": "인테리어 트림",
-          "priceStatus": "standard"
+          "priceStatus": "standard",
+          "originalImage": "images/catalog-originals/e-class/page-058.webp",
+          "originalApproved": true
         },
         {
           "code": "14H",
@@ -627,7 +669,9 @@
           "sourcePage": "59",
           "applicability": "E 300 4MATIC EXCLUSIVE, E 350 e 4MATIC EXCLUSIVE 기본사양",
           "category": "인테리어 트림",
-          "priceStatus": "standard"
+          "priceStatus": "standard",
+          "originalImage": "images/catalog-originals/e-class/page-059.webp",
+          "originalApproved": true
         },
         {
           "code": "753",
@@ -635,7 +679,9 @@
           "sourcePage": "60",
           "applicability": "E 200 AVANTGARDE, E 200 EXCLUSIVE, E 200 AMG Line, E 220 d 4MATIC EXCLUSIVE, E 300 4MATIC AMG Line, E 450 4MATIC AMG Line 기본사양",
           "category": "센터콘솔",
-          "priceStatus": "standard"
+          "priceStatus": "standard",
+          "originalImage": "images/catalog-originals/e-class/page-060.webp",
+          "originalApproved": true
         },
         {
           "code": "667",
@@ -643,7 +689,9 @@
           "sourcePage": "61",
           "applicability": "E 300 4MATIC EXCLUSIVE, E 350 e 4MATIC EXCLUSIVE, E 450 4MATIC EXCLUSIVE 기본사양",
           "category": "센터콘솔",
-          "priceStatus": "standard"
+          "priceStatus": "standard",
+          "originalImage": "images/catalog-originals/e-class/page-061.webp",
+          "originalApproved": true
         },
         {
           "code": "58U",
@@ -651,7 +699,9 @@
           "sourcePage": "62",
           "applicability": "E 200 AVANTGARDE, E 220 d 4MATIC EXCLUSIVE 기본사양",
           "category": "루프라이너",
-          "priceStatus": "standard"
+          "priceStatus": "standard",
+          "originalImage": "images/catalog-originals/e-class/page-062.webp",
+          "originalApproved": true
         },
         {
           "code": "51U",
@@ -659,7 +709,9 @@
           "sourcePage": "63",
           "applicability": "E 200 EXCLUSIVE, E 200 AMG Line, E 300 4MATIC EXCLUSIVE, E 300 4MATIC AMG Line, E 350 e 4MATIC EXCLUSIVE, E 450 4MATIC EXCLUSIVE, E 450 4MAITC AMG Line 기본사양 / E 200 AVANTGARDE, E 220 d 4MATIC EXCLUSIVE 유료옵션",
           "category": "루프라이너",
-          "priceStatus": "varies"
+          "priceStatus": "varies",
+          "originalImage": "images/catalog-originals/e-class/page-063.webp",
+          "originalApproved": true
         },
         {
           "code": "55U",
@@ -667,7 +719,9 @@
           "sourcePage": "64",
           "applicability": "E 200 AMG Line, E 300 4MATIC AMG Line 제외 선택사양",
           "category": "루프라이너",
-          "priceStatus": "optional"
+          "priceStatus": "optional",
+          "originalImage": "images/catalog-originals/e-class/page-064.webp",
+          "originalApproved": true
         }
       ],
       "sourceFileName": "Mercedes-Benz_The new E-Class_Catalogue_20260424.pdf",
@@ -2959,231 +3013,301 @@
         {
           "code": "149U",
           "name": "폴라 화이트",
-          "sourcePage": "26"
+          "sourcePage": "26",
+          "originalImage": "images/catalog-originals/electric-g-class/page-026.webp",
+          "originalApproved": true
         },
         {
           "code": "197U",
           "name": "옵시디안 블랙",
-          "sourcePage": "26"
+          "sourcePage": "26",
+          "originalImage": "images/catalog-originals/electric-g-class/page-026.webp",
+          "originalApproved": true
         },
         {
           "code": "775U",
           "name": "이리디움 실버",
-          "sourcePage": "26"
+          "sourcePage": "26",
+          "originalImage": "images/catalog-originals/electric-g-class/page-026.webp",
+          "originalApproved": true
         },
         {
           "code": "859U",
           "name": "모하비 실버",
-          "sourcePage": "26"
+          "sourcePage": "26",
+          "originalImage": "images/catalog-originals/electric-g-class/page-026.webp",
+          "originalApproved": true
         },
         {
           "code": "842U",
           "name": "소달라이트 블루",
-          "sourcePage": "26"
+          "sourcePage": "26",
+          "originalImage": "images/catalog-originals/electric-g-class/page-026.webp",
+          "originalApproved": true
         },
         {
           "code": "896U",
           "name": "브릴리언트 블루",
-          "sourcePage": "27"
+          "sourcePage": "27",
+          "originalImage": "images/catalog-originals/electric-g-class/page-027.webp",
+          "originalApproved": true
         },
         {
           "code": "989U",
           "name": "에메랄드 그린",
-          "sourcePage": "27"
+          "sourcePage": "27",
+          "originalImage": "images/catalog-originals/electric-g-class/page-027.webp",
+          "originalApproved": true
         },
         {
           "code": "992U",
           "name": "셀레나이트 그레이",
-          "sourcePage": "27"
+          "sourcePage": "27",
+          "originalImage": "images/catalog-originals/electric-g-class/page-027.webp",
+          "originalApproved": true
         },
         {
           "code": "124U",
           "name": "MANUFAKTUR 클래식 그레이 논-메탈릭",
           "sourcePage": "28",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-028.webp",
+          "originalApproved": true
         },
         {
           "code": "464U",
           "name": "MANUFAKTUR 데저트 샌드 논-메탈릭",
           "sourcePage": "28",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-028.webp",
+          "originalApproved": true
         },
         {
           "code": "825U",
           "name": "MANUFAKTUR 딥 그린 논-메탈릭",
           "sourcePage": "28",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-028.webp",
+          "originalApproved": true
         },
         {
           "code": "904U",
           "name": "MANUFAKTUR 다크 블루 논-메탈릭",
           "sourcePage": "28",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-028.webp",
+          "originalApproved": true
         },
         {
           "code": "914U",
           "name": "MANUFAKTUR 썬 옐로우 논-메탈릭",
           "sourcePage": "28",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-028.webp",
+          "originalApproved": true
         },
         {
           "code": "934U",
           "name": "MANUFAKTUR 빈티지 블루 논-메탈릭",
           "sourcePage": "29",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-029.webp",
+          "originalApproved": true
         },
         {
           "code": "026U",
           "name": "MANUFAKTUR 오션 블루 메탈릭",
           "sourcePage": "29",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-029.webp",
+          "originalApproved": true
         },
         {
           "code": "041U",
           "name": "MANUFAKTUR 그라파이트 메탈릭",
           "sourcePage": "29",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-029.webp",
+          "originalApproved": true
         },
         {
           "code": "162U",
           "name": "MANUFAKTUR 사우스 씨 블루 메탈릭",
           "sourcePage": "29",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-029.webp",
+          "originalApproved": true
         },
         {
           "code": "255U",
           "name": "MANUFAKTUR 올리브 메탈릭",
           "sourcePage": "29",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-029.webp",
+          "originalApproved": true
         },
         {
           "code": "660U",
           "name": "MANUFAKTUR 루벨라이트 레드 메탈릭",
           "sourcePage": "30",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-030.webp",
+          "originalApproved": true
         },
         {
           "code": "693U",
           "name": "MANUFAKTUR 트레벌타인 베이지 메탈릭",
           "sourcePage": "30",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-030.webp",
+          "originalApproved": true
         },
         {
           "code": "963U",
           "name": "MANUFAKTUR 인디움 그레이 메탈릭",
           "sourcePage": "30",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-030.webp",
+          "originalApproved": true
         },
         {
           "code": "996U",
           "name": "MANUFAKTUR 하이신스 레드 메탈릭",
           "sourcePage": "30",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-030.webp",
+          "originalApproved": true
         },
         {
           "code": "885U",
           "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
           "sourcePage": "30",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-030.webp",
+          "originalApproved": true
         },
         {
           "code": "659U",
           "name": "MANUFAKTUR 오팔라이트 화이트 마그노",
           "sourcePage": "31",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-031.webp",
+          "originalApproved": true
         },
         {
           "code": "051U",
           "name": "MANUFAKTUR 플래티넘 마그노",
           "sourcePage": "31",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-031.webp",
+          "originalApproved": true
         },
         {
           "code": "054U",
           "name": "MANUFAKTUR 몬자 그레이 마그노",
           "sourcePage": "31",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-031.webp",
+          "originalApproved": true
         },
         {
           "code": "056U",
           "name": "MANUFAKTUR 나이트 블랙 마그노",
           "sourcePage": "31",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-031.webp",
+          "originalApproved": true
         },
         {
           "code": "164U",
           "name": "MANUFAKTUR 다크 올리브 마그노",
           "sourcePage": "31",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-031.webp",
+          "originalApproved": true
         },
         {
           "code": "271U",
           "name": "MANUFAKTUR 시트린 브라운 마그노",
           "sourcePage": "32",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-032.webp",
+          "originalApproved": true
         },
         {
           "code": "658U",
           "name": "MANUFAKTUR 쿠퍼 오렌지 마그노",
           "sourcePage": "32",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-032.webp",
+          "originalApproved": true
         },
         {
           "code": "677U",
           "name": "MANUFAKTUR 칼라하리 골드 마그노",
           "sourcePage": "32",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-032.webp",
+          "originalApproved": true
         },
         {
           "code": "795U",
           "name": "MANUFAKTUR 망가나이트 그레이 마그노",
           "sourcePage": "32",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-032.webp",
+          "originalApproved": true
         },
         {
           "code": "739U",
           "name": "MANUFAKTUR 올리브 마그노",
           "sourcePage": "32",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-032.webp",
+          "originalApproved": true
         },
         {
           "code": "644U",
           "name": "MANUFAKTUR 브릴리언트 블루 마그노",
           "sourcePage": "33",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-033.webp",
+          "originalApproved": true
         },
         {
           "code": "823U",
           "name": "MANUFAKTUR 히아신스 레드 마그노",
           "sourcePage": "33",
           "priceStatus": "paid",
-          "applicability": "유료옵션"
+          "applicability": "유료옵션",
+          "originalImage": "images/catalog-originals/electric-g-class/page-033.webp",
+          "originalApproved": true
         }
       ],
       "seats": [
@@ -3192,21 +3316,27 @@
           "name": "나파 가죽 블랙",
           "sourcePage": "16",
           "applicability": "기본사양",
-          "priceStatus": "standard"
+          "priceStatus": "standard",
+          "originalImage": "images/catalog-originals/electric-g-class/page-016.webp",
+          "originalApproved": true
         },
         {
           "code": "545A",
           "name": "나파 가죽 트러플 브라운/블랙",
           "sourcePage": "16",
           "applicability": "선택사양",
-          "priceStatus": "optional"
+          "priceStatus": "optional",
+          "originalImage": "images/catalog-originals/electric-g-class/page-016.webp",
+          "originalApproved": true
         },
         {
           "code": "575A",
           "name": "나파 가죽 마키아토 베이지/블랙",
           "sourcePage": "16",
           "applicability": "선택사양",
-          "priceStatus": "optional"
+          "priceStatus": "optional",
+          "originalImage": "images/catalog-originals/electric-g-class/page-016.webp",
+          "originalApproved": true
         },
         {
           "code": "902A",
@@ -3214,7 +3344,9 @@
           "sourcePage": "17",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-017.webp",
+          "originalApproved": true
         },
         {
           "code": "903A",
@@ -3222,7 +3354,9 @@
           "sourcePage": "17",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-017.webp",
+          "originalApproved": true
         },
         {
           "code": "904A",
@@ -3230,7 +3364,9 @@
           "sourcePage": "17",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-017.webp",
+          "originalApproved": true
         },
         {
           "code": "906A",
@@ -3238,7 +3374,9 @@
           "sourcePage": "17",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-017.webp",
+          "originalApproved": true
         },
         {
           "code": "907A",
@@ -3246,7 +3384,9 @@
           "sourcePage": "17",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-017.webp",
+          "originalApproved": true
         },
         {
           "code": "909A",
@@ -3254,7 +3394,9 @@
           "sourcePage": "17",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-017.webp",
+          "originalApproved": true
         },
         {
           "code": "923A",
@@ -3262,7 +3404,9 @@
           "sourcePage": "18",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-018.webp",
+          "originalApproved": true
         },
         {
           "code": "924A",
@@ -3270,7 +3414,9 @@
           "sourcePage": "18",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-018.webp",
+          "originalApproved": true
         },
         {
           "code": "925A",
@@ -3278,7 +3424,9 @@
           "sourcePage": "18",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-018.webp",
+          "originalApproved": true
         },
         {
           "code": "927A",
@@ -3286,7 +3434,9 @@
           "sourcePage": "18",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-018.webp",
+          "originalApproved": true
         },
         {
           "code": "928A",
@@ -3294,7 +3444,9 @@
           "sourcePage": "18",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-018.webp",
+          "originalApproved": true
         },
         {
           "code": "934A",
@@ -3302,7 +3454,9 @@
           "sourcePage": "18",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-018.webp",
+          "originalApproved": true
         },
         {
           "code": "937A",
@@ -3310,7 +3464,9 @@
           "sourcePage": "19",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-019.webp",
+          "originalApproved": true
         },
         {
           "code": "938A",
@@ -3318,7 +3474,9 @@
           "sourcePage": "19",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-019.webp",
+          "originalApproved": true
         },
         {
           "code": "944A",
@@ -3326,7 +3484,9 @@
           "sourcePage": "19",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-019.webp",
+          "originalApproved": true
         },
         {
           "code": "947A",
@@ -3334,7 +3494,9 @@
           "sourcePage": "19",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-019.webp",
+          "originalApproved": true
         },
         {
           "code": "948A",
@@ -3342,7 +3504,9 @@
           "sourcePage": "19",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-019.webp",
+          "originalApproved": true
         },
         {
           "code": "953A",
@@ -3350,7 +3514,9 @@
           "sourcePage": "19",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-019.webp",
+          "originalApproved": true
         },
         {
           "code": "954A",
@@ -3358,7 +3524,9 @@
           "sourcePage": "20",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-020.webp",
+          "originalApproved": true
         },
         {
           "code": "955A",
@@ -3366,7 +3534,9 @@
           "sourcePage": "20",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-020.webp",
+          "originalApproved": true
         },
         {
           "code": "957A",
@@ -3374,7 +3544,9 @@
           "sourcePage": "20",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-020.webp",
+          "originalApproved": true
         },
         {
           "code": "958A",
@@ -3382,7 +3554,9 @@
           "sourcePage": "20",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-020.webp",
+          "originalApproved": true
         },
         {
           "code": "964A",
@@ -3390,7 +3564,9 @@
           "sourcePage": "20",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-020.webp",
+          "originalApproved": true
         },
         {
           "code": "967A",
@@ -3398,7 +3574,9 @@
           "sourcePage": "20",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-020.webp",
+          "originalApproved": true
         },
         {
           "code": "968A",
@@ -3406,7 +3584,9 @@
           "sourcePage": "21",
           "applicability": "유료옵션",
           "priceStatus": "paid",
-          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)"
+          "notes": "일부 MANUFAKTUR 시트 디자인은 익스클루시브/슈페리어 인테리어 선택에 따라 달라질 수 있습니다(카탈로그 17~21쪽)",
+          "originalImage": "images/catalog-originals/electric-g-class/page-021.webp",
+          "originalApproved": true
         }
       ],
       "interiorTrims": [
@@ -3416,7 +3596,9 @@
           "sourcePage": "22",
           "category": "시트벨트",
           "applicability": "유료옵션",
-          "priceStatus": "paid"
+          "priceStatus": "paid",
+          "originalImage": "images/catalog-originals/electric-g-class/page-022.webp",
+          "originalApproved": true
         },
         {
           "code": "S44",
@@ -3424,7 +3606,9 @@
           "sourcePage": "22",
           "category": "시트벨트",
           "applicability": "유료옵션",
-          "priceStatus": "paid"
+          "priceStatus": "paid",
+          "originalImage": "images/catalog-originals/electric-g-class/page-022.webp",
+          "originalApproved": true
         },
         {
           "code": "S46",
@@ -3432,7 +3616,9 @@
           "sourcePage": "22",
           "category": "시트벨트",
           "applicability": "유료옵션",
-          "priceStatus": "paid"
+          "priceStatus": "paid",
+          "originalImage": "images/catalog-originals/electric-g-class/page-022.webp",
+          "originalApproved": true
         },
         {
           "code": "VA5",
@@ -3440,7 +3626,9 @@
           "sourcePage": "24",
           "category": "인테리어 트림",
           "applicability": "기본사양",
-          "priceStatus": "standard"
+          "priceStatus": "standard",
+          "originalImage": "images/catalog-originals/electric-g-class/page-024.webp",
+          "originalApproved": true
         },
         {
           "code": "VA2",
@@ -3448,7 +3636,9 @@
           "sourcePage": "24",
           "category": "인테리어 트림",
           "applicability": "선택사양",
-          "priceStatus": "optional"
+          "priceStatus": "optional",
+          "originalImage": "images/catalog-originals/electric-g-class/page-024.webp",
+          "originalApproved": true
         },
         {
           "code": "VA1",
@@ -3456,7 +3646,9 @@
           "sourcePage": "24",
           "category": "인테리어 트림",
           "applicability": "유료옵션",
-          "priceStatus": "paid"
+          "priceStatus": "paid",
+          "originalImage": "images/catalog-originals/electric-g-class/page-024.webp",
+          "originalApproved": true
         },
         {
           "code": "VA4",
@@ -3464,7 +3656,9 @@
           "sourcePage": "24",
           "category": "인테리어 트림",
           "applicability": "선택사양",
-          "priceStatus": "optional"
+          "priceStatus": "optional",
+          "originalImage": "images/catalog-originals/electric-g-class/page-024.webp",
+          "originalApproved": true
         },
         {
           "code": "VA8",
@@ -3472,7 +3666,9 @@
           "sourcePage": "24",
           "category": "인테리어 트림",
           "applicability": "유료옵션",
-          "priceStatus": "paid"
+          "priceStatus": "paid",
+          "originalImage": "images/catalog-originals/electric-g-class/page-024.webp",
+          "originalApproved": true
         },
         {
           "code": "ZG2",
@@ -3480,7 +3676,9 @@
           "sourcePage": "24",
           "category": "인테리어 트림",
           "applicability": "유료옵션",
-          "priceStatus": "paid"
+          "priceStatus": "paid",
+          "originalImage": "images/catalog-originals/electric-g-class/page-024.webp",
+          "originalApproved": true
         },
         {
           "code": "ZG6",
@@ -3488,7 +3686,9 @@
           "sourcePage": "25",
           "category": "인테리어 트림",
           "applicability": "유료옵션",
-          "priceStatus": "paid"
+          "priceStatus": "paid",
+          "originalImage": "images/catalog-originals/electric-g-class/page-025.webp",
+          "originalApproved": true
         }
       ],
       "sourceFileName": "G-Class with EQ Technology_Catalogue_20260424.pdf",
@@ -4243,49 +4443,65 @@
           "code": "149U · 040U · 183U · 197U · 775U",
           "name": "외장 컬러 · 25MY 공식 카탈로그 원문",
           "sourcePage": "33",
-          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름.",
+          "originalImage": "images/catalog-originals/amg-g-class/page-033.webp",
+          "originalApproved": true
         },
         {
           "code": "842U · 859U · 896U · 989U · 992U",
           "name": "외장 컬러 · 25MY 공식 카탈로그 원문",
           "sourcePage": "34",
-          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름.",
+          "originalImage": "images/catalog-originals/amg-g-class/page-034.webp",
+          "originalApproved": true
         },
         {
           "code": "124U · 464U · 825U · 904U",
           "name": "외장 컬러 · 25MY 공식 카탈로그 원문",
           "sourcePage": "35",
-          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름.",
+          "originalImage": "images/catalog-originals/amg-g-class/page-035.webp",
+          "originalApproved": true
         },
         {
           "code": "934U · 026U · 041U · 162U · 255U",
           "name": "외장 컬러 · 25MY 공식 카탈로그 원문",
           "sourcePage": "36",
-          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름.",
+          "originalImage": "images/catalog-originals/amg-g-class/page-036.webp",
+          "originalApproved": true
         },
         {
           "code": "693U · 660U · 963U · 996U",
           "name": "외장 컬러 · 25MY 공식 카탈로그 원문",
           "sourcePage": "37",
-          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름.",
+          "originalImage": "images/catalog-originals/amg-g-class/page-037.webp",
+          "originalApproved": true
         },
         {
           "code": "659U · 051U · 054U · 056U · 164U",
           "name": "외장 컬러 · 25MY 공식 카탈로그 원문",
           "sourcePage": "38",
-          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름.",
+          "originalImage": "images/catalog-originals/amg-g-class/page-038.webp",
+          "originalApproved": true
         },
         {
           "code": "271U · 658U · 677U · 795U · 739U",
           "name": "외장 컬러 · 25MY 공식 카탈로그 원문",
           "sourcePage": "39",
-          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름.",
+          "originalImage": "images/catalog-originals/amg-g-class/page-039.webp",
+          "originalApproved": true
         },
         {
           "code": "964U · 376U · 823U · 644U",
           "name": "외장 컬러 · 25MY 공식 카탈로그 원문",
           "sourcePage": "40",
-          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름.",
+          "originalImage": "images/catalog-originals/amg-g-class/page-040.webp",
+          "originalApproved": true
         }
       ],
       "seats": [
@@ -4293,43 +4509,57 @@
           "code": "501A · 545A · 575A · 801A · 808A · 825A",
           "name": "실내 시트 · 25MY 공식 카탈로그 원문",
           "sourcePage": "22",
-          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름.",
+          "originalImage": "images/catalog-originals/amg-g-class/page-022.webp",
+          "originalApproved": true
         },
         {
           "code": "902A · 903A · 904A · 906A",
           "name": "실내 시트 · 25MY 공식 카탈로그 원문",
           "sourcePage": "23",
-          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름.",
+          "originalImage": "images/catalog-originals/amg-g-class/page-023.webp",
+          "originalApproved": true
         },
         {
           "code": "913A · 914A · 915A · 916A",
           "name": "실내 시트 · 25MY 공식 카탈로그 원문",
           "sourcePage": "24",
-          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름.",
+          "originalImage": "images/catalog-originals/amg-g-class/page-024.webp",
+          "originalApproved": true
         },
         {
           "code": "923A · 924A · 925A · 927A",
           "name": "실내 시트 · 25MY 공식 카탈로그 원문",
           "sourcePage": "25",
-          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름.",
+          "originalImage": "images/catalog-originals/amg-g-class/page-025.webp",
+          "originalApproved": true
         },
         {
           "code": "937A · 938A · 944A · 947A",
           "name": "실내 시트 · 25MY 공식 카탈로그 원문",
           "sourcePage": "26",
-          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름.",
+          "originalImage": "images/catalog-originals/amg-g-class/page-026.webp",
+          "originalApproved": true
         },
         {
           "code": "954A · 955A · 957A · 958A",
           "name": "실내 시트 · 25MY 공식 카탈로그 원문",
           "sourcePage": "27",
-          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름.",
+          "originalImage": "images/catalog-originals/amg-g-class/page-027.webp",
+          "originalApproved": true
         },
         {
           "code": "968A",
           "name": "실내 시트 · 25MY 공식 카탈로그 원문",
           "sourcePage": "28",
-          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름.",
+          "originalImage": "images/catalog-originals/amg-g-class/page-028.webp",
+          "originalApproved": true
         }
       ],
       "interiorTrims": [
@@ -4337,13 +4567,17 @@
           "code": "ZG2 · VA1 · VA4 · VA5 · VA2 · VA8",
           "name": "인테리어 트림 · 25MY 공식 카탈로그 원문",
           "sourcePage": "30",
-          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름.",
+          "originalImage": "images/catalog-originals/amg-g-class/page-030.webp",
+          "originalApproved": true
         },
         {
           "code": "ZG6",
           "name": "인테리어 트림 · 25MY 공식 카탈로그 원문",
           "sourcePage": "31",
-          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름.",
+          "originalImage": "images/catalog-originals/amg-g-class/page-031.webp",
+          "originalApproved": true
         }
       ],
       "verificationNote": "고객 요청에 따라 25MY 공식 카탈로그 원문을 G 63의 참조 자료로 사용. 본 항목은 27MY 사양 보증이 아니며 이미지 원본 업로드는 별도 진행 중.",
