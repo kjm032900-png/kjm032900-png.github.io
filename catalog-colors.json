@@ -52,7 +52,7 @@
     "a-class": {
       "title": "A-Class",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/Mercedes-Benz_A-Class_Catalogue_20260424.pdf",
       "sourceEdition": "2026년 04월 24일, 26년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -168,7 +168,7 @@
     "c-class": {
       "title": "C-Class",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/Mercedes-Benz_C-Class_Catalogue_20260424.pdf",
       "sourceEdition": "2026년 04월 24일, 26년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -356,7 +356,7 @@
     "cla": {
       "title": "CLA",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20all-new%20CLA_catalogue_20261007.pdf",
       "sourceEdition": "2026년 10월 07일, 27년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -669,7 +669,7 @@
     "s-class": {
       "title": "S-Class",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/Mercedes-Benz_S-Class_Catalogue_20260914.pdf",
       "sourceEdition": "2026년 09월 14일, 27년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -889,7 +889,7 @@
     "gla": {
       "title": "GLA",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/Mercedes-Benz_GLA_Catalogue_20260707.pdf",
       "sourceEdition": "2026년 07월 07일, 27년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -948,7 +948,7 @@
     "glb": {
       "title": "GLB",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/Mercedes-Benz_The%20new%20GLB_Catalogue_20260813.pdf",
       "sourceEdition": "2026년 08월 13일, 26년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -1038,7 +1038,7 @@
     "glc": {
       "title": "GLC & GLC Coupé",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20new%20GLC%20n%20GLC%20Coupe_Catalogue_20260424.pdf",
       "sourceEdition": "2026년 04월 24일, 26년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -1296,7 +1296,7 @@
     "gle": {
       "title": "GLE & GLE Coupé",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20new%20GLE_n_GLE_Coupe_Catalogue_20261116.pdf",
       "sourceEdition": "2026년 11월 16일, 27년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -1449,7 +1449,7 @@
     "gls": {
       "title": "GLS",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/Mercedes-Benz_The%20new%20GLS_Catalogue_20261116.pdf",
       "sourceEdition": "2026년 11월 16일, 27년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -1547,7 +1547,7 @@
     "g-class": {
       "title": "G-Class",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20new%20G-Class_Catalogue_20260930.pdf",
       "sourceEdition": "2026년 09월 30일, 27년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -1806,7 +1806,7 @@
     "electric-cla": {
       "title": "The all-new electric CLA",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20all%20new%20electric%20CLA_catalogue_20261021.pdf",
       "sourceEdition": "2026년 10월 21일, 27년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -1890,7 +1890,7 @@
     "electric-glb": {
       "title": "The all-new electric GLB",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20all-new%20electric%20GLB_catalogue_20261028.pdf",
       "sourceEdition": "2026년 10월 28일, 27년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -1949,7 +1949,7 @@
     "electric-glc": {
       "title": "The all-new electric GLC",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20all-new%20electric%20GLC_catalogue_20261016.pdf",
       "sourceEdition": "2026년 10월 16일, 27년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -2059,7 +2059,7 @@
     "eqa": {
       "title": "EQA",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20new%20EQA_Catalogue_20260902.pdf",
       "sourceEdition": "2026년 09월 02일, 27년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -2150,7 +2150,7 @@
     "eqb": {
       "title": "EQB",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20new%20EQB_Catalogue_20260424.pdf",
       "sourceEdition": "2026년 04월 24일, 26년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -2247,7 +2247,7 @@
     "eqe": {
       "title": "EQE",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/Mercedes-Benz_EQE_Catalogue_20260429.pdf",
       "sourceEdition": "2026년 04월 29일, 26년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -2374,7 +2374,7 @@
     "eqe-suv": {
       "title": "EQE SUV",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20new%20EQE%20SUV_Catalogue_20260424.pdf",
       "sourceEdition": "2026년 04월 24일, 26년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -2576,7 +2576,7 @@
     "eqs": {
       "title": "EQS",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20new%20EQS_Catalogue_20260424.pdf",
       "sourceEdition": "2026년 04월 24일, 25년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -2766,7 +2766,7 @@
     "eqs-suv": {
       "title": "EQS SUV",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/Mercedes-Benz_The%20new%20EQS%20SUV_Catalogue_20260907.pdf",
       "sourceEdition": "2026년 09월 07일, 26년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -3516,7 +3516,7 @@
     "amg-a-class": {
       "title": "AMG A-Class",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20new%20Mercedes-AMG%20A-Class_Catalogue_20260522.pdf",
       "sourceEdition": "2026년 05월 22일, 26년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -3615,7 +3615,7 @@
     "amg-cla": {
       "title": "AMG CLA",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20new%20Mercedes-AMG%20CLA_Catalogue_20260424.pdf",
       "sourceEdition": "2026년 04월 24일, 26년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -3683,7 +3683,7 @@
     "amg-e-class": {
       "title": "AMG E-Class",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/Mercedes-AMG%20E-Class_Catalogue_20260519.pdf",
       "sourceEdition": "2026년 05월 19일, 26년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -3790,7 +3790,7 @@
     "amg-glb": {
       "title": "AMG GLB",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20new%20Mercedes-AMG%20GLB_20260716.pdf",
       "sourceEdition": "2026년 07월 16일, 26년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -3886,7 +3886,7 @@
     "amg-glc": {
       "title": "Mercedes-AMG GLC & GLC Coupé",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20new%20Mercedes-AMG%20GLC%20n%20GLC%20Coupe_Catalogue_20260424.pdf",
       "sourceEdition": "2026년 04월 24일, 26년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -4095,7 +4095,7 @@
     "amg-gle": {
       "title": "Mercedes-AMG GLE & GLE Coupé",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/Mercedes-AMG%20GLE%20n%20GLE%20Coupe_Catalogue_20260619.pdf",
       "sourceEdition": "2026년 06월 19일, 26년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -4245,7 +4245,7 @@
     "amg-sl": {
       "title": "AMG SL",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/Mercedes-AMG_SL_Catalogue_20261105.pdf",
       "sourceEdition": "2026년 11월 05일, 27년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -4484,7 +4484,7 @@
     "maybach-s-class": {
       "title": "Mercedes-Maybach S-Class",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The_new_Mercedes-Maybach_S-Class_Catalogue_20260811.pdf",
       "sourceEdition": "2026년 08월 11일, 27년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -4731,7 +4731,7 @@
     "maybach-gls": {
       "title": "Mercedes-Maybach GLS",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20new%20Mercedes-Maybach%20GLS_catalogue_20260622.pdf",
       "sourceEdition": "2026년 06월 22일, 26년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -4838,7 +4838,7 @@
     "maybach-eqs-suv": {
       "title": "Mercedes-Maybach EQS SUV",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20all-new%20Mercedes-Maybach%20EQS%20SUV_Catalogue_20260519.pdf",
       "sourceEdition": "2026년 05월 19일, 26년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -5009,7 +5009,7 @@
     "maybach-sl": {
       "title": "Mercedes-Maybach SL",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20all-new%20Mercedes-Maybach%20SL_Catalogue_20260424.pdf",
       "sourceEdition": "2026년 04월 24일, 26년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -5077,7 +5077,7 @@
     "v-class": {
       "title": "V-Class",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20new%20V-Class_catalogue_20261029.pdf",
       "sourceEdition": "2026년 10월 29일, 27년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -5367,7 +5367,7 @@
     "amg-cle-coupe": {
       "title": "Mercedes-AMG CLE Coupé",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20all-new%20AMG%20CLE%20Coupe_catalogue_20260921.pdf",
       "sourceEdition": "2026년 09월 21일, 27년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -5448,7 +5448,7 @@
     "amg-cle-cabriolet": {
       "title": "Mercedes-AMG CLE Cabriolet",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20all-new%20AMG%20CLE%20Cabriolet_catalogue_20260921.pdf",
       "sourceEdition": "2026년 09월 21일, 27년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -5546,7 +5546,7 @@
     "amg-gt-coupe": {
       "title": "Mercedes-AMG GT Coupé",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20new%20Mercedes-AMG%20GT%20Coupe_Catalogue_260424.pdf",
       "sourceEdition": "2026년 04월 24일, 25년식",
       "reviewStatus": "text_verified",
       "exterior": [
@@ -5884,7 +5884,7 @@
     "amg-gt-4door": {
       "title": "Mercedes-AMG GT 4-Door Coupé",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
+      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20new%20Mercedes-AMG%20GT%204Door_Catalogue_20260424.pdf",
       "sourceEdition": "2026년 04월 24일, 26년식",
       "reviewStatus": "text_verified",
       "exterior": [
