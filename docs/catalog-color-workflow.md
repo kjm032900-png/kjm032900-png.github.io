@@ -44,9 +44,20 @@ Do not commit the example as a live colour. Values for real items must come from
 - The remaining 39 brochure groups remain pending source text and image verification, including four without a matched current PDF candidate: amg-a-class, amg-s-class, amg-gls, amg-g-class. A 2025 AMG G-Class PDF exists but must **not** be used for the 27MY G 63.
 - This text-only preview is still **not ready to merge**; photographs are required for the user's intended customer consultation workflow.
 
+## Maybach source-PDF upload — 2026-11-18
+- Four original user-uploaded PDFs are directly readable for text and rendered-page inspection: Mercedes-Maybach S-Class **27MY**, GLS **26MY**, EQS SUV **26MY**, SL **26MY**.
+- Official-source colours, upholstery and interior finishes were manually cross-checked against page renderings and PDF code strings. All 98 code occurrences matched source pages: 96 paint/seat/trim entries + 2 SL exterior detail options.
+- S-Class (pages 40–49): 30 exterior (including two-tone), 9 seat, 6 interior = **45 items**.
+- GLS (pages 39–55): 9 exterior, 2 seat, 6 interior = **17 items**.
+- EQS SUV (pages 20–26): 16 exterior (including two-tone), 3 seat, 10 interior = **29 items**.
+- SL (pages 27–32): 2 exterior, 1 seat, 2 interior = **5 items**, plus 756 soft top and 327 patterned bonnet as related exterior details.
+- All four groups are `text_verified`. Source PDFs are SHA-256-pinned in `catalog-colors.json`. For each group, a reproducible crop manifest in `docs/crop-manifests/` identifies each source page, colour/seat/trim code and image rectangle. A selected set of colour-by-car crops was visually checked locally. All other image rectangles require further QA.
+- Combined verified text tally so far: 6 groups, **79 exterior**, **35 seats**, **39 interior finishes** = **153 items**, plus 2 SL exterior construction details.
+- **No photographs have been committed** to public GitHub: reuse / redistribution permission for the dealer's public website has not been established. This draft is not production ready.
+
 ## Current blockers
 
-- The catalogue PDFs exist in Library and are readable for selected text ranges, but the tooling denies raw-byte materialization of these Project files. This prevents reproducing individual original brochure images using the cropping script from the existing Library links.
+- Older Library PDFs remain restricted for raw-byte materialization, but the four Maybach PDFs were uploaded directly in this conversation and their original bytes can now be used for local image crops. This does not grant public redistribution rights.
 - To finish the photo gallery, source PDF bytes and permission to republish its vehicle/seat images must be established; then extract only each image, not whole PDF pages.
 - Some MY27 models have only older source brochures in the Library. Display exact source edition and avoid silently applying MY26 colours as MY27 guaranteed availability.
 - Test all tabs, visual fidelity and mobile widths on the completed image data before any deployment.
