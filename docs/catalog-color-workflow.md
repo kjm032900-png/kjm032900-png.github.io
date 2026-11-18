@@ -36,12 +36,12 @@ Do not commit the example as a live colour. Values for real items must come from
 ## Progress log — 2026-11-18
 
 - 41 brochure groups across 44 model families. A combined home-page family can point to multiple brochure groups when required.
-- 34 group PDFs located in the user's Library (listed under `sourceFileName` only; private Library identifiers must never be published); these are source **candidates**, not automatically verified publication assets.
+- 37 group PDFs located in the user's Library (listed under `sourceFileName` only; private Library identifiers must never be published); these are source **candidates**, not automatically verified publication assets.
 - `e-class` (26MY, 2026-04-24): 10 exterior colours, 13 upholstery entries, 8 interior trim / console / roof-liner entries from pages 44–74. `reviewStatus: text_verified`.
 - `c-class` (26MY, 2026-04-24): 12 exterior colours, 7 upholstery entries, 7 trim/console/roof-liner entries from pages 27–52. `reviewStatus: text_verified`.
 - All 57 options are linked to catalogue page numbers. The wording and code are taken from the source PDFs. Price and applicability statements are only retained where explicitly printed.
 - Colour/seat photographs have **not** been posted to GitHub. Source Library PDF bytes could not be materialized by the present tool, and public website redistribution permission was not verified.
-- The remaining 39 brochure groups remain pending source text and image verification, including seven without a matched current PDF candidate: eqa, eqs-suv, amg-a-class, amg-s-class, amg-glb, amg-gls, amg-g-class. A 2025 AMG G-Class PDF exists but must **not** be used for the 27MY G 63.
+- The remaining 39 brochure groups remain pending source text and image verification, including four without a matched current PDF candidate: amg-a-class, amg-s-class, amg-gls, amg-g-class. A 2025 AMG G-Class PDF exists but must **not** be used for the 27MY G 63.
 - This text-only preview is still **not ready to merge**; photographs are required for the user's intended customer consultation workflow.
 
 ## Current blockers
