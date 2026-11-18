@@ -36,7 +36,7 @@ Do not commit the example as a live colour. Values for real items must come from
 ## Progress log — 2026-11-18
 
 - 41 brochure groups across 44 model families. A combined home-page family can point to multiple brochure groups when required.
-- 34 group PDFs located in the user's Library (stored under `sourceFileName` and `sourceLibraryFileId`); these are source **candidates**, not automatically verified publication assets.
+- 34 group PDFs located in the user's Library (listed under `sourceFileName` only; private Library identifiers must never be published); these are source **candidates**, not automatically verified publication assets.
 - `e-class` (26MY, 2026-04-24): 10 exterior colours, 13 upholstery entries, 8 interior trim / console / roof-liner entries from pages 44–74. `reviewStatus: text_verified`.
 - `c-class` (26MY, 2026-04-24): 12 exterior colours, 7 upholstery entries, 7 trim/console/roof-liner entries from pages 27–52. `reviewStatus: text_verified`.
 - All 57 options are linked to catalogue page numbers. The wording and code are taken from the source PDFs. Price and applicability statements are only retained where explicitly printed.
