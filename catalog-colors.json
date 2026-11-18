@@ -825,13 +825,108 @@
       "title": "Mercedes-Maybach GLS",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 06월 22일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "47"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "48"
+        },
+        {
+          "code": "842U",
+          "name": "소달라이트 블루",
+          "sourcePage": "49"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "50"
+        },
+        {
+          "code": "992U",
+          "name": "셀레나이트 그레이",
+          "sourcePage": "51"
+        },
+        {
+          "code": "C20",
+          "name": "마이바흐 투톤 페인트, 하이 테크 실버/노틱 블루",
+          "sourcePage": "52"
+        },
+        {
+          "code": "C21",
+          "name": "마이바흐 투톤 페인트, 옵시디안 블랙/루벨라이트 레드",
+          "sourcePage": "53"
+        },
+        {
+          "code": "C23",
+          "name": "옵시디안 블랙/MANUFAKTUR 칼라하리 골드",
+          "sourcePage": "54"
+        },
+        {
+          "code": "C35",
+          "name": "마이바흐 투톤 페인트, 하이 테크 실버/옵시디안 블랙",
+          "sourcePage": "55"
+        }
+      ],
+      "seats": [
+        {
+          "code": "511A",
+          "name": "익스클루시브 나파 가죽, 블랙",
+          "sourcePage": "39"
+        },
+        {
+          "code": "514A",
+          "name": "익스클루시브 나파 가죽, 자바",
+          "sourcePage": "40"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "71U",
+          "name": "나파가죽 MANUFAKTUR 루프라이너, 블랙",
+          "sourcePage": "41",
+          "category": "루프라이너"
+        },
+        {
+          "code": "65U",
+          "name": "마이크로컷 마이크로파이버 MANUFAKTUR 루프라이너, 마키아토 베이지",
+          "sourcePage": "42",
+          "category": "루프라이너"
+        },
+        {
+          "code": "75U",
+          "name": "나파가죽 MANUFATUR 루프라이너, 마키아토 베이지",
+          "sourcePage": "43",
+          "category": "루프라이너"
+        },
+        {
+          "code": "79U",
+          "name": "나파가죽 MANUFAKTUR 루프 라이너, 크리스탈 화이트",
+          "sourcePage": "44",
+          "category": "루프라이너"
+        },
+        {
+          "code": "H11",
+          "name": "MANUFAKTUR 플로잉 라인 블랙 피아노 라커, 트림",
+          "sourcePage": "45",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H31",
+          "name": "엔트러사이트 오픈 포어 오크 우드, 트림",
+          "sourcePage": "46",
+          "category": "인테리어 트림"
+        }
+      ],
       "sourceFileName": "The new Mercedes-Maybach GLS_catalogue_20260622.pdf",
-      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
+      "verificationNote": "업로드된 공식 카탈로그 39~55쪽 텍스트·코드 원문 대조. 차량·시트 이미지 추출 및 공개 재게시 권한 확인 전.",
+      "sourceSha256": "45edafd111cbc4bb6822fe22c4adddb849f57a91efa2c21dfe09fd6aad14ec59"
     },
     "maybach-eqs-suv": {
       "title": "Mercedes-Maybach EQS SUV",
@@ -849,13 +944,69 @@
       "title": "Mercedes-Maybach SL",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 04월 24일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "393U",
+          "name": "MANUFAKTUR 가넷 레드 메탈릭",
+          "sourcePage": "32",
+          "notes": "카탈로그 주석: *모든 컬러는 옵시디언 블랙 컬러의 보닛으로 투톤 적용됩니다. 327 MAYBACH 패턴이 적용된 보닛은 선택사양(31쪽)."
+        },
+        {
+          "code": "659U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 마그노",
+          "sourcePage": "32",
+          "notes": "카탈로그 주석: *모든 컬러는 옵시디언 블랙 컬러의 보닛으로 투톤 적용됩니다. 327 MAYBACH 패턴이 적용된 보닛은 선택사양(31쪽)."
+        }
+      ],
+      "seats": [
+        {
+          "code": "509A",
+          "name": "MANUFAKTUR 익스클루시브 나파 가죽 크리스탈 화이트",
+          "sourcePage": "27",
+          "priceStatus": "standard",
+          "applicability": "기본사양"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "72H",
+          "name": "실버 크롬 트림",
+          "sourcePage": "28",
+          "category": "인테리어 트림",
+          "priceStatus": "standard",
+          "applicability": "기본사양"
+        },
+        {
+          "code": "60U",
+          "name": "MANUFAKTUR 마이크로컷 루프라이너 크리스탈 화이트",
+          "sourcePage": "29",
+          "category": "루프라이너",
+          "priceStatus": "standard",
+          "applicability": "기본사양"
+        }
+      ],
       "sourceFileName": "The all-new Mercedes-Maybach SL_Catalogue_20260424.pdf",
-      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
+      "verificationNote": "공식 카탈로그 27~32쪽, 509A 시트/72H 트림/60U 루프라이너와 2개 외장색의 원문 대조. 페이지 30의 756 소프트탑(기본), 페이지 31의 327 패턴 보닛(선택) 별도 주석으로 유지. 이미지 공개 권한 확인 전.",
+      "sourceSha256": "6b3ef6fb8d193ea2da55f1f34cd3b117027872854cc8cc7078ceb9027c300c55",
+      "exteriorDetails": [
+        {
+          "code": "756",
+          "name": "MAYBACH 패턴이 적용된 패브릭 소프트 탑 블랙",
+          "sourcePage": "30",
+          "priceStatus": "standard",
+          "applicability": "기본사양"
+        },
+        {
+          "code": "327",
+          "name": "MAYBACH 패턴이 적용된 보닛",
+          "sourcePage": "31",
+          "priceStatus": "optional",
+          "applicability": "선택사양",
+          "notes": "옵션 미선택 시 기본 단색의 옵시디안 블랙 컬러 적용"
+        }
+      ]
     },
     "v-class": {
       "title": "V-Class",
