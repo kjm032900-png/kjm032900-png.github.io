@@ -33,7 +33,22 @@ This is a **draft** workflow for the salesperson's private-branch consultation U
 ```
 Do not commit the example as a live colour. Values for real items must come from the selected official catalogue.
 
+## Progress log — 2026-11-18
+
+- 41 brochure groups across 44 model families. A combined home-page family can point to multiple brochure groups when required.
+- 34 group PDFs located in the user's Library (stored under `sourceFileName` and `sourceLibraryFileId`); these are source **candidates**, not automatically verified publication assets.
+- `e-class` (26MY, 2026-04-24): 10 exterior colours, 13 upholstery entries, 8 interior trim / console / roof-liner entries from pages 44–74. `reviewStatus: text_verified`.
+- `c-class` (26MY, 2026-04-24): 12 exterior colours, 7 upholstery entries, 7 trim/console/roof-liner entries from pages 27–52. `reviewStatus: text_verified`.
+- All 57 options are linked to catalogue page numbers. The wording and code are taken from the source PDFs. Price and applicability statements are only retained where explicitly printed.
+- Colour/seat photographs have **not** been posted to GitHub. Source Library PDF bytes could not be materialized by the present tool, and public website redistribution permission was not verified.
+- The remaining 39 brochure groups remain pending source text and image verification, including seven without a matched current PDF candidate: eqa, eqs-suv, amg-a-class, amg-s-class, amg-glb, amg-gls, amg-g-class. A 2025 AMG G-Class PDF exists but must **not** be used for the 27MY G 63.
+- This text-only preview is still **not ready to merge**; photographs are required for the user's intended customer consultation workflow.
+
 ## Current blockers
-The official index's dynamic download buttons have been identified, but the exact original PDF download URLs and document editions still need direct verification. Thus **all 41 catalogue group entries currently remain pending** and are deliberately invisible as options in the public UI. This is a safeguard, not a completed colour library.
+
+- The catalogue PDFs exist in Library and are readable for selected text ranges, but the tooling denies raw-byte materialization of these Project files. This prevents reproducing individual original brochure images using the cropping script from the existing Library links.
+- To finish the photo gallery, source PDF bytes and permission to republish its vehicle/seat images must be established; then extract only each image, not whole PDF pages.
+- Some MY27 models have only older source brochures in the Library. Display exact source edition and avoid silently applying MY26 colours as MY27 guaranteed availability.
+- Test all tabs, visual fidelity and mobile widths on the completed image data before any deployment.
 
 All changes remain in Draft PR #4. Existing live `main` prices, promotions, GA4 and search engine setup must be left untouched until verification and explicit approval.
