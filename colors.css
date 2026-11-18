@@ -16,3 +16,5 @@ a{color:inherit}button,select{font:inherit}.container{width:min(1120px,calc(100%
 .catalog-chooser label{font-size:13px}
 .catalog-chooser select{width:100%}
 @media(max-width:520px){.catalog-chooser{grid-template-columns:1fr;gap:6px}}
+
+.exterior-extras{margin-top:22px;padding:16px;border:1px solid var(--line);background:#1b2a38;border-radius:10px}.extras-heading{margin:0 0 8px;font-size:15px}.exterior-extra{font-size:13px;padding:9px 0;border-top:1px solid #35495b}.exterior-extra strong{color:#f5f7f9}.exterior-extra span{color:var(--muted)}.exterior-extra p{margin:4px 0 0}
