@@ -123,6 +123,23 @@
     return card;
   }
 
+  function renderExteriorExtras(catalog) {
+    const container = byId('exteriorExtras');
+    container.replaceChildren();
+    container.hidden = true;
+    if (activeTab !== 'exterior' || !Array.isArray(catalog?.exteriorDetails) || !catalog.exteriorDetails.length) return;
+    container.appendChild(textNode('h3', 'extras-heading', '외장 추가 구성'));
+    for (const item of catalog.exteriorDetails) {
+      const element = textNode('div', 'exterior-extra', '');
+      element.appendChild(textNode('strong', '', (item.code ? item.code + ' · ' : '') + item.name));
+      if (item.applicability) element.appendChild(textNode('span', '', ' · ' + item.applicability));
+      if (item.sourcePage) element.appendChild(textNode('span', '', ' (카탈로그 ' + item.sourcePage + '쪽)'));
+      if (item.notes) element.appendChild(textNode('p', 'meta', item.notes));
+      container.appendChild(element);
+    }
+    container.hidden = false;
+  }
+
   function render() {
     const catalog = getCatalog();
     const title = catalog && catalog.title ? catalog.title : family;
@@ -149,6 +166,8 @@
     byId('colorPanel').setAttribute('aria-labelledby', 'tab-' + activeTab);
 
     grid.replaceChildren();
+    byId('exteriorExtras').replaceChildren();
+    byId('exteriorExtras').hidden = true;
     if (catalogData.familyCatalogChoices?.[family] && !selectedCatalogKey) {
       renderStatus('이 모델군은 공식 카탈로그가 둘 이상입니다. 위에서 쿠페·카브리올레 또는 GT 쿠페·4도어 중 해당 카탈로그를 선택해 주세요.', true);
       return;
@@ -166,6 +185,7 @@
       renderStatus('공식 카탈로그의 정식 명칭·코드·적용 조건만 먼저 등록했습니다. 컬러별 차량·시트 이미지는 재게시 권한과 원본 검증 후 추가합니다. 카탈로그 판본(' + catalog.sourceEdition + ')을 확인해 주세요.', true);
     } else renderStatus('', false);
     items.filter((it) => it && typeof it.name === 'string' && it.name.trim()).forEach((it) => grid.appendChild(createColorCard(it)));
+    renderExteriorExtras(catalog);
   }
 
   function selectFamily(next, resetTrim) {
