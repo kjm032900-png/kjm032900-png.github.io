@@ -4227,20 +4227,126 @@
     "amg-g-class": {
       "title": "Mercedes-AMG G-Class",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": "https://www.mercedes-benz.co.kr/content/dam/south-korea/passenger-cars/model/catalog/2026/The%20new%20Mercedes-AMG%20G-Class_Catalogue_20261029.pdf",
-      "sourceEdition": "2026년 10월 29일, 27년식 (공식 PDF 경로 확인, 이미지 검수 중)",
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
-      "verificationNote": "최신 27MY 공식 AMG G-Class 카탈로그 다운로드 경로 확인. 컬러·시트·트림 이미지 원본 업로드 및 항목별 검수 전이므로 임의 사진 게시하지 않음.",
+      "sourceDocumentUrl": null,
+      "sourceEdition": "2025년 01월 23일, 25MY 참고 자료",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U · 040U · 183U · 197U · 775U",
+          "name": "외장 컬러 · 25MY 공식 카탈로그 원문",
+          "sourcePage": "33",
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+        },
+        {
+          "code": "842U · 859U · 896U · 989U · 992U",
+          "name": "외장 컬러 · 25MY 공식 카탈로그 원문",
+          "sourcePage": "34",
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+        },
+        {
+          "code": "124U · 464U · 825U · 904U",
+          "name": "외장 컬러 · 25MY 공식 카탈로그 원문",
+          "sourcePage": "35",
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+        },
+        {
+          "code": "934U · 026U · 041U · 162U · 255U",
+          "name": "외장 컬러 · 25MY 공식 카탈로그 원문",
+          "sourcePage": "36",
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+        },
+        {
+          "code": "693U · 660U · 963U · 996U",
+          "name": "외장 컬러 · 25MY 공식 카탈로그 원문",
+          "sourcePage": "37",
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+        },
+        {
+          "code": "659U · 051U · 054U · 056U · 164U",
+          "name": "외장 컬러 · 25MY 공식 카탈로그 원문",
+          "sourcePage": "38",
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+        },
+        {
+          "code": "271U · 658U · 677U · 795U · 739U",
+          "name": "외장 컬러 · 25MY 공식 카탈로그 원문",
+          "sourcePage": "39",
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+        },
+        {
+          "code": "964U · 376U · 823U · 644U",
+          "name": "외장 컬러 · 25MY 공식 카탈로그 원문",
+          "sourcePage": "40",
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+        }
+      ],
+      "seats": [
+        {
+          "code": "501A · 545A · 575A · 801A · 808A · 825A",
+          "name": "실내 시트 · 25MY 공식 카탈로그 원문",
+          "sourcePage": "22",
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+        },
+        {
+          "code": "902A · 903A · 904A · 906A",
+          "name": "실내 시트 · 25MY 공식 카탈로그 원문",
+          "sourcePage": "23",
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+        },
+        {
+          "code": "913A · 914A · 915A · 916A",
+          "name": "실내 시트 · 25MY 공식 카탈로그 원문",
+          "sourcePage": "24",
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+        },
+        {
+          "code": "923A · 924A · 925A · 927A",
+          "name": "실내 시트 · 25MY 공식 카탈로그 원문",
+          "sourcePage": "25",
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+        },
+        {
+          "code": "937A · 938A · 944A · 947A",
+          "name": "실내 시트 · 25MY 공식 카탈로그 원문",
+          "sourcePage": "26",
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+        },
+        {
+          "code": "954A · 955A · 957A · 958A",
+          "name": "실내 시트 · 25MY 공식 카탈로그 원문",
+          "sourcePage": "27",
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+        },
+        {
+          "code": "968A",
+          "name": "실내 시트 · 25MY 공식 카탈로그 원문",
+          "sourcePage": "28",
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "ZG2 · VA1 · VA4 · VA5 · VA2 · VA8",
+          "name": "인테리어 트림 · 25MY 공식 카탈로그 원문",
+          "sourcePage": "30",
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+        },
+        {
+          "code": "ZG6",
+          "name": "인테리어 트림 · 25MY 공식 카탈로그 원문",
+          "sourcePage": "31",
+          "notes": "2025년식 G 63 / G 63 MANUFAKTUR 참고 자료. 기본·선택·유료옵션 구분은 원본 카탈로그에 따름."
+        }
+      ],
+      "verificationNote": "고객 요청에 따라 25MY 공식 카탈로그 원문을 G 63의 참조 자료로 사용. 본 항목은 27MY 사양 보증이 아니며 이미지 원본 업로드는 별도 진행 중.",
       "historicalReference": {
         "sourceFileName": "Mercedes-AMG_G Class_Catalogue_20250123.pdf",
         "sourceEdition": "2025년 01월 23일, 25년식",
         "sourceSha256": "9ed132a47d6e5e32b95915e11263d7f0f73b24853689989a3d763070a1850e2e",
         "status": "not_applicable_to_27MY",
         "note": "현재 홈페이지 G 63은 27MY입니다. 이 자료는 25MY이므로 현재 색상 제공 근거로 사용하지 않습니다."
-      }
+      },
+      "sourceFileName": "Mercedes-AMG_G Class_Catalogue_20250123.pdf"
     },
     "amg-sl": {
       "title": "AMG SL",
