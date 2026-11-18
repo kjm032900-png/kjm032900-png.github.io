@@ -138,12 +138,7 @@
     byId('modelDetails').textContent = (hasRequestedTrim ? '선택한 트림: ' + requestedTrim + ' · ' : '')
       + '같은 모델군은 카탈로그 색상 목록을 공유합니다. 트림별 실제 주문 가능 여부는 별도 확인이 필요합니다.';
 
-    byId('catalogKind').addEventListener('change', (event) => {
-    selectedCatalogKey = event.target.value;
-    render();
-  });
-
-  tabs.forEach((tab) => {
+    tabs.forEach((tab) => {
       const selected = tab.dataset.tab === activeTab;
       tab.classList.toggle('is-active', selected);
       tab.setAttribute('aria-selected', String(selected));
@@ -212,6 +207,11 @@
       familySelect.addEventListener('change', () => selectFamily(familySelect.value, true));
     });
   }
+
+  byId('catalogKind').addEventListener('change', (event) => {
+    selectedCatalogKey = event.target.value;
+    render();
+  });
 
   tabs.forEach((tab) => {
     tab.addEventListener('click', () => { activeTab = tab.dataset.tab; if (vehicleData) render(); });
