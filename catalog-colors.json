@@ -1770,61 +1770,708 @@
       "title": "EQA",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 09월 02일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "191U",
+          "name": "코스모스 블랙",
+          "sourcePage": "34"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "35"
+        },
+        {
+          "code": "696U",
+          "name": "나이트 블랙",
+          "sourcePage": "36"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "37"
+        },
+        {
+          "code": "787U",
+          "name": "마운틴 그레이",
+          "sourcePage": "38"
+        }
+      ],
+      "seats": [
+        {
+          "code": "105A",
+          "name": "아티코 가죽, 마키아토 베이지/블랙",
+          "sourcePage": "25"
+        },
+        {
+          "code": "101A",
+          "name": "아티코 가죽, 블랙/블랙",
+          "sourcePage": "26"
+        },
+        {
+          "code": "651A",
+          "name": "아티코 가죽/마이크로컷 마이크로파이버 블랙",
+          "sourcePage": "27"
+        },
+        {
+          "code": "158A",
+          "name": "아티코 가죽 세이지 그레이/블랙",
+          "sourcePage": "28"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "29",
+          "category": "루프라이너"
+        },
+        {
+          "code": "55U",
+          "name": "루프라이너 , 베이지",
+          "sourcePage": "30",
+          "category": "루프라이너"
+        },
+        {
+          "code": "58U",
+          "name": "루프라이너, 크리스탈 그레이",
+          "sourcePage": "31",
+          "category": "루프라이너"
+        },
+        {
+          "code": "55H",
+          "name": "스타 패턴 트림",
+          "sourcePage": "32",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "56H",
+          "name": "스타 패턴 트림",
+          "sourcePage": "33",
+          "category": "인테리어 트림"
+        }
+      ],
       "sourceFileName": "The new EQA_Catalogue_20260902.pdf",
-      "verificationNote": "사용자 자료 보관함에서 카탈로그 PDF 발견. 판본/컬러명/이미지/적용 조건 및 재게시 권한 확인 전(pending)."
+      "verificationNote": "사용자가 첨부한 공식 카탈로그에서 각 옵션 페이지의 명칭·코드·명시된 적용 조건 확인. 외장/시트 사진 공개 권한과 이미지별 검수 대기.",
+      "sourceSha256": "5ea8ea746d05cc719746207f0fbd8ae6bcca13b9852126dff23a8558809e35c8"
     },
     "eqb": {
       "title": "EQB",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 04월 24일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "191U",
+          "name": "코스모스 블랙",
+          "sourcePage": "31"
+        },
+        {
+          "code": "696U",
+          "name": "나이트 블랙",
+          "sourcePage": "32"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "33"
+        },
+        {
+          "code": "787U",
+          "name": "마운틴 그레이",
+          "sourcePage": "34"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "35"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "36"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "37",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
+      "seats": [
+        {
+          "code": "105A",
+          "name": "아티코 가죽, 마키아토 베이지/블랙",
+          "sourcePage": "25",
+          "applicability": "EQB 300 4MATIC Progressive 기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "651A",
+          "name": "아티코 가죽 / 마이크로컷 마이크로파이버 블랙",
+          "sourcePage": "26",
+          "applicability": "EQB 300 4MATIC AMG Line 기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "101A",
+          "name": "아티코 가죽, 블랙/블랙",
+          "sourcePage": "27",
+          "applicability": "EQB 300 4MATIC Progressive 선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "158A",
+          "name": "아티코 가죽 세이지 그레이/블랙",
+          "sourcePage": "28",
+          "applicability": "EQB 300 4MATIC Progressive 선택사양, EQB 300 4MATIC AMG Line 유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "55H",
+          "name": "스타 패턴 트림",
+          "sourcePage": "29",
+          "applicability": "EQB 300 4MATIC Progressive 기본사양",
+          "priceStatus": "standard",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "56H",
+          "name": "스타 패턴 트림",
+          "sourcePage": "30",
+          "applicability": "EQB 300 4MATIC AMG Line 기본사양, EQB 300 4MATIC Progressive 유료옵션",
+          "priceStatus": "varies",
+          "category": "인테리어 트림"
+        }
+      ],
       "sourceFileName": "The new EQB_Catalogue_20260424.pdf",
-      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
+      "verificationNote": "사용자가 첨부한 공식 카탈로그에서 각 옵션 페이지의 명칭·코드·명시된 적용 조건 확인. 외장/시트 사진 공개 권한과 이미지별 검수 대기.",
+      "sourceSha256": "9a5242812433cd4c4f11a3427c13cb8eadf742b5c5ddb92b12fcb3279d0f0785"
     },
     "eqe": {
       "title": "EQE",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 04월 29일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "040U",
+          "name": "블랙",
+          "sourcePage": "27"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "28"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "29"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이 메탈릭",
+          "sourcePage": "30"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버 메탈릭",
+          "sourcePage": "31"
+        },
+        {
+          "code": "842U",
+          "name": "소다라이트 블루",
+          "sourcePage": "32"
+        },
+        {
+          "code": "992U",
+          "name": "셀레나이트 그레이 메탈릭",
+          "sourcePage": "33"
+        }
+      ],
+      "seats": [
+        {
+          "code": "201A",
+          "name": "가죽, 블랙/스페이스 그레이",
+          "sourcePage": "17",
+          "applicability": "기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "209A",
+          "name": "가죽, 네바 그레이/발라오 브라운",
+          "sourcePage": "18",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "211A",
+          "name": "가죽, 블랙/발라오 브라운",
+          "sourcePage": "19",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "219A",
+          "name": "가죽, 네바 그레이/비스케이 블루",
+          "sourcePage": "20",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "221A",
+          "name": "가죽, 블랙/비스케이 블루",
+          "sourcePage": "21",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "블랙",
+          "sourcePage": "22",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "notes": "*네바 그레이/발라오 브라운 색상의 가죽, 네바 그레이/비스케이 블루 색상의 가죽 선택 시 적용 불가",
+          "category": "루프라이너"
+        },
+        {
+          "code": "59U",
+          "name": "네바 그레이",
+          "sourcePage": "23",
+          "applicability": "선택사양",
+          "priceStatus": "optional",
+          "category": "루프라이너"
+        },
+        {
+          "code": "51H",
+          "name": "레이저 컷 백릿 트림, 메르세데스-벤츠 패턴",
+          "sourcePage": "24",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "757",
+          "name": "하이 글로스 블랙",
+          "sourcePage": "25",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "category": "센터콘솔"
+        },
+        {
+          "code": "661",
+          "name": "블랙 파인 스트럭쳐룩",
+          "sourcePage": "26",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "category": "센터콘솔"
+        }
+      ],
       "sourceFileName": "Mercedes-Benz_EQE_Catalogue_20260429.pdf",
-      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
+      "verificationNote": "사용자가 첨부한 공식 카탈로그에서 각 옵션 페이지의 명칭·코드·명시된 적용 조건 확인. 외장/시트 사진 공개 권한과 이미지별 검수 대기.",
+      "sourceSha256": "597fc81c29af37b97b8da4c05262c2346c75a79b435f51fadbe8dfde8441b67c"
     },
     "eqe-suv": {
       "title": "EQE SUV",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 04월 24일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "43"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "44"
+        },
+        {
+          "code": "040U",
+          "name": "블랙",
+          "sourcePage": "45"
+        },
+        {
+          "code": "771U",
+          "name": "벨벳 브라운",
+          "sourcePage": "46"
+        },
+        {
+          "code": "842U",
+          "name": "소다라이트 블루",
+          "sourcePage": "47"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "48"
+        },
+        {
+          "code": "992U",
+          "name": "셀레나이트 그레이",
+          "sourcePage": "49"
+        }
+      ],
+      "seats": [
+        {
+          "code": "111A",
+          "name": "NEOTEX/ARTICO, 블랙/스페이스 그레이",
+          "sourcePage": "23",
+          "applicability": "EQE 350+ SUV 선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "109A",
+          "name": "NEOTEX/ARTICO, 네바 그레이/발라오 브라운",
+          "sourcePage": "24",
+          "applicability": "EQE 350+ SUV 선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "119A",
+          "name": "NEOTEX/ARTICO, 네바 그레이/비스케이 블루",
+          "sourcePage": "25",
+          "applicability": "EQE 350+ SUV 선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "121A",
+          "name": "NEOTEX/ARTICO, 블랙/발라오 브라운",
+          "sourcePage": "26",
+          "applicability": "EQE 350+ SUV 기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "131A",
+          "name": "NEOTEX/ARTICO 블랙/비스케이 블루",
+          "sourcePage": "27",
+          "applicability": "EQE 350+ SUV 선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "201A",
+          "name": "가죽, 블랙/스페이스 그레이",
+          "sourcePage": "28",
+          "applicability": "EQE 500 4MATIC SUV 선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "209A",
+          "name": "가죽, 네바 그레이/발라오 브라운",
+          "sourcePage": "29",
+          "applicability": "EQE 500 4MATIC SUV 선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "211A",
+          "name": "가죽, 블랙/발라오 브라운",
+          "sourcePage": "30",
+          "applicability": "EQE 500 4MATIC SUV 기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "219A",
+          "name": "가죽, 네바 그레이/비스케이 블루",
+          "sourcePage": "31",
+          "applicability": "EQE 500 4MATIC SUV 선택사양",
+          "priceStatus": "optional"
+        },
+        {
+          "code": "221A",
+          "name": "가죽, 블랙/비스케이 블루",
+          "sourcePage": "32",
+          "applicability": "EQE 500 4MATIC SUV 선택사양",
+          "priceStatus": "optional"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "33",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "category": "루프라이너"
+        },
+        {
+          "code": "59U",
+          "name": "루프라이너, 네바 그레이",
+          "sourcePage": "34",
+          "applicability": "선택사양",
+          "priceStatus": "optional",
+          "category": "루프라이너"
+        },
+        {
+          "code": "61U",
+          "name": "MICROCUT 루프라이너, 블랙",
+          "sourcePage": "35",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "notes": "*네바 그레이/발라오 브라운 색상, 네바 그레이/비스케이 블루 색상의 NEOTEX/ARTICO/가죽, 네바 그레이/발라오 브라운 색상, 네바 그레이/비스케이 블루 색상의 가죽 선택 불가",
+          "category": "루프라이너"
+        },
+        {
+          "code": "51H",
+          "name": "레이저 컷 백릿 트림, 메르세데스-벤츠 패턴",
+          "sourcePage": "36",
+          "applicability": "EQE 350+ SUV 기본사양",
+          "priceStatus": "standard",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H51",
+          "name": "블랙 파인 스트럭쳐-룩 트림",
+          "sourcePage": "37",
+          "applicability": "EQE 350+ SUV 선택사양",
+          "priceStatus": "optional",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H20",
+          "name": "브라운 오픈-포어 마그놀리아 우드 트림, 메르세데스-벤츠 패턴",
+          "sourcePage": "38",
+          "applicability": "EQE 350+ SUV 유료옵션",
+          "priceStatus": "paid",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H08",
+          "name": "앤트러사이트 라임 우드 트림",
+          "sourcePage": "39",
+          "applicability": "EQE 500 4MATIC SUV 기본사양",
+          "priceStatus": "standard",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "757",
+          "name": "센터콘솔, 하이 글로스 블랙",
+          "sourcePage": "40",
+          "applicability": "EQE 350+ SUV 기본사양",
+          "priceStatus": "standard",
+          "category": "센터콘솔"
+        },
+        {
+          "code": "661",
+          "name": "센터콘솔, 블랙 파인 스트럭처룩",
+          "sourcePage": "41",
+          "applicability": "EQE 350+ SUV 유료옵션",
+          "priceStatus": "paid",
+          "category": "센터콘솔"
+        },
+        {
+          "code": "775",
+          "name": "센터콘솔, 앤트러사이트 라임 우드",
+          "sourcePage": "42",
+          "applicability": "EQE 500 4MATIC SUV 기본사양",
+          "priceStatus": "standard",
+          "category": "센터콘솔"
+        }
+      ],
       "sourceFileName": "The new EQE SUV_Catalogue_20260424.pdf",
-      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
+      "verificationNote": "사용자가 첨부한 공식 카탈로그에서 각 옵션 페이지의 명칭·코드·명시된 적용 조건 확인. 외장/시트 사진 공개 권한과 이미지별 검수 대기.",
+      "sourceSha256": "845bb5dc01cb7719b58cc296acec47d389733d3b1e329e949d7a15507ef8a380"
     },
     "eqs": {
       "title": "EQS",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 04월 24일, 25년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "51"
+        },
+        {
+          "code": "346U",
+          "name": "오닉스 블랙",
+          "sourcePage": "52"
+        },
+        {
+          "code": "595U",
+          "name": "노틱 블루",
+          "sourcePage": "53"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이",
+          "sourcePage": "54"
+        },
+        {
+          "code": "842U",
+          "name": "소다라이트 블루",
+          "sourcePage": "55"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "56"
+        },
+        {
+          "code": "040U",
+          "name": "블랙",
+          "sourcePage": "57"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "58"
+        }
+      ],
+      "seats": [
+        {
+          "code": "203A",
+          "name": "가죽, 블랙/스페이스 그레이",
+          "sourcePage": "33",
+          "applicability": "기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "213A",
+          "name": "가죽, 블랙/발라오 브라운",
+          "sourcePage": "34",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "215A",
+          "name": "가죽, 마키아토 베이지/스페이스 그레이",
+          "sourcePage": "35",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "219A",
+          "name": "가죽, 네바 그레이/발라오 브라운",
+          "sourcePage": "36",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "223A",
+          "name": "가죽, 블랙/비스케이 블루",
+          "sourcePage": "37",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "803A",
+          "name": "나파 가죽, 블랙/스페이스 그레이",
+          "sourcePage": "38",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "813A",
+          "name": "나파 가죽, 블랙/발라오 브라운",
+          "sourcePage": "39",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "815A",
+          "name": "나파 가죽, 마키아토 베이지/스페이스 그레이",
+          "sourcePage": "40",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "823A",
+          "name": "나파 가죽, 블랙/비스케이 블루",
+          "sourcePage": "41",
+          "applicability": "유료옵션",
+          "priceStatus": "paid"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "42",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "category": "루프라이너"
+        },
+        {
+          "code": "55U",
+          "name": "루프라이너, 마키아토 베이지",
+          "sourcePage": "43",
+          "applicability": "선택사양",
+          "priceStatus": "optional",
+          "category": "루프라이너"
+        },
+        {
+          "code": "59U",
+          "name": "루프라이너, 네바 그레이",
+          "sourcePage": "44",
+          "applicability": "선택사양",
+          "priceStatus": "optional",
+          "category": "루프라이너"
+        },
+        {
+          "code": "61U",
+          "name": "MICROCUT 루프라이너, 블랙",
+          "sourcePage": "45",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "category": "루프라이너"
+        },
+        {
+          "code": "69U",
+          "name": "MICROCUT 루프라이너, 네바 그레이",
+          "sourcePage": "46",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "category": "루프라이너"
+        },
+        {
+          "code": "H08",
+          "name": "앤트러사이트 라임 우드 트림",
+          "sourcePage": "47",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H12",
+          "name": "브라운 오픈포어 월넛 우드 트림",
+          "sourcePage": "48",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "51H",
+          "name": "레이저 컷 백릿 트림, 메르세데스-벤츠 패턴",
+          "sourcePage": "49",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "661",
+          "name": "센터콘솔, 블랙 파인 스트럭쳐룩",
+          "sourcePage": "50",
+          "applicability": "기본옵션",
+          "category": "센터콘솔"
+        }
+      ],
       "sourceFileName": "The new EQS_Catalogue_20260424.pdf",
-      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
+      "verificationNote": "사용자가 첨부한 공식 카탈로그에서 각 옵션 페이지의 명칭·코드·명시된 적용 조건 확인. 외장/시트 사진 공개 권한과 이미지별 검수 대기.",
+      "sourceSha256": "9d0b21992fdd3305b05a3ad496e8fea075b85f5af6043ba7905aa15a26527852"
     },
     "eqs-suv": {
       "title": "EQS SUV",
