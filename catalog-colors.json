@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "notice": "공식 카탈로그 해당 판본에서 실제 확인된 명칭·차량 이미지·시트 이미지·적용 정보만 입력합니다. 확인 전 빈 목록은 공개용 색상 선택지가 아닙니다.",
+  "notice": "공식 벤츠코리아 카탈로그 원문과 이미지 권한 확인 전에는 추정 정보를 게시하지 않습니다. 일부 모델군(AMG CLE/GT)은 카탈로그 여러 종류가 있으므로 트림 링크 또는 카탈로그 선택으로 구분합니다.",
   "sourcePolicy": "Mercedes-Benz Korea official catalogue only; do not infer colours, option cost, applicability or image rights.",
   "familyToCatalog": {
     "A-Class": "a-class",
@@ -30,7 +30,7 @@
     "AMG CLA": "amg-cla",
     "AMG E-Class": "amg-e-class",
     "AMG S-Class": "amg-s-class",
-    "AMG CLE": "amg-cle",
+    "AMG CLE": "amg-cle-coupe",
     "AMG GLB": "amg-glb",
     "AMG GLC": "amg-glc",
     "AMG GLC Coupé": "amg-glc",
@@ -38,7 +38,7 @@
     "AMG GLE Coupé": "amg-gle",
     "AMG GLS": "amg-gls",
     "AMG G 63": "amg-g-class",
-    "AMG GT": "amg-gt",
+    "AMG GT": "amg-gt-coupe",
     "AMG SL": "amg-sl",
     "Maybach S-Class": "maybach-s-class",
     "Maybach GLS": "maybach-gls",
@@ -297,17 +297,8 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
-    },
-    "amg-cle": {
-      "title": "Mercedes-AMG CLE",
-      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "officialCatalogueNote": "현재 공식 카탈로그 목록에서 Mercedes-AMG S-Class 전용 항목 미확인. 일반 S-Class 자료로 임의 대체 금지."
     },
     "amg-glb": {
       "title": "AMG GLB",
@@ -347,20 +338,11 @@
       "reviewStatus": "pending",
       "exterior": [],
       "seats": [],
-      "interiorTrims": []
+      "interiorTrims": [],
+      "officialCatalogueNote": "현재 공식 카탈로그 목록에서 Mercedes-AMG GLS 전용 항목 미확인. 일반 GLS 자료로 임의 대체 금지."
     },
     "amg-g-class": {
       "title": "Mercedes-AMG G-Class",
-      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
-      "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": []
-    },
-    "amg-gt": {
-      "title": "AMG GT",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
       "sourceEdition": null,
@@ -438,6 +420,61 @@
       "exterior": [],
       "seats": [],
       "interiorTrims": []
+    },
+    "amg-cle-coupe": {
+      "title": "Mercedes-AMG CLE Coupé",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": null,
+      "reviewStatus": "pending",
+      "exterior": [],
+      "seats": [],
+      "interiorTrims": []
+    },
+    "amg-cle-cabriolet": {
+      "title": "Mercedes-AMG CLE Cabriolet",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": null,
+      "reviewStatus": "pending",
+      "exterior": [],
+      "seats": [],
+      "interiorTrims": []
+    },
+    "amg-gt-coupe": {
+      "title": "Mercedes-AMG GT Coupé",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": null,
+      "reviewStatus": "pending",
+      "exterior": [],
+      "seats": [],
+      "interiorTrims": []
+    },
+    "amg-gt-4door": {
+      "title": "Mercedes-AMG GT 4-Door Coupé",
+      "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
+      "sourceDocumentUrl": null,
+      "sourceEdition": null,
+      "reviewStatus": "pending",
+      "exterior": [],
+      "seats": [],
+      "interiorTrims": []
     }
+  },
+  "familyCatalogChoices": {
+    "AMG CLE": [
+      "amg-cle-coupe",
+      "amg-cle-cabriolet"
+    ],
+    "AMG GT": [
+      "amg-gt-coupe",
+      "amg-gt-4door"
+    ]
+  },
+  "trimCatalogOverrides": {
+    "Mercedes-AMG CLE 53 4MATIC+ Coupé": "amg-cle-coupe",
+    "Mercedes-AMG CLE 53 4MATIC+ Cabriolet": "amg-cle-cabriolet",
+    "Mercedes-AMG GT 43 4MATIC+ 4-Door": "amg-gt-4door"
   }
 }
