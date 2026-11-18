@@ -83,7 +83,7 @@
       && ['.webp', '.jpg', '.jpeg', '.png'].some((ext) => item.image.toLowerCase().endsWith(ext));
   }
 
-  const PHOTO_GROUPS = new Set(["a-class","c-class","cla","s-class","gla","glb","glc","gle","gls","g-class","electric-cla","electric-glb","electric-glc","eqa","eqb","eqe","eqe-suv","eqs","eqs-suv","electric-g-class","amg-a-class","amg-cla","amg-e-class","amg-glb","amg-glc","amg-gle","amg-sl","amg-cle-coupe","amg-cle-cabriolet","amg-gt-coupe","amg-gt-4door","maybach-gls","maybach-sl","v-class","cle"]);
+  const PHOTO_GROUPS = new Set(["a-class","c-class","cla","s-class","gla","glb","glc","gle","gls","g-class","electric-cla","electric-glb","electric-glc","eqa","eqb","eqe","eqe-suv","eqs","eqs-suv","electric-g-class","amg-a-class","amg-cla","amg-e-class","amg-glb","amg-glc","amg-gle","amg-sl","amg-cle-coupe","amg-cle-cabriolet","amg-gt-coupe","amg-gt-4door","maybach-gls","maybach-sl","v-class","cle","maybach-s-class","maybach-eqs-suv"]);
   const pendingPhotoGroups = new Set();
 
   function requestPhotoGroup() {
@@ -91,7 +91,7 @@
     if (!key || !PHOTO_GROUPS.has(key) || pendingPhotoGroups.has(key) || window.CATALOG_IMAGE_ATLASES?.[key]) return;
     pendingPhotoGroups.add(key);
     const script = document.createElement('script');
-    script.src = './catalog-photo-atlases/' + encodeURIComponent(key) + '.js?v=20261118-photo-fix2';
+    script.src = './catalog-photo-atlases/' + encodeURIComponent(key) + '.js?v=20261118-photo-fix4';
     script.async = true;
     script.onload = () => {
       pendingPhotoGroups.delete(key);
