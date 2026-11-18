@@ -1,0 +1,46 @@
+name: Rebuild original official catalogue image pages
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/catalog-originals.yml"
+      - "tools/rebuild_official_catalogs.py"
+permissions:
+  contents: write
+concurrency:
+  group: official-catalog-original-assets
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image dependencies
+        run: python -m pip install --disable-pip-version-check pymupdf pillow requests
+      - name: Rebuild E-Class and G 580 EQ from official PDF
+        run: python tools/rebuild_official_catalogs.py --groups e-class electric-g-class
+      - name: Publish E-Class and G 580 EQ originals
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalog-colors.json images/catalog-originals
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish full-resolution official E-Class and G 580 EQ catalogue pages"
+            git push
+          fi
+      - name: Rebuild AMG G 63 (verified 27MY official PDF)
+        run: python tools/rebuild_official_catalogs.py --groups amg-g-class
+      - name: Publish 27MY AMG G 63 originals
+        run: |
+          git add catalog-colors.json images/catalog-originals
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish 27MY AMG G 63 original colour seat and trim pages"
+            git push
+          fi
