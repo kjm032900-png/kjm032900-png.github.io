@@ -357,13 +357,85 @@
       "title": "CLA",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 10월 07일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "31"
+        },
+        {
+          "code": "341U",
+          "name": "아쿠아 민트",
+          "sourcePage": "31"
+        },
+        {
+          "code": "696U",
+          "name": "제트 블랙",
+          "sourcePage": "31"
+        },
+        {
+          "code": "809U",
+          "name": "시어 블루",
+          "sourcePage": "31"
+        },
+        {
+          "code": "922U",
+          "name": "하이테크 실버",
+          "sourcePage": "31"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "31"
+        }
+      ],
+      "seats": [
+        {
+          "code": "105A",
+          "name": "아티코 가죽 아이보리 베이지/블랙",
+          "sourcePage": "28"
+        },
+        {
+          "code": "101A",
+          "name": "아티코 가죽 블랙",
+          "sourcePage": "28"
+        },
+        {
+          "code": "681A",
+          "name": "아티코 가죽 마이크로컷 투톤 마이크로파이버 블랙/클린 화이트",
+          "sourcePage": "28"
+        },
+        {
+          "code": "224A",
+          "name": "가죽 브라운/블랙",
+          "sourcePage": "28"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "59H",
+          "name": "앤트러사이트 아노다이즈드 룩 트림",
+          "sourcePage": "29",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H43",
+          "name": "카본-그레인 알루미늄 트림",
+          "sourcePage": "29",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "30",
+          "category": "루프라이너"
+        }
+      ],
       "sourceFileName": "The all-new CLA_catalogue_20261007.pdf",
-      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
+      "verificationNote": "제공된 공식 카탈로그에 인쇄된 외장/시트/내장 모형별 코드·명칭을 해당 페이지와 대조함. 사진 게시 전 권한 및 시각 검증 필요.",
+      "sourceSha256": "e3bef491be0aa6ea58fa0d68507003d126db5c676721d3f73bc4a0f8afaabe1d"
     },
     "e-class": {
       "title": "E-Class",
@@ -1734,37 +1806,254 @@
       "title": "The all-new electric CLA",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 10월 21일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "41"
+        },
+        {
+          "code": "341U",
+          "name": "아쿠아 민트",
+          "sourcePage": "41"
+        },
+        {
+          "code": "696U",
+          "name": "제트 블랙",
+          "sourcePage": "41"
+        },
+        {
+          "code": "809U",
+          "name": "시어 블루",
+          "sourcePage": "41"
+        },
+        {
+          "code": "922U",
+          "name": "하이테크 실버",
+          "sourcePage": "41"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드",
+          "sourcePage": "41"
+        }
+      ],
+      "seats": [
+        {
+          "code": "105A",
+          "name": "ARTICO 가죽 아이보리 베이지/블랙",
+          "sourcePage": "38"
+        },
+        {
+          "code": "101A",
+          "name": "ARTICO 가죽 블랙",
+          "sourcePage": "38"
+        },
+        {
+          "code": "681A",
+          "name": "ARTICO 가죽 마이크로컷 투톤 마이크로파이버 블랙/클린 화이트",
+          "sourcePage": "38"
+        },
+        {
+          "code": "224A",
+          "name": "가죽 브라운/블랙",
+          "sourcePage": "38"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "59H",
+          "name": "앤트러사이트 아노다이즈드 룩 트림",
+          "sourcePage": "39",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H43",
+          "name": "카본-그레인 알루미늄 트림",
+          "sourcePage": "39",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "40",
+          "category": "루프라이너"
+        }
+      ],
       "sourceFileName": "The all new electric CLA_catalogue_20261021.pdf",
-      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
+      "verificationNote": "제공된 공식 카탈로그에 인쇄된 외장/시트/내장 모형별 코드·명칭을 해당 페이지와 대조함. 사진 게시 전 권한 및 시각 검증 필요.",
+      "sourceSha256": "725633e24bb42b146a8e95dbf7fe8aff9dbe473c986e0cbe28a2eb74cdf4b035"
     },
     "electric-glb": {
       "title": "The all-new electric GLB",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 10월 28일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "35"
+        },
+        {
+          "code": "341U",
+          "name": "아쿠아 민트",
+          "sourcePage": "35"
+        },
+        {
+          "code": "696U",
+          "name": "제트 블랙",
+          "sourcePage": "35"
+        }
+      ],
+      "seats": [
+        {
+          "code": "101A",
+          "name": "ARTICO 가죽 블랙",
+          "sourcePage": "32"
+        },
+        {
+          "code": "105A",
+          "name": "ARTICO 가죽 아이보리 베이지/블랙",
+          "sourcePage": "32"
+        },
+        {
+          "code": "224A",
+          "name": "가죽 라운/블랙",
+          "sourcePage": "32",
+          "notes": "원문 PDF 32쪽에 '라운/블랙'으로 인쇄되어 있습니다. 별도 공식 정정 자료 확인 전 원문 표기를 유지합니다."
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "59H",
+          "name": "앤트러사이트 아노다이즈드 룩 트림",
+          "sourcePage": "33",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "34",
+          "category": "루프라이너"
+        }
+      ],
       "sourceFileName": "The all-new electric GLB_catalogue_20261028.pdf",
-      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
+      "verificationNote": "제공된 공식 카탈로그에 인쇄된 외장/시트/내장 모형별 코드·명칭을 해당 페이지와 대조함. 사진 게시 전 권한 및 시각 검증 필요.",
+      "sourceSha256": "b56aafeb69fa78f69378b15308d25841978bfb9b7b341201a9a3a0098321bed5"
     },
     "electric-glc": {
       "title": "The all-new electric GLC",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 10월 16일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "35"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "35"
+        },
+        {
+          "code": "689U",
+          "name": "라벤더 실버",
+          "sourcePage": "35"
+        },
+        {
+          "code": "809U",
+          "name": "시어 블루",
+          "sourcePage": "35"
+        },
+        {
+          "code": "842U",
+          "name": "소달라이트 블루",
+          "sourcePage": "35"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "35"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이",
+          "sourcePage": "36"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트",
+          "sourcePage": "36"
+        }
+      ],
+      "seats": [
+        {
+          "code": "211A",
+          "name": "가죽 블랙",
+          "sourcePage": "32"
+        },
+        {
+          "code": "111A",
+          "name": "ARTICO 가죽 블랙",
+          "sourcePage": "32"
+        },
+        {
+          "code": "214A",
+          "name": "가죽 비치 브라운/블랙",
+          "sourcePage": "32"
+        },
+        {
+          "code": "114A",
+          "name": "ARTICO 가죽 비치 브라운/블랙",
+          "sourcePage": "32"
+        },
+        {
+          "code": "215A",
+          "name": "가죽 아이보리 베이지/블랙",
+          "sourcePage": "32"
+        },
+        {
+          "code": "115A",
+          "name": "ARTICO 가죽 아이보리 베이지/블랙",
+          "sourcePage": "32"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "26H",
+          "name": "브라운 오픈포어 파인라인 버치 우드 트림",
+          "sourcePage": "33",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "73H",
+          "name": "하이 글로스 실버 메탈릭 혼방 패브릭 트림",
+          "sourcePage": "33",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H75",
+          "name": "블랙/실버 메탈릭 혼방 패브릭 트림",
+          "sourcePage": "33",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "34",
+          "category": "루프라이너"
+        }
+      ],
       "sourceFileName": "The all-new electric GLC_catalogue_20261016.pdf",
-      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
+      "verificationNote": "제공된 공식 카탈로그에 인쇄된 외장/시트/내장 모형별 코드·명칭을 해당 페이지와 대조함. 사진 게시 전 권한 및 시각 검증 필요.",
+      "sourceSha256": "487d7c36e3db55261ca33a457ba6ca5cdefc6c2cba03d07a0999edaf2b59a6d8"
     },
     "eqa": {
       "title": "EQA",
@@ -4228,13 +4517,88 @@
       "title": "V-Class",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 10월 29일, 27년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "9197",
+          "name": "옵시디안 블랙(메탈릭)",
+          "sourcePage": "37"
+        },
+        {
+          "code": "7831",
+          "name": "그라파이트 그레이(메탈릭)",
+          "sourcePage": "37"
+        },
+        {
+          "code": "1802",
+          "name": "칼라하리 골드(메탈릭)",
+          "sourcePage": "37"
+        },
+        {
+          "code": "9134",
+          "name": "락 크리스탈 화이트(메탈릭)",
+          "sourcePage": "37"
+        },
+        {
+          "code": "9922",
+          "name": "하이 테크 실버(메탈릭)",
+          "sourcePage": "37"
+        }
+      ],
+      "seats": [
+        {
+          "code": "VY7",
+          "name": "나파 가죽 블랙",
+          "sourcePage": "34"
+        },
+        {
+          "code": "VY9",
+          "name": "나파 가죽 실크 베이지",
+          "sourcePage": "34"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "F3T",
+          "name": "오픈포어 우드룩 트림",
+          "sourcePage": "35",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "FB2",
+          "name": "익스클루시브 트림",
+          "sourcePage": "35",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "VD9",
+          "name": "루프 라이너, 블랙(MICROCUT)",
+          "sourcePage": "36",
+          "category": "루프라이너"
+        },
+        {
+          "code": "VD7",
+          "name": "루프 라이너, 블랙",
+          "sourcePage": "36",
+          "category": "루프라이너"
+        },
+        {
+          "code": "VD8",
+          "name": "루프 라이너, 포슬린(MICROCUT)",
+          "sourcePage": "36",
+          "category": "루프라이너"
+        },
+        {
+          "code": "VD6",
+          "name": "루프 라이너, 포슬린",
+          "sourcePage": "36",
+          "category": "루프라이너"
+        }
+      ],
       "sourceFileName": "The new V-Class_catalogue_20261029.pdf",
-      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
+      "verificationNote": "제공된 공식 카탈로그에 인쇄된 외장/시트/내장 모형별 코드·명칭을 해당 페이지와 대조함. 사진 게시 전 권한 및 시각 검증 필요.",
+      "sourceSha256": "9dffd32fda18edb7a1b9aadb2513977e593cccf2f0775c67530f8790075c4ae6"
     },
     "cle": {
       "title": "CLE Coupé & CLE Cabriolet",
