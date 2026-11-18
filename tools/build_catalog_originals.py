@@ -62,11 +62,17 @@ def main():
                 rel = destination.relative_to(root).as_posix()
                 if args.apply:
                     destination.parent.mkdir(parents=True, exist_ok=True)
+                    if destination.exists():
+                        for item in items:
+                            item['originalImage'] = rel
+                            item['originalApproved'] = True
+                        result.append((key, 'EXISTING', rel))
+                        continue
                     p = pdf[number - 1]
                     matrix = fitz.Matrix(args.width / p.rect.width, args.width / p.rect.width)
                     pix = p.get_pixmap(matrix=matrix, alpha=False, colorspace=fitz.csRGB)
                     img = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
-                    img.save(destination, "WEBP", quality=args.quality, method=6)
+                    img.save(destination, "WEBP", quality=args.quality, method=1)
                     for item in items:
                         item["originalImage"] = rel
                         item["originalApproved"] = True
