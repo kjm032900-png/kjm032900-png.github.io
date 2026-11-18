@@ -91,7 +91,7 @@
     if (!key || !PHOTO_GROUPS.has(key) || pendingPhotoGroups.has(key) || window.CATALOG_IMAGE_ATLASES?.[key]) return;
     pendingPhotoGroups.add(key);
     const script = document.createElement('script');
-    script.src = './catalog-photo-atlases/' + encodeURIComponent(key) + '.js?v=20261118-photo-fix5';
+    script.src = './catalog-photo-atlases/' + encodeURIComponent(key) + '.js?v=20261118-photo-fix6';
     script.async = true;
     script.onload = () => {
       pendingPhotoGroups.delete(key);
