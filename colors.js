@@ -132,7 +132,7 @@
       script.src='./catalog-original-pages/'+encodeURIComponent(filename)+'.js?v=20261119-all-originals4';
       script.async=true;
       script.onload=()=>{loadedOriginalStages.add(filename);if(selectedCatalogKey===key)render();next(i+1);};
-      script.onerror=()=>{pendingOriginalGroups.delete(key);script.remove();console.warn('Original catalogue image missing:',filename);};
+      script.onerror=()=>{pendingOriginalGroups.delete(key);script.remove();renderStatus('고해상도 원본 이미지를 불러오지 못했습니다. 새로고침해 주세요.',true);console.warn('Original catalogue image missing:',filename);};
       document.head.appendChild(script);
     }
     next(0);
@@ -140,7 +140,7 @@
 
   function requestPhotoGroup() {
     const key = selectedCatalogKey;
-    if (!key || !PHOTO_GROUPS.has(key) || pendingPhotoGroups.has(key) || window.CATALOG_IMAGE_ATLASES?.[key]) return;
+    if (!key || ORIGINAL_PAGE_GROUPS.has(key) || !PHOTO_GROUPS.has(key) || pendingPhotoGroups.has(key) || window.CATALOG_IMAGE_ATLASES?.[key]) return;
     pendingPhotoGroups.add(key);
     const script = document.createElement('script');
     script.src = './catalog-photo-atlases/' + encodeURIComponent(key) + '.js?v=20261118-photo-fix6';
@@ -214,7 +214,6 @@
     button.className = 'photo-trigger';
     const sprite = getPhotoSprite(item);
     const embeddedOriginal = window.CATALOG_ORIGINAL_PAGES?.[selectedCatalogKey]?.[String(item.sourcePage || '')];
-    const original = typeof item.originalImage === 'string' && item.originalApproved === true && localApprovedImage({...item, assetApproved:true, image:item.originalImage}) ? {...item, image:item.originalImage} : null;
     if (embeddedOriginal) {
       const img = document.createElement('img');
       img.src = embeddedOriginal;
@@ -223,15 +222,7 @@
       img.loading = 'lazy';
       button.appendChild(img);
       button.addEventListener('click', () => expandPhoto({...item, image: embeddedOriginal, originalApproved:true}));
-    } else if (original) {
-      const img = document.createElement('img');
-      img.src = original.image;
-      img.className = 'catalog-original';
-      img.alt = item.code + ' ' + item.name + ' 원본 카탈로그 전체 이미지';
-      img.loading = 'lazy';
-      button.appendChild(img);
-      button.addEventListener('click', () => expandPhoto(original));
-    } else if (sprite) {
+    } else if (sprite && !ORIGINAL_PAGE_GROUPS.has(selectedCatalogKey)) {
       const swatch = document.createElement('div');
       swatch.className = 'photo-sprite';
       swatch.setAttribute('role', 'img');
@@ -250,7 +241,7 @@
       button.addEventListener('click', () => expandPhoto(item));
     } else {
       button.disabled = true;
-      button.appendChild(textNode('div', 'photo-placeholder', '공식 이미지 검증 대기'));
+      button.appendChild(textNode('div', 'photo-placeholder', ORIGINAL_PAGE_GROUPS.has(selectedCatalogKey) ? '공식 고해상도 원본 불러오는 중' : '공식 이미지 검증 대기'));
     }
     card.appendChild(button);
 
