@@ -758,13 +758,259 @@
       "title": "GLC & GLC Coupé",
       "sourceUrl": "https://www.mercedes-benz.co.kr/passengercars/models/catalog.html",
       "sourceDocumentUrl": null,
-      "sourceEdition": null,
-      "reviewStatus": "pending",
-      "exterior": [],
-      "seats": [],
-      "interiorTrims": [],
+      "sourceEdition": "2026년 04월 24일, 26년식",
+      "reviewStatus": "text_verified",
+      "exterior": [
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "55",
+          "bodyStyle": "GLC"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "56",
+          "bodyStyle": "GLC"
+        },
+        {
+          "code": "188U",
+          "name": "베르데 실버",
+          "sourcePage": "57",
+          "bodyStyle": "GLC"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이",
+          "sourcePage": "58",
+          "bodyStyle": "GLC"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "59",
+          "bodyStyle": "GLC"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "60",
+          "notes": "*시에나 브라운/블랙 색상의 아티코 투톤 인조 가죽 선택 시 적용 불가",
+          "bodyStyle": "GLC"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "61",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "bodyStyle": "GLC"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이",
+          "sourcePage": "62",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "bodyStyle": "GLC"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드 메탈릭",
+          "sourcePage": "63",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "bodyStyle": "GLC"
+        },
+        {
+          "code": "149U",
+          "name": "폴라 화이트",
+          "sourcePage": "64",
+          "bodyStyle": "GLC Coupé"
+        },
+        {
+          "code": "197U",
+          "name": "옵시디안 블랙",
+          "sourcePage": "65",
+          "bodyStyle": "GLC Coupé"
+        },
+        {
+          "code": "188U",
+          "name": "베르데 실버",
+          "sourcePage": "66",
+          "bodyStyle": "GLC Coupé"
+        },
+        {
+          "code": "831U",
+          "name": "그라파이트 그레이",
+          "sourcePage": "67",
+          "bodyStyle": "GLC Coupé"
+        },
+        {
+          "code": "922U",
+          "name": "하이 테크 실버",
+          "sourcePage": "68",
+          "bodyStyle": "GLC Coupé"
+        },
+        {
+          "code": "970U",
+          "name": "스펙트럴 블루",
+          "sourcePage": "69",
+          "notes": "*시에나 브라운/블랙 색상의 아티코 투톤 인조 가죽 선택 시 적용 불가",
+          "bodyStyle": "GLC Coupé"
+        },
+        {
+          "code": "885U",
+          "name": "MANUFAKTUR 오팔라이트 화이트 브라이트",
+          "sourcePage": "70",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "bodyStyle": "GLC Coupé"
+        },
+        {
+          "code": "956U",
+          "name": "MANUFAKTUR 알파인 그레이",
+          "sourcePage": "71",
+          "applicability": "유료옵션",
+          "priceStatus": "paid",
+          "bodyStyle": "GLC Coupé"
+        },
+        {
+          "code": "993U",
+          "name": "MANUFAKTUR 파타고니아 레드 메탈릭",
+          "sourcePage": "72",
+          "applicability": "유료옵션",
+          "notes": "*시에나 브라운/블랙 색상의 아티코 투톤 인조 가죽 선택 시 적용 불가",
+          "priceStatus": "paid",
+          "bodyStyle": "GLC Coupé"
+        }
+      ],
+      "seats": [
+        {
+          "code": "101A",
+          "name": "아티코 인조 가죽, 블랙",
+          "sourcePage": "40",
+          "applicability": "GLC 220 d 4MATIC, GLC 300 4MAITC AVANTGARDE / GLC 300 4MATIC Coupé AVANTGARDE 기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "104A",
+          "name": "아티코 인조 가죽, 시에나 브라운/블랙",
+          "sourcePage": "41",
+          "applicability": "GLC 220 d 4MATIC, GLC 300 4MAITC AVANTGARDE / GLC 300 4MATIC Coupé AVANTGARDE 유료옵션",
+          "notes": "*루프라이너, 크리스탈 그레이 선택 시 적용 불가",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "105A",
+          "name": "아티코 인조 가죽, 마키아토 베이지/블랙",
+          "sourcePage": "42",
+          "applicability": "GLC 220 d 4MATIC, GLC 300 4MAITC AVANTGARDE / GLC 300 4MATIC Coupé AVANTGARDE 유료옵션",
+          "notes": "*루프라이너, 크리스탈 그레이 선택 시 적용 불가",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "111A",
+          "name": "아티코 인조 가죽, 블랙",
+          "sourcePage": "43",
+          "applicability": "GLC 300 4MATIC AMG Line / GLC 300 4MATIC Coupé AMG Line 기본사양",
+          "priceStatus": "standard"
+        },
+        {
+          "code": "118A",
+          "name": "아티코 인조 가죽, 네바 그레이/블랙",
+          "sourcePage": "44",
+          "applicability": "GLC 300 4MATIC AMG Line / GLC 300 4MATIC Coupé AMG Line 유료옵션",
+          "priceStatus": "paid"
+        },
+        {
+          "code": "194A",
+          "name": "아티코 투톤 인조 가죽, 시에나 브라운/블랙",
+          "sourcePage": "45",
+          "applicability": "GLC 300 4MATIC AMG Line / GLC 300 4MATIC Coupé AMG Line 유료옵션",
+          "notes": "*루프라이너, 크리스탈 그레이 선택 시 적용 불가",
+          "priceStatus": "paid"
+        }
+      ],
+      "interiorTrims": [
+        {
+          "code": "51U",
+          "name": "루프라이너, 블랙",
+          "sourcePage": "46",
+          "notes": "- 기본사양 : GLC 300 4MAITC AVANTGARDE, GLC 300 4MATIC AMG Line / GLC 300 4MATIC Coupé AVANTGARDE, GLC 300 4MATIC Coupé AMG Line / - 유료옵션 : GLC 220 d 4MATIC",
+          "priceStatus": "varies",
+          "category": "루프라이너"
+        },
+        {
+          "code": "58U",
+          "name": "루프라이너 크리스탈 그레이",
+          "sourcePage": "47",
+          "notes": "- 기본사양 : GLC 220 d 4MATIC / - 선택사양 : GLC 300 4MAITC AVANTGARDE, GLC 300 4MATIC AMG Line / GLC 300 4MATIC Coupé AVANTGARDE, GLC 300 4MATIC Coupé AMG Line / *GLC 220 d 4MATIC : 시에나브라운/블랙 색상, 마키아토 베이지/블랙 색상의 아티코 인조 가죽 선택 시 적용 불가",
+          "priceStatus": "varies",
+          "category": "루프라이너"
+        },
+        {
+          "code": "H08",
+          "name": "안트라사이트 라인스트럭쳐 라임 우드 트림",
+          "sourcePage": "48",
+          "notes": "- 기본사양 : GLC 220 d 4MATIC / - 선택사양 : GLC 300 4MATIC AVANTGARDE, GLC 300 4MAITC AMG Line / GLC 300 4MATIC Coupé AVANTGARDE, GLC 300 4MATIC Coupé AMG Line",
+          "priceStatus": "varies",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H50",
+          "name": "실버 그레이 다이아몬드 패턴 트림",
+          "sourcePage": "49",
+          "notes": "- 기본사양 : GLC 300 4MATIC AVANTGARDE / GLC 300 4MATIC Coupé AVANTGARDE / - 선택사양 : GLC 220 d 4MATIC, GLC 300 4MATIC AMG Line / GLC 300 4MATIC Coupé AMG Line",
+          "priceStatus": "varies",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H04",
+          "name": "블랙 오픈포어 알루미늄 라인 우드 트림",
+          "sourcePage": "50",
+          "applicability": "GLC 300 4MATIC AMG Line / GLC 300 4MATIC Coupé AMG Line 기본사양",
+          "priceStatus": "standard",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "H33",
+          "name": "월넛 브라운 우드 오픈 포어 트림",
+          "sourcePage": "51",
+          "applicability": "선택사양",
+          "priceStatus": "optional",
+          "category": "인테리어 트림"
+        },
+        {
+          "code": "757",
+          "name": "하이 글로스 블랙 센터콘솔",
+          "sourcePage": "52",
+          "applicability": "기본사양",
+          "priceStatus": "standard",
+          "category": "센터콘솔"
+        },
+        {
+          "code": "794",
+          "name": "크리스 크로스 룩 실버 그레이 센터콘솔",
+          "sourcePage": "53",
+          "applicability": "유료옵션",
+          "notes": "*실버 그레이 다이아몬드 패턴 트림 선택 시 적용 가능",
+          "priceStatus": "paid",
+          "category": "센터콘솔"
+        },
+        {
+          "code": "795",
+          "name": "메탈 스트럭쳐 피니시 센터콘솔",
+          "sourcePage": "54",
+          "applicability": "유료옵션",
+          "notes": "*안트라사이트 라인스트럭쳐 라임 우드 트림, 블랙 오픈포어 알루미늄 라인 우드 트림 선택 시 적용 가능",
+          "priceStatus": "paid",
+          "category": "센터콘솔"
+        }
+      ],
       "sourceFileName": "The new GLC n GLC Coupe_Catalogue_20260424.pdf",
-      "verificationNote": "사용자 자료 보관함에서 해당 제목의 카탈로그 PDF 발견. 정식 색상명·이미지·연식 및 재게시 권한 검증 전(pending)."
+      "verificationNote": "공식 PDF 40~72쪽: GLC/GLC Coupé 각각 실제 차량 외장 컬러 모형, 실내 코드·원문 적용 차종 대조. 사진 재게시 권한 검증 대기.",
+      "sourceSha256": "3c94ae37f544eabd2c2183fcd7cc4b469142c5b653b9a8aae0bbb795731dbfb1"
     },
     "gle": {
       "title": "GLE & GLE Coupé",
