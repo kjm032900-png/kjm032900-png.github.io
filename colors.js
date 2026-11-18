@@ -138,6 +138,7 @@
     byId('spriteZoom').hidden = true;
     byId('photo').hidden = false;
     byId('photo').src = item.image;
+    byId('photo').classList.toggle('catalog-original', item.originalApproved === true);
     byId('photo').alt = item.name + ' 공식 카탈로그 참고 이미지';
     byId('photoName').textContent = (item.code ? item.code + ' · ' : '') + item.name;
     byId('photoMeta').textContent = item.applicability || '';
@@ -154,6 +155,7 @@
     if (original) {
       const img = document.createElement('img');
       img.src = original.image;
+      img.className = 'catalog-original';
       img.alt = item.code + ' ' + item.name + ' 원본 카탈로그 전체 이미지';
       img.loading = 'lazy';
       button.appendChild(img);
