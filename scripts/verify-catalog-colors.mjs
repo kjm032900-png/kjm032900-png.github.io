@@ -47,6 +47,27 @@ for (const [key, group] of Object.entries(colors.catalogGroups)) {
     assert.ok(items.length > 0, 'Verified text status must contain entries: ' + key);
     assert.ok(items.every((item) => !item.image), 'Do not attach photos before picture-level review: ' + key);
   }
+  if (group.sourceSha256) {
+    assert.match(group.sourceSha256, /^[a-f0-9]{64}$/, 'Invalid PDF checksum: ' + key);
+  }
+  const manifestUrl = new URL('../docs/crop-manifests/' + key + '.json', import.meta.url);
+  if (existsSync(manifestUrl)) {
+    const manifest = JSON.parse(readFileSync(manifestUrl, 'utf8'));
+    assert.equal(manifest.group, key, 'Crop manifest model mismatch: ' + key);
+    assert.equal(manifest.pdf_sha256, group.sourceSha256, 'Crop manifest PDF checksum mismatch: ' + key);
+    assert.equal(manifest.sourceFileName, group.sourceFileName, 'Crop manifest filename mismatch: ' + key);
+    assert.ok(Array.isArray(manifest.crops), 'Invalid crop list: ' + key);
+    const expectedCrops = [...group.exterior.map((x) => ['exterior', x]), ...group.seats.map((x) => ['seats', x]), ...group.interiorTrims.map((x) => ['interiorTrims', x])];
+    assert.equal(manifest.crops.length, expectedCrops.length, 'Crop-count mismatch: ' + key);
+    for (let i = 0; i < manifest.crops.length; i++) {
+      const crop = manifest.crops[i], [kind, item] = expectedCrops[i];
+      assert.equal(crop.page, Number(item.sourcePage), 'Crop page mismatch: ' + key + ' ' + item.code);
+      assert.equal(crop.filename, kind + '-' + item.code.toLowerCase(), 'Crop target mismatch: ' + key + ' ' + item.code);
+      assert.ok(Array.isArray(crop.rect) && crop.rect.length === 4 && crop.rect.every((v) => Number.isFinite(v)), 'Invalid crop rect: ' + key);
+      const [x0, y0, x1, y1] = crop.rect;
+      assert.ok(x0 >= 0 && y0 >= 0 && x1 > x0 && y1 > y0 && x1 <= 1920 && y1 <= 1440, 'Out-of-bounds PDF crop: ' + key);
+    }
+  }
   assert.ok(items.length > 0, 'Verified group must have items: ' + key);
   for (const item of items) {
     assert.ok(typeof item.name === 'string' && item.name.trim(), 'Missing catalogue-exact name: ' + key);
