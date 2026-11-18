@@ -78,7 +78,7 @@
 
   function localApprovedImage(item) {
     return item && item.assetApproved === true && typeof item.image === 'string'
-      && item.image.startsWith('images/catalog-colors/')
+      && (item.image.startsWith('images/catalog-colors/') || item.image.startsWith('images/catalog-originals/'))
       && !item.image.includes('..') && !item.image.includes('?')
       && ['.webp', '.jpg', '.jpeg', '.png'].some((ext) => item.image.toLowerCase().endsWith(ext));
   }
@@ -126,10 +126,10 @@
     byId('photo').hidden = true;
     const el = byId('spriteZoom');
     el.hidden = false;
-    el.setAttribute('aria-label', item.code + ' ' + item.name + ' 공식 E-Class 카탈로그 이미지');
+    el.setAttribute('aria-label', item.code + ' ' + item.name + ' 공식 카탈로그 이미지');
     setSpriteBackground(el, sprite);
     byId('photoName').textContent = item.code + ' · ' + item.name;
-    byId('photoMeta').textContent = '공식 E-Class 26MY 카탈로그 ' + (item.sourcePage || '') + '쪽';
+    byId('photoMeta').textContent = item.applicability || '';
     dlg.showModal();
   }
 
@@ -150,7 +150,15 @@
     button.type = 'button';
     button.className = 'photo-trigger';
     const sprite = getPhotoSprite(item);
-    if (sprite) {
+    const original = typeof item.originalImage === 'string' && localApprovedImage({...item, image:item.originalImage}) ? {...item, image:item.originalImage} : null;
+    if (original) {
+      const img = document.createElement('img');
+      img.src = original.image;
+      img.alt = item.code + ' ' + item.name + ' 원본 카탈로그 전체 이미지';
+      img.loading = 'lazy';
+      button.appendChild(img);
+      button.addEventListener('click', () => expandPhoto(original));
+    } else if (sprite) {
       const swatch = document.createElement('div');
       swatch.className = 'photo-sprite';
       swatch.setAttribute('role', 'img');
@@ -182,7 +190,7 @@
     if (item.priceStatus) info.appendChild(textNode('p', 'meta', optionPriceStatus(item.priceStatus)));
     if (item.applicability) info.appendChild(textNode('p', 'meta', '카탈로그 적용: ' + item.applicability));
     if (item.notes) info.appendChild(textNode('p', 'meta', item.notes));
-    if (item.sourcePage) info.appendChild(textNode('p', 'meta', '출처: 카탈로그 ' + item.sourcePage + '쪽'));
+
     card.appendChild(info);
     return card;
   }
@@ -197,7 +205,7 @@
       const element = textNode('div', 'exterior-extra', '');
       element.appendChild(textNode('strong', '', (item.code ? item.code + ' · ' : '') + item.name));
       if (item.applicability) element.appendChild(textNode('span', '', ' · ' + item.applicability));
-      if (item.sourcePage) element.appendChild(textNode('span', '', ' (카탈로그 ' + item.sourcePage + '쪽)'));
+
       if (item.notes) element.appendChild(textNode('p', 'meta', item.notes));
       container.appendChild(element);
     }
