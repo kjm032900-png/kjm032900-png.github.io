@@ -217,7 +217,7 @@
       img.loading = 'lazy';
       button.appendChild(img);
       button.addEventListener('click', () => expandPhoto(original));
-    } else if (embeddedOriginal(item)) {
+    } else if (false && embeddedOriginal(item)) {
       const imageUrl = embeddedOriginal(item);
       const img = document.createElement('img');
       img.className = 'catalog-original';
@@ -343,6 +343,7 @@
     render();
     requestPhotoGroup();
     requestOriginalBundle();
+    requestOriginalPages();
   }
 
   function boot() {
@@ -387,6 +388,7 @@
     render();
     requestPhotoGroup();
     requestOriginalBundle();
+    requestOriginalPages();
   });
 
   tabs.forEach((tab) => {
