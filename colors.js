@@ -83,8 +83,38 @@
       && ['.webp', '.jpg', '.jpeg', '.png'].some((ext) => item.image.toLowerCase().endsWith(ext));
   }
 
+  function getPhotoSprite(item) {
+    const group = window.CATALOG_IMAGE_ATLASES?.[selectedCatalogKey]?.[activeTab];
+    const idx = group?.codes?.indexOf(item.code);
+    return idx >= 0 ? { group, idx } : null;
+  }
+
+  function setSpriteBackground(el, sprite) {
+    const { group, idx } = sprite;
+    const col = idx % group.cols;
+    const row = Math.floor(idx / group.cols);
+    el.style.backgroundImage = 'url("' + group.url + '")';
+    el.style.backgroundSize = (group.cols * 100) + '% ' + (group.rows * 100) + '%';
+    el.style.backgroundPosition = (group.cols > 1 ? col * 100 / (group.cols - 1) : 0) + '% ' + (group.rows > 1 ? row * 100 / (group.rows - 1) : 0) + '%';
+    el.style.backgroundRepeat = 'no-repeat';
+  }
+
+  function expandSprite(item, sprite) {
+    const dlg = byId('photoDialog');
+    byId('photo').hidden = true;
+    const el = byId('spriteZoom');
+    el.hidden = false;
+    el.setAttribute('aria-label', item.code + ' ' + item.name + ' 공식 E-Class 카탈로그 이미지');
+    setSpriteBackground(el, sprite);
+    byId('photoName').textContent = item.code + ' · ' + item.name;
+    byId('photoMeta').textContent = '공식 E-Class 26MY 카탈로그 ' + (item.sourcePage || '') + '쪽';
+    dlg.showModal();
+  }
+
   function expandPhoto(item) {
     const dlg = byId('photoDialog');
+    byId('spriteZoom').hidden = true;
+    byId('photo').hidden = false;
     byId('photo').src = item.image;
     byId('photo').alt = item.name + ' 공식 카탈로그 참고 이미지';
     byId('photoName').textContent = (item.code ? item.code + ' · ' : '') + item.name;
@@ -97,7 +127,17 @@
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'photo-trigger';
-    if (localApprovedImage(item)) {
+    const sprite = getPhotoSprite(item);
+    if (sprite) {
+      const swatch = document.createElement('div');
+      swatch.className = 'photo-sprite';
+      swatch.setAttribute('role', 'img');
+      swatch.setAttribute('aria-label', item.code + ' ' + item.name + ' 공식 카탈로그 이미지');
+      setSpriteBackground(swatch, sprite);
+      button.appendChild(swatch);
+      button.setAttribute('aria-label', item.code + ' ' + item.name + ' 사진 확대');
+      button.addEventListener('click', () => expandSprite(item, sprite));
+    } else if (localApprovedImage(item)) {
       const img = document.createElement('img');
       img.src = item.image;
       img.alt = item.name + ' 공식 카탈로그 이미지';
@@ -147,7 +187,7 @@
     const title = catalog && catalog.title ? catalog.title : family;
     byId('guideTitle').textContent = title;
     const subtitle = catalog && catalog.sourceEdition
-      ? '자료 판본: ' + catalog.sourceEdition + (catalog.reviewStatus === 'text_verified' ? ' · 이미지 미등록' : '')
+      ? '자료 판본: ' + catalog.sourceEdition + (catalog.reviewStatus === 'text_verified' && !window.CATALOG_IMAGE_ATLASES?.[selectedCatalogKey] ? ' · 사진 등록 대기' : '')
       : '카탈로그 판본·컬러 자료 대조 중';
     byId('guideSubtitle').textContent = subtitle;
 
@@ -188,8 +228,8 @@
       renderStatus(supportedTabs[activeTab] + ' 자료가 아직 검증되지 않았습니다. 확인된 항목만 등록됩니다.', true);
       return;
     }
-    if (catalog.reviewStatus === 'text_verified') {
-      renderStatus('공식 카탈로그의 정식 명칭·코드·적용 조건만 먼저 등록했습니다. 컬러별 차량·시트 이미지는 재게시 권한과 원본 검증 후 추가합니다. 카탈로그 판본(' + catalog.sourceEdition + ')을 확인해 주세요.', true);
+    if (catalog.reviewStatus === 'text_verified' && !window.CATALOG_IMAGE_ATLASES?.[selectedCatalogKey]) {
+      renderStatus('공식 카탈로그의 정식 명칭·코드·적용 조건은 등록됐습니다. 색상별 차량·시트 이미지는 차종별로 추가하고 있습니다. 카탈로그 판본(' + catalog.sourceEdition + ')을 확인해 주세요.', true);
     } else renderStatus('', false);
     items.filter((it) => it && typeof it.name === 'string' && it.name.trim()).forEach((it) => grid.appendChild(createColorCard(it)));
     renderExteriorExtras(catalog);
