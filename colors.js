@@ -207,8 +207,12 @@
     dlg.showModal();
   }
 
-  function createColorCard(item) {
+  function createColorCard(item, imageLabel = '') {
     const card = textNode('article', 'color-card', '');
+    // A combined card uses a neutral caption instead of labelling the whole
+    // PDF page as if it were a photo of just the first option.
+    const displayItem = imageLabel ? {...item, code: '', name: imageLabel, applicability: ''} : item;
+    const displayName = imageLabel || ((item.code ? item.code + ' ' : '') + item.name);
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'photo-trigger';
@@ -218,31 +222,32 @@
       const img = document.createElement('img');
       img.src = embeddedOriginal;
       img.className = 'catalog-original';
-      img.alt = item.code + ' ' + item.name + ' 공식 카탈로그 전체 원본';
+      img.alt = displayName + ' 공식 카탈로그 전체 원본';
       img.loading = 'lazy';
       button.appendChild(img);
-      button.addEventListener('click', () => expandPhoto({...item, image: embeddedOriginal, originalApproved:true}));
+      button.addEventListener('click', () => expandPhoto({...displayItem, image: embeddedOriginal, originalApproved:true}));
     } else if (sprite && !ORIGINAL_PAGE_GROUPS.has(selectedCatalogKey)) {
       const swatch = document.createElement('div');
       swatch.className = 'photo-sprite';
       swatch.setAttribute('role', 'img');
-      swatch.setAttribute('aria-label', item.code + ' ' + item.name + ' 공식 카탈로그 이미지');
+      swatch.setAttribute('aria-label', displayName + ' 공식 카탈로그 이미지');
       setSpriteBackground(swatch, sprite);
       button.appendChild(swatch);
-      button.setAttribute('aria-label', item.code + ' ' + item.name + ' 사진 확대');
-      button.addEventListener('click', () => expandSprite(item, sprite));
+      button.setAttribute('aria-label', displayName + ' 사진 확대');
+      button.addEventListener('click', () => expandSprite(displayItem, sprite));
     } else if (localApprovedImage(item)) {
       const img = document.createElement('img');
       img.src = item.image;
-      img.alt = item.name + ' 공식 카탈로그 이미지';
+      img.alt = displayName + ' 공식 카탈로그 이미지';
       img.loading = 'lazy';
       button.appendChild(img);
-      button.setAttribute('aria-label', item.name + ' 이미지 확대');
-      button.addEventListener('click', () => expandPhoto(item));
+      button.setAttribute('aria-label', displayName + ' 이미지 확대');
+      button.addEventListener('click', () => expandPhoto(imageLabel ? displayItem : item));
     } else {
       button.disabled = true;
       button.appendChild(textNode('div', 'photo-placeholder', ORIGINAL_PAGE_GROUPS.has(selectedCatalogKey) ? '공식 고해상도 원본 불러오는 중' : '공식 이미지 검증 대기'));
     }
+    if (imageLabel) button.setAttribute('aria-label', displayName + ' 확대');
     card.appendChild(button);
 
     const info = textNode('div', 'color-info', '');
@@ -256,6 +261,64 @@
     if (item.notes) info.appendChild(textNode('p', 'meta', item.notes));
 
     card.appendChild(info);
+    return card;
+  }
+
+  // Multiple options on the same source PDF page share one original image.
+  // Consolidate that image, never the options or their official annotations.
+  function groupVisibleItemsByPage(items) {
+    const groups = new Map();
+    items.forEach((item, index) => {
+      const page = item.sourcePage == null ? '' : String(item.sourcePage);
+      const key = ORIGINAL_PAGE_GROUPS.has(selectedCatalogKey) && page
+        ? 'page:' + page
+        : 'single:' + index;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(item);
+    });
+    return Array.from(groups.values());
+  }
+
+  function createCombinedCard(items) {
+    const first = items[0];
+    const kind = supportedTabs[activeTab];
+    const imageLabel = kind + ' ' + items.length + '개 항목 통합 이미지';
+    const card = createColorCard(first, imageLabel);
+    card.classList.add('color-card--combined');
+
+    const imageButton = card.querySelector('.photo-trigger');
+    const head = textNode('div', 'combined-head', '');
+    const titleBox = textNode('div', '', '');
+    titleBox.appendChild(textNode('h3', 'combined-title', '공식 카탈로그 통합 이미지'));
+    titleBox.appendChild(textNode('p', 'combined-caption',
+      kind + ' ' + items.length + '개 항목이 원본 ' + first.sourcePage + '페이지에 함께 수록되어 있습니다.'));
+    head.appendChild(titleBox);
+    head.appendChild(textNode('span', 'combined-count', items.length + '개 항목'));
+
+    const body = textNode('div', 'combined-body', '');
+    const photo = textNode('div', 'combined-media', '');
+    photo.appendChild(imageButton);
+    body.appendChild(photo);
+
+    const options = textNode('div', 'combined-options', '');
+    options.setAttribute('role', 'list');
+    options.setAttribute('aria-label', kind + ' 항목별 정식 명칭');
+    options.appendChild(textNode('p', 'combined-options-title', '컬러·사양 코드와 정식 명칭'));
+    for (const item of items) {
+      const option = textNode('div', 'combined-option', '');
+      option.setAttribute('role', 'listitem');
+      if (item.code) option.appendChild(textNode('span', 'color-code', item.code));
+      option.appendChild(textNode('strong', 'combined-option-name', item.name));
+      if (item.category) option.appendChild(textNode('p', 'meta', '구분: ' + item.category));
+      if (item.bodyStyle) option.appendChild(textNode('p', 'meta', '차체: ' + item.bodyStyle));
+      if (item.material) option.appendChild(textNode('p', 'meta', '소재: ' + item.material));
+      if (item.priceStatus) option.appendChild(textNode('p', 'meta', optionPriceStatus(item.priceStatus)));
+      if (item.applicability) option.appendChild(textNode('p', 'meta', '카탈로그 적용: ' + item.applicability));
+      if (item.notes) option.appendChild(textNode('p', 'meta', item.notes));
+      options.appendChild(option);
+    }
+    body.appendChild(options);
+    card.replaceChildren(head, body);
     return card;
   }
 
@@ -335,9 +398,12 @@
     if (ORIGINAL_PAGE_GROUPS.has(selectedCatalogKey) && availablePhotos < items.length && (pendingOriginalGroups.has(selectedCatalogKey) || originalLoading.has(selectedCatalogKey))) {
       renderStatus('공식 카탈로그의 고해상도 원본 이미지를 불러오는 중입니다.', true);
     } else if (catalog.reviewStatus === 'text_verified' && availablePhotos < items.length) {
-      renderStatus('공식 카탈로그의 ' + items.length + '개 항목 중 사진 ' + availablePhotos + '개를 확인할 수 있습니다. 사진이 없는 항목은 원문 명칭·옵션 코드로 안내합니다. 선택 가능 여부는 연식·트림에 따라 달라질 수 있습니다.', true);
+      renderStatus('공식 카탈로그의 ' + items.length + '개 항목 중 이미지 연결 항목 ' + availablePhotos + '개를 확인할 수 있습니다. 사진이 없는 항목은 원문 명칭·옵션 코드로 안내합니다. 선택 가능 여부는 연식·트림에 따라 달라질 수 있습니다.', true);
     } else renderStatus('', false);
-    items.filter((it) => it && typeof it.name === 'string' && it.name.trim()).forEach((it) => grid.appendChild(createColorCard(it)));
+    const visibleItems = items.filter((it) => it && typeof it.name === 'string' && it.name.trim());
+    for (const group of groupVisibleItemsByPage(visibleItems)) {
+      grid.appendChild(group.length > 1 ? createCombinedCard(group) : createColorCard(group[0]));
+    }
     renderExteriorExtras(catalog);
   }
 
