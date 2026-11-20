@@ -33,18 +33,30 @@
     if (selectedCatalogKey) url.searchParams.set('catalog', selectedCatalogKey);
     else url.searchParams.delete('catalog');
     window.history.replaceState(null, '', url.pathname + url.search + url.hash);
-    byId('returnToModel').href = './index.html?openModel=' + encodeURIComponent(family) + '#models';
-    byId('returnToModel').textContent = '← ' + family + ' 상세로';
+
   }
 
-  function showShareFeedback(message) {
-    const feedback = byId('shareFeedback');
-    feedback.hidden = false;
-    feedback.textContent = message;
+  // Prefer the true browser history entry so the prior scroll and open modal survive.
+  // Directly shared URLs have no matching homepage entry: open the selected model as fallback.
+  function returnToPreviousScreen(event) {
+    event.preventDefault();
+    let origin;
+    let snapshot;
+    try {
+      origin = document.referrer ? new URL(document.referrer) : null;
+      snapshot = JSON.parse(sessionStorage.getItem('mb-color-origin-v1') || 'null');
+    } catch (_) { snapshot = null; }
+    const fromHome = origin && origin.origin === location.origin
+      && (origin.pathname === '/' || origin.pathname.endsWith('/index.html'));
+    if (fromHome && snapshot && snapshot.originPath === origin.pathname && history.length > 1) {
+      try { sessionStorage.setItem('mb-color-return-request-v1', '1'); } catch (_) { /* Private browsing */ }
+      history.back();
+      return;
+    }
+    location.assign('./index.html?openModel=' + encodeURIComponent(family) + '#models');
   }
 
-  async function copyGuideLink() {
-    const url = window.location.href;
+  async function copyLink(url, successMessage) {
     try {
       if (navigator.clipboard?.writeText) {
         await navigator.clipboard.writeText(url);
@@ -60,10 +72,29 @@
         input.remove();
         if (!copied) throw new Error('clipboard unavailable');
       }
-      showShareFeedback('현재 선택한 ' + family + ' 컬러 안내 링크를 복사했습니다. 카카오톡 등에 붙여넣어 보내세요.');
+      showShareFeedback(successMessage);
     } catch (_) {
-      showShareFeedback('링크 자동 복사가 지원되지 않습니다. 주소창의 URL을 복사해 전달해 주세요.');
+      showShareFeedback('자동 복사에 실패했습니다. 해당 링크를 길게 누르거나 주소창에서 복사해 주세요.');
     }
+  }
+
+  async function copyCatalogLink() {
+    const catalog = getCatalog();
+    if (!catalog?.sourceDocumentUrl) {
+      showShareFeedback('이 차종의 직접 연결된 PDF 주소가 없습니다. 공식 카탈로그 목록에서 확인해 주세요.');
+      return;
+    }
+    await copyLink(catalog.sourceDocumentUrl, family + ' 공식 카탈로그 PDF 링크를 복사했습니다. 카카오톡에 붙여넣어 보내세요.');
+  }
+
+  function showShareFeedback(message) {
+    const feedback = byId('shareFeedback');
+    feedback.hidden = false;
+    feedback.textContent = message;
+  }
+
+  async function copyGuideLink() {
+    await copyLink(window.location.href, '선택한 ' + family + ' 컬러 안내 페이지 링크를 복사했습니다.');
   }
 
   async function shareGuideLink() {
@@ -412,9 +443,14 @@
       : '카탈로그 판본·컬러 자료 대조 중';
     byId('guideSubtitle').textContent = subtitle;
 
-    sourceLink.href = catalog && catalog.sourceDocumentUrl ? catalog.sourceDocumentUrl : officialCatalog;
-    sourceLink.textContent = catalog && catalog.sourceDocumentUrl
-      ? '확인된 공식 카탈로그 ↗' : '벤츠코리아 공식 카탈로그 목록 ↗';
+    const hasPdf = Boolean(catalog?.sourceDocumentUrl);
+    sourceLink.href = hasPdf ? catalog.sourceDocumentUrl : officialCatalog;
+    sourceLink.textContent = hasPdf
+      ? '공식 카탈로그 PDF 열기·다운로드 ↗' : '공식 카탈로그 목록 보기 ↗';
+    byId('copyCatalogLink').hidden = !hasPdf;
+    byId('pdfActionHint').textContent = hasPdf
+      ? 'PDF는 브라우저 설정에 따라 새 창으로 열리거나 바로 다운로드될 수 있습니다.'
+      : '직접 연결된 공식 PDF가 없어 벤츠코리아 카탈로그 목록을 안내합니다.';
 
     const trims = vehicleData.models.filter((m) => m.family === family).map((m) => m.trim);
     const hasRequestedTrim = requestedTrim && trims.includes(requestedTrim);
@@ -536,6 +572,8 @@
   tabs.forEach((tab) => {
     tab.addEventListener('click', () => { activeTab = tab.dataset.tab; if (vehicleData) { syncGuideUrl(); render(); } });
   });
+  byId('returnToModel').addEventListener('click', returnToPreviousScreen);
+  byId('copyCatalogLink').addEventListener('click', copyCatalogLink);
   byId('copyColorLink').addEventListener('click', copyGuideLink);
   byId('shareColorLink').addEventListener('click', shareGuideLink);
   byId('photoClose').addEventListener('click', () => byId('photoDialog').close());

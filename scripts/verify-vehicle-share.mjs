@@ -35,13 +35,15 @@ assert.equal(readFileSync('catalog-colors.json', 'utf8'),
 const guideHtml = readFileSync('colors.html', 'utf8');
 const guideJs = readFileSync('colors.js', 'utf8');
 const homeHtml = readFileSync('index.html', 'utf8');
-for (const id of ['returnToModel', 'copyColorLink', 'shareColorLink', 'shareFeedback']) {
+for (const id of ['returnToModel', 'catalogSource', 'copyCatalogLink', 'copyColorLink', 'shareColorLink', 'pdfActionHint', 'shareFeedback']) {
   assert.ok(guideHtml.includes('id="' + id + '"'), 'Missing colour navigation control: ' + id);
 }
 assert.ok(guideJs.includes('syncGuideUrl()') && guideJs.includes('navigator.share') &&
+  guideJs.includes('history.back()') && guideJs.includes('copyCatalogLink()') &&
   guideJs.includes('navigator.clipboard') && guideJs.includes("addEventListener('click', copyGuideLink)"),
   'Colour guide sharing or selected-model return handling is incomplete');
-assert.ok(homeHtml.includes("get('openModel')") && homeHtml.includes('openModel(requestedModel)'),
+assert.ok(homeHtml.includes("get('openModel')") && homeHtml.includes('openModel(requestedModel)') &&
+  homeHtml.includes('mb-color-origin-v1') && homeHtml.includes('mb-color-return-request-v1'),
   'Homepage must reopen the previous model details dialog');
 // All prior model/year/trim entries and prices must survive for old share URLs.
 const original = JSON.parse(execFileSync('git', ['show', baseline + ':content.json'], { encoding:'utf8', maxBuffer:3000000 }));

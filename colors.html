@@ -6,17 +6,17 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="description" content="메르세데스-벤츠 의정부 전시장 김중모 차장 상담용 차량 컬러 안내">
 <title>차량 외장·실내 컬러 | Mercedes-Benz 의정부</title>
-<link rel="stylesheet" href="./colors.css?v=20261120-return-share">
+<link rel="stylesheet" href="./colors.css?v=20261120-back-pdf-ux">
 <script src="./eclass-sprites.js" defer></script>
-<script src="./colors.js?v=20261120-return-share" defer></script>
+<script src="./colors.js?v=20261120-back-pdf-ux" defer></script>
 </head>
 <body>
 <header class="topbar">
-  <div class="container topbar-inner"><a class="brand" href="./index.html">Mercedes-Benz <span>의정부 · 김중모 차장</span></a><div class="nav-actions"><a id="returnToModel" class="back-link" href="./index.html#models">← 차량 목록</a><button id="copyColorLink" class="back-link action-button" type="button">링크 복사</button><button id="shareColorLink" class="back-link action-button" type="button">공유하기</button></div></div>
+  <div class="container topbar-inner"><a class="brand" href="./index.html">Mercedes-Benz <span>의정부 · 김중모 차장</span></a></div>
 </header>
 <main class="container">
+  <div class="return-bar"><a id="returnToModel" class="return-button" href="./index.html#models">← 이전 화면으로 돌아가기</a></div>
   <div class="intro"><p class="eyebrow">CATALOGUE COLOR GUIDE</p><h1>외장 컬러 · 실내 시트</h1><p>차량을 선택하면 해당 모델군의 <strong>공식 카탈로그에서 검증한 컬러 정보</strong>를 확인할 수 있습니다. 일반 모델과 AMG·마이바흐는 별도로 관리합니다.</p></div>
-  <p id="shareFeedback" class="share-feedback" role="status" aria-live="polite" hidden></p>
   <section class="selector" aria-label="차량 선택">
     <label for="family">차종 선택</label>
     <select id="family" aria-label="차종 선택"><option>불러오는 중…</option></select>
@@ -26,7 +26,18 @@
   <section class="guide" aria-label="컬러 가이드">
     <div class="guide-head">
       <div><p class="eyebrow">OFFICIAL CATALOGUE REFERENCE</p><h2 id="guideTitle">차종을 선택해 주세요</h2><p class="guide-caption" id="guideSubtitle"></p></div>
-      <a id="catalogSource" class="source-link" href="https://www.mercedes-benz.co.kr/passengercars/models/catalog.html" target="_blank" rel="noopener noreferrer">공식 카탈로그 목록 ↗</a>
+      <div class="catalog-actions">
+        <div class="catalog-action-row">
+          <a id="catalogSource" class="source-link source-primary" href="https://www.mercedes-benz.co.kr/passengercars/models/catalog.html" target="_blank" rel="noopener noreferrer">공식 카탈로그 목록 보기 ↗</a>
+          <button type="button" id="copyCatalogLink" class="source-link action-button" hidden>PDF 링크 복사</button>
+        </div>
+        <p id="pdfActionHint" class="download-hint">공식 카탈로그 제공 여부를 확인하고 있습니다.</p>
+        <div class="catalog-action-row guide-share-row">
+          <button type="button" id="copyColorLink" class="source-link action-button">이 컬러 화면 링크 복사</button>
+          <button type="button" id="shareColorLink" class="source-link action-button">컬러 화면 공유</button>
+        </div>
+        <p id="shareFeedback" class="share-feedback" role="status" aria-live="polite" hidden></p>
+      </div>
     </div>
     <div class="tabs" role="tablist" aria-label="컬러 종류">
       <button type="button" id="tab-exterior" class="tab is-active" role="tab" aria-controls="colorPanel" aria-selected="true" data-tab="exterior">외장 컬러</button>
