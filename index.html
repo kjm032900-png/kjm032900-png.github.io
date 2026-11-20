@@ -234,7 +234,7 @@ const timeout=setTimeout(()=>controller.abort(),10000);
 fetch('./content.json',{cache:'no-cache',signal:controller.signal})
   .then(response=>{if(!response.ok)throw new Error('Content HTTP '+response.status);return response.json()})
   .then(validate)
-  .then(data=>{initialize(data);window.VehicleShareUI?.init(data);search.disabled=false;status.hidden=true;status.textContent=''})
+  .then(data=>{initialize(data);window.VehicleShareUI?.init(data);search.disabled=false;status.hidden=true;status.textContent='';const requestedModel=new URLSearchParams(location.search).get('openModel');if(requestedModel&&families.includes(requestedModel)){openModel(requestedModel)}})
   .catch(error=>{
     ['promos','modelGrid','filters','benefitsGrid','count','dialogTable'].forEach(id=>document.getElementById(id).replaceChildren());
     document.querySelectorAll('[data-card-price]').forEach(el=>el.textContent='가격 확인 중');
