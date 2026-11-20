@@ -176,7 +176,7 @@ const modelImageUrl = family => verifiedModelImages[family] || MODEL_IMAGE_OVERR
 const studioZoomModels = new Set(['C-Class','GLA','GLB','GLE','GLE Coupé','GLS','EQA','EQB','EQE','EQE SUV','EQS SUV','Maybach EQS SUV','Maybach GLS','AMG GLE','AMG GLE Coupé']);
 const families=[...new Set(data.models.map(x=>x.family))];const cats=['전체','세단','SUV','전기차','AMG','마이바흐','쿠페·카브리올레','라이프스타일'];let cat='전체',query='';
 $('promos').innerHTML=data.promotions.map(p=>`<article class="promo"><small>${escape(p.year)} · ${escape(text('promotion_period'))}</small><h3>${escape(p.title)}</h3><div class="price">${won(p.price)}</div><div class="pills"><span class="pill">현금 ${escape(p.cash)}</span><span class="pill">MBF ${escape(p.mbf)}</span></div><p>${escape(p.description)}</p><a href="sms:${escape(data.phone)}">구매 조건 문의 ↗</a></article>`).join('');$('benefitsGrid').innerHTML=data.benefits.map(x=>`<div class="benefit"><h3>${escape(x.title)}</h3><p>${escape(x.desc)}</p></div>`).join('');
-function groupRows(f){return data.models.filter(r=>r.family===f && !r.hiddenFromCatalog)}
+function groupRows(f){return data.models.filter(r=>r.family===f && !r.hiddenFromCatalog && Number.isFinite(r.price))}
 const categoryGroups=['세단','SUV','쿠페·카브리올레','전기차','AMG','마이바흐','라이프스타일'];
 const latestFamilies = new Set(['GLE','GLE Coupé','GLS','GLB Electric','CLA Electric','GLC Electric']);
 const categoryTitle = {'세단':'Sedan','SUV':'SUV','쿠페·카브리올레':'Coupé & Cabriolet','전기차':'Electric','AMG':'Mercedes-AMG','마이바흐':'Mercedes-Maybach','라이프스타일':'V-Class'};
