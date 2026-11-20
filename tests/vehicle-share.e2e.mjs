@@ -39,6 +39,41 @@ try {
   assert.equal(vehicleIds.vehicles.length, 91);
   assert.equal(families.length, 44);
   assert.equal(await page.locator('#modelGrid .model').count(), 44);
+
+  // Verify imagery is model-correct and visibly high resolution.
+  const imageOverrides = ['AMG CLA','AMG S-Class','AMG GLB','AMG GLC','AMG GLC Coupé',
+    'AMG GLE Coupé','AMG GLS','AMG CLE','Maybach SL','EQS'];
+  const modelCards = await page.locator('#modelGrid .model[data-model-family]').count();
+  assert.equal(modelCards, 44, 'One marked card for each published model family');
+  const sourcePairs = await page.locator('#modelGrid .model[data-model-family]').evaluateAll(cards =>
+    cards.map(c => ({ family: c.dataset.modelFamily, src: c.querySelector('.model-photo img')?.src }))
+  );
+  assert.equal(new Set(sourcePairs.map(p => p.src)).size, 44, 'No two model families use the same actual image URL');
+  for (const family of imageOverrides) {
+    const url = sourcePairs.find(p => p.family === family)?.src;
+    assert.ok(url?.startsWith('https://'), family + ' must have a dedicated model-accurate photo URL');
+  }
+  const imageResults = await page.evaluate(async urls => {
+    return Promise.all(urls.map(async url => {
+      const image = new Image();
+      image.decoding = 'async';
+      const result = new Promise(resolve => {
+        image.onload = () => resolve({ url, width: image.naturalWidth, height: image.naturalHeight });
+        image.onerror = () => resolve({ url, width: 0, height: 0 });
+      });
+      image.src = url;
+      return Promise.race([result, new Promise(resolve => setTimeout(
+        () => resolve({url, width:0, height:0}), 16000))]);
+    }));
+  }, imageOverrides.map(f => sourcePairs.find(p => p.family === f).src));
+  const failures = imageResults.map((result, i) => (
+    result.width >= 600 && result.height >= 300 ? null :
+      { model: imageOverrides[i], ...result }
+  )).filter(Boolean);
+  console.log('Image audit:', JSON.stringify(imageResults.map((item, i) => ({model:imageOverrides[i],width:item.width,height:item.height}))));
+  assert.deepEqual(failures, [], 'New model photos must all load and be at least 600x300 pixels');
+  console.log('PASS: 44 unique model images and 10 accurate high-resolution replacements loaded.');
+
   assert.equal(await page.locator('#promos .promo').count(), data.promotions.length);
   assert.equal(await page.locator('#shareToolbar').count(), 0, 'No multi-car share toolbar');
 
