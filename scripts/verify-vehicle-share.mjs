@@ -26,7 +26,8 @@ for (const catalog of Object.values(catalogs.catalogs)) {
     assert.equal(url.hostname, 'www.mercedes-benz.co.kr');
   }
 }
-const baseline = '7c94c6cdae4d4965c94f2626e375298658d49533';
+// Prior approved catalogue-colour UI change (PR #8) is now the preservation baseline.
+const baseline = '82163202dd1552efb4085536c9b0812c3ebf1e08';
 for (const path of ['content.json', 'catalog-colors.json', 'colors.html', 'colors.js']) {
   assert.equal(readFileSync(path, 'utf8'), execFileSync('git', ['show', baseline + ':' + path], { encoding: 'utf8', maxBuffer: 2000000 }),
     'Existing data changed unexpectedly: ' + path);

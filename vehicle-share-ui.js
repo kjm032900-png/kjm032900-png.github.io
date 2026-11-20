@@ -25,7 +25,8 @@
             /\.pdf$/i.test(url.pathname)) pdf = url.href;
       }
     } catch (error) { /* Avoid unsafe or malformed links. */ }
-    return { url: pdf || DEFAULT_CATALOGUE, pdf: Boolean(pdf) };
+    return { url: pdf || DEFAULT_CATALOGUE, pdf: Boolean(pdf),
+      title: group.title || row.family, edition: pdf ? (group.edition || '') : '' };
   }
 
   function notify(message) {
@@ -87,21 +88,95 @@
   // Homepage model cards intentionally keep just their original detail button.
   function afterRender() { /* No extra "salesperson selection" button on public cards. */ }
 
+  // Group by the actual link, not the trim or catalog key: several trims
+  // (and sometimes several catalogue keys) can point to the same PDF.
+  function createCataloguePanel(rows) {
+    const unique = new Map();
+    for (const row of rows) {
+      const catalogue = catalogueFor(row);
+      if (!unique.has(catalogue.url)) unique.set(catalogue.url, { ...catalogue, trims: [] });
+      unique.get(catalogue.url).trims.push(row.trim);
+    }
+    const panel = document.createElement('section');
+    panel.className = 'share-catalogue-panel';
+    panel.setAttribute('aria-label', '차종별 공식 카탈로그');
+
+    const intro = document.createElement('p');
+    intro.className = 'share-catalogue-summary';
+    intro.textContent = unique.size === 1
+      ? '이 차종의 공식 카탈로그는 한 번만 열거나 저장하시면 됩니다.'
+      : '차체 유형에 따라 카탈로그가 다릅니다. 해당 자료를 선택해 주세요.';
+    panel.appendChild(intro);
+
+    const list = document.createElement('div');
+    list.className = 'share-catalogue-list';
+    for (const catalogue of unique.values()) {
+      const entry = document.createElement('article');
+      entry.className = 'share-catalogue-entry';
+      const heading = document.createElement('h4');
+      heading.textContent = catalogue.title;
+      entry.appendChild(heading);
+
+      const meta = document.createElement('p');
+      meta.className = 'share-catalogue-meta';
+      meta.textContent = (catalogue.pdf ? '공식 PDF' : '공식 카탈로그 목록') +
+        ' · ' + catalogue.trims.length + '개 트림' +
+        (catalogue.trims.length > 1 ? ' 공통' : '') +
+        (catalogue.edition ? ' · ' + catalogue.edition : '');
+      entry.appendChild(meta);
+
+      if (unique.size > 1) {
+        const applies = document.createElement('p');
+        applies.className = 'share-catalogue-applies';
+        applies.textContent = '적용 트림: ' + catalogue.trims.join(', ');
+        entry.appendChild(applies);
+      }
+      const actions = document.createElement('div');
+      actions.className = 'share-catalogue-actions';
+      const pdf = document.createElement('a');
+      pdf.className = 'share-catalogue-open';
+      pdf.href = catalogue.url;
+      pdf.target = '_blank';
+      pdf.rel = 'noopener noreferrer';
+      pdf.textContent = catalogue.pdf ? '공식 카탈로그 보기·다운로드 ↗' : '공식 카탈로그 목록 보기 ↗';
+      const copy = document.createElement('button');
+      copy.type = 'button';
+      copy.dataset.copyCatalogue = catalogue.url;
+      copy.textContent = catalogue.pdf ? '카탈로그 링크 복사' : '목록 링크 복사';
+      actions.append(pdf, copy);
+      entry.appendChild(actions);
+      if (!catalogue.pdf) {
+        const note = document.createElement('p');
+        note.className = 'share-action-note';
+        note.textContent = '개별 PDF 미등록: 공식 카탈로그 목록에서 확인해 주세요.';
+        entry.appendChild(note);
+      }
+      list.appendChild(entry);
+    }
+    panel.appendChild(list);
+    return panel;
+  }
+
   function decorateDialog(family, rows) {
     if (!state.ready) return;
     const holder = $('dialogTable');
     const table = holder && holder.querySelector('table');
     if (!table || table.querySelector('.share-checkbox-head')) return;
+
     const hint = document.createElement('div');
     hint.className = 'share-dialog-intro';
-    hint.innerHTML = '<strong>카탈로그를 바로 열어 보세요.</strong><p>PDF를 열어 저장하거나, 링크를 복사해 카카오톡으로 보낼 수 있습니다. 여러 차량은 ‘함께 담기’를 선택하세요.</p>';
+    hint.innerHTML = '<strong>공식 카탈로그 · 트림별 가격 안내</strong>' +
+      '<p>동일한 카탈로그는 한 번만 표시합니다. 차량별 공유와 ‘함께 담기’는 아래 트림 목록에서 이용하세요.</p>';
     holder.prepend(hint);
+
     const feedback = document.createElement('p');
     feedback.id = 'shareActionFeedback';
     feedback.className = 'share-action-feedback';
     feedback.setAttribute('role', 'status');
     feedback.setAttribute('aria-live', 'polite');
     hint.after(feedback);
+    feedback.after(createCataloguePanel(rows));
+
     const head = document.createElement('th');
     head.scope = 'col';
     head.className = 'share-checkbox-head';
@@ -128,40 +203,23 @@
       cell.appendChild(label);
       tr.appendChild(cell);
 
-      const catalog = catalogueFor(row);
-      const details = document.createElement('tr');
-      details.className = 'share-action-row';
-      const actionCell = document.createElement('td');
-      actionCell.colSpan = 4;
-      const actions = document.createElement('div');
-      actions.className = 'share-row-actions';
-      const pdf = document.createElement('a');
-      pdf.className = 'share-catalogue-open';
-      pdf.href = catalog.url;
-      pdf.target = '_blank';
-      pdf.rel = 'noopener noreferrer';
-      pdf.textContent = catalog.pdf ? '공식 카탈로그 보기·다운로드 ↗' : '공식 카탈로그 목록 보기 ↗';
-      const copy = document.createElement('button');
-      copy.type = 'button';
-      copy.dataset.copyCatalogue = catalog.url;
-      copy.textContent = catalog.pdf ? '카탈로그 링크 복사' : '카탈로그 목록 링크 복사';
-      actions.append(pdf, copy);
       if (id) {
+        const details = document.createElement('tr');
+        details.className = 'share-action-row';
+        const actionCell = document.createElement('td');
+        actionCell.colSpan = 4;
+        const actions = document.createElement('div');
+        actions.className = 'share-row-actions';
         const single = document.createElement('button');
         single.type = 'button';
+        single.className = 'share-single-button';
         single.dataset.shareSingle = id;
         single.textContent = '이 차량 정보 공유';
         actions.appendChild(single);
+        actionCell.appendChild(actions);
+        details.appendChild(actionCell);
+        tr.after(details);
       }
-      actionCell.appendChild(actions);
-      if (!catalog.pdf) {
-        const notice = document.createElement('p');
-        notice.className = 'share-action-note';
-        notice.textContent = '해당 모델의 개별 PDF가 확인되지 않아 공식 카탈로그 목록으로 안내합니다.';
-        actionCell.appendChild(notice);
-      }
-      details.appendChild(actionCell);
-      tr.after(details);
     });
 
     if (!$('shareDialogControls')) {
