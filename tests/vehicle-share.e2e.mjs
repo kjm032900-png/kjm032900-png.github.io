@@ -45,6 +45,10 @@ try {
   const pdfUrl = await page.locator('#dialogTable a.share-catalogue-open').first().getAttribute('href');
   assert.match(pdfUrl, /^https:\/\/www\.mercedes-benz\.co\.kr\/.+\.pdf$/);
   assert.match(await page.locator('#dialogTable').innerText(), /공식 카탈로그 보기·다운로드/);
+  assert.equal(await page.locator('#dialogTable a.share-catalogue-open').count(), 1);
+  assert.equal(await page.locator('#dialogTable button[data-copy-catalogue]').count(), 1);
+  assert.equal(await page.locator('#dialogTable button[data-share-single]').count(), 8);
+  assert.equal(await page.locator('#dialogTable .share-row-actions a').count(), 0);
 
   await page.locator('#dialogTable button[data-copy-catalogue]').first().click();
   await page.waitForFunction(() => window.__copiedShareUrl && window.__copiedShareUrl.endsWith('.pdf'));
@@ -96,6 +100,39 @@ try {
   assert.ok(shareUrl.includes('ids='));
   assert.ok(!shareUrl.includes('name=') && !shareUrl.includes('phone='));
   await checkWidth(sharePage, 1440);
+  // Verify every published family: one catalogue control per DISTINCT URL.
+  const catalogRegistry = await (await fetch(base + 'catalog-links.json')).json();
+  const groupNames = [...new Set(publishedData.models.map(row => row.family))];
+  const defaultCatalogue = catalogRegistry.catalogueIndexUrl;
+  assert.equal(groupNames.length, 44);
+  for (const family of groupNames) {
+    const familyRows = publishedData.models.filter(row => row.family === family);
+    const expectedUrls = [...new Set(familyRows.map(row => {
+      const key = catalogRegistry.trimCatalogOverrides[row.trim] || catalogRegistry.familyToCatalog[row.family];
+      const url = catalogRegistry.catalogs[key]?.url;
+      return url && new URL(url).pathname.toLowerCase().endsWith('.pdf') ? url : defaultCatalogue;
+    }))].sort();
+
+    await page.locator('[data-family="' + family + '"]').click();
+    await page.locator('#dialogTable .share-catalogue-panel').waitFor();
+    const modalUrls = await page.locator('#dialogTable a.share-catalogue-open').evaluateAll(anchors => anchors.map(a => a.href).sort());
+    assert.deepEqual(modalUrls, expectedUrls, 'Catalogue URLs should be unique within ' + family);
+    assert.equal(await page.locator('#dialogTable button[data-copy-catalogue]').count(), expectedUrls.length, family + ' catalogue copies');
+    assert.equal(await page.locator('#dialogTable tr.share-data-row').count(), familyRows.length, family + ' trims');
+    assert.equal(await page.locator('#dialogTable button[data-share-single]').count(), familyRows.length, family + ' individual sharing');
+    assert.equal(await page.locator('#dialogTable input[data-share-id]').count(), familyRows.length, family + ' selection controls');
+    assert.equal(await page.locator('#dialogTable .share-row-actions a').count(), 0, family + ' must not repeat PDF links per trim');
+    await page.locator('#closeDialog').click();
+  }
+  // AMG CLE and GT are each backed by TWO distinct official brochures.
+  for (const family of ['AMG CLE', 'AMG GT']) {
+    await page.locator('[data-family="' + family + '"]').click();
+    assert.equal(await page.locator('#dialogTable a.share-catalogue-open').count(), 2);
+    assert.equal(await page.locator('#dialogTable .share-catalogue-applies').count(), 2);
+    await page.locator('#closeDialog').click();
+  }
+  console.log('PASS: all 44 family modals use one catalogue link per distinct PDF; individual trim sharing preserved.');
+
   await page.goto(base + 'share.html?ids=not-a-real-vehicle-id', { waitUntil: 'domcontentloaded' });
   await page.locator('#shareCount').filter({ hasText: '선택된 차량 0대' }).waitFor({ timeout: 25000 });
   assert.equal(await page.locator('.share-card').count(), 0);
@@ -120,6 +157,8 @@ try {
     await checkWidth(home, width);
     await home.locator('[data-family="E-Class"]').click();
     await home.locator('#dialogTable .share-row-actions').first().waitFor();
+    assert.equal(await home.locator('#dialogTable a.share-catalogue-open').count(), 1);
+    assert.equal(await home.locator('#dialogTable button[data-share-single]').count(), 8);
     await home.locator('#dialogTable input[data-share-id]').first().check();
     assert.match(await home.locator('#shareDialogCount').innerText(), /1대/);
     await home.locator('#closeDialog').click();
