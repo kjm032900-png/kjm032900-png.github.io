@@ -35,6 +35,21 @@ assert.equal(readFileSync('catalog-colors.json', 'utf8'),
 const guideHtml = readFileSync('colors.html', 'utf8');
 const guideJs = readFileSync('colors.js', 'utf8');
 const homeHtml = readFileSync('index.html', 'utf8');
+const shortsScript = readFileSync('delivery-shorts.js','utf8');
+const shortsCss = readFileSync('delivery-shorts.css','utf8');
+const shortsIds = [...shortsScript.matchAll(/\{id:'([A-Za-z0-9_-]{11})'/g)].map(m=>m[1]);
+assert.equal(shortsIds.length,15,'Delivery gallery must include 15 verified YouTube Shorts');
+assert.equal(new Set(shortsIds).size,15,'Delivery gallery cannot have duplicate video IDs');
+assert.ok(shortsIds.includes('Zt-IzDLAivU'),'Existing published delivery Short must be preserved');
+for(const id of ['shortsGrid','shortsCount','shortsMore','shortsDialog','shortsFrame','shortsClose','shortsExternal']){
+  assert.ok(homeHtml.includes('id="'+id+'"'),'Missing delivery gallery element: '+id);
+}
+assert.ok(homeHtml.includes('delivery-shorts.js') && homeHtml.includes('delivery-shorts.css'));
+assert.ok(shortsCss.includes('grid-template-columns:repeat(2,minmax(0,1fr))'),
+  'Mobile Shorts gallery should have two columns');
+assert.ok(shortsScript.includes('www.youtube-nocookie.com/embed/') &&
+  shortsScript.includes("dialog.addEventListener('close'"), 'Only open player after user click and stop on close');
+
 for (const id of ['returnToModel', 'catalogSource', 'copyCatalogLink', 'copyColorLink', 'shareColorLink', 'pdfActionHint', 'shareFeedback']) {
   assert.ok(guideHtml.includes('id="' + id + '"'), 'Missing colour navigation control: ' + id);
 }

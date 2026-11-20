@@ -31,6 +31,35 @@ try {
   await page.goto(base + 'index.html', { waitUntil: 'domcontentloaded' });
   await page.locator('#modelGrid .model').first().waitFor({ timeout: 25000 });
 
+  // Multi-video delivery story gallery: verify real ID links and accessible opt-in playback.
+  await page.locator('#shortsGrid .shorts-card').first().waitFor({timeout:15000});
+  assert.equal(await page.locator('#shortsGrid [data-short-id]').count(), 15);
+  assert.equal(await page.locator('#shortsGrid .shorts-card:visible').count(), 10);
+  assert.equal(await page.locator('#shortsCount').innerText(), '15개 출고 영상');
+  assert.equal(await page.locator('#shortsGrid [data-short-id="Zt-IzDLAivU"]').count(), 1,
+    'The original verified delivery video must remain available');
+  const shortsIds=await page.locator('#shortsGrid [data-short-id]').evaluateAll(cards=>cards.map(e=>e.dataset.shortId));
+  assert.equal(new Set(shortsIds).size, 15, 'Every gallery thumbnail must point to a unique real Short');
+  assert.ok(shortsIds.every(id=>/^[A-Za-z0-9_-]{11}$/.test(id)));
+  assert.equal(await page.locator('#shortsDialog').evaluate(el=>el.open), false);
+  assert.equal(await page.locator('#shortsGrid iframe').count(), 0, 'No upfront video iframe downloads');
+  const desktopColumns=await page.locator('#shortsGrid').evaluate(e=>getComputedStyle(e).gridTemplateColumns.split(' ').length);
+  assert.equal(desktopColumns, 5);
+  await page.locator('[data-play-short="VdWMJMJkFaQ"]').click();
+  assert.equal(await page.locator('#shortsDialog').evaluate(el=>el.open), true);
+  assert.match(await page.locator('#shortsDialogTitle').innerText(), /CLE 450/);
+  assert.match(await page.locator('#shortsFrame').getAttribute('src'), /youtube-nocookie\.com\/embed\/VdWMJMJkFaQ/);
+  assert.equal(await page.locator('#shortsExternal').getAttribute('href'),'https://www.youtube.com/shorts/VdWMJMJkFaQ');
+  await page.locator('#shortsClose').click();
+  assert.equal(await page.locator('#shortsDialog').evaluate(el=>el.open), false);
+  assert.equal(await page.locator('#shortsFrame').getAttribute('src'), null, 'Video stops on close');
+  await page.locator('#shortsMore').click();
+  assert.equal(await page.locator('#shortsGrid .shorts-card:visible').count(), 15);
+  assert.equal(await page.locator('#shortsMore').getAttribute('aria-expanded'), 'true');
+  await page.locator('#shortsMore').click();
+  assert.equal(await page.locator('#shortsGrid .shorts-card:visible').count(), 10);
+  assert.equal(await page.locator('#shortsMore').getAttribute('aria-expanded'), 'false');
+
   const data = await (await fetch(base + 'content.json')).json();
   const registry = await (await fetch(base + 'catalog-links.json')).json();
   const vehicleIds = await (await fetch(base + 'vehicle-ids.json')).json();
@@ -340,6 +369,13 @@ try {
     await home.goto(base + 'index.html', { waitUntil: 'domcontentloaded' });
     await home.locator('[data-family="E-Class"]').waitFor({ timeout: 25000 });
     await checkWidth(home, width);
+    assert.equal(await home.locator('#shortsGrid .shorts-card:visible').count(), 10);
+    const shortsMobileColumns=await home.locator('#shortsGrid').evaluate(e=>getComputedStyle(e).gridTemplateColumns.split(' ').length);
+    assert.equal(shortsMobileColumns,2,'Shorts must be two columns on mobile');
+    await home.locator('[data-play-short="nOIVVeJiwIQ"]').click();
+    assert.equal(await home.locator('#shortsDialog').evaluate(e=>e.open),true);
+    await checkWidth(home,width);
+    await home.locator('#shortsClose').click();
     await home.locator('[data-family="E-Class"]').click();
     await home.locator('#dialogCatalogues a.share-catalogue-open').first().waitFor();
     assert.equal(await home.locator('#dialogCatalogues a.share-catalogue-open').count(), 1);
