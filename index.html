@@ -302,12 +302,9 @@ function saveLastGoodContent(data){
 }
 function ensureVehicleRendered(){
   if(appReady){window.__ensureVehicleCatalog?.();return}
-  // When returning from a colour guide, try the cached complete catalogue immediately.
-  const saved=readSavedContent();
-  if(saved){
-    try{applyVehicleData(saved,true)}catch(error){console.warn('Cached vehicle content:',error)}
-  }
-  if(!appReady && !loadingPromise)loadContent();
+  // Avoid showing stale prices while a fresh network request is still possible.
+  // loadContent() falls back to the last validated session snapshot on real failure.
+  if(!loadingPromise)loadContent();
 }
 function applyVehicleData(data,fromCache=false){
   if(appReady){window.__ensureVehicleCatalog?.();return}
