@@ -246,6 +246,10 @@ try {
   assert.equal(await colorNav.locator('#modelGrid .model').count(), 43,
     'Back/forward cache restore must rebuild the complete model gallery');
   assert.ok(await colorNav.locator('#filters [data-cat="전체"]').isVisible());
+  await colorNav.locator('#filters [data-cat="SUV"]').click();
+  assert.ok(await colorNav.locator('#modelGrid .model').count() > 0,
+    'Rebuilt filter buttons must remain interactive');
+  await colorNav.locator('#filters [data-cat="전체"]').click();
   await colorNav.locator('#search').fill('___not-a-car___');
   assert.equal(await colorNav.locator('#modelGrid .model').count(), 0);
   await colorNav.locator('header nav a[href="#models"]').click();
