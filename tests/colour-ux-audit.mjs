@@ -12,7 +12,7 @@ try {
    const page=await context.newPage(); const errs=[];
    page.on('pageerror',e=>errs.push(e.message));
    await page.goto(base+'colors.html?model=E-Class&trim=E%20200%20EXCLUSIVE&my=27MY',{waitUntil:'domcontentloaded'});
-   await page.locator('#family option').last().waitFor({timeout:25000});
+   await page.locator('#family option').last().waitFor({state:'attached',timeout:25000});
    await page.waitForTimeout(1500);
    const metrics=await page.evaluate(()=>{
      const select=document.querySelector('#family'),grid=document.querySelector('#colorGrid');
