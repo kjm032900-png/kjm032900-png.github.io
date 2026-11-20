@@ -42,9 +42,15 @@ assert.ok(guideJs.includes('syncGuideUrl()') && guideJs.includes('navigator.shar
   guideJs.includes('history.back()') && guideJs.includes('copyCatalogLink()') &&
   guideJs.includes('navigator.clipboard') && guideJs.includes("addEventListener('click', copyGuideLink)"),
   'Colour guide sharing or selected-model return handling is incomplete');
-assert.ok(homeHtml.includes("get('openModel')") && homeHtml.includes('openModel(requestedModel)') &&
+assert.ok(homeHtml.includes("get('openModel')") && homeHtml.includes('button?.click()') &&
   homeHtml.includes('mb-color-origin-v1') && homeHtml.includes('mb-color-return-request-v1'),
   'Homepage must reopen the previous model details dialog');
+assert.ok(homeHtml.includes('window.__ensureVehicleCatalog') &&
+  homeHtml.includes('window.__resetVehicleCatalog') &&
+  homeHtml.includes('id="catalogRetryButton"') &&
+  homeHtml.includes('CONTENT_CACHE_KEY') &&
+  !homeHtml.includes("['promos','modelGrid','filters','benefitsGrid','count','dialogTable'].forEach"),
+  'Catalog recovery must not wipe all vehicle cards on a temporary network failure');
 // Guard announced but separately sourced electric GLC prices from being lost again.
 const glc = data.models.filter(row => row.family === 'GLC Electric' && !row.hiddenFromCatalog);
 assert.equal(glc.length, 2);
