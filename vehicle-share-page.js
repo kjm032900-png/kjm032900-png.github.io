@@ -178,7 +178,8 @@
     if (!data || !Array.isArray(data.models) || !data.images ||
         !registry || registry.version !== 1 || !Array.isArray(registry.vehicles) ||
         !catalogs || catalogs.version !== 1) throw new Error('Invalid share data');
-    const models = new Map(data.models.map(function (row) { return [rowKey(row), row]; }));
+    // Preserve historical customer links even when the public model gallery lists newer model years.
+    const models = new Map([...(data.legacyModels || []),...data.models].map(function (row) { return [rowKey(row), row]; }));
     const ids = new Map(registry.vehicles.map(function (row) { return [row.id, row]; }));
     const target = $('shareResults');
     let found = 0, missing = 0;
