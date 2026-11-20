@@ -31,20 +31,46 @@ try {
   assert.equal(await page.locator('#modelGrid .model').count(), 44);
   const publishedData = await (await fetch(base + 'content.json')).json();
   assert.equal(await page.locator('#promos .promo').count(), publishedData.promotions.length);
-  await page.locator('[data-share-family="E-Class"]').waitFor({ timeout: 25000 });
-  await page.locator('[data-share-family="E-Class"]').click();
-  await page.locator('#dialogTable tbody tr').filter({ hasText: 'E 200 EXCLUSIVE' }).locator('input[data-share-id]').check();
-  await page.locator('#closeDialog').click();
-  await page.locator('[data-share-family="GLE"]').click();
-  await page.locator('#dialogTable tbody tr').filter({ hasText: 'GLE 450 4MATIC AMG Line' }).locator('input[data-share-id]').check();
-  await page.locator('#closeDialog').click();
-  assert.match(await page.locator('#shareToolbarCount').innerText(), /2대/);
+  assert.equal(await page.locator('[data-share-family]').count(), 0, 'No sales-only buttons on public model cards');
   await page.evaluate(() => {
     Object.defineProperty(navigator, 'clipboard', {
       configurable: true,
-      value: { writeText: async (text) => { window.__copiedShareUrl = text; } }
+      value: { writeText: async text => { window.__copiedShareUrl = text; } }
     });
+    Object.defineProperty(navigator, 'share', { configurable: true, value: undefined });
   });
+
+  await page.locator('[data-family="E-Class"]').click();
+  await page.locator('#dialogTable .share-action-row').first().waitFor();
+  const pdfUrl = await page.locator('#dialogTable a.share-catalogue-open').first().getAttribute('href');
+  assert.match(pdfUrl, /^https:\/\/www\.mercedes-benz\.co\.kr\/.+\.pdf$/);
+  assert.match(await page.locator('#dialogTable').innerText(), /공식 카탈로그 보기·다운로드/);
+
+  await page.locator('#dialogTable button[data-copy-catalogue]').first().click();
+  await page.waitForFunction(() => window.__copiedShareUrl && window.__copiedShareUrl.endsWith('.pdf'));
+  assert.equal(await page.evaluate(() => window.__copiedShareUrl), pdfUrl);
+  assert.match(await page.locator('#shareActionFeedback').innerText(), /복사되었습니다/);
+
+  await page.locator('#dialogTable button[data-share-single]').first().click();
+  await page.waitForFunction(() => window.__copiedShareUrl && window.__copiedShareUrl.includes('share.html?ids='));
+  let oneUrl = new URL(await page.evaluate(() => window.__copiedShareUrl));
+  assert.equal(oneUrl.searchParams.get('ids').split(',').length, 1);
+  assert.deepEqual(Array.from(oneUrl.searchParams.keys()), ['ids']);
+
+  await page.locator('#dialogTable tr.share-data-row').filter({ hasText: 'E 200 EXCLUSIVE' }).locator('input[data-share-id]').check();
+  assert.match(await page.locator('#shareDialogCount').innerText(), /1대/);
+  await page.locator('#closeDialog').click();
+  await page.locator('[data-family="GLE"]').click();
+  await page.locator('#dialogTable tr.share-data-row').filter({ hasText: 'GLE 450 4MATIC AMG Line' }).locator('input[data-share-id]').check();
+  assert.match(await page.locator('#shareDialogCount').innerText(), /2대/);
+  await page.locator('[data-share-selected-copy]').click();
+  await page.waitForFunction(() => window.__copiedShareUrl && new URL(window.__copiedShareUrl).searchParams.get('ids')?.includes(','));
+  const modalUrl = new URL(await page.evaluate(() => window.__copiedShareUrl));
+  assert.equal(modalUrl.searchParams.get('ids').split(',').length, 2);
+  await page.locator('#closeDialog').click();
+
+  await page.locator('#shareToolbar').waitFor({ state: 'visible' });
+  assert.match(await page.locator('#shareToolbarCount').innerText(), /2대/);
   await page.locator('#shareCopy').click();
   await page.waitForFunction(() => Boolean(window.__copiedShareUrl));
   const copiedUrl = new URL(await page.evaluate(() => window.__copiedShareUrl));
@@ -59,6 +85,12 @@ try {
   assert.match(await sharePage.locator('#shareResults').innerText(), /77,500,000원/);
   assert.match(await sharePage.locator('#shareResults').innerText(), /139,000,000원/);
   assert.equal(await sharePage.locator('.share-card .share-card-actions a').count(), 4);
+  assert.equal(await sharePage.locator('.share-card .share-card-actions button[data-catalogue-copy]').count(), 2);
+  await sharePage.evaluate(() => { Object.defineProperty(navigator, 'clipboard', { configurable:true, value: {writeText:async text => {window.__copiedCatalogue = text;}}}); });
+  await sharePage.locator('button[data-catalogue-copy]').first().click();
+  await sharePage.waitForFunction(() => Boolean(window.__copiedCatalogue));
+  assert.match(await sharePage.evaluate(() => window.__copiedCatalogue), /\.pdf$/);
+  assert.match(await sharePage.locator('.share-card-feedback').first().innerText(), /복사되었습니다/);
   assert.match(await sharePage.locator('.share-card').first().locator('a').first().getAttribute('href'), /\.pdf(?:\?|$)/);
   const shareUrl = sharePage.url();
   assert.ok(shareUrl.includes('ids='));
@@ -84,11 +116,16 @@ try {
     await checkWidth(customer, width);
     const home = await mobile.newPage();
     await home.goto(base + 'index.html', { waitUntil: 'domcontentloaded' });
-    await home.locator('[data-share-family="E-Class"]').waitFor({ timeout: 25000 });
+    await home.locator('[data-family="E-Class"]').waitFor({ timeout: 25000 });
     await checkWidth(home, width);
-    await home.locator('[data-share-family="E-Class"]').click();
+    await home.locator('[data-family="E-Class"]').click();
+    await home.locator('#dialogTable .share-row-actions').first().waitFor();
     await home.locator('#dialogTable input[data-share-id]').first().check();
+    assert.match(await home.locator('#shareDialogCount').innerText(), /1대/);
+    await home.locator('#closeDialog').click();
+    await home.locator('#shareToolbar').waitFor({ state: 'visible' });
     assert.match(await home.locator('#shareToolbarCount').innerText(), /1대/);
+    await checkWidth(home, width);
     await mobile.close();
   }
   assert.deepEqual(errors, []);
