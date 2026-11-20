@@ -32,3 +32,23 @@ a{color:inherit}button,select{font:inherit}.container{width:min(1120px,calc(100%
 
 .original-pdf-link{display:inline-block;margin:9px auto 4px;border:1px solid #91acc0;border-radius:7px;padding:8px 12px;font-size:13px;font-weight:700;text-decoration:none;color:#fff}
 .original-pdf-link:hover{background:#294358}
+
+
+/* Shared source PDF pages: one large image, complete per-option names. */
+.color-card--combined{grid-column:1/-1;border-color:#52718a}
+.combined-head{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 18px;border-bottom:1px solid var(--line);background:#172635}
+.combined-title{margin:0;font-size:17px;font-weight:800}
+.combined-caption{margin:3px 0 0;color:var(--muted);font-size:12px}
+.combined-count{flex-shrink:0;white-space:nowrap;color:#d5e7f5;border:1px solid #6a8aa0;border-radius:30px;font-size:12px;font-weight:700;padding:5px 10px}
+.combined-body{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(275px,1fr);align-items:start}
+.combined-media{min-width:0;background:#17212b}
+.color-card--combined .photo-trigger{background:#17212b}
+.color-card--combined .photo-trigger img.catalog-original{width:100%;height:auto;max-height:660px;object-fit:contain}
+.combined-options{min-width:0;padding:12px 17px 16px}
+.combined-options-title{margin:0 0 8px;font-size:12px;color:#b8cfe1;font-weight:700}
+.combined-option{padding:9px 0 10px;border-top:1px solid #30485b;overflow-wrap:anywhere}
+.combined-option .color-code{display:block;margin-bottom:1px}
+.combined-option-name{display:block;font-size:13px;line-height:1.45}
+.combined-option .meta{font-size:11px;margin:3px 0 0}
+@media(max-width:760px){.combined-body{grid-template-columns:1fr}.combined-options{padding:12px 15px 16px}.combined-option{padding:9px 0}.combined-head{padding:13px 15px}.combined-title{font-size:15px}}
+@media(max-width:520px){.combined-head{align-items:flex-start}.combined-caption{font-size:11px}.combined-count{font-size:10px;padding:4px 7px}.combined-option-name{font-size:12px}}
