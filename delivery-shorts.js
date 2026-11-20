@@ -73,9 +73,11 @@
     const button=event.target.closest('button[data-play-short]');
     if (button) play(button.dataset.playShort);
   });
-  dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
-  byId('shortsClose').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('close', () => {byId('shortsFrame').removeAttribute('src');});
+  function stopVideo() { byId('shortsFrame').removeAttribute('src'); }
+  dialog.addEventListener('click', event => { if (event.target === dialog) {stopVideo();dialog.close();} });
+  byId('shortsClose').addEventListener('click', () => {stopVideo();dialog.close();});
+  dialog.addEventListener('cancel', stopVideo);
+  dialog.addEventListener('close', stopVideo);
   // Never initiate a YouTube player until an explicit click on a Shorts card.
   render();
 })();
