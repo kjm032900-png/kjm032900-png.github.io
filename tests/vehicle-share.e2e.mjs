@@ -181,7 +181,7 @@ try {
     await page.locator('#closeDialog').click();
   }
   assert.equal(displayedDocs, 46);
-  assert.equal(redundantButtonsRemoved, 86);
+  assert.equal(redundantButtonsRemoved, 88);
   for (const family of ['AMG CLE', 'AMG GT']) {
     await page.locator('[data-family="' + family + '"]').click();
     assert.equal(await page.locator('#dialogCatalogues a.share-catalogue-open').count(), 2);
