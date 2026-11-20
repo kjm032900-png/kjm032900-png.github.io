@@ -34,13 +34,37 @@ try {
   const data = await (await fetch(base + 'content.json')).json();
   const registry = await (await fetch(base + 'catalog-links.json')).json();
   const vehicleIds = await (await fetch(base + 'vehicle-ids.json')).json();
-  assert.equal(data.models.length, 98);
+  assert.equal(data.models.length, 100);
   const visibleModels = data.models.filter(row => !row.hiddenFromCatalog);
   const families = [...new Set(visibleModels.map(row => row.family))];
-  assert.equal(visibleModels.length, 89);
+  assert.equal(visibleModels.length, 90);
   assert.equal(vehicleIds.vehicles.length, 91);
   assert.equal(families.length, 44);
+  // Separate Mercedes-Benz Korea launch prices: the 2026-11-17 consolidated PDF does not list electric GLC.
+  const glcElectric = visibleModels.filter(row => row.family === 'GLC Electric');
+  assert.equal(glcElectric.length, 2, 'Only the two announced electric GLC grades should be public');
+  assert.deepEqual(glcElectric.map(row => row.price).sort((a,b)=>a-b), [90000000, 94800000]);
+  assert.deepEqual(glcElectric.map(row => row.trim), [
+    'GLC 300 4MATIC AMG Line Electric','GLC 300 4MATIC AMG Line+ Electric'
+  ]);
+  assert.ok(glcElectric.every(row => /별도 발표/.test(row.source)));
+  assert.equal(data.models.find(row => row.family === 'GLC Electric' && row.trim === 'The all-new electric GLC')?.hiddenFromCatalog, true);
+  const unknownPublicPrices = visibleModels.filter(row => row.price === null);
+  assert.deepEqual(unknownPublicPrices.map(row => row.trim), ['EQS 400 Facelift'],
+    'Only the genuinely unannounced EQS 400 facelift may lack a public price');
+  assert.deepEqual(data.card_prices.glc_electric, {family:'GLC Electric',year:'27MY',trim:'GLC 300 4MATIC AMG Line Electric',starting:true});
+  assert.equal(await page.locator('[data-card-price="glc_electric"]').innerText(), '9,000만원부터');
+  assert.equal(await page.locator('[data-model-family="GLC Electric"] .starting').innerText(), '공식가 90,000,000원부터');
+  const galleryBg = await page.locator('#models').evaluate(el => getComputedStyle(el).backgroundColor);
+  assert.equal(galleryBg, 'rgb(233, 237, 240)', 'Gallery uses a gentle silver instead of pure white');
+  const buttonFontSize = await page.locator('[data-family="GLC Electric"]').evaluate(el => parseFloat(getComputedStyle(el).fontSize));
+  assert.ok(buttonFontSize >= 14, 'Vehicle gallery buttons should remain legible at desktop scale');
   assert.equal(await page.locator('#modelGrid .model').count(), 44);
+  await page.locator('[data-family="GLC Electric"]').click();
+  assert.equal(await page.locator('#dialogTable tbody tr').count(), 2);
+  assert.match(await page.locator('#dialogTable').innerText(), /90,000,000원/);
+  assert.match(await page.locator('#dialogTable').innerText(), /94,800,000원/);
+  await page.locator('#closeDialog').click();
   assert.equal(await page.locator('#modelGrid .gallery-group-heading').count(), 7);
   assert.equal(await page.locator('#modelGrid .model[data-model-family="GLS"] .starting').innerText(), '공식가 152,000,000원부터');
   assert.match(await page.locator('#new').innerText(), /신형 GLE Coupé/);
@@ -273,7 +297,7 @@ try {
     await mobile.close();
   }
   assert.deepEqual(errors, []);
-  console.log('PASS: 44 categorized model cards, 89 currently listed trims, historical share ID safety, 27MY price checks and all catalogue/colour/desktop/mobile tests.');
+  console.log('PASS: 44 categorized model cards, 90 currently listed trims, historical share ID safety, 27MY price checks and all catalogue/colour/desktop/mobile tests.');
 } finally {
   if (browser) await browser.close();
   server.kill();
