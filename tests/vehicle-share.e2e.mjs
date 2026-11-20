@@ -82,6 +82,32 @@ try {
   assert.deepEqual(failures, [], 'New model photos must all load and be at least 600x300 pixels');
   console.log('PASS: 44 unique model images and 13 updated image sources loaded at sufficient resolution.');
 
+  // Regression: validate every visible model's image, not only changed external ones.
+  const allPictures = await page.evaluate(async urls =>
+    Promise.all(urls.map(async url => {
+      const img = new Image();
+      const result = new Promise(resolve => {
+        img.onload = () => resolve({url,width:img.naturalWidth,height:img.naturalHeight});
+        img.onerror = () => resolve({url,width:0,height:0});
+      });
+      img.src = url;
+      return Promise.race([result,new Promise(resolve => setTimeout(() =>
+        resolve({url,width:0,height:0}),16000))]);
+    })), sourcePairs.map(p => p.src));
+  assert.equal(allPictures.length, 44);
+  assert.deepEqual(allPictures.filter(pic => pic.width < 500 || pic.height < 260), [],
+    'Every gallery card must have a resolvable, legible photograph');
+  const rowGeometry = await page.locator('#modelGrid .model').first().evaluate(card => {
+    const photo = card.querySelector('.model-photo');
+    const photoBox = photo.getBoundingClientRect();
+    const cardBox = card.getBoundingClientRect();
+    return { width:photoBox.width,height:photoBox.height,cardHeight:cardBox.height };
+  });
+  assert.ok(Math.abs(rowGeometry.width / rowGeometry.height - 16/9) < 0.06,
+    'Consistent 16:9 photo area: '+JSON.stringify(rowGeometry));
+  console.log('PASS: all 44 model images load at 500x260 or higher with consistent image stage.');
+
+
   assert.equal(await page.locator('#promos .promo').count(), data.promotions.length);
   assert.equal(await page.locator('#shareToolbar').count(), 0, 'No multi-car share toolbar');
 
