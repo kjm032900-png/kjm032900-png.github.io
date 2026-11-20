@@ -82,7 +82,10 @@ try {
   for (const family of ['GLE','GLE Coupé','GLS','AMG CLE']) {
     const src = sourcePairs.find(p => p.family === family)?.src;
     assert.ok(src?.includes('/images/official-gallery/'), 'Expected local official cutout: ' + family);
-    const size = await page.locator('[data-model-family="' + family + '"] .model-photo img').evaluate(img => ({complete:img.complete,width:img.naturalWidth,height:img.naturalHeight}));
+    const image = page.locator('[data-model-family="' + family + '"] .model-photo img');
+    await image.scrollIntoViewIfNeeded();
+    await image.evaluate(img => img.decode());
+    const size = await image.evaluate(img => ({complete:img.complete,width:img.naturalWidth,height:img.naturalHeight}));
     assert.ok(size.complete && size.width>=900 && size.height>=450, 'Missing/highly compressed local image ' + family + ': ' + JSON.stringify(size));
   }
 
