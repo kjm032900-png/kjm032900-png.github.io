@@ -41,7 +41,7 @@ def main():
   doc=documents[key]
   if page_no>=len(doc): raise ValueError("Missing page for "+name)
   images=[im for im in doc[page_no].get_images(full=True) if (im[2],im[3])==dimensions and im[1]>0]
-  if len(images)!=1: raise ValueError(f"Could not uniquely identify {name} photo: {len(images)}")
+  if not images: raise ValueError(f"Could not identify {name} photo in the expected PDF page")
   xref,mask=images[0][:2]
   rgba=fitz.Pixmap(fitz.Pixmap(doc,xref),fitz.Pixmap(doc,mask))
   if rgba.n!=4:raise ValueError("Expected alpha-masked vehicle")
