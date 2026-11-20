@@ -547,6 +547,48 @@
       "family": "EQS",
       "year": "27MY",
       "trim": "EQS 400 Facelift"
+    },
+    {
+      "id": "gle-27my-gle-450-4matic-amg-line",
+      "family": "GLE",
+      "year": "27MY",
+      "trim": "GLE 450 4MATIC AMG Line"
+    },
+    {
+      "id": "gle-coupe-27my-gle-450-4matic-coupe",
+      "family": "GLE Coupé",
+      "year": "27MY",
+      "trim": "GLE 450 4MATIC Coupé"
+    },
+    {
+      "id": "gls-27my-gls-450-4matic",
+      "family": "GLS",
+      "year": "27MY",
+      "trim": "GLS 450 4MATIC"
+    },
+    {
+      "id": "gls-27my-gls-450-4matic-6-seater",
+      "family": "GLS",
+      "year": "27MY",
+      "trim": "GLS 450 4MATIC 6-seater"
+    },
+    {
+      "id": "gls-27my-gls-450-4matic-amg-line",
+      "family": "GLS",
+      "year": "27MY",
+      "trim": "GLS 450 4MATIC AMG Line"
+    },
+    {
+      "id": "gls-27my-gls-450-4matic-amg-line-6-seater",
+      "family": "GLS",
+      "year": "27MY",
+      "trim": "GLS 450 4MATIC AMG Line 6-seater"
+    },
+    {
+      "id": "glb-electric-27my-glb-250-electric",
+      "family": "GLB Electric",
+      "year": "27MY",
+      "trim": "GLB 250+ electric"
     }
   ]
 }
