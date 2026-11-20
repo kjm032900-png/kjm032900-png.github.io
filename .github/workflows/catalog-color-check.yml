@@ -24,6 +24,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Discover public Shorts metadata for gallery
+        run: |
+          python3 -m pip install --user yt-dlp --quiet
+          echo "=== SHORTS LIST START ==="
+          ~/.local/bin/yt-dlp --ignore-errors --flat-playlist --playlist-end 18 --print '%(id)s|%(title)s' https://www.youtube.com/@movenzz/shorts || true
+          echo "=== SHORTS LIST END ==="
       - name: Verify JavaScript syntax
         run: |
           node --check colors.js
