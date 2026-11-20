@@ -37,3 +37,11 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Browser test desktop and mobile
         run: node tests/vehicle-share.e2e.mjs
+      - name: Upload model gallery visual QA
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-gallery-visual-review
+          path: artifacts/official-*.png
+          if-no-files-found: ignore
+          retention-days: 7
