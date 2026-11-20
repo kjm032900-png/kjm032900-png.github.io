@@ -84,13 +84,18 @@
     const directPdf = safeCatalogUrl(catalog.url);
     const fallback = safeCatalogUrl(catalogueLinks.catalogueIndexUrl) || catalogueHomepage;
     const actionRow = node('div', 'share-card-actions');
-    actionRow.appendChild(link(directPdf ? '공식 카탈로그 PDF ↗' : '공식 카탈로그 목록 ↗', directPdf || fallback, true));
+    actionRow.appendChild(link(directPdf ? '공식 카탈로그 보기·다운로드 ↗' : '공식 카탈로그 목록 보기 ↗', directPdf || fallback, true));
+    const copyPdf = node('button', 'share-link-outline', directPdf ? '카탈로그 링크 복사' : '목록 링크 복사');
+    copyPdf.type = 'button';
+    copyPdf.dataset.catalogueCopy = directPdf || fallback;
+    actionRow.appendChild(copyPdf);
     const colorUrl = new URL('./colors.html', location.href);
     colorUrl.searchParams.set('model', row.family);
     colorUrl.searchParams.set('trim', row.trim);
     colorUrl.searchParams.set('my', row.year);
     actionRow.appendChild(link('컬러·실내 안내 ↗', colorUrl.href, false));
     body.appendChild(actionRow);
+    body.appendChild(node('p', 'share-card-tip', directPdf ? 'PDF를 열면 브라우저에서 다운로드할 수 있습니다. 링크를 복사해 다른 분께 보낼 수도 있습니다.' : '공식 목록에서 카탈로그를 확인하고 공유할 수 있습니다.'));
     if (directPdf) {
       body.appendChild(node('p', 'share-card-foot',
         '카탈로그: ' + (catalog.title || row.family) +
@@ -103,11 +108,10 @@
     article.appendChild(body);
     return article;
   }
-  async function copyCurrentAddress() {
-    const text = location.href;
+  async function copyLink(text, successMessage) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      try { await navigator.clipboard.writeText(text); setStatus('링크를 복사했습니다. 카카오톡에 붙여넣어 전달하실 수 있습니다.', true); return; }
-      catch (error) { /* fallback below */ }
+      try { await navigator.clipboard.writeText(text); setStatus(successMessage, true); return; }
+      catch (error) { /* Use fallback below. */ }
     }
     const input = document.createElement('textarea');
     input.value = text;
@@ -117,10 +121,13 @@
     input.focus();
     input.select();
     let okay = false;
-    try { okay = document.execCommand('copy'); } catch (error) { /* manual copy below */ }
+    try { okay = document.execCommand('copy'); } catch (error) { /* Manual fallback. */ }
     input.remove();
-    if (!okay) window.prompt('주소를 복사해 주세요.', text);
-    setStatus(okay ? '링크를 복사했습니다.' : '주소를 길게 눌러 복사해 주세요.', true);
+    if (!okay) window.prompt('아래 링크를 복사해 카카오톡에 보내 주세요.', text);
+    setStatus(okay ? successMessage : '주소를 길게 눌러 복사해 주세요.', true);
+  }
+  function copyCurrentAddress() {
+    return copyLink(location.href, '차량 안내 링크가 복사되었습니다. 카카오톡에 붙여넣어 보내세요.');
   }
   async function loadJson(path) {
     const response = await fetch(path, { cache: 'no-cache' });
@@ -133,6 +140,11 @@
   }
 
   $('copyShareLink').addEventListener('click', copyCurrentAddress);
+  $('shareResults').addEventListener('click', function (event) {
+    const button = event.target.closest('button[data-catalogue-copy]');
+    if (!button) return;
+    copyLink(button.dataset.catalogueCopy, '카탈로그 링크가 복사되었습니다. 카카오톡에 붙여넣어 보내세요.');
+  });
   const search = new URLSearchParams(location.search);
   const raw = search.get('ids') || '';
   const inputIds = raw.split(',').filter(Boolean);
