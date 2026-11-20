@@ -57,9 +57,20 @@ try {
     cards.map(c => ({ family: c.dataset.modelFamily, src: c.querySelector('.model-photo img')?.src }))
   );
   assert.equal(new Set(sourcePairs.map(p => p.src)).size, 44, 'No two model families use the same actual image URL');
+  const brochurePhotos = {
+    'GLE':'gle-27my.webp',
+    'GLE Coupé':'gle-coupe-27my.webp',
+    'GLS':'gls-27my.webp',
+    'AMG CLE':'amg-cle-27my.webp'
+  };
   for (const family of imageOverrides) {
     const url = sourcePairs.find(p => p.family === family)?.src;
-    assert.ok(url?.startsWith('https://'), family + ' must have a dedicated model-accurate photo URL');
+    if (brochurePhotos[family]) {
+      assert.ok(url?.endsWith('/images/official-gallery/' + brochurePhotos[family]),
+        family + ' must use its self-hosted official brochure image');
+    } else {
+      assert.ok(url?.startsWith('https://'), family + ' must have a dedicated model-accurate photo URL');
+    }
   }
   const imageResults = await page.evaluate(async urls => {
     return Promise.all(urls.map(async url => {
