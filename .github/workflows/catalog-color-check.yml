@@ -24,16 +24,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Discover public Shorts metadata for gallery
-        run: |
-          python3 -m pip install --user yt-dlp --quiet
-          echo "=== SHORTS LIST START ==="
-          ~/.local/bin/yt-dlp --ignore-errors --flat-playlist --playlist-end 18 --print '%(id)s|%(title)s' https://www.youtube.com/@movenzz/shorts || true
-          echo "=== SHORTS LIST END ==="
-          for id in VdWMJMJkFaQ nOIVVeJiwIQ Zt-IzDLAivU; do
-            echo "portrait-thumb:${id} $(curl -L -s --max-time 8 -o /dev/null -w '%{http_code} %{size_download}' https://i.ytimg.com/vi/${id}/oar2.jpg)"
-            echo "fallback-thumb:${id} $(curl -L -s --max-time 8 -o /dev/null -w '%{http_code} %{size_download}' https://i.ytimg.com/vi/${id}/hqdefault.jpg)"
-          done
       - name: Verify JavaScript syntax
         run: |
           node --check colors.js
