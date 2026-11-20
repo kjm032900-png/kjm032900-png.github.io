@@ -35,14 +35,22 @@ try {
   const registry = await (await fetch(base + 'catalog-links.json')).json();
   const vehicleIds = await (await fetch(base + 'vehicle-ids.json')).json();
   const families = [...new Set(data.models.map(row => row.family))];
-  assert.equal(data.models.length, 91);
-  assert.equal(vehicleIds.vehicles.length, 91);
+  assert.equal(data.models.length, 89);
+  assert.equal(data.legacyModels.length, 9);
+  assert.equal(vehicleIds.vehicles.length, 98);
   assert.equal(families.length, 44);
   assert.equal(await page.locator('#modelGrid .model').count(), 44);
+  assert.equal(await page.locator('#modelGrid .gallery-group').count(), 6);
+  assert.equal(await page.locator('#new .launch').count(), 7);
+  assert.equal(await page.locator('#new .flagship').count(), 2);
+  assert.equal(await page.locator('#new [data-card-price="gle_new"]').innerText(), '1억 3670만원');
+  assert.equal(await page.locator('#new [data-card-price="glb_electric"]').innerText(), '6990만원');
+  assert.equal(await page.locator('#modelGrid [data-model-family="GLE"] .starting').innerText(), '공식가 136,700,000원부터');
+  assert.equal(await page.locator('#modelGrid [data-model-family="GLS"] .starting').innerText(), '공식가 152,000,000원부터');
 
   // Verify imagery is model-correct and visibly high resolution.
   const imageOverrides = ['AMG CLA','AMG S-Class','AMG GLB','AMG GLC','AMG GLC Coupé',
-    'AMG GLE Coupé','AMG GLS','AMG CLE','Maybach SL','EQS'];
+    'AMG GLE Coupé','AMG GLS','AMG CLE','Maybach SL','EQS','GLE','GLE Coupé','GLS'];
   const modelCards = await page.locator('#modelGrid .model[data-model-family]').count();
   assert.equal(modelCards, 44, 'One marked card for each published model family');
   const sourcePairs = await page.locator('#modelGrid .model[data-model-family]').evaluateAll(cards =>
@@ -72,7 +80,7 @@ try {
   )).filter(Boolean);
   console.log('Image audit:', JSON.stringify(imageResults.map((item, i) => ({model:imageOverrides[i],width:item.width,height:item.height}))));
   assert.deepEqual(failures, [], 'New model photos must all load and be at least 600x300 pixels');
-  console.log('PASS: 44 unique model images and 10 accurate high-resolution replacements loaded.');
+  console.log('PASS: 44 unique model images and 13 updated image sources loaded at sufficient resolution.');
 
   assert.equal(await page.locator('#promos .promo').count(), data.promotions.length);
   assert.equal(await page.locator('#shareToolbar').count(), 0, 'No multi-car share toolbar');
@@ -135,7 +143,13 @@ try {
     await page.locator('#closeDialog').click();
   }
   assert.equal(displayedDocs, 46);
-  assert.equal(redundantButtonsRemoved, 90);
+  assert.equal(redundantButtonsRemoved, 86);
+  for (const family of ['GLE','GLE Coupé','GLS','GLB Electric']) {
+    await page.locator('[data-family="' + family + '"]').click();
+    assert.equal(await page.locator('#dialogTable tbody tr').count(), family==='GLS'?4:1, family+' new MY27 rows');
+    assert.match(await page.locator('#dialogTable').innerText(), /27MY/);
+    await page.locator('#closeDialog').click();
+  }
   for (const family of ['AMG CLE', 'AMG GT']) {
     await page.locator('[data-family="' + family + '"]').click();
     assert.equal(await page.locator('#dialogCatalogues a.share-catalogue-open').count(), 2);
@@ -196,7 +210,7 @@ try {
     await mobile.close();
   }
   assert.deepEqual(errors, []);
-  console.log('PASS: 44 model modals, 46 unique catalogue entries, 91 prices, no share/collection clutter, colour guide once, desktop/mobile and legacy customer links.');
+  console.log('PASS: 44 model modals, 46 distinct catalogues, 89 current MY trims, 98 IDs, 9 preserved legacy entries, 13 images, desktop/mobile.');
 } finally {
   if (browser) await browser.close();
   server.kill();
