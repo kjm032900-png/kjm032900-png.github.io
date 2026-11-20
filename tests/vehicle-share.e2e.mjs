@@ -29,7 +29,8 @@ try {
   await page.goto(base + 'index.html', { waitUntil: 'domcontentloaded' });
   await page.locator('#modelGrid .model').first().waitFor({ timeout: 25000 });
   assert.equal(await page.locator('#modelGrid .model').count(), 44);
-  assert.equal(await page.locator('#promos .promo').count(), 3);
+  const publishedData = await (await fetch(base + 'content.json')).json();
+  assert.equal(await page.locator('#promos .promo').count(), publishedData.promotions.length);
   await page.locator('[data-share-family="E-Class"]').waitFor({ timeout: 25000 });
   await page.locator('[data-share-family="E-Class"]').click();
   await page.locator('#dialogTable tbody tr').filter({ hasText: 'E 200 EXCLUSIVE' }).locator('input[data-share-id]').check();
