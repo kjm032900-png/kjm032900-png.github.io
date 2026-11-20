@@ -1,0 +1,72 @@
+/* Standalone share styles; existing homepage rules are not replaced. */
+.share-toolbar{position:sticky;bottom:16px;z-index:20;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:16px 0 24px;padding:13px 16px;background:#213345f5;border:1px solid #9ab0c2;border-radius:12px;box-shadow:0 12px 32px #0008;backdrop-filter:blur(12px)}
+.share-toolbar-title{margin:0;font-size:14px;font-weight:750;color:#f0f6fa}
+.share-toolbar-detail{margin:2px 0 0;color:#c6d6e2;font-size:12px}
+.share-toolbar-actions{display:flex;flex-wrap:wrap;gap:8px}
+.share-toolbar button,.share-pick{border:1px solid #8ca4b9;border-radius:7px;padding:10px 12px;background:transparent;color:#f0f6fa;font-weight:700;font-size:13px}
+.share-toolbar button.primary{background:#f2f6f9;border-color:#f2f6f9;color:#112131}
+.share-toolbar button:disabled{opacity:.44;cursor:not-allowed}
+.share-toolbar-feedback{flex-basis:100%;font-size:12px;color:#d8e9f6;margin:0;min-height:0}
+.model-body .share-pick{width:100%;margin-top:8px;text-align:center;padding:9px;border-color:#56748c;background:#243a4d}
+.model-body .share-pick.selected{background:#e6eff7;border-color:#e6eff7;color:#102131}
+.share-checkbox{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;cursor:pointer}
+.share-checkbox input{accent-color:#245c86;width:21px;height:21px;cursor:pointer}
+.share-checkbox-head{text-align:center!important}
+.share-select-cell{text-align:center!important;white-space:nowrap}
+.share-dialog-hint{font-size:13px;color:#dcebf5;padding:12px;margin-top:15px;border:1px solid #42586b;border-radius:8px;background:#1b2a37}
+@media(max-width:740px){.share-toolbar{bottom:73px;margin-top:10px;padding:12px}.share-toolbar-actions{width:100%;display:grid;grid-template-columns:1fr 1fr}.share-toolbar-actions button{font-size:12px;padding:11px 6px}.model-body .share-pick{font-size:12px}.share-select-cell{min-width:48px}.price-table th.share-checkbox-head{width:47px}}
+@media(max-width:390px){.share-toolbar{bottom:73px}}
+
+/* Customer-facing share page */
+:root{--s-bg:#0b1016;--s-panel:#151e28;--s-line:#344657;--s-ink:#f3f7fb;--s-sub:#c7d3dd}
+.share-page{min-height:100vh;margin:0;background:var(--s-bg);color:var(--s-ink);font:15px/1.75 'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;word-break:keep-all}
+.share-page *{box-sizing:border-box}
+.share-page a{color:inherit;text-decoration:none}
+.share-page button{font:inherit;cursor:pointer}
+.share-page button:focus-visible,.share-page a:focus-visible{outline:3px solid #91d0ff;outline-offset:3px}
+.share-topbar{position:sticky;top:0;z-index:10;background:#0b1016f2;border-bottom:1px solid var(--s-line);backdrop-filter:blur(10px)}
+.share-inner{max-width:1020px;margin:auto;padding:0 24px}
+.share-head{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:72px}
+.share-brand{font-size:19px;line-height:1.35;font-weight:700}
+.share-brand small{display:block;color:#b9cddd;font-size:11px;font-weight:400}
+.share-back{font-size:13px;color:#d9e6ef!important;white-space:nowrap}
+.share-hero{padding:48px 0 30px}
+.share-eyebrow{font-size:12px;letter-spacing:.16em;color:#a8bfd1;font-weight:700}
+.share-hero h1{font-family:'Noto Serif KR',serif;font-weight:500;letter-spacing:-.045em;line-height:1.4;font-size:clamp(30px,3.5vw,45px);margin:12px 0 14px}
+.share-intro{margin:0;color:var(--s-sub);line-height:1.9;max-width:720px}
+.share-status{border:1px solid #61788c;background:#152332;border-radius:10px;padding:15px 17px;margin:18px 0;color:#e7f0f7;font-size:14px}
+.share-summary{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding:12px 0 22px;border-bottom:1px solid var(--s-line)}
+.share-summary strong{font-size:17px}
+.share-actions{display:flex;flex-wrap:wrap;gap:9px}
+.share-link-btn,.share-link-outline{display:inline-flex;justify-content:center;align-items:center;min-height:42px;padding:10px 16px;border-radius:7px;border:1px solid #94a9b9;font-size:13px;font-weight:750;text-align:center}
+.share-link-btn{background:#eef5f9;color:#142434!important}
+.share-link-outline{background:transparent;color:#eaf3f8!important}
+.share-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding:28px 0 40px}
+.share-card{background:var(--s-panel);border:1px solid var(--s-line);border-radius:14px;overflow:hidden;min-width:0}
+.share-card-photo{height:248px;background:#d8dee3;display:flex;align-items:center;justify-content:center;color:#263747;font-weight:700}
+.share-card-photo img{width:100%;height:100%;object-fit:contain;display:block}
+.share-card-body{padding:22px}
+.share-card-meta{color:#a6c1d5;font-weight:700;font-size:12px;letter-spacing:.02em}
+.share-card h2{font-size:20px;line-height:1.5;margin:8px 0 16px;letter-spacing:-.03em}
+.share-card-price{font-size:24px;font-weight:800;letter-spacing:-.03em;margin:0 0 14px}
+.share-specs{border-top:1px solid var(--s-line);margin:16px 0;padding:13px 0 0}
+.share-specs div{display:grid;grid-template-columns:90px 1fr;gap:10px;margin:7px 0;font-size:13px}
+.share-specs dt{color:#a3bacc}.share-specs dd{margin:0;color:#e2eaf2;overflow-wrap:anywhere}
+.share-card-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:17px}
+.share-card-actions a{min-width:0}
+.share-card-foot{font-size:12px;color:#aebfce;line-height:1.7;margin:14px 0 0}
+.share-contact{background:#152536;border:1px solid #526b81;border-radius:14px;padding:25px;margin-bottom:32px}
+.share-contact h2{font-size:23px;margin:0 0 7px}
+.share-contact p{color:#c5d6e3;margin:0 0 17px}
+.share-contact-links{display:flex;flex-wrap:wrap;gap:10px}
+.share-footer{font-size:12px;color:#9eb3c3;border-top:1px solid #283948;padding:24px 0 48px;line-height:1.8}
+.share-empty{grid-column:1/-1;text-align:center;padding:35px 20px;color:#b9cddd;border:1px dashed #5a7084;border-radius:12px}
+[hidden]{display:none!important}
+@media(max-width:740px){
+.share-inner{padding:0 17px}.share-head{min-height:65px}.share-brand{font-size:16px}.share-brand small{font-size:10px}
+.share-hero{padding:34px 0 19px}.share-intro{font-size:14px}.share-results{grid-template-columns:1fr;gap:14px;padding:20px 0 30px}
+.share-card-photo{height:205px}.share-card-body{padding:17px}.share-card h2{font-size:18px}.share-card-price{font-size:22px}.share-card-actions a{font-size:12px;padding:10px 6px}
+.share-summary{align-items:stretch}.share-summary .share-actions{width:100%}.share-summary .share-actions>*{flex:1}
+.share-contact{padding:18px}.share-contact h2{font-size:20px}.share-contact-links>*{flex:1}
+}
+@media(max-width:355px){.share-back{font-size:11px}.share-card-actions{grid-template-columns:1fr}}
