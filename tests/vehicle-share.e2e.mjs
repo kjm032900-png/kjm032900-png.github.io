@@ -43,8 +43,8 @@ try {
   assert.equal(await page.locator('#modelGrid .gallery-group').count(), 6);
   assert.equal(await page.locator('#new .launch').count(), 7);
   assert.equal(await page.locator('#new .flagship').count(), 2);
-  assert.equal(await page.locator('#new [data-card-price="gle_new"]').innerText(), '1억 3670만원');
-  assert.equal(await page.locator('#new [data-card-price="glb_electric"]').innerText(), '6990만원');
+  assert.equal(await page.locator('#new [data-card-price="gle_new"]').innerText(), '1억 3,670만원');
+  assert.equal(await page.locator('#new [data-card-price="glb_electric"]').innerText(), '6,990만원');
   assert.equal(await page.locator('#modelGrid [data-model-family="GLE"] .starting').innerText(), '공식가 136,700,000원부터');
   assert.equal(await page.locator('#modelGrid [data-model-family="GLS"] .starting').innerText(), '공식가 152,000,000원부터');
 
