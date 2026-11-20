@@ -89,6 +89,7 @@ try {
    await page.locator('#closeDialog').click();
    const tray=await page.evaluate(()=>{
       const a=document.querySelector('#shareToolbar'),b=document.querySelector('.mobile-contact');
+      const rect=el=>{if(!el)return null;const r=el.getBoundingClientRect();return {x:r.x,y:r.y,w:r.width,h:r.height}};
       return {visible:a&&!a.hidden,box:rect(a),contact:rect(b),viewport:{w:innerWidth,h:innerHeight},
         trayOverlapsContact:!!(a&&b&&a.getBoundingClientRect().bottom>b.getBoundingClientRect().top),
         trayWidthOverflow:!!(a&&a.getBoundingClientRect().right>innerWidth)};
