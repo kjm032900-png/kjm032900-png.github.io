@@ -108,3 +108,31 @@
 .share-contact{padding:18px}.share-contact h2{font-size:20px}.share-contact-links>*{flex:1}
 }
 @media(max-width:355px){.share-back{font-size:11px}.share-card-actions{grid-template-columns:1fr}}
+
+
+/* Model modal: consolidate identical official PDF links before the price table. */
+#dialogTable .share-dialog-intro{margin-bottom:10px}
+#dialogTable .share-catalogue-panel{margin:0 0 19px;min-width:0}
+#dialogTable .share-catalogue-summary{font-size:12px;color:#cee0ec;margin:0 0 9px}
+#dialogTable .share-catalogue-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:10px}
+#dialogTable .share-catalogue-entry{min-width:0;padding:13px 14px;border-radius:9px;border:1px solid #59768c;background:#182a3a}
+#dialogTable .share-catalogue-entry h4{font-size:14px;font-weight:800;color:#f1f7fc;margin:0 0 3px;line-height:1.45;overflow-wrap:anywhere}
+#dialogTable .share-catalogue-meta{font-size:11px;color:#c5d9e7;line-height:1.6;margin:0 0 10px;overflow-wrap:anywhere}
+#dialogTable .share-catalogue-applies{font-size:11px;color:#d5e4ed;margin:0 0 10px;line-height:1.6;overflow-wrap:anywhere}
+#dialogTable .share-catalogue-actions{display:flex;gap:8px;flex-wrap:wrap}
+#dialogTable .share-catalogue-actions a,#dialogTable .share-catalogue-actions button{display:inline-flex;justify-content:center;align-items:center;text-align:center;min-height:42px;padding:9px 11px;border:1px solid #819eb4;border-radius:7px;background:#233648;color:#f4f8fb;font-size:12px;font-weight:700;line-height:1.4;text-decoration:none;cursor:pointer}
+#dialogTable .share-catalogue-actions a{background:#eaf2f7;color:#142434;border-color:#eaf2f7}
+#dialogTable .share-catalogue-actions a:hover,#dialogTable .share-catalogue-actions button:hover{filter:brightness(1.12)}
+#dialogTable .share-catalogue-actions a:focus-visible,#dialogTable .share-catalogue-actions button:focus-visible{outline:3px solid #90caff;outline-offset:3px}
+#dialogTable .share-catalogue-entry .share-action-note{margin:9px 0 0}
+#dialogTable .share-action-row td{padding-bottom:11px}
+#dialogTable .share-single-button{min-height:37px;padding:7px 11px;font-size:11px}
+@media(max-width:740px){
+#dialogTable .share-catalogue-entry{padding:12px}
+#dialogTable .share-catalogue-actions{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+#dialogTable .share-catalogue-actions a,#dialogTable .share-catalogue-actions button{min-width:0;padding:9px 6px;font-size:11px;overflow-wrap:anywhere}
+#dialogTable .share-row-actions{display:flex;justify-content:flex-start}
+#dialogTable .share-row-actions .share-single-button{padding:8px 11px;min-height:38px}
+#dialogTable .share-action-row td{padding:5px 0 11px}
+}
+@media(max-width:380px){#dialogTable .share-catalogue-actions{grid-template-columns:1fr}}
