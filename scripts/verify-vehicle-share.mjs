@@ -45,6 +45,16 @@ assert.ok(guideJs.includes('syncGuideUrl()') && guideJs.includes('navigator.shar
 assert.ok(homeHtml.includes("get('openModel')") && homeHtml.includes('openModel(requestedModel)') &&
   homeHtml.includes('mb-color-origin-v1') && homeHtml.includes('mb-color-return-request-v1'),
   'Homepage must reopen the previous model details dialog');
+// Guard announced but separately sourced electric GLC prices from being lost again.
+const glc = data.models.filter(row => row.family === 'GLC Electric' && !row.hiddenFromCatalog);
+assert.equal(glc.length, 2);
+assert.deepEqual(glc.map(row => row.price).sort((a,b)=>a-b), [90000000, 94800000]);
+assert.equal(data.card_prices.glc_electric?.trim, 'GLC 300 4MATIC AMG Line Electric');
+assert.equal(data.card_prices.glc_electric?.starting, true);
+assert.ok(data.models.some(row => row.family === 'GLC Electric' && row.trim === 'The all-new electric GLC' && row.hiddenFromCatalog),
+  'Legacy share ID target must remain present but hidden');
+assert.deepEqual(data.models.filter(row => !row.hiddenFromCatalog && row.price === null).map(row => row.trim),
+  ['EQS 400 Facelift'], 'Only officially unpriced published models may have null price');
 // All prior model/year/trim entries and prices must survive for old share URLs.
 const original = JSON.parse(execFileSync('git', ['show', baseline + ':content.json'], { encoding:'utf8', maxBuffer:3000000 }));
 for (const old of original.models) {
