@@ -235,6 +235,23 @@ try {
   await colorNav.locator('#modelDialog[open]').waitFor({timeout:25000});
   assert.equal(await colorNav.locator('#dialogTitle').innerText(), 'S-Class');
   await colorNav.waitForFunction(y=>Math.abs(window.scrollY-y)<=12,previousScrollY,{timeout:7000});
+  // Reproduce Android-style BFCache restoration with a missing DOM catalogue.
+  await colorNav.locator('#closeDialog').click();
+  await colorNav.evaluate(() => {
+    document.getElementById('modelGrid').replaceChildren();
+    document.getElementById('filters').replaceChildren();
+    window.dispatchEvent(new PageTransitionEvent('pageshow', {persisted:true}));
+  });
+  await colorNav.locator('#modelGrid .model').first().waitFor({timeout:10000});
+  assert.equal(await colorNav.locator('#modelGrid .model').count(), 43,
+    'Back/forward cache restore must rebuild the complete model gallery');
+  assert.ok(await colorNav.locator('#filters [data-cat="전체"]').isVisible());
+  await colorNav.locator('#search').fill('___not-a-car___');
+  assert.equal(await colorNav.locator('#modelGrid .model').count(), 0);
+  await colorNav.locator('header nav a[href="#models"]').click();
+  assert.equal(await colorNav.locator('#search').inputValue(), '');
+  assert.equal(await colorNav.locator('#modelGrid .model').count(), 43,
+    'Top navigation must reset search and restore all cars');
   await colorNav.close();
 
   const directColour = await desktop.newPage();
@@ -245,6 +262,49 @@ try {
   assert.match(await directColour.locator('#catalogSource').innerText(), /공식 카탈로그 목록/);
   assert.match(await directColour.locator('#pdfActionHint').innerText(), /직접 연결된 공식 PDF가 없어/);
   await directColour.close();
+
+
+  // A transient mobile network fetch error must retry rather than blanking the entire site.
+  const flaky = await desktop.newPage();
+  let failOnce = 0;
+  await flaky.route('**/content.json', async route => {
+    failOnce++;
+    if (failOnce === 1) await route.abort('failed');
+    else await route.continue();
+  });
+  await flaky.goto(base+'index.html',{waitUntil:'domcontentloaded'});
+  await flaky.locator('#modelGrid .model').first().waitFor({timeout:20000});
+  assert.equal(failOnce,2,'Transient data failure is retried once');
+  assert.equal(await flaky.locator('#modelGrid .model').count(),43);
+  await flaky.close();
+
+  // If all requests fail, provide an explicit retry button in the model section.
+  const offline = await desktop.newPage();
+  await offline.route('**/content.json', route=>route.abort('failed'));
+  await offline.goto(base+'index.html',{waitUntil:'domcontentloaded'});
+  await offline.locator('#catalogRetryButton').waitFor({state:'visible',timeout:20000});
+  assert.match(await offline.locator('#catalogLoadWarningText').innerText(),/다시 불러오기/);
+  assert.equal(await offline.locator('#modelGrid .model').count(),0);
+  await offline.unroute('**/content.json');
+  await offline.locator('#catalogRetryButton').click();
+  await offline.locator('#modelGrid .model').first().waitFor({timeout:20000});
+  assert.equal(await offline.locator('#modelGrid .model').count(),43);
+  await offline.close();
+
+  // Once initialized, an optional share-component failure cannot erase priced cards.
+  const isolated = await desktop.newPage();
+  await isolated.addInitScript(() => {
+    window.addEventListener('DOMContentLoaded', () => {
+      window.VehicleShareUI = {
+        init() { throw Error('Deliberate optional sharing failure'); },
+        afterRender() { throw Error('Deliberate gallery decoration failure'); }
+      };
+    });
+  });
+  await isolated.goto(base+'index.html',{waitUntil:'domcontentloaded'});
+  await isolated.locator('#modelGrid .model').first().waitFor({timeout:20000});
+  assert.equal(await isolated.locator('#modelGrid .model').count(),43);
+  await isolated.close();
 
   // Old customer share links must still work, despite removal of homepage
   // selection and multi-send buttons. No customer PII is introduced in URLs.
@@ -289,6 +349,8 @@ try {
     await home.locator('#returnToModel').click();
     await home.locator('#modelDialog[open]').waitFor({timeout:25000});
     assert.equal(await home.locator('#dialogTitle').innerText(), 'E-Class');
+    assert.equal(await home.locator('#modelGrid .model').count(), 43,
+      'Returning to the model modal must keep the mobile gallery populated');
     await home.locator('#closeDialog').click();
 
     const legacy = await mobile.newPage();
