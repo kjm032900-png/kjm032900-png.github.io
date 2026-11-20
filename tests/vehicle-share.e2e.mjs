@@ -171,6 +171,54 @@ try {
     await page.locator('#closeDialog').click();
   }
 
+
+  // Restore previous scroll and modal, verify distinct PDF/colour copy actions.
+  const colorNav = await desktop.newPage();
+  colorNav.on('pageerror', error => errors.push('Colour navigation: ' + error.message));
+  await colorNav.goto(base + 'index.html', {waitUntil:'domcontentloaded'});
+  await colorNav.locator('[data-family="S-Class"]').waitFor({timeout:25000});
+  await colorNav.locator('[data-family="S-Class"]').scrollIntoViewIfNeeded();
+  const previousScrollY = await colorNav.evaluate(() => window.scrollY);
+  await colorNav.locator('[data-family="S-Class"]').click();
+  await colorNav.locator('#dialogColorsLink').click();
+  await colorNav.waitForURL(/colors\.html\?model=S-Class/);
+  await colorNav.locator('#guideTitle').filter({hasText:'S-Class'}).waitFor();
+  assert.equal(await colorNav.locator('#returnToModel').innerText(), '← 이전 화면으로 돌아가기');
+  assert.equal(await colorNav.locator('header #returnToModel').count(), 0);
+  assert.ok((await colorNav.locator('#returnToModel').boundingBox()).height >= 40);
+  const officialPdf = await colorNav.locator('#catalogSource').getAttribute('href');
+  assert.match(officialPdf, /^https:\/\/www\.mercedes-benz\.co\.kr\/.+\.pdf$/);
+  assert.match(await colorNav.locator('#catalogSource').innerText(), /PDF 열기·다운로드/);
+  assert.match(await colorNav.locator('#pdfActionHint').innerText(), /바로 다운로드/);
+  assert.equal(await colorNav.locator('#copyCatalogLink').isVisible(), true);
+  await colorNav.evaluate(() => {
+    Object.defineProperty(navigator,'clipboard',{
+      configurable:true,value:{writeText:async url=>{window.__copiedColourOrPdfUrl=url;}}
+    });
+  });
+  await colorNav.locator('#copyCatalogLink').click();
+  await colorNav.waitForFunction(() => Boolean(window.__copiedColourOrPdfUrl));
+  assert.equal(await colorNav.evaluate(() => window.__copiedColourOrPdfUrl), officialPdf);
+  assert.match(await colorNav.locator('#shareFeedback').innerText(), /PDF 링크를 복사/);
+  await colorNav.locator('#tab-seats').click();
+  await colorNav.locator('#copyColorLink').click();
+  assert.match(await colorNav.evaluate(() => window.__copiedColourOrPdfUrl), /colors\.html\?model=S-Class/);
+  assert.match(await colorNav.evaluate(() => window.__copiedColourOrPdfUrl), /tab=seats/);
+  await colorNav.locator('#returnToModel').click();
+  await colorNav.waitForURL(/index\.html/);
+  await colorNav.locator('#modelDialog[open]').waitFor({timeout:25000});
+  assert.equal(await colorNav.locator('#dialogTitle').innerText(), 'S-Class');
+  await colorNav.waitForFunction(y=>Math.abs(window.scrollY-y)<=12,previousScrollY,{timeout:7000});
+  await colorNav.close();
+
+  const directColour = await desktop.newPage();
+  await directColour.goto(base + 'colors.html?model=AMG%20G%2063', {waitUntil:'domcontentloaded'});
+  await directColour.locator('#guideTitle').filter({hasText:'AMG G 63'}).waitFor();
+  assert.equal(await directColour.locator('#copyCatalogLink').isVisible(), false);
+  assert.match(await directColour.locator('#catalogSource').innerText(), /공식 카탈로그 목록/);
+  assert.match(await directColour.locator('#pdfActionHint').innerText(), /직접 연결된 공식 PDF가 없어/);
+  await directColour.close();
+
   // Old customer share links must still work, despite removal of homepage
   // selection and multi-send buttons. No customer PII is introduced in URLs.
   const ids = [
@@ -208,6 +256,12 @@ try {
     assert.equal(await home.locator('#dialogTable tbody tr').count(), 8);
     assert.equal(await home.locator('input[data-share-id]').count(), 0);
     await checkWidth(home, width);
+    await home.locator('#dialogColorsLink').click();
+    await home.locator('#returnToModel').waitFor({timeout:25000});
+    await checkWidth(home, width);
+    await home.locator('#returnToModel').click();
+    await home.locator('#modelDialog[open]').waitFor({timeout:25000});
+    assert.equal(await home.locator('#dialogTitle').innerText(), 'E-Class');
     await home.locator('#closeDialog').click();
 
     const legacy = await mobile.newPage();
