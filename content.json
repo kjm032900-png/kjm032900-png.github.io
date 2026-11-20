@@ -730,7 +730,24 @@
       "year": "27MY",
       "trim": "The all-new electric GLC",
       "price": null,
-      "source": "가격 확인 필요"
+      "source": "초기 모델 안내용 보존 항목 · 27MY 실제 국내 출시 트림은 GLC 300 4MATIC AMG Line Electric / AMG Line+ Electric",
+      "hiddenFromCatalog": true
+    },
+    {
+      "category": "전기차",
+      "family": "GLC Electric",
+      "year": "27MY",
+      "trim": "GLC 300 4MATIC AMG Line Electric",
+      "price": 90000000,
+      "source": "벤츠코리아 2026-07-09 국내 사전계약 발표 · 2026-10-19 국내 출시 (11월17일 통합 가격표 외 별도 발표)"
+    },
+    {
+      "category": "전기차",
+      "family": "GLC Electric",
+      "year": "27MY",
+      "trim": "GLC 300 4MATIC AMG Line+ Electric",
+      "price": 94800000,
+      "source": "벤츠코리아 2026-07-09 국내 사전계약 발표 · 2026-10-19 국내 출시 (11월17일 통합 가격표 외 별도 발표)"
     },
     {
       "category": "전기차",
@@ -946,8 +963,8 @@
     "glc_electric": {
       "family": "GLC Electric",
       "year": "27MY",
-      "trim": "The all-new electric GLC",
-      "starting": false
+      "trim": "GLC 300 4MATIC AMG Line Electric",
+      "starting": true
     },
     "v_class": {
       "family": "V-Class",
