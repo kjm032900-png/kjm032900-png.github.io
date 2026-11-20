@@ -34,9 +34,9 @@ try {
   const data = await (await fetch(base + 'content.json')).json();
   const registry = await (await fetch(base + 'catalog-links.json')).json();
   const vehicleIds = await (await fetch(base + 'vehicle-ids.json')).json();
-  const families = [...new Set(visibleModels.map(row => row.family))];
   assert.equal(data.models.length, 98);
   const visibleModels = data.models.filter(row => !row.hiddenFromCatalog);
+  const families = [...new Set(visibleModels.map(row => row.family))];
   assert.equal(visibleModels.length, 89);
   assert.equal(vehicleIds.vehicles.length, 91);
   assert.equal(families.length, 44);
