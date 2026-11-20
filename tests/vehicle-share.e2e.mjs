@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { mkdirSync } from 'node:fs';
 import { spawn } from 'node:child_process';
 import { chromium } from 'playwright';
 
@@ -118,6 +119,16 @@ try {
     'Consistent 16:9 photo area: '+JSON.stringify(rowGeometry));
   console.log('PASS: all 44 model images load at 500x260 or higher with consistent image stage.');
 
+  // Keep actual visual proof of the 3-column model gallery before rollout.
+  mkdirSync('artifacts', {recursive:true});
+  await page.locator('#modelGrid .gallery-group[aria-label="SUV"]').screenshot({
+    path:'artifacts/official-suv-gallery-desktop.png', animations:'disabled'
+  });
+  await page.locator('#modelGrid .gallery-group[aria-label="Sedan"]').screenshot({
+    path:'artifacts/official-sedan-gallery-desktop.png', animations:'disabled'
+  });
+
+
 
   assert.equal(await page.locator('#promos .promo').count(), data.promotions.length);
   assert.equal(await page.locator('#shareToolbar').count(), 0, 'No multi-car share toolbar');
@@ -230,6 +241,10 @@ try {
     await home.goto(base + 'index.html', { waitUntil: 'domcontentloaded' });
     await home.locator('[data-family="E-Class"]').waitFor({ timeout: 25000 });
     await checkWidth(home, width);
+    if (width === 390) {
+      await home.locator('#models').scrollIntoViewIfNeeded();
+      await home.screenshot({path:'artifacts/official-gallery-mobile.png', animations:'disabled'});
+    }
     await home.locator('[data-family="E-Class"]').click();
     await home.locator('#dialogCatalogues a.share-catalogue-open').first().waitFor();
     assert.equal(await home.locator('#dialogCatalogues a.share-catalogue-open').count(), 1);
