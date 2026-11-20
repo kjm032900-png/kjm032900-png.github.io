@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { mkdirSync } from 'node:fs';
 import { spawn } from 'node:child_process';
 import { chromium } from 'playwright';
 
@@ -35,23 +36,42 @@ try {
   const registry = await (await fetch(base + 'catalog-links.json')).json();
   const vehicleIds = await (await fetch(base + 'vehicle-ids.json')).json();
   const families = [...new Set(data.models.map(row => row.family))];
-  assert.equal(data.models.length, 91);
-  assert.equal(vehicleIds.vehicles.length, 91);
+  assert.equal(data.models.length, 89);
+  assert.equal(data.legacyModels.length, 9);
+  assert.equal(vehicleIds.vehicles.length, 98);
   assert.equal(families.length, 44);
   assert.equal(await page.locator('#modelGrid .model').count(), 44);
+  assert.equal(await page.locator('#modelGrid .gallery-group').count(), 6);
+  assert.equal(await page.locator('#new .launch').count(), 7);
+  assert.equal(await page.locator('#new .flagship').count(), 2);
+  assert.equal(await page.locator('#new [data-card-price="gle_new"]').innerText(), '1억 3,670만원');
+  assert.equal(await page.locator('#new [data-card-price="glb_electric"]').innerText(), '6,990만원');
+  assert.equal(await page.locator('#modelGrid [data-model-family="GLE"] .starting').innerText(), '공식가 136,700,000원부터');
+  assert.equal(await page.locator('#modelGrid [data-model-family="GLS"] .starting').innerText(), '공식가 152,000,000원부터');
 
   // Verify imagery is model-correct and visibly high resolution.
   const imageOverrides = ['AMG CLA','AMG S-Class','AMG GLB','AMG GLC','AMG GLC Coupé',
-    'AMG GLE Coupé','AMG GLS','AMG CLE','Maybach SL','EQS'];
+    'AMG GLE Coupé','AMG GLS','AMG CLE','Maybach SL','EQS','GLE','GLE Coupé','GLS'];
   const modelCards = await page.locator('#modelGrid .model[data-model-family]').count();
   assert.equal(modelCards, 44, 'One marked card for each published model family');
   const sourcePairs = await page.locator('#modelGrid .model[data-model-family]').evaluateAll(cards =>
     cards.map(c => ({ family: c.dataset.modelFamily, src: c.querySelector('.model-photo img')?.src }))
   );
   assert.equal(new Set(sourcePairs.map(p => p.src)).size, 44, 'No two model families use the same actual image URL');
+  const brochurePhotos = {
+    'GLE':'gle-27my.webp',
+    'GLE Coupé':'gle-coupe-27my.webp',
+    'GLS':'gls-27my.webp',
+    'AMG CLE':'amg-cle-27my.webp'
+  };
   for (const family of imageOverrides) {
     const url = sourcePairs.find(p => p.family === family)?.src;
-    assert.ok(url?.startsWith('https://'), family + ' must have a dedicated model-accurate photo URL');
+    if (brochurePhotos[family]) {
+      assert.ok(url?.endsWith('/images/official-gallery/' + brochurePhotos[family]),
+        family + ' must use its self-hosted official brochure image');
+    } else {
+      assert.ok(url?.startsWith('https://'), family + ' must have a dedicated model-accurate photo URL');
+    }
   }
   const imageResults = await page.evaluate(async urls => {
     return Promise.all(urls.map(async url => {
@@ -72,7 +92,43 @@ try {
   )).filter(Boolean);
   console.log('Image audit:', JSON.stringify(imageResults.map((item, i) => ({model:imageOverrides[i],width:item.width,height:item.height}))));
   assert.deepEqual(failures, [], 'New model photos must all load and be at least 600x300 pixels');
-  console.log('PASS: 44 unique model images and 10 accurate high-resolution replacements loaded.');
+  console.log('PASS: 44 unique model images and 13 updated image sources loaded at sufficient resolution.');
+
+  // Regression: validate every visible model's image, not only changed external ones.
+  const allPictures = await page.evaluate(async urls =>
+    Promise.all(urls.map(async url => {
+      const img = new Image();
+      const result = new Promise(resolve => {
+        img.onload = () => resolve({url,width:img.naturalWidth,height:img.naturalHeight});
+        img.onerror = () => resolve({url,width:0,height:0});
+      });
+      img.src = url;
+      return Promise.race([result,new Promise(resolve => setTimeout(() =>
+        resolve({url,width:0,height:0}),16000))]);
+    })), sourcePairs.map(p => p.src));
+  assert.equal(allPictures.length, 44);
+  assert.deepEqual(allPictures.filter(pic => pic.width < 500 || pic.height < 260), [],
+    'Every gallery card must have a resolvable, legible photograph');
+  const rowGeometry = await page.locator('#modelGrid .model').first().evaluate(card => {
+    const photo = card.querySelector('.model-photo');
+    const photoBox = photo.getBoundingClientRect();
+    const cardBox = card.getBoundingClientRect();
+    return { width:photoBox.width,height:photoBox.height,cardHeight:cardBox.height };
+  });
+  assert.ok(Math.abs(rowGeometry.width / rowGeometry.height - 16/9) < 0.06,
+    'Consistent 16:9 photo area: '+JSON.stringify(rowGeometry));
+  console.log('PASS: all 44 model images load at 500x260 or higher with consistent image stage.');
+
+  // Keep actual visual proof of the 3-column model gallery before rollout.
+  mkdirSync('artifacts', {recursive:true});
+  await page.locator('#modelGrid .gallery-group[aria-label="SUV"]').screenshot({
+    path:'artifacts/official-suv-gallery-desktop.png', animations:'disabled'
+  });
+  await page.locator('#modelGrid .gallery-group[aria-label="Sedan"]').screenshot({
+    path:'artifacts/official-sedan-gallery-desktop.png', animations:'disabled'
+  });
+
+
 
   assert.equal(await page.locator('#promos .promo').count(), data.promotions.length);
   assert.equal(await page.locator('#shareToolbar').count(), 0, 'No multi-car share toolbar');
@@ -135,7 +191,13 @@ try {
     await page.locator('#closeDialog').click();
   }
   assert.equal(displayedDocs, 46);
-  assert.equal(redundantButtonsRemoved, 90);
+  assert.equal(redundantButtonsRemoved, 86);
+  for (const family of ['GLE','GLE Coupé','GLS','GLB Electric']) {
+    await page.locator('[data-family="' + family + '"]').click();
+    assert.equal(await page.locator('#dialogTable tbody tr').count(), family==='GLS'?4:1, family+' new MY27 rows');
+    assert.match(await page.locator('#dialogTable').innerText(), /27MY/);
+    await page.locator('#closeDialog').click();
+  }
   for (const family of ['AMG CLE', 'AMG GT']) {
     await page.locator('[data-family="' + family + '"]').click();
     assert.equal(await page.locator('#dialogCatalogues a.share-catalogue-open').count(), 2);
@@ -179,6 +241,10 @@ try {
     await home.goto(base + 'index.html', { waitUntil: 'domcontentloaded' });
     await home.locator('[data-family="E-Class"]').waitFor({ timeout: 25000 });
     await checkWidth(home, width);
+    if (width === 390) {
+      await home.locator('#models').scrollIntoViewIfNeeded();
+      await home.screenshot({path:'artifacts/official-gallery-mobile.png', animations:'disabled'});
+    }
     await home.locator('[data-family="E-Class"]').click();
     await home.locator('#dialogCatalogues a.share-catalogue-open').first().waitFor();
     assert.equal(await home.locator('#dialogCatalogues a.share-catalogue-open').count(), 1);
@@ -196,7 +262,7 @@ try {
     await mobile.close();
   }
   assert.deepEqual(errors, []);
-  console.log('PASS: 44 model modals, 46 unique catalogue entries, 91 prices, no share/collection clutter, colour guide once, desktop/mobile and legacy customer links.');
+  console.log('PASS: 44 model modals, 46 distinct catalogues, 89 current MY trims, 98 IDs, 9 preserved legacy entries, 13 images, desktop/mobile.');
 } finally {
   if (browser) await browser.close();
   server.kill();
