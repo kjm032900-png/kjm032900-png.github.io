@@ -1,21 +1,53 @@
-/* Standalone share styles; existing homepage rules are not replaced. */
-.share-toolbar{position:sticky;bottom:16px;z-index:20;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:16px 0 24px;padding:13px 16px;background:#213345f5;border:1px solid #9ab0c2;border-radius:12px;box-shadow:0 12px 32px #0008;backdrop-filter:blur(12px)}
-.share-toolbar-title{margin:0;font-size:14px;font-weight:750;color:#f0f6fa}
-.share-toolbar-detail{margin:2px 0 0;color:#c6d6e2;font-size:12px}
-.share-toolbar-actions{display:flex;flex-wrap:wrap;gap:8px}
-.share-toolbar button,.share-pick{border:1px solid #8ca4b9;border-radius:7px;padding:10px 12px;background:transparent;color:#f0f6fa;font-weight:700;font-size:13px}
-.share-toolbar button.primary{background:#f2f6f9;border-color:#f2f6f9;color:#112131}
-.share-toolbar button:disabled{opacity:.44;cursor:not-allowed}
-.share-toolbar-feedback{flex-basis:100%;font-size:12px;color:#d8e9f6;margin:0;min-height:0}
-.model-body .share-pick{width:100%;margin-top:8px;text-align:center;padding:9px;border-color:#56748c;background:#243a4d}
-.model-body .share-pick.selected{background:#e6eff7;border-color:#e6eff7;color:#102131}
-.share-checkbox{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;cursor:pointer}
-.share-checkbox input{accent-color:#245c86;width:21px;height:21px;cursor:pointer}
-.share-checkbox-head{text-align:center!important}
-.share-select-cell{text-align:center!important;white-space:nowrap}
-.share-dialog-hint{font-size:13px;color:#dcebf5;padding:12px;margin-top:15px;border:1px solid #42586b;border-radius:8px;background:#1b2a37}
-@media(max-width:740px){.share-toolbar{bottom:73px;margin-top:10px;padding:12px}.share-toolbar-actions{width:100%;display:grid;grid-template-columns:1fr 1fr}.share-toolbar-actions button{font-size:12px;padding:11px 6px}.model-body .share-pick{font-size:12px}.share-select-cell{min-width:48px}.price-table th.share-checkbox-head{width:47px}}
-@media(max-width:390px){.share-toolbar{bottom:73px}}
+/* Public-facing catalogue sharing and optional multi-vehicle collection. */
+.share-toolbar{position:fixed;z-index:38;right:20px;bottom:20px;width:min(410px,calc(100vw - 40px));padding:14px;background:#213345f5;border:1px solid #8da7be;border-radius:13px;box-shadow:0 15px 46px #000b;backdrop-filter:blur(12px)}
+.share-toolbar-heading{display:flex;flex-direction:column;gap:1px;margin-bottom:11px}
+.share-toolbar-heading strong{font-size:16px;color:#f4f8fc}
+.share-toolbar-heading span{font-size:12px;color:#cbdce9}
+.share-toolbar-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.share-toolbar-actions button{min-height:42px;border:1px solid #95aabd;border-radius:7px;padding:9px;background:#22394a;color:#f1f7fb;font-size:13px;font-weight:700}
+.share-toolbar-actions button.primary{background:#f1f6fa;color:#122434}
+.share-toolbar-actions #shareClear,.share-toolbar-actions #sharePreview{background:transparent;border-color:#536c80;font-size:12px}
+#shareToolbarFeedback,#shareDialogFeedback{margin:8px 0 0;color:#d2e5f3;font-size:12px;line-height:1.55}
+#shareToolbarFeedback:empty,#shareDialogFeedback:empty{display:none}
+.share-dialog-intro{padding:14px 15px;margin:0 0 18px;background:#1a2d3c;border:1px solid #617e96;border-radius:9px}
+.share-dialog-intro strong{font-size:15px;color:#f0f6fb}
+.share-dialog-intro p{margin:3px 0 0;color:#d3e1ec;font-size:13px;line-height:1.75}
+.price-table .share-checkbox-head{font-size:11px;text-align:center!important;white-space:nowrap}
+.price-table .share-select-cell{text-align:center!important;white-space:normal}
+.share-checkbox{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:44px;font-size:12px;color:#dceaf4;white-space:nowrap;cursor:pointer}
+.share-checkbox input{accent-color:#8acaf3;width:20px;height:20px;cursor:pointer}
+#dialogTable .share-action-row td{padding:3px 7px 17px;text-align:left!important;white-space:normal;border-bottom:1px solid #415568}
+.share-row-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:stretch}
+.share-row-actions a,.share-row-actions button{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:43px;padding:10px 12px;border:1px solid #819eb4;border-radius:7px;background:#233648;color:#f4f8fb;font-size:12px;font-weight:700;line-height:1.4;text-decoration:none}
+.share-row-actions a{background:#eaf2f7;color:#142434;border-color:#eaf2f7}
+.share-row-actions a:hover,.share-row-actions button:hover{filter:brightness(1.12)}
+.share-row-actions a:focus-visible,.share-row-actions button:focus-visible{outline:3px solid #90caff;outline-offset:3px}
+.share-action-note{margin:7px 0 0;font-size:11px;color:#bdccd8}
+.share-dialog-controls{position:sticky;bottom:0;z-index:2;margin-top:16px;padding:13px;background:#213648;border:1px solid #7c9eb8;border-radius:10px;box-shadow:0 -5px 20px #0006}
+.share-dialog-controls strong{display:block;font-size:13px;margin-bottom:8px}
+.share-dialog-buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.share-dialog-buttons button{min-height:44px;padding:9px;border-radius:7px;border:1px solid #cbdce8;background:#edf4f9;color:#132436;font-size:12px;font-weight:800}
+.share-dialog-buttons button:last-child{background:#28455a;color:#f3f8fc;border-color:#8ea9be}
+@media(max-width:740px){
+.share-toolbar{bottom:74px;left:10px;right:10px;width:auto;padding:11px}
+.share-toolbar-heading{margin-bottom:8px}.share-toolbar-heading strong{font-size:14px}
+.share-toolbar-actions button{min-height:42px;font-size:12px}
+#dialogTable .price-table,#dialogTable .price-table tbody{display:block;width:100%}
+#dialogTable .price-table thead{display:none}
+#dialogTable .share-data-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;padding:10px 0 3px;border-top:1px solid #42576b}
+#dialogTable .share-data-row td{display:block;border:0;padding:2px 3px;white-space:normal!important;text-align:left;min-width:0}
+#dialogTable .share-data-row td:nth-child(1){grid-column:1/-1;font-weight:700}
+#dialogTable .share-data-row td:nth-child(2){grid-column:1;font-size:12px}
+#dialogTable .share-data-row td:nth-child(3){grid-column:1;font-size:14px}
+#dialogTable .share-data-row .share-select-cell{grid-column:2;grid-row:2/span 2;text-align:center!important;align-self:center}
+#dialogTable .share-action-row{display:block}
+#dialogTable .share-action-row td{display:block;width:100%;padding:8px 0 15px}
+.share-row-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.share-row-actions a{grid-column:1/-1}
+.share-row-actions a,.share-row-actions button{font-size:12px;min-height:44px;padding:8px 5px}
+.share-dialog-intro{padding:12px}.share-dialog-intro strong{font-size:14px}.share-dialog-intro p{font-size:12px}
+}
+@media(max-width:360px){.share-row-actions button{font-size:11px}.share-toolbar{bottom:74px}}
 
 /* Customer-facing share page */
 :root{--s-bg:#0b1016;--s-panel:#151e28;--s-line:#344657;--s-ink:#f3f7fb;--s-sub:#c7d3dd}
