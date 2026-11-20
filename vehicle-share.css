@@ -23,6 +23,9 @@
 .share-row-actions a:hover,.share-row-actions button:hover{filter:brightness(1.12)}
 .share-row-actions a:focus-visible,.share-row-actions button:focus-visible{outline:3px solid #90caff;outline-offset:3px}
 .share-action-note{margin:7px 0 0;font-size:11px;color:#bdccd8}
+.share-action-feedback{position:sticky;top:10px;z-index:4;background:#23455b;border:1px solid #7bb4d5;border-radius:7px;color:#f3f8fb;font-weight:700;font-size:12px;padding:10px;margin:7px 0}
+.share-action-feedback:empty,.share-card-feedback:empty{display:none}
+.share-card-feedback{color:#d7e8f4;background:#203e52;border:1px solid #7cacc8;border-radius:7px;padding:10px;font-size:12px;margin:10px 0}
 .share-dialog-controls{position:sticky;bottom:0;z-index:2;margin-top:16px;padding:13px;background:#213648;border:1px solid #7c9eb8;border-radius:10px;box-shadow:0 -5px 20px #0006}
 .share-dialog-controls strong{display:block;font-size:13px;margin-bottom:8px}
 .share-dialog-buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px}

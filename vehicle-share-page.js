@@ -95,6 +95,10 @@
     colorUrl.searchParams.set('my', row.year);
     actionRow.appendChild(link('컬러·실내 안내 ↗', colorUrl.href, false));
     body.appendChild(actionRow);
+    const cardFeedback = node('p', 'share-card-feedback');
+    cardFeedback.setAttribute('role', 'status');
+    cardFeedback.setAttribute('aria-live', 'polite');
+    body.appendChild(cardFeedback);
     body.appendChild(node('p', 'share-card-tip', directPdf ? 'PDF를 열면 브라우저에서 다운로드할 수 있습니다. 링크를 복사해 다른 분께 보낼 수도 있습니다.' : '공식 목록에서 카탈로그를 확인하고 공유할 수 있습니다.'));
     if (directPdf) {
       body.appendChild(node('p', 'share-card-foot',
@@ -110,7 +114,7 @@
   }
   async function copyLink(text, successMessage) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      try { await navigator.clipboard.writeText(text); setStatus(successMessage, true); return; }
+      try { await navigator.clipboard.writeText(text); setStatus(successMessage, true); return true; }
       catch (error) { /* Use fallback below. */ }
     }
     const input = document.createElement('textarea');
@@ -125,6 +129,7 @@
     input.remove();
     if (!okay) window.prompt('아래 링크를 복사해 카카오톡에 보내 주세요.', text);
     setStatus(okay ? successMessage : '주소를 길게 눌러 복사해 주세요.', true);
+    return okay;
   }
   function copyCurrentAddress() {
     return copyLink(location.href, '차량 안내 링크가 복사되었습니다. 카카오톡에 붙여넣어 보내세요.');
@@ -143,7 +148,10 @@
   $('shareResults').addEventListener('click', function (event) {
     const button = event.target.closest('button[data-catalogue-copy]');
     if (!button) return;
-    copyLink(button.dataset.catalogueCopy, '카탈로그 링크가 복사되었습니다. 카카오톡에 붙여넣어 보내세요.');
+    copyLink(button.dataset.catalogueCopy, '카탈로그 링크가 복사되었습니다. 카카오톡에 붙여넣어 보내세요.').then(function (copied) {
+      const feedback = button.closest('.share-card')?.querySelector('.share-card-feedback');
+      if (feedback) feedback.textContent = copied ? '복사되었습니다. 카카오톡에 붙여넣어 보내세요.' : '링크 복사 안내를 확인해 주세요.';
+    });
   });
   const search = new URLSearchParams(location.search);
   const raw = search.get('ids') || '';

@@ -29,7 +29,7 @@
   }
 
   function notify(message) {
-    for (const id of ['shareToolbarFeedback', 'shareDialogFeedback']) {
+    for (const id of ['shareToolbarFeedback', 'shareDialogFeedback', 'shareActionFeedback']) {
       const target = $(id);
       if (target) target.textContent = message;
     }
@@ -96,6 +96,12 @@
     hint.className = 'share-dialog-intro';
     hint.innerHTML = '<strong>카탈로그를 바로 열어 보세요.</strong><p>PDF를 열어 저장하거나, 링크를 복사해 카카오톡으로 보낼 수 있습니다. 여러 차량은 ‘함께 담기’를 선택하세요.</p>';
     holder.prepend(hint);
+    const feedback = document.createElement('p');
+    feedback.id = 'shareActionFeedback';
+    feedback.className = 'share-action-feedback';
+    feedback.setAttribute('role', 'status');
+    feedback.setAttribute('aria-live', 'polite');
+    hint.after(feedback);
     const head = document.createElement('th');
     head.scope = 'col';
     head.className = 'share-checkbox-head';
