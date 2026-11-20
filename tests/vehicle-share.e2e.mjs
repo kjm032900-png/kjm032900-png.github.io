@@ -5,170 +5,163 @@ import { chromium } from 'playwright';
 const base = 'http://127.0.0.1:8765/';
 const server = spawn('python3', ['-m', 'http.server', '8765', '--bind', '127.0.0.1'], { stdio: 'ignore' });
 let browser;
-function pause(ms) { return new Promise((resolve) => setTimeout(resolve, ms)); }
+
+const pause = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 async function waitForServer() {
-  for (let i = 0; i < 75; i++) {
-    try { const r = await fetch(base + 'content.json'); if (r.ok) return; }
-    catch (error) { /* server still starting */ }
+  for (let attempt = 0; attempt < 75; attempt++) {
+    try { if ((await fetch(base + 'content.json')).ok) return; }
+    catch (error) { /* Wait for local server startup. */ }
     await pause(200);
   }
-  throw new Error('Local test server did not start');
+  throw Error('Local test server did not start');
 }
 async function checkWidth(page, expected) {
-  const size = await page.evaluate(() => ({ view: window.innerWidth, doc: document.documentElement.scrollWidth }));
-  assert.equal(size.view, expected);
-  assert.ok(size.doc <= expected + 1, 'Horizontal overflow: ' + JSON.stringify(size));
+  const size = await page.evaluate(() => ({ width: window.innerWidth, document: document.documentElement.scrollWidth }));
+  assert.equal(size.width, expected);
+  assert.ok(size.document <= expected + 1, 'Horizontal overflow: ' + JSON.stringify(size));
 }
+
 try {
   await waitForServer();
   browser = await chromium.launch({ headless: true });
   const desktop = await browser.newContext({ viewport: { width: 1440, height: 900 } });
   const page = await desktop.newPage();
   const errors = [];
-  page.on('pageerror', (error) => errors.push(error.message));
+  page.on('pageerror', error => errors.push(error.message));
   await page.goto(base + 'index.html', { waitUntil: 'domcontentloaded' });
   await page.locator('#modelGrid .model').first().waitFor({ timeout: 25000 });
+
+  const data = await (await fetch(base + 'content.json')).json();
+  const registry = await (await fetch(base + 'catalog-links.json')).json();
+  const vehicleIds = await (await fetch(base + 'vehicle-ids.json')).json();
+  const families = [...new Set(data.models.map(row => row.family))];
+  assert.equal(data.models.length, 91);
+  assert.equal(vehicleIds.vehicles.length, 91);
+  assert.equal(families.length, 44);
   assert.equal(await page.locator('#modelGrid .model').count(), 44);
-  const publishedData = await (await fetch(base + 'content.json')).json();
-  assert.equal(await page.locator('#promos .promo').count(), publishedData.promotions.length);
-  assert.equal(await page.locator('[data-share-family]').count(), 0, 'No sales-only buttons on public model cards');
+  assert.equal(await page.locator('#promos .promo').count(), data.promotions.length);
+  assert.equal(await page.locator('#shareToolbar').count(), 0, 'No multi-car share toolbar');
+
   await page.evaluate(() => {
     Object.defineProperty(navigator, 'clipboard', {
       configurable: true,
-      value: { writeText: async text => { window.__copiedShareUrl = text; } }
+      value: { writeText: async url => { window.__copiedCatalogueUrl = url; } }
     });
-    Object.defineProperty(navigator, 'share', { configurable: true, value: undefined });
   });
 
+  // A model card opens one common catalogue/colour section and a plain trim price table.
   await page.locator('[data-family="E-Class"]').click();
-  await page.locator('#dialogTable .share-action-row').first().waitFor();
-  const pdfUrl = await page.locator('#dialogTable a.share-catalogue-open').first().getAttribute('href');
+  await page.locator('#dialogCatalogues a.share-catalogue-open').first().waitFor();
+  assert.equal(await page.locator('#dialogCatalogues a.share-catalogue-open').count(), 1);
+  assert.equal(await page.locator('#dialogCatalogues button[data-copy-catalogue]').count(), 1);
+  assert.equal(await page.locator('#dialogColorsLink').count(), 1);
+  assert.equal(await page.locator('#dialogColorsLink').getAttribute('href'), 'colors.html?model=E-Class');
+  assert.equal(await page.locator('#dialogTable tbody tr').count(), 8);
+  assert.match(await page.locator('#dialogTable').innerText(), /77,500,000원/);
+  assert.match(await page.locator('#dialogTable').innerText(), /129,500,000원/);
+
+  const pdfUrl = await page.locator('#dialogCatalogues a.share-catalogue-open').first().getAttribute('href');
   assert.match(pdfUrl, /^https:\/\/www\.mercedes-benz\.co\.kr\/.+\.pdf$/);
-  assert.match(await page.locator('#dialogTable').innerText(), /공식 카탈로그 보기·다운로드/);
-  assert.equal(await page.locator('#dialogTable a.share-catalogue-open').count(), 1);
-  assert.equal(await page.locator('#dialogTable button[data-copy-catalogue]').count(), 1);
-  assert.equal(await page.locator('#dialogTable button[data-share-single]').count(), 8);
-  assert.equal(await page.locator('#dialogTable .share-row-actions a').count(), 0);
-
-  await page.locator('#dialogTable button[data-copy-catalogue]').first().click();
-  await page.waitForFunction(() => window.__copiedShareUrl && window.__copiedShareUrl.endsWith('.pdf'));
-  assert.equal(await page.evaluate(() => window.__copiedShareUrl), pdfUrl);
-  assert.match(await page.locator('#shareActionFeedback').innerText(), /복사되었습니다/);
-
-  await page.locator('#dialogTable button[data-share-single]').first().click();
-  await page.waitForFunction(() => window.__copiedShareUrl && window.__copiedShareUrl.includes('share.html?ids='));
-  let oneUrl = new URL(await page.evaluate(() => window.__copiedShareUrl));
-  assert.equal(oneUrl.searchParams.get('ids').split(',').length, 1);
-  assert.deepEqual(Array.from(oneUrl.searchParams.keys()), ['ids']);
-
-  await page.locator('#dialogTable tr.share-data-row').filter({ hasText: 'E 200 EXCLUSIVE' }).locator('input[data-share-id]').check();
-  assert.match(await page.locator('#shareDialogCount').innerText(), /1대/);
-  await page.locator('#closeDialog').click();
-  await page.locator('[data-family="GLE"]').click();
-  await page.locator('#dialogTable tr.share-data-row').filter({ hasText: 'GLE 450 4MATIC AMG Line' }).locator('input[data-share-id]').check();
-  assert.match(await page.locator('#shareDialogCount').innerText(), /2대/);
-  await page.locator('[data-share-selected-copy]').click();
-  await page.waitForFunction(() => window.__copiedShareUrl && new URL(window.__copiedShareUrl).searchParams.get('ids')?.includes(','));
-  const modalUrl = new URL(await page.evaluate(() => window.__copiedShareUrl));
-  assert.equal(modalUrl.searchParams.get('ids').split(',').length, 2);
+  await page.locator('#dialogCatalogues button[data-copy-catalogue]').click();
+  await page.waitForFunction(() => Boolean(window.__copiedCatalogueUrl));
+  assert.equal(await page.evaluate(() => window.__copiedCatalogueUrl), pdfUrl);
+  assert.match(await page.locator('#catalogCopyFeedback').innerText(), /복사되었습니다/);
   await page.locator('#closeDialog').click();
 
-  await page.locator('#shareToolbar').waitFor({ state: 'visible' });
-  assert.match(await page.locator('#shareToolbarCount').innerText(), /2대/);
-  await page.locator('#shareCopy').click();
-  await page.waitForFunction(() => Boolean(window.__copiedShareUrl));
-  const copiedUrl = new URL(await page.evaluate(() => window.__copiedShareUrl));
-  assert.equal(copiedUrl.pathname, '/share.html');
-  assert.deepEqual(Array.from(copiedUrl.searchParams.keys()), ['ids']);
-  assert.equal(copiedUrl.searchParams.get('ids').split(',').length, 2);
-  const newPage = desktop.waitForEvent('page');
-  await page.locator('#sharePreview').click();
-  const sharePage = await newPage;
+  // Every published family: distinct PDF per actual URL, with no repeated
+  // colour links, individual share actions, checkboxes or collection controls.
+  let displayedDocs = 0;
+  let redundantButtonsRemoved = 0;
+  for (const family of families) {
+    const rows = data.models.filter(row => row.family === family);
+    const expectedUrls = [...new Set(rows.map(row => {
+      const key = registry.trimCatalogOverrides[row.trim] || registry.familyToCatalog[row.family];
+      const url = registry.catalogs[key]?.url;
+      return url && new URL(url).pathname.toLowerCase().endsWith('.pdf')
+        ? url : registry.catalogueIndexUrl;
+    }))].sort();
+    displayedDocs += expectedUrls.length;
+    redundantButtonsRemoved += (rows.length - expectedUrls.length) * 2;
+
+    await page.locator('[data-family="' + family + '"]').click();
+    await page.locator('#dialogCatalogues a.share-catalogue-open').first().waitFor();
+    const actualUrls = await page.locator('#dialogCatalogues a.share-catalogue-open')
+      .evaluateAll(anchors => anchors.map(a => a.href).sort());
+    assert.deepEqual(actualUrls, expectedUrls, 'Unique catalogue URLs for ' + family);
+    assert.equal(await page.locator('#dialogCatalogues button[data-copy-catalogue]').count(), expectedUrls.length, family + ' copy buttons');
+    assert.equal(await page.locator('#dialogColorsLink').count(), 1, family + ' single colour link');
+    assert.equal(await page.locator('#dialogColorsLink').getAttribute('href'), 'colors.html?model=' + encodeURIComponent(family));
+    assert.equal(await page.locator('#dialogTable tbody tr').count(), rows.length, family + ' price rows');
+    assert.equal(await page.locator('#dialogTable .model-color-link').count(), 0, family + ' duplicate colour links');
+    assert.equal(await page.locator('#dialogTable input[data-share-id]').count(), 0, family + ' no checkbox');
+    assert.equal(await page.locator('#dialogTable button[data-share-single]').count(), 0, family + ' no per-trim sharing');
+    assert.equal(await page.locator('#dialogTable .share-action-row').count(), 0, family + ' no share rows');
+    assert.equal(await page.locator('#shareDialogControls').count(), 0, family + ' no collection controls');
+    await page.locator('#closeDialog').click();
+  }
+  assert.equal(displayedDocs, 46);
+  assert.equal(redundantButtonsRemoved, 90);
+  for (const family of ['AMG CLE', 'AMG GT']) {
+    await page.locator('[data-family="' + family + '"]').click();
+    assert.equal(await page.locator('#dialogCatalogues a.share-catalogue-open').count(), 2);
+    assert.equal(await page.locator('#dialogCatalogues .share-catalogue-applies').count(), 2);
+    await page.locator('#closeDialog').click();
+  }
+  for (const family of ['AMG S-Class', 'AMG GLS', 'AMG G 63']) {
+    await page.locator('[data-family="' + family + '"]').click();
+    assert.equal(await page.locator('#dialogCatalogues a.share-catalogue-open').count(), 1);
+    assert.match(await page.locator('#dialogCatalogues').innerText(), /공식 카탈로그 목록 보기/);
+    await page.locator('#closeDialog').click();
+  }
+
+  // Old customer share links must still work, despite removal of homepage
+  // selection and multi-send buttons. No customer PII is introduced in URLs.
+  const ids = [
+    ['E-Class', 'E 200 EXCLUSIVE'],
+    ['GLE', 'GLE 450 4MATIC AMG Line']
+  ].map(([family, trim]) => {
+    const match = vehicleIds.vehicles.find(v => v.family === family && v.trim === trim);
+    assert.ok(match, family + ' ' + trim + ' ID remains available');
+    return match.id;
+  });
+  const oldShareUrl = base + 'share.html?ids=' + ids.join(',');
+  const sharePage = await desktop.newPage();
+  await sharePage.goto(oldShareUrl, { waitUntil: 'domcontentloaded' });
   await sharePage.locator('.share-card').nth(1).waitFor({ timeout: 25000 });
   assert.equal(await sharePage.locator('.share-card').count(), 2);
   assert.match(await sharePage.locator('#shareResults').innerText(), /77,500,000원/);
   assert.match(await sharePage.locator('#shareResults').innerText(), /139,000,000원/);
-  assert.equal(await sharePage.locator('.share-card .share-card-actions a').count(), 4);
-  assert.equal(await sharePage.locator('.share-card .share-card-actions button[data-catalogue-copy]').count(), 2);
-  await sharePage.evaluate(() => { Object.defineProperty(navigator, 'clipboard', { configurable:true, value: {writeText:async text => {window.__copiedCatalogue = text;}}}); });
-  await sharePage.locator('button[data-catalogue-copy]').first().click();
-  await sharePage.waitForFunction(() => Boolean(window.__copiedCatalogue));
-  assert.match(await sharePage.evaluate(() => window.__copiedCatalogue), /\.pdf$/);
-  assert.match(await sharePage.locator('.share-card-feedback').first().innerText(), /복사되었습니다/);
-  assert.match(await sharePage.locator('.share-card').first().locator('a').first().getAttribute('href'), /\.pdf(?:\?|$)/);
-  const shareUrl = sharePage.url();
-  assert.ok(shareUrl.includes('ids='));
-  assert.ok(!shareUrl.includes('name=') && !shareUrl.includes('phone='));
   await checkWidth(sharePage, 1440);
-  // Verify every published family: one catalogue control per DISTINCT URL.
-  const catalogRegistry = await (await fetch(base + 'catalog-links.json')).json();
-  const groupNames = [...new Set(publishedData.models.map(row => row.family))];
-  const defaultCatalogue = catalogRegistry.catalogueIndexUrl;
-  assert.equal(groupNames.length, 44);
-  for (const family of groupNames) {
-    const familyRows = publishedData.models.filter(row => row.family === family);
-    const expectedUrls = [...new Set(familyRows.map(row => {
-      const key = catalogRegistry.trimCatalogOverrides[row.trim] || catalogRegistry.familyToCatalog[row.family];
-      const url = catalogRegistry.catalogs[key]?.url;
-      return url && new URL(url).pathname.toLowerCase().endsWith('.pdf') ? url : defaultCatalogue;
-    }))].sort();
-
-    await page.locator('[data-family="' + family + '"]').click();
-    await page.locator('#dialogTable .share-catalogue-panel').waitFor();
-    const modalUrls = await page.locator('#dialogTable a.share-catalogue-open').evaluateAll(anchors => anchors.map(a => a.href).sort());
-    assert.deepEqual(modalUrls, expectedUrls, 'Catalogue URLs should be unique within ' + family);
-    assert.equal(await page.locator('#dialogTable button[data-copy-catalogue]').count(), expectedUrls.length, family + ' catalogue copies');
-    assert.equal(await page.locator('#dialogTable tr.share-data-row').count(), familyRows.length, family + ' trims');
-    assert.equal(await page.locator('#dialogTable button[data-share-single]').count(), familyRows.length, family + ' individual sharing');
-    assert.equal(await page.locator('#dialogTable input[data-share-id]').count(), familyRows.length, family + ' selection controls');
-    assert.equal(await page.locator('#dialogTable .share-row-actions a').count(), 0, family + ' must not repeat PDF links per trim');
-    await page.locator('#closeDialog').click();
-  }
-  // AMG CLE and GT are each backed by TWO distinct official brochures.
-  for (const family of ['AMG CLE', 'AMG GT']) {
-    await page.locator('[data-family="' + family + '"]').click();
-    assert.equal(await page.locator('#dialogTable a.share-catalogue-open').count(), 2);
-    assert.equal(await page.locator('#dialogTable .share-catalogue-applies').count(), 2);
-    await page.locator('#closeDialog').click();
-  }
-  console.log('PASS: all 44 family modals use one catalogue link per distinct PDF; individual trim sharing preserved.');
-
   await page.goto(base + 'share.html?ids=not-a-real-vehicle-id', { waitUntil: 'domcontentloaded' });
   await page.locator('#shareCount').filter({ hasText: '선택된 차량 0대' }).waitFor({ timeout: 25000 });
-  assert.equal(await page.locator('.share-card').count(), 0);
-  await page.goto(base + 'share.html', { waitUntil: 'domcontentloaded' });
   assert.equal(await page.locator('.share-card').count(), 0);
 
   for (const width of [390, 360]) {
     const mobile = await browser.newContext({
-      viewport: { width, height: 844 },
-      isMobile: true,
-      deviceScaleFactor: 3,
-      hasTouch: true
+      viewport: { width, height: 844 }, isMobile: true, deviceScaleFactor: 3, hasTouch: true
     });
-    const customer = await mobile.newPage();
-    await customer.goto(shareUrl, { waitUntil: 'domcontentloaded' });
-    await customer.locator('.share-card').nth(1).waitFor({ timeout: 25000 });
-    assert.equal(await customer.locator('.share-card').count(), 2);
-    await checkWidth(customer, width);
     const home = await mobile.newPage();
     await home.goto(base + 'index.html', { waitUntil: 'domcontentloaded' });
     await home.locator('[data-family="E-Class"]').waitFor({ timeout: 25000 });
     await checkWidth(home, width);
     await home.locator('[data-family="E-Class"]').click();
-    await home.locator('#dialogTable .share-row-actions').first().waitFor();
-    assert.equal(await home.locator('#dialogTable a.share-catalogue-open').count(), 1);
-    assert.equal(await home.locator('#dialogTable button[data-share-single]').count(), 8);
-    await home.locator('#dialogTable input[data-share-id]').first().check();
-    assert.match(await home.locator('#shareDialogCount').innerText(), /1대/);
-    await home.locator('#closeDialog').click();
-    await home.locator('#shareToolbar').waitFor({ state: 'visible' });
-    assert.match(await home.locator('#shareToolbarCount').innerText(), /1대/);
+    await home.locator('#dialogCatalogues a.share-catalogue-open').first().waitFor();
+    assert.equal(await home.locator('#dialogCatalogues a.share-catalogue-open').count(), 1);
+    assert.equal(await home.locator('#dialogColorsLink').count(), 1);
+    assert.equal(await home.locator('#dialogTable tbody tr').count(), 8);
+    assert.equal(await home.locator('input[data-share-id]').count(), 0);
     await checkWidth(home, width);
+    await home.locator('#closeDialog').click();
+
+    const legacy = await mobile.newPage();
+    await legacy.goto(oldShareUrl, { waitUntil: 'domcontentloaded' });
+    await legacy.locator('.share-card').nth(1).waitFor({ timeout: 25000 });
+    assert.equal(await legacy.locator('.share-card').count(), 2);
+    await checkWidth(legacy, width);
     await mobile.close();
   }
   assert.deepEqual(errors, []);
-  console.log('PASS: desktop 1440px / Galaxy-sized 390px and 360px; existing content, multi-trim selection, customer detail, PDF and missing-ID states.');
+  console.log('PASS: 44 model modals, 46 unique catalogue entries, 91 prices, no share/collection clutter, colour guide once, desktop/mobile and legacy customer links.');
 } finally {
   if (browser) await browser.close();
   server.kill();
