@@ -53,8 +53,11 @@ assert.equal(data.card_prices.glc_electric?.trim, 'GLC 300 4MATIC AMG Line Elect
 assert.equal(data.card_prices.glc_electric?.starting, true);
 assert.ok(data.models.some(row => row.family === 'GLC Electric' && row.trim === 'The all-new electric GLC' && row.hiddenFromCatalog),
   'Legacy share ID target must remain present but hidden');
-assert.deepEqual(data.models.filter(row => !row.hiddenFromCatalog && row.price === null).map(row => row.trim),
-  ['EQS 400 Facelift'], 'Only officially unpriced published models may have null price');
+assert.deepEqual(data.models.filter(row => !row.hiddenFromCatalog && row.price === null), [],
+  'Do not advertise vehicles with unconfirmed retail prices as priced catalogue cars');
+const unpublishedEqs = data.models.find(row => row.family === 'EQS' && row.trim === 'EQS 400 Facelift');
+assert.ok(unpublishedEqs && unpublishedEqs.price === null && unpublishedEqs.hiddenFromCatalog,
+  'Keep legacy EQS 400 ID for old customer links but do not show its unpriced card');
 // All prior model/year/trim entries and prices must survive for old share URLs.
 const original = JSON.parse(execFileSync('git', ['show', baseline + ':content.json'], { encoding:'utf8', maxBuffer:3000000 }));
 for (const old of original.models) {
