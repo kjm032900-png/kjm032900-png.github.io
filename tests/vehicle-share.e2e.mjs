@@ -66,10 +66,12 @@ try {
         () => resolve({url, width:0, height:0}), 16000))]);
     }));
   }, imageOverrides.map(f => sourcePairs.find(p => p.family === f).src));
-  for (let i=0;i<imageOverrides.length;i++) {
-    assert.ok(imageResults[i].width >= 600 && imageResults[i].height >= 300,
-      'Missing or undersized picture: ' + imageOverrides[i] + ' ' + JSON.stringify(imageResults[i]));
-  }
+  const failures = imageResults.map((result, i) => (
+    result.width >= 600 && result.height >= 300 ? null :
+      { model: imageOverrides[i], ...result }
+  )).filter(Boolean);
+  console.log('Image audit:', JSON.stringify(imageResults.map((item, i) => ({model:imageOverrides[i],width:item.width,height:item.height}))));
+  assert.deepEqual(failures, [], 'New model photos must all load and be at least 600x300 pixels');
   console.log('PASS: 44 unique model images and 10 accurate high-resolution replacements loaded.');
 
   assert.equal(await page.locator('#promos .promo').count(), data.promotions.length);
