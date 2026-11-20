@@ -213,7 +213,8 @@ try {
 
   const directColour = await desktop.newPage();
   await directColour.goto(base + 'colors.html?model=AMG%20G%2063', {waitUntil:'domcontentloaded'});
-  await directColour.locator('#guideTitle').filter({hasText:'AMG G 63'}).waitFor();
+  await directColour.locator('#family').waitFor();
+  await directColour.waitForFunction(() => document.querySelector('#family')?.value === 'AMG G 63');
   assert.equal(await directColour.locator('#copyCatalogLink').isVisible(), false);
   assert.match(await directColour.locator('#catalogSource').innerText(), /공식 카탈로그 목록/);
   assert.match(await directColour.locator('#pdfActionHint').innerText(), /직접 연결된 공식 PDF가 없어/);
