@@ -20,6 +20,61 @@
   let selectedCatalogKey = '';
   const officialCatalog = 'https://www.mercedes-benz.co.kr/passengercars/models/catalog.html';
 
+  function syncGuideUrl() {
+    if (!vehicleData || !family) return;
+    const url = new URL(window.location.href);
+    url.searchParams.set('model', family);
+    url.searchParams.delete('trim');
+    url.searchParams.delete('my');
+    if (requestedTrim) url.searchParams.set('trim', requestedTrim);
+    if (requestedMY) url.searchParams.set('my', requestedMY);
+    if (activeTab !== 'exterior') url.searchParams.set('tab', activeTab);
+    else url.searchParams.delete('tab');
+    if (selectedCatalogKey) url.searchParams.set('catalog', selectedCatalogKey);
+    else url.searchParams.delete('catalog');
+    window.history.replaceState(null, '', url.pathname + url.search + url.hash);
+    byId('returnToModel').href = './index.html?openModel=' + encodeURIComponent(family) + '#models';
+    byId('returnToModel').textContent = '← ' + family + ' 상세로';
+  }
+
+  function showShareFeedback(message) {
+    const feedback = byId('shareFeedback');
+    feedback.hidden = false;
+    feedback.textContent = message;
+  }
+
+  async function copyGuideLink() {
+    const url = window.location.href;
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(url);
+      } else {
+        const input = document.createElement('textarea');
+        input.value = url;
+        input.setAttribute('readonly', '');
+        input.style.position = 'fixed';
+        input.style.opacity = '0';
+        document.body.appendChild(input);
+        input.select();
+        const copied = document.execCommand('copy');
+        input.remove();
+        if (!copied) throw new Error('clipboard unavailable');
+      }
+      showShareFeedback('현재 선택한 ' + family + ' 컬러 안내 링크를 복사했습니다. 카카오톡 등에 붙여넣어 보내세요.');
+    } catch (_) {
+      showShareFeedback('링크 자동 복사가 지원되지 않습니다. 주소창의 URL을 복사해 전달해 주세요.');
+    }
+  }
+
+  async function shareGuideLink() {
+    if (!navigator.share) { await copyGuideLink(); return; }
+    try {
+      await navigator.share({title: family + ' 외장·실내 컬러 안내', text: family + ' 공식 카탈로그 컬러 안내', url: window.location.href});
+    } catch (error) {
+      if (error?.name !== 'AbortError') showShareFeedback('공유창을 열지 못했습니다. 링크 복사 버튼으로 전달해 주세요.');
+    }
+  }
+
   function textNode(tag, cssClass, value) {
     const el = document.createElement(tag);
     if (cssClass) el.className = cssClass;
@@ -413,6 +468,7 @@
     familySelect.value = next;
     if (resetTrim) { requestedTrim = ''; requestedMY = ''; }
     configureCatalogChoice();
+    syncGuideUrl();
     render();
     requestPhotoGroup();
     requestOriginalBundle();
@@ -450,14 +506,27 @@
       const params = new URLSearchParams(location.search);
       requestedTrim = params.get('trim') || '';
       requestedMY = /^\d{2}MY$/.test(params.get('my') || '') ? params.get('my') : '';
+      const requestedTab = params.get('tab') || '';
+      activeTab = Object.hasOwn(supportedTabs, requestedTab) ? requestedTab : 'exterior';
+      const requestedCatalog = params.get('catalog') || '';
       const requestedFamily = params.get('model') || '';
       selectFamily(list.includes(requestedFamily) ? requestedFamily : list[0], false);
+      if (requestedCatalog && (catalogData.familyCatalogChoices?.[family] || []).includes(requestedCatalog)) {
+        selectedCatalogKey = requestedCatalog;
+        byId('catalogKind').value = requestedCatalog;
+        syncGuideUrl();
+        render();
+        requestPhotoGroup();
+        requestOriginalBundle();
+        requestOriginalPages();
+      }
       familySelect.addEventListener('change', () => selectFamily(familySelect.value, true));
     });
   }
 
   byId('catalogKind').addEventListener('change', (event) => {
     selectedCatalogKey = event.target.value;
+    syncGuideUrl();
     render();
     requestPhotoGroup();
     requestOriginalBundle();
@@ -465,8 +534,10 @@
   });
 
   tabs.forEach((tab) => {
-    tab.addEventListener('click', () => { activeTab = tab.dataset.tab; if (vehicleData) render(); });
+    tab.addEventListener('click', () => { activeTab = tab.dataset.tab; if (vehicleData) { syncGuideUrl(); render(); } });
   });
+  byId('copyColorLink').addEventListener('click', copyGuideLink);
+  byId('shareColorLink').addEventListener('click', shareGuideLink);
   byId('photoClose').addEventListener('click', () => byId('photoDialog').close());
   byId('photoDialog').addEventListener('click', (event) => {
     if (event.target === byId('photoDialog')) byId('photoDialog').close();
