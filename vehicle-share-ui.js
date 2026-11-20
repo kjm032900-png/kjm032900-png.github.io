@@ -1,81 +1,111 @@
-/* Vehicle selection UI for the existing homepage. Price/promo rendering is unchanged. */
+/* Clear, one-tap catalogue & vehicle sharing for all visitors. No customer data in URLs. */
 (function () {
   'use strict';
-  const state = { data: null, idsByKey: new Map(), selected: new Set(), ready: false };
-  const keyOf = function (row) { return JSON.stringify([row.family, row.year, row.trim]); };
-  const get = function (id) { return document.getElementById(id); };
 
-  function selectedForFamily(family) {
-    if (!state.ready) return 0;
-    return state.data.models.filter(function (row) {
-      const id = state.idsByKey.get(keyOf(row));
-      return row.family === family && id && state.selected.has(id);
-    }).length;
-  }
+  const state = { data: null, catalogue: null, idsByKey: new Map(), selected: new Set(), ready: false };
+  const keyOf = row => JSON.stringify([row.family, row.year, row.trim]);
+  const $ = id => document.getElementById(id);
+  const DEFAULT_CATALOGUE = 'https://www.mercedes-benz.co.kr/passengercars/models/catalog.html';
 
-  function buildShareUrl() {
-    const url = new URL('./share.html', window.location.href);
-    url.searchParams.set('ids', Array.from(state.selected).join(','));
+  function vehicleUrl(ids) {
+    const url = new URL('./share.html', location.href);
+    url.searchParams.set('ids', ids.join(','));
     return url.href;
   }
 
-  function flash(message) {
-    const target = get('shareToolbarFeedback');
-    if (target) target.textContent = message;
+  function catalogueFor(row) {
+    const data = state.catalogue || {};
+    const key = (data.trimCatalogOverrides || {})[row.trim] || (data.familyToCatalog || {})[row.family];
+    const group = (data.catalogs || {})[key] || {};
+    let pdf = null;
+    try {
+      if (typeof group.url === 'string') {
+        const url = new URL(group.url);
+        if (url.protocol === 'https:' && url.hostname === 'www.mercedes-benz.co.kr' &&
+            /\.pdf$/i.test(url.pathname)) pdf = url.href;
+      }
+    } catch (error) { /* Avoid unsafe or malformed links. */ }
+    return { url: pdf || DEFAULT_CATALOGUE, pdf: Boolean(pdf) };
+  }
+
+  function notify(message) {
+    for (const id of ['shareToolbarFeedback', 'shareDialogFeedback']) {
+      const target = $(id);
+      if (target) target.textContent = message;
+    }
+  }
+
+  async function copyUrl(url) {
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+      try { await navigator.clipboard.writeText(url); return true; }
+      catch (error) { /* Fall back for browsers without clipboard permission. */ }
+    }
+    const field = document.createElement('textarea');
+    field.value = url;
+    field.style.position = 'fixed';
+    field.style.opacity = '0';
+    document.body.appendChild(field);
+    field.focus();
+    field.select();
+    let copied = false;
+    try { copied = document.execCommand('copy'); } catch (error) { /* Manual fallback. */ }
+    field.remove();
+    if (!copied) window.prompt('아래 링크를 복사해 카카오톡으로 보내 주세요.', url);
+    return copied;
+  }
+
+  async function shareOrCopy(url, title) {
+    if (typeof navigator.share === 'function') {
+      try {
+        await navigator.share({ title, url });
+        notify('공유창을 열었습니다. 원하는 앱으로 전달해 주세요.');
+        return;
+      } catch (error) {
+        if (error && error.name === 'AbortError') return; // User cancelled.
+      }
+    }
+    const copied = await copyUrl(url);
+    notify(copied ? '링크가 복사되었습니다. 카카오톡에 붙여넣어 보내세요.' : '공유창을 지원하지 않아 링크 복사 안내를 표시했습니다.');
   }
 
   function refresh() {
     if (!state.ready) return;
     const n = state.selected.size;
-    const count = get('shareToolbarCount');
-    if (count) count.textContent = '선택한 차량 ' + n + '대';
-    const copy = get('shareCopy');
-    const preview = get('sharePreview');
-    const clear = get('shareClear');
-    if (copy) copy.disabled = n === 0;
-    if (preview) preview.disabled = n === 0;
-    if (clear) clear.disabled = n === 0;
-    document.querySelectorAll('[data-share-family]').forEach(function (button) {
-      const amount = selectedForFamily(button.dataset.shareFamily);
-      button.textContent = amount ? '상담용 차량 선택 · ' + amount + '대 선택됨' : '상담용 차량 선택 ＋';
-      button.classList.toggle('selected', amount > 0);
-    });
-    document.querySelectorAll('#dialogTable input[data-share-id]').forEach(function (input) {
+    const tray = $('shareToolbar');
+    if (tray) tray.hidden = n === 0;
+    const count = $('shareToolbarCount');
+    if (count) count.textContent = '함께 보낼 차량 ' + n + '대';
+    const dialogControls = $('shareDialogControls');
+    if (dialogControls) dialogControls.hidden = n === 0;
+    const dialogCount = $('shareDialogCount');
+    if (dialogCount) dialogCount.textContent = n + '대 선택됨 · 링크 하나로 함께 보낼 수 있어요';
+    document.querySelectorAll('#dialogTable input[data-share-id]').forEach(input => {
       input.checked = state.selected.has(input.dataset.shareId);
     });
   }
 
-  function afterRender() {
-    if (!state.ready) return;
-    document.querySelectorAll('#modelGrid .model').forEach(function (card) {
-      if (card.querySelector('[data-share-family]')) return;
-      const existing = card.querySelector('[data-family]');
-      if (!existing) return;
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'share-pick';
-      button.dataset.shareFamily = existing.dataset.family;
-      button.textContent = '상담용 차량 선택 ＋';
-      existing.insertAdjacentElement('afterend', button);
-    });
-    refresh();
-  }
+  // Homepage model cards intentionally keep just their original detail button.
+  function afterRender() { /* No extra "salesperson selection" button on public cards. */ }
 
   function decorateDialog(family, rows) {
     if (!state.ready) return;
-    const holder = get('dialogTable');
+    const holder = $('dialogTable');
     const table = holder && holder.querySelector('table');
     if (!table || table.querySelector('.share-checkbox-head')) return;
-    const header = document.createElement('th');
-    header.scope = 'col';
-    header.className = 'share-checkbox-head';
-    header.textContent = '공유 선택';
-    const headRow = table.querySelector('thead tr');
-    if (headRow) headRow.appendChild(header);
-    const trs = table.querySelectorAll('tbody tr');
-    rows.forEach(function (row, index) {
-      const tr = trs[index];
-      if (!tr) return;
+    const hint = document.createElement('div');
+    hint.className = 'share-dialog-intro';
+    hint.innerHTML = '<strong>카탈로그를 바로 열어 보세요.</strong><p>PDF를 열어 저장하거나, 링크를 복사해 카카오톡으로 보낼 수 있습니다. 여러 차량은 ‘함께 담기’를 선택하세요.</p>';
+    holder.prepend(hint);
+    const head = document.createElement('th');
+    head.scope = 'col';
+    head.className = 'share-checkbox-head';
+    head.textContent = '함께 담기';
+    table.querySelector('thead tr').appendChild(head);
+
+    Array.from(table.querySelectorAll('tbody tr')).forEach((tr, index) => {
+      const row = rows[index];
+      if (!row) return;
+      tr.classList.add('share-data-row');
       const id = state.idsByKey.get(keyOf(row));
       const cell = document.createElement('td');
       cell.className = 'share-select-cell';
@@ -86,121 +116,165 @@
       checkbox.dataset.shareId = id || '';
       checkbox.disabled = !id;
       checkbox.checked = Boolean(id && state.selected.has(id));
-      checkbox.setAttribute('aria-label', row.year + ' ' + row.trim + ' 고객 안내 공유 선택');
+      checkbox.setAttribute('aria-label', row.year + ' ' + row.trim + ' 함께 담기');
       label.appendChild(checkbox);
+      label.appendChild(document.createTextNode(' 함께 담기'));
       cell.appendChild(label);
       tr.appendChild(cell);
-    });
-    const hint = document.createElement('p');
-    hint.className = 'share-dialog-hint';
-    hint.textContent = '고객에게 안내할 트림을 체크해 주세요. 여러 모델에서 선택한 차량을 하나의 링크로 전달할 수 있습니다.';
-    holder.appendChild(hint);
-  }
 
-  async function copyUrl(url) {
-    if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
-      try { await navigator.clipboard.writeText(url); return true; }
-      catch (error) { /* Use local fallback. */ }
+      const catalog = catalogueFor(row);
+      const details = document.createElement('tr');
+      details.className = 'share-action-row';
+      const actionCell = document.createElement('td');
+      actionCell.colSpan = 4;
+      const actions = document.createElement('div');
+      actions.className = 'share-row-actions';
+      const pdf = document.createElement('a');
+      pdf.className = 'share-catalogue-open';
+      pdf.href = catalog.url;
+      pdf.target = '_blank';
+      pdf.rel = 'noopener noreferrer';
+      pdf.textContent = catalog.pdf ? '공식 카탈로그 보기·다운로드 ↗' : '공식 카탈로그 목록 보기 ↗';
+      const copy = document.createElement('button');
+      copy.type = 'button';
+      copy.dataset.copyCatalogue = catalog.url;
+      copy.textContent = catalog.pdf ? '카탈로그 링크 복사' : '카탈로그 목록 링크 복사';
+      actions.append(pdf, copy);
+      if (id) {
+        const single = document.createElement('button');
+        single.type = 'button';
+        single.dataset.shareSingle = id;
+        single.textContent = '이 차량 정보 공유';
+        actions.appendChild(single);
+      }
+      actionCell.appendChild(actions);
+      if (!catalog.pdf) {
+        const notice = document.createElement('p');
+        notice.className = 'share-action-note';
+        notice.textContent = '해당 모델의 개별 PDF가 확인되지 않아 공식 카탈로그 목록으로 안내합니다.';
+        actionCell.appendChild(notice);
+      }
+      details.appendChild(actionCell);
+      tr.after(details);
+    });
+
+    if (!$('shareDialogControls')) {
+      const panel = document.createElement('div');
+      panel.id = 'shareDialogControls';
+      panel.className = 'share-dialog-controls';
+      panel.hidden = true;
+      panel.innerHTML = '<strong id="shareDialogCount">0대 선택됨</strong>' +
+        '<div class="share-dialog-buttons"><button type="button" data-share-selected-copy>선택 차량 링크 복사</button>' +
+        '<button type="button" data-share-selected-send>한 번에 공유</button></div>' +
+        '<p id="shareDialogFeedback" role="status" aria-live="polite"></p>';
+      holder.appendChild(panel);
     }
-    const field = document.createElement('textarea');
-    field.value = url;
-    field.style.position = 'fixed';
-    field.style.opacity = '0';
-    document.body.appendChild(field);
-    field.focus();
-    field.select();
-    let copied = false;
-    try { copied = document.execCommand('copy'); } catch (error) { /* Show manual fallback. */ }
-    field.remove();
-    if (!copied) window.prompt('아래 링크를 길게 눌러 복사해 주세요.', url);
-    return copied;
+    refresh();
   }
 
   function attachToolbar() {
-    if (get('shareToolbar')) return;
-    const anchor = get('count');
+    if ($('shareToolbar')) return;
+    const anchor = $('count');
     if (!anchor) return;
     const bar = document.createElement('div');
     bar.id = 'shareToolbar';
     bar.className = 'share-toolbar';
-    bar.setAttribute('aria-label', '맞춤 차량 안내 링크 만들기');
-    bar.innerHTML = '<div><p id="shareToolbarCount" class="share-toolbar-title">선택한 차량 0대</p><p class="share-toolbar-detail">원하는 모델의 트림을 여러 개 선택해 고객에게 공유하세요.</p></div>' +
-      '<div class="share-toolbar-actions"><button type="button" id="shareClear" disabled>선택 초기화</button><button type="button" id="sharePreview" disabled>안내 페이지 보기</button><button type="button" id="shareCopy" class="primary" disabled>공유 링크 복사</button></div>' +
-      '<p id="shareToolbarFeedback" class="share-toolbar-feedback" role="status" aria-live="polite"></p>';
+    bar.hidden = true;
+    bar.setAttribute('aria-label', '여러 차량 함께 공유하기');
+    bar.innerHTML = '<div class="share-toolbar-heading"><strong id="shareToolbarCount">함께 보낼 차량 0대</strong>' +
+      '<span>선택한 차량을 링크 하나로 보낼 수 있어요.</span></div>' +
+      '<div class="share-toolbar-actions"><button type="button" id="shareCopy" class="primary">차량 링크 복사</button>' +
+      '<button type="button" id="shareDirect">바로 공유</button>' +
+      '<button type="button" id="sharePreview">미리 보기</button>' +
+      '<button type="button" id="shareClear">초기화</button></div>' +
+      '<p id="shareToolbarFeedback" role="status" aria-live="polite"></p>';
     anchor.insertAdjacentElement('afterend', bar);
-    get('shareClear').addEventListener('click', function () {
+    $('shareCopy').addEventListener('click', async () => {
+      if (!state.selected.size) return;
+      const copied = await copyUrl(vehicleUrl([...state.selected]));
+      notify(copied ? '링크가 복사되었습니다. 카카오톡에 붙여넣어 보내세요.' : '링크를 직접 복사해 주세요.');
+    });
+    $('shareDirect').addEventListener('click', () => {
+      if (state.selected.size) shareOrCopy(vehicleUrl([...state.selected]), '메르세데스-벤츠 차량 안내');
+    });
+    $('sharePreview').addEventListener('click', () => {
+      if (state.selected.size) window.open(vehicleUrl([...state.selected]), '_blank', 'noopener,noreferrer');
+    });
+    $('shareClear').addEventListener('click', () => {
       state.selected.clear();
-      flash('차량 선택을 초기화했습니다.');
+      notify('선택한 차량을 초기화했습니다.');
       refresh();
     });
-    get('sharePreview').addEventListener('click', function () {
-      if (!state.selected.size) return;
-      window.open(buildShareUrl(), '_blank', 'noopener,noreferrer');
-    });
-    get('shareCopy').addEventListener('click', async function () {
-      if (!state.selected.size) return;
-      const copied = await copyUrl(buildShareUrl());
-      flash(copied ? '링크가 복사되었습니다. 카카오톡 대화창에 붙여넣어 전달하세요.' : '링크 복사를 허용한 뒤 다시 시도해 주세요.');
-    });
-    get('modelGrid').addEventListener('click', function (event) {
-      const button = event.target.closest('[data-share-family]');
-      if (!button) return;
-      const card = button.closest('.model');
-      const details = card && card.querySelector('[data-family]');
-      if (details) details.click();
-    });
-    get('dialogTable').addEventListener('change', function (event) {
+
+    $('dialogTable').addEventListener('change', event => {
       const input = event.target.closest('input[data-share-id]');
       if (!input || input.disabled) return;
-      const id = input.dataset.shareId;
-      if (input.checked) state.selected.add(id);
-      else state.selected.delete(id);
-      flash('');
+      if (input.checked) state.selected.add(input.dataset.shareId);
+      else state.selected.delete(input.dataset.shareId);
+      notify('');
       refresh();
+    });
+
+    $('dialogTable').addEventListener('click', async event => {
+      const pdfCopy = event.target.closest('button[data-copy-catalogue]');
+      if (pdfCopy) {
+        const copied = await copyUrl(pdfCopy.dataset.copyCatalogue);
+        notify(copied ? '카탈로그 링크가 복사되었습니다. 카카오톡에 붙여넣어 보내세요.' : '카탈로그 링크를 직접 복사해 주세요.');
+        return;
+      }
+      const single = event.target.closest('button[data-share-single]');
+      if (single) {
+        shareOrCopy(vehicleUrl([single.dataset.shareSingle]), '메르세데스-벤츠 ' + ($('dialogTitle')?.textContent || '차량 안내'));
+        return;
+      }
+      if (event.target.closest('[data-share-selected-copy]') && state.selected.size) {
+        const copied = await copyUrl(vehicleUrl([...state.selected]));
+        notify(copied ? '선택한 차량 링크가 복사되었습니다. 카카오톡에 붙여넣어 보내세요.' : '링크를 직접 복사해 주세요.');
+        return;
+      }
+      if (event.target.closest('[data-share-selected-send]') && state.selected.size) {
+        shareOrCopy(vehicleUrl([...state.selected]), '메르세데스-벤츠 맞춤 차량 안내');
+      }
     });
   }
 
   function init(data) {
     state.data = data;
-    fetch('./vehicle-ids.json', { cache: 'no-cache' })
-      .then(function (response) {
-        if (!response.ok) throw new Error('Vehicle IDs HTTP ' + response.status);
-        return response.json();
-      })
-      .then(function (registry) {
-        if (!registry || registry.version !== 1 || !Array.isArray(registry.vehicles)) throw new Error('Invalid vehicle IDs');
-        const keys = new Set(), ids = new Set();
-        registry.vehicles.forEach(function (row) {
-          if (!row || typeof row.id !== 'string' || !/^[a-z0-9-]+$/.test(row.id) ||
-              !['family', 'year', 'trim'].every(function (field) { return typeof row[field] === 'string'; }))
-            throw new Error('Invalid registry row');
-          const key = keyOf(row);
-          if (ids.has(row.id) || keys.has(key)) throw new Error('Duplicate vehicle share ID');
-          ids.add(row.id); keys.add(key);
-          state.idsByKey.set(key, row.id);
-        });
-        const missing = data.models.filter(function (row) { return !state.idsByKey.has(keyOf(row)); });
-        if (missing.length) throw new Error('Unregistered vehicle count ' + missing.length);
-        state.ready = true;
-        attachToolbar();
-        afterRender();
-        const dialog = get('modelDialog');
-        if (dialog && dialog.open) {
-          const family = get('dialogTitle').textContent;
-          decorateDialog(family, data.models.filter(function (row) { return row.family === family; }));
-        }
-      })
-      .catch(function (error) {
-        console.warn('Vehicle sharing unavailable; existing site remains available:', error);
-        const anchor = get('count');
-        if (anchor) {
-          const message = document.createElement('p');
-          message.className = 'muted-note';
-          message.textContent = '맞춤 차량 공유 기능을 불러오지 못했습니다. 일반 차량 안내는 정상 이용하실 수 있습니다.';
-          anchor.insertAdjacentElement('afterend', message);
-        }
+    Promise.all([
+      fetch('./vehicle-ids.json', { cache: 'no-cache' }).then(r => { if (!r.ok) throw Error('Vehicle IDs HTTP ' + r.status); return r.json(); }),
+      fetch('./catalog-links.json', { cache: 'no-cache' }).then(r => { if (!r.ok) throw Error('Catalogue HTTP ' + r.status); return r.json(); })
+    ]).then(([registry, catalogues]) => {
+      if (!registry || registry.version !== 1 || !Array.isArray(registry.vehicles) ||
+          !catalogues || catalogues.version !== 1) throw Error('Invalid share registries');
+      const keys = new Set(), ids = new Set();
+      registry.vehicles.forEach(row => {
+        if (!row || typeof row.id !== 'string' || !/^[a-z0-9-]+$/.test(row.id) ||
+            !['family', 'year', 'trim'].every(field => typeof row[field] === 'string')) throw Error('Invalid vehicle ID');
+        const key = keyOf(row);
+        if (ids.has(row.id) || keys.has(key)) throw Error('Duplicate vehicle ID');
+        keys.add(key); ids.add(row.id); state.idsByKey.set(key, row.id);
       });
+      if (data.models.some(row => !state.idsByKey.has(keyOf(row)))) throw Error('Unregistered vehicle');
+      state.catalogue = catalogues;
+      state.ready = true;
+      attachToolbar();
+      refresh();
+      const dlg = $('modelDialog');
+      if (dlg && dlg.open) {
+        const family = $('dialogTitle').textContent;
+        decorateDialog(family, data.models.filter(row => row.family === family));
+      }
+    }).catch(error => {
+      console.warn('Vehicle sharing unavailable; original vehicle information remains accessible:', error);
+      const anchor = $('count');
+      if (anchor) {
+        const note = document.createElement('p');
+        note.className = 'muted-note';
+        note.textContent = '카탈로그 공유 기능을 불러오지 못했습니다. 차량 가격은 정상 확인하실 수 있습니다.';
+        anchor.insertAdjacentElement('afterend', note);
+      }
+    });
   }
 
-  window.VehicleShareUI = { init: init, afterRender: afterRender, decorateDialog: decorateDialog };
+  window.VehicleShareUI = { init, afterRender, decorateDialog };
 })();
