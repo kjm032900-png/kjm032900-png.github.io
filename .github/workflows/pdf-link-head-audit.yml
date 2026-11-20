@@ -1,0 +1,16 @@
+name: Official PDF link HEAD audit (non-production)
+on:
+  push:
+    branches: ['audit/public-homepage-ux-20261120']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pdf-head-audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/pdf-link-head-audit.mjs
