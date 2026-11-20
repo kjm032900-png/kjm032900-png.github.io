@@ -257,12 +257,17 @@ window.__restoreVehicleView=()=>{
 // Rebuild only when necessary, preserving a genuine no-match search result.
 window.__ensureVehicleCatalog=()=>{
   const modelGrid=$('modelGrid'),filters=$('filters');
+  const missingFilters=!filters.querySelector('[data-cat]');
+  if(missingFilters){
+    filters.innerHTML=cats.map(x=>`<button type="button" class="filter ${x===cat?'active':''}" data-cat="${x}">${x}</button>`).join('');
+  }
   const blankWithoutSearch=!query && cat==='전체' && !modelGrid.querySelector('[data-model-family]');
-  if(blankWithoutSearch || !filters.querySelector('[data-cat]'))render();
+  if(blankWithoutSearch || missingFilters)render();
 };
 window.__resetVehicleCatalog=()=>{
   cat='전체';query='';
   $('search').value='';
+  window.__ensureVehicleCatalog?.();
   [...$('filters').children].forEach(el=>el.classList.toggle('active',el.dataset.cat==='전체'));
   render();
 };
