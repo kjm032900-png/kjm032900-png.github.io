@@ -63,7 +63,7 @@ try {
   await page.locator('#dialogTable tr.share-data-row').filter({ hasText: 'GLE 450 4MATIC AMG Line' }).locator('input[data-share-id]').check();
   assert.match(await page.locator('#shareDialogCount').innerText(), /2대/);
   await page.locator('[data-share-selected-copy]').click();
-  await page.waitForFunction(() => window.__copiedShareUrl && window.__copiedShareUrl.includes(','));
+  await page.waitForFunction(() => window.__copiedShareUrl && new URL(window.__copiedShareUrl).searchParams.get('ids')?.includes(','));
   const modalUrl = new URL(await page.evaluate(() => window.__copiedShareUrl));
   assert.equal(modalUrl.searchParams.get('ids').split(',').length, 2);
   await page.locator('#closeDialog').click();
