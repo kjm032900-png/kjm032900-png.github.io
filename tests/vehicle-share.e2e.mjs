@@ -52,7 +52,7 @@ try {
   assert.ok(!shareUrl.includes('name=') && !shareUrl.includes('phone='));
   await checkWidth(sharePage, 1440);
   await page.goto(base + 'share.html?ids=not-a-real-vehicle-id', { waitUntil: 'domcontentloaded' });
-  await page.locator('#shareCount').getByText('선택된 차량 0대').waitFor({ timeout: 25000 });
+  await page.locator('#shareCount').filter({ hasText: '선택된 차량 0대' }).waitFor({ timeout: 25000 });
   assert.equal(await page.locator('.share-card').count(), 0);
   await page.goto(base + 'share.html', { waitUntil: 'domcontentloaded' });
   assert.equal(await page.locator('.share-card').count(), 0);
