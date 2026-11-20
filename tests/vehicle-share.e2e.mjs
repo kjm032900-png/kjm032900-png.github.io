@@ -49,6 +49,7 @@ try {
   await page.locator('#dialogTable button[data-copy-catalogue]').first().click();
   await page.waitForFunction(() => window.__copiedShareUrl && window.__copiedShareUrl.endsWith('.pdf'));
   assert.equal(await page.evaluate(() => window.__copiedShareUrl), pdfUrl);
+  assert.match(await page.locator('#shareActionFeedback').innerText(), /복사되었습니다/);
 
   await page.locator('#dialogTable button[data-share-single]').first().click();
   await page.waitForFunction(() => window.__copiedShareUrl && window.__copiedShareUrl.includes('share.html?ids='));
@@ -89,6 +90,7 @@ try {
   await sharePage.locator('button[data-catalogue-copy]').first().click();
   await sharePage.waitForFunction(() => Boolean(window.__copiedCatalogue));
   assert.match(await sharePage.evaluate(() => window.__copiedCatalogue), /\.pdf$/);
+  assert.match(await sharePage.locator('.share-card-feedback').first().innerText(), /복사되었습니다/);
   assert.match(await sharePage.locator('.share-card').first().locator('a').first().getAttribute('href'), /\.pdf(?:\?|$)/);
   const shareUrl = sharePage.url();
   assert.ok(shareUrl.includes('ids='));
