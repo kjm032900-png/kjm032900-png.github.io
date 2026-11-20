@@ -34,15 +34,21 @@ try {
   const data = await (await fetch(base + 'content.json')).json();
   const registry = await (await fetch(base + 'catalog-links.json')).json();
   const vehicleIds = await (await fetch(base + 'vehicle-ids.json')).json();
-  const families = [...new Set(data.models.map(row => row.family))];
-  assert.equal(data.models.length, 91);
+  assert.equal(data.models.length, 98);
+  const visibleModels = data.models.filter(row => !row.hiddenFromCatalog);
+  const families = [...new Set(visibleModels.map(row => row.family))];
+  assert.equal(visibleModels.length, 89);
   assert.equal(vehicleIds.vehicles.length, 91);
   assert.equal(families.length, 44);
   assert.equal(await page.locator('#modelGrid .model').count(), 44);
+  assert.equal(await page.locator('#modelGrid .gallery-group-heading').count(), 7);
+  assert.equal(await page.locator('#modelGrid .model[data-model-family="GLS"] .starting').innerText(), '공식가 152,000,000원부터');
+  assert.match(await page.locator('#new').innerText(), /신형 GLE Coupé/);
+  assert.match(await page.locator('#new').innerText(), /신형 GLS/);
 
   // Verify imagery is model-correct and visibly high resolution.
   const imageOverrides = ['AMG CLA','AMG S-Class','AMG GLB','AMG GLC','AMG GLC Coupé',
-    'AMG GLE Coupé','AMG GLS','AMG CLE','Maybach SL','EQS'];
+    'AMG GLE Coupé','AMG GLS','Maybach SL','EQS'];
   const modelCards = await page.locator('#modelGrid .model[data-model-family]').count();
   assert.equal(modelCards, 44, 'One marked card for each published model family');
   const sourcePairs = await page.locator('#modelGrid .model[data-model-family]').evaluateAll(cards =>
@@ -72,7 +78,16 @@ try {
   )).filter(Boolean);
   console.log('Image audit:', JSON.stringify(imageResults.map((item, i) => ({model:imageOverrides[i],width:item.width,height:item.height}))));
   assert.deepEqual(failures, [], 'New model photos must all load and be at least 600x300 pixels');
-  console.log('PASS: 44 unique model images and 10 accurate high-resolution replacements loaded.');
+  console.log('PASS: 44 distinct image URLs and available external images.');
+  for (const family of ['GLE','GLE Coupé','GLS','AMG CLE']) {
+    const src = sourcePairs.find(p => p.family === family)?.src;
+    assert.ok(src?.includes('/images/official-gallery/'), 'Expected local official cutout: ' + family);
+    const image = page.locator('[data-model-family="' + family + '"] .model-photo img');
+    await image.scrollIntoViewIfNeeded();
+    await image.evaluate(img => img.decode());
+    const size = await image.evaluate(img => ({complete:img.complete,width:img.naturalWidth,height:img.naturalHeight}));
+    assert.ok(size.complete && size.width>=900 && size.height>=450, 'Missing/highly compressed local image ' + family + ': ' + JSON.stringify(size));
+  }
 
   assert.equal(await page.locator('#promos .promo').count(), data.promotions.length);
   assert.equal(await page.locator('#shareToolbar').count(), 0, 'No multi-car share toolbar');
@@ -94,6 +109,13 @@ try {
   assert.equal(await page.locator('#dialogTable tbody tr').count(), 8);
   assert.match(await page.locator('#dialogTable').innerText(), /77,500,000원/);
   assert.match(await page.locator('#dialogTable').innerText(), /129,500,000원/);
+  await page.locator('#closeDialog').click();
+  await page.locator('[data-family="GLS"]').click();
+  assert.equal(await page.locator('#dialogTable tbody tr').count(), 4);
+  assert.match(await page.locator('#dialogTable').innerText(), /152,000,000원/);
+  assert.ok(!(await page.locator('#dialogTable').innerText()).includes('26MY'));
+  await page.locator('#closeDialog').click();
+  await page.locator('[data-family="E-Class"]').click();
 
   const pdfUrl = await page.locator('#dialogCatalogues a.share-catalogue-open').first().getAttribute('href');
   assert.match(pdfUrl, /^https:\/\/www\.mercedes-benz\.co\.kr\/.+\.pdf$/);
@@ -108,7 +130,7 @@ try {
   let displayedDocs = 0;
   let redundantButtonsRemoved = 0;
   for (const family of families) {
-    const rows = data.models.filter(row => row.family === family);
+    const rows = visibleModels.filter(row => row.family === family);
     const expectedUrls = [...new Set(rows.map(row => {
       const key = registry.trimCatalogOverrides[row.trim] || registry.familyToCatalog[row.family];
       const url = registry.catalogs[key]?.url;
@@ -135,7 +157,7 @@ try {
     await page.locator('#closeDialog').click();
   }
   assert.equal(displayedDocs, 46);
-  assert.equal(redundantButtonsRemoved, 90);
+  assert.equal(redundantButtonsRemoved, 86);
   for (const family of ['AMG CLE', 'AMG GT']) {
     await page.locator('[data-family="' + family + '"]').click();
     assert.equal(await page.locator('#dialogCatalogues a.share-catalogue-open').count(), 2);
@@ -196,7 +218,7 @@ try {
     await mobile.close();
   }
   assert.deepEqual(errors, []);
-  console.log('PASS: 44 model modals, 46 unique catalogue entries, 91 prices, no share/collection clutter, colour guide once, desktop/mobile and legacy customer links.');
+  console.log('PASS: 44 categorized model cards, 89 currently listed trims, historical share ID safety, 27MY price checks and all catalogue/colour/desktop/mobile tests.');
 } finally {
   if (browser) await browser.close();
   server.kill();
