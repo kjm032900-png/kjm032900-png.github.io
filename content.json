@@ -755,7 +755,8 @@
       "year": "27MY",
       "trim": "EQS 400 Facelift",
       "price": null,
-      "source": "가격 확인 필요"
+      "source": "27MY EQS 400 국내 판매가격·정식 출시일 공식 발표 전 · 고객 공유 ID 보존용 비노출 항목",
+      "hiddenFromCatalog": true
     },
     {
       "family": "GLE",
