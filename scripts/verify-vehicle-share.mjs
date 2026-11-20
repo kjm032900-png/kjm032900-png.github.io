@@ -37,7 +37,7 @@ const guideJs = readFileSync('colors.js', 'utf8');
 const homeHtml = readFileSync('index.html', 'utf8');
 const shortsScript = readFileSync('delivery-shorts.js','utf8');
 const shortsCss = readFileSync('delivery-shorts.css','utf8');
-const shortsIds = [...shortsScript.matchAll(/\\{id:'([A-Za-z0-9_-]{11})'/g)].map(m=>m[1]);
+const shortsIds = [...shortsScript.matchAll(/\{id:'([A-Za-z0-9_-]{11})'/g)].map(m=>m[1]);
 assert.equal(shortsIds.length,15,'Delivery gallery must include 15 verified YouTube Shorts');
 assert.equal(new Set(shortsIds).size,15,'Delivery gallery cannot have duplicate video IDs');
 assert.ok(shortsIds.includes('Zt-IzDLAivU'),'Existing published delivery Short must be preserved');
