@@ -873,6 +873,24 @@
       "year": "27MY",
       "trim": "V 300 d 4MATIC Exclusive",
       "starting": false
+    },
+    "gle_new": {
+      "family": "GLE",
+      "year": "27MY",
+      "trim": "GLE 450 4MATIC AMG Line",
+      "starting": false
+    },
+    "gle_coupe_new": {
+      "family": "GLE Coupé",
+      "year": "27MY",
+      "trim": "GLE 450 4MATIC Coupé",
+      "starting": false
+    },
+    "gls_new": {
+      "family": "GLS",
+      "year": "27MY",
+      "trim": "GLS 450 4MATIC 6-seater",
+      "starting": true
     }
   },
   "source_book_month": 11,
