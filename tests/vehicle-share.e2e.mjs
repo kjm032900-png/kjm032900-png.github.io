@@ -37,9 +37,9 @@ try {
   assert.equal(data.models.length, 100);
   const visibleModels = data.models.filter(row => !row.hiddenFromCatalog);
   const families = [...new Set(visibleModels.map(row => row.family))];
-  assert.equal(visibleModels.length, 90);
+  assert.equal(visibleModels.length, 89);
   assert.equal(vehicleIds.vehicles.length, 91);
-  assert.equal(families.length, 44);
+  assert.equal(families.length, 43);
   // Separate Mercedes-Benz Korea launch prices: the 2026-11-17 consolidated PDF does not list electric GLC.
   const glcElectric = visibleModels.filter(row => row.family === 'GLC Electric');
   assert.equal(glcElectric.length, 2, 'Only the two announced electric GLC grades should be public');
@@ -50,8 +50,10 @@ try {
   assert.ok(glcElectric.every(row => /별도 발표/.test(row.source)));
   assert.equal(data.models.find(row => row.family === 'GLC Electric' && row.trim === 'The all-new electric GLC')?.hiddenFromCatalog, true);
   const unknownPublicPrices = visibleModels.filter(row => row.price === null);
-  assert.deepEqual(unknownPublicPrices.map(row => row.trim), ['EQS 400 Facelift'],
-    'Only the genuinely unannounced EQS 400 facelift may lack a public price');
+  assert.deepEqual(unknownPublicPrices, [], 'Unpriced vehicles must not be shown as purchasable catalog cards');
+  const eqsLegacy = data.models.find(row => row.family === 'EQS' && row.trim === 'EQS 400 Facelift');
+  assert.ok(eqsLegacy?.hiddenFromCatalog && eqsLegacy.price === null, 'Keep unpublished EQS 400 legacy ID but hide unpriced card');
+  assert.equal(await page.locator('[data-model-family="EQS"]').count(), 0);
   assert.deepEqual(data.card_prices.glc_electric, {family:'GLC Electric',year:'27MY',trim:'GLC 300 4MATIC AMG Line Electric',starting:true});
   assert.equal(await page.locator('[data-card-price="glc_electric"]').innerText(), '9,000만원부터');
   assert.equal(await page.locator('[data-model-family="GLC Electric"] .starting').innerText(), '공식가 90,000,000원부터');
@@ -59,7 +61,7 @@ try {
   assert.equal(galleryBg, 'rgb(233, 237, 240)', 'Gallery uses a gentle silver instead of pure white');
   const buttonFontSize = await page.locator('[data-family="GLC Electric"]').evaluate(el => parseFloat(getComputedStyle(el).fontSize));
   assert.ok(buttonFontSize >= 14, 'Vehicle gallery buttons should remain legible at desktop scale');
-  assert.equal(await page.locator('#modelGrid .model').count(), 44);
+  assert.equal(await page.locator('#modelGrid .model').count(), 43);
   await page.locator('[data-family="GLC Electric"]').click();
   assert.equal(await page.locator('#dialogTable tbody tr').count(), 2);
   assert.match(await page.locator('#dialogTable').innerText(), /90,000,000원/);
@@ -72,13 +74,13 @@ try {
 
   // Verify imagery is model-correct and visibly high resolution.
   const imageOverrides = ['AMG CLA','AMG S-Class','AMG GLB','AMG GLC','AMG GLC Coupé',
-    'AMG GLE Coupé','AMG GLS','Maybach SL','EQS'];
+    'AMG GLE Coupé','AMG GLS','Maybach SL'];
   const modelCards = await page.locator('#modelGrid .model[data-model-family]').count();
-  assert.equal(modelCards, 44, 'One marked card for each published model family');
+  assert.equal(modelCards, 43, 'One marked card for each currently priced model family');
   const sourcePairs = await page.locator('#modelGrid .model[data-model-family]').evaluateAll(cards =>
     cards.map(c => ({ family: c.dataset.modelFamily, src: c.querySelector('.model-photo img')?.src }))
   );
-  assert.equal(new Set(sourcePairs.map(p => p.src)).size, 44, 'No two model families use the same actual image URL');
+  assert.equal(new Set(sourcePairs.map(p => p.src)).size, 43, 'No two priced model families use the same actual image URL');
   for (const family of imageOverrides) {
     const url = sourcePairs.find(p => p.family === family)?.src;
     assert.ok(url?.startsWith('https://'), family + ' must have a dedicated model-accurate photo URL');
@@ -102,7 +104,7 @@ try {
   )).filter(Boolean);
   console.log('Image audit:', JSON.stringify(imageResults.map((item, i) => ({model:imageOverrides[i],width:item.width,height:item.height}))));
   assert.deepEqual(failures, [], 'New model photos must all load and be at least 600x300 pixels');
-  console.log('PASS: 44 distinct image URLs and available external images.');
+  console.log('PASS: 43 distinct priced model gallery image URLs.');
   for (const family of ['GLE','GLE Coupé','GLS','AMG CLE']) {
     const src = sourcePairs.find(p => p.family === family)?.src;
     assert.ok(src?.includes('/images/official-gallery/'), 'Expected local official cutout: ' + family);
@@ -180,7 +182,7 @@ try {
     assert.equal(await page.locator('#shareDialogControls').count(), 0, family + ' no collection controls');
     await page.locator('#closeDialog').click();
   }
-  assert.equal(displayedDocs, 46);
+  assert.equal(displayedDocs, 45);
   assert.equal(redundantButtonsRemoved, 88);
   for (const family of ['AMG CLE', 'AMG GT']) {
     await page.locator('[data-family="' + family + '"]').click();
@@ -297,7 +299,7 @@ try {
     await mobile.close();
   }
   assert.deepEqual(errors, []);
-  console.log('PASS: 44 categorized model cards, 90 currently listed trims, historical share ID safety, 27MY price checks and all catalogue/colour/desktop/mobile tests.');
+  console.log('PASS: 43 categorized model cards, 89 currently priced trims, historical share ID safety, 27MY price checks and all catalogue/colour/desktop/mobile tests.');
 } finally {
   if (browser) await browser.close();
   server.kill();
