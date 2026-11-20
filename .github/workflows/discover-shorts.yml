@@ -1,0 +1,23 @@
+name: Shorts metadata discovery
+on:
+  push:
+    branches:
+      - feat/shorts-gallery-20261120
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Install public metadata client
+        run: python3 -m pip install --user --upgrade yt-dlp
+      - name: Retrieve public Shorts video IDs and titles only
+        run: |
+          set +e
+          echo '=== PUBLIC SHORTS START ==='
+          ~/.local/bin/yt-dlp --ignore-errors --flat-playlist --playlist-end 20 \
+            --print '%(id)s|%(title)s|%(webpage_url)s' \
+            'https://www.youtube.com/@movenzz/shorts' 2>&1
+          echo "yt-dlp exit code: $?"
+          echo '=== PUBLIC SHORTS END ==='
+          echo '=== CHANNEL HTTP STATUS ==='
+          curl -L -s -o /dev/null -w '%{http_code}\n' --max-time 15 'https://www.youtube.com/@movenzz/shorts' || true
