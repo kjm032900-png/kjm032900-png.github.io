@@ -27,12 +27,22 @@ for (const catalog of Object.values(catalogs.catalogs)) {
     assert.equal(url.hostname, 'www.mercedes-benz.co.kr');
   }
 }
-// Prior approved catalogue-colour UI change (PR #8) is now the preservation baseline.
+// Preserve the approved colour dataset and legacy share IDs while allowing deliberate UI updates.
 const baseline = '82163202dd1552efb4085536c9b0812c3ebf1e08';
-for (const path of ['catalog-colors.json', 'colors.html', 'colors.js']) {
-  assert.equal(readFileSync(path, 'utf8'), execFileSync('git', ['show', baseline + ':' + path], { encoding: 'utf8', maxBuffer: 2000000 }),
-    'Existing data changed unexpectedly: ' + path);
+assert.equal(readFileSync('catalog-colors.json', 'utf8'),
+  execFileSync('git', ['show', baseline + ':catalog-colors.json'], {encoding:'utf8', maxBuffer:2000000}),
+  'Catalogue colour source data changed unexpectedly');
+const guideHtml = readFileSync('colors.html', 'utf8');
+const guideJs = readFileSync('colors.js', 'utf8');
+const homeHtml = readFileSync('index.html', 'utf8');
+for (const id of ['returnToModel', 'copyColorLink', 'shareColorLink', 'shareFeedback']) {
+  assert.ok(guideHtml.includes('id="' + id + '"'), 'Missing colour navigation control: ' + id);
 }
+assert.ok(guideJs.includes('syncGuideUrl()') && guideJs.includes('navigator.share') &&
+  guideJs.includes('navigator.clipboard') && guideJs.includes("addEventListener('click', copyGuideLink)"),
+  'Colour guide sharing or selected-model return handling is incomplete');
+assert.ok(homeHtml.includes("get('openModel')") && homeHtml.includes('openModel(requestedModel)'),
+  'Homepage must reopen the previous model details dialog');
 // All prior model/year/trim entries and prices must survive for old share URLs.
 const original = JSON.parse(execFileSync('git', ['show', baseline + ':content.json'], { encoding:'utf8', maxBuffer:3000000 }));
 for (const old of original.models) {
@@ -41,4 +51,4 @@ for (const old of original.models) {
  assert.equal(same.price, old.price, 'Historical customer share price was changed: ' + key(old));
 }
 console.log('PASS: ' + ids.vehicles.length + ' trim IDs, ' +
-  Object.keys(catalogs.catalogs).length + ' catalogue groups; original content/colors unchanged.');
+  Object.keys(catalogs.catalogs).length + ' catalogue groups; historic content and catalogue colour data preserved.');
