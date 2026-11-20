@@ -1,0 +1,552 @@
+{
+  "version": 1,
+  "updated": "2026-11-20",
+  "vehicles": [
+    {
+      "id": "a-class-26my-a-220",
+      "family": "A-Class",
+      "year": "26MY",
+      "trim": "A 220"
+    },
+    {
+      "id": "c-class-26my-c-200-avantgarde",
+      "family": "C-Class",
+      "year": "26MY",
+      "trim": "C 200 AVANTGARDE"
+    },
+    {
+      "id": "c-class-26my-c-200-special-edition",
+      "family": "C-Class",
+      "year": "26MY",
+      "trim": "C 200 Special Edition"
+    },
+    {
+      "id": "c-class-26my-c-200-amg-line",
+      "family": "C-Class",
+      "year": "26MY",
+      "trim": "C 200 AMG Line"
+    },
+    {
+      "id": "cla-27my-cla-220",
+      "family": "CLA",
+      "year": "27MY",
+      "trim": "CLA 220"
+    },
+    {
+      "id": "cla-27my-cla-220-amg-line",
+      "family": "CLA",
+      "year": "27MY",
+      "trim": "CLA 220 AMG Line"
+    },
+    {
+      "id": "e-class-27my-e-200-exclusive",
+      "family": "E-Class",
+      "year": "27MY",
+      "trim": "E 200 EXCLUSIVE"
+    },
+    {
+      "id": "e-class-27my-e-200-amg-line",
+      "family": "E-Class",
+      "year": "27MY",
+      "trim": "E 200 AMG Line"
+    },
+    {
+      "id": "e-class-27my-e-300-4matic-exclusive",
+      "family": "E-Class",
+      "year": "27MY",
+      "trim": "E 300 4MATIC EXCLUSIVE"
+    },
+    {
+      "id": "e-class-27my-e-300-4matic-amg-line",
+      "family": "E-Class",
+      "year": "27MY",
+      "trim": "E 300 4MATIC AMG Line"
+    },
+    {
+      "id": "e-class-27my-e-450-4matic-amg-line",
+      "family": "E-Class",
+      "year": "27MY",
+      "trim": "E 450 4MATIC AMG Line"
+    },
+    {
+      "id": "e-class-27my-e-450-4matic-exclusive",
+      "family": "E-Class",
+      "year": "27MY",
+      "trim": "E 450 4MATIC EXCLUSIVE"
+    },
+    {
+      "id": "e-class-26my-e-220-d-4matic-exclusive",
+      "family": "E-Class",
+      "year": "26MY",
+      "trim": "E 220 d 4MATIC EXCLUSIVE"
+    },
+    {
+      "id": "e-class-26my-e-350-e-4matic-exclusive",
+      "family": "E-Class",
+      "year": "26MY",
+      "trim": "E 350 e 4MATIC EXCLUSIVE"
+    },
+    {
+      "id": "s-class-27my-s-350-d-4matic",
+      "family": "S-Class",
+      "year": "27MY",
+      "trim": "S 350 d 4MATIC"
+    },
+    {
+      "id": "s-class-27my-s-450-4matic",
+      "family": "S-Class",
+      "year": "27MY",
+      "trim": "S 450 4MATIC"
+    },
+    {
+      "id": "s-class-27my-s-450-4matic-long-exclusive",
+      "family": "S-Class",
+      "year": "27MY",
+      "trim": "S 450 4MATIC Long Exclusive"
+    },
+    {
+      "id": "s-class-27my-s-450-4matic-long-amg-line",
+      "family": "S-Class",
+      "year": "27MY",
+      "trim": "S 450 4MATIC Long AMG Line"
+    },
+    {
+      "id": "s-class-27my-s-500-4matic-long",
+      "family": "S-Class",
+      "year": "27MY",
+      "trim": "S 500 4MATIC Long"
+    },
+    {
+      "id": "s-class-27my-s-580-4matic-long",
+      "family": "S-Class",
+      "year": "27MY",
+      "trim": "S 580 4MATIC Long"
+    },
+    {
+      "id": "gla-27my-gla-250-4matic-amg-line",
+      "family": "GLA",
+      "year": "27MY",
+      "trim": "GLA 250 4MATIC AMG Line"
+    },
+    {
+      "id": "glb-26my-glb-250-4matic",
+      "family": "GLB",
+      "year": "26MY",
+      "trim": "GLB 250 4MATIC"
+    },
+    {
+      "id": "glc-27my-glc-300-4matic",
+      "family": "GLC",
+      "year": "27MY",
+      "trim": "GLC 300 4MATIC"
+    },
+    {
+      "id": "glc-27my-glc-220-d-4matic",
+      "family": "GLC",
+      "year": "27MY",
+      "trim": "GLC 220 d 4MATIC"
+    },
+    {
+      "id": "glc-27my-glc-300-4matic-avantgarde",
+      "family": "GLC",
+      "year": "27MY",
+      "trim": "GLC 300 4MATIC AVANTGARDE"
+    },
+    {
+      "id": "glc-27my-glc-300-4matic-amg-line",
+      "family": "GLC",
+      "year": "27MY",
+      "trim": "GLC 300 4MATIC AMG Line"
+    },
+    {
+      "id": "glc-coupe-27my-glc-300-4matic-coupe-avantgarde",
+      "family": "GLC Coupé",
+      "year": "27MY",
+      "trim": "GLC 300 4MATIC Coupé AVANTGARDE"
+    },
+    {
+      "id": "glc-coupe-27my-glc-300-4matic-coupe-amg-line",
+      "family": "GLC Coupé",
+      "year": "27MY",
+      "trim": "GLC 300 4MATIC Coupé AMG Line"
+    },
+    {
+      "id": "gle-26my-gle-350-4matic",
+      "family": "GLE",
+      "year": "26MY",
+      "trim": "GLE 350 4MATIC"
+    },
+    {
+      "id": "gle-26my-gle-300-d-4matic",
+      "family": "GLE",
+      "year": "26MY",
+      "trim": "GLE 300 d 4MATIC"
+    },
+    {
+      "id": "gle-26my-gle-450-4matic",
+      "family": "GLE",
+      "year": "26MY",
+      "trim": "GLE 450 4MATIC"
+    },
+    {
+      "id": "gle-26my-gle-450-4matic-amg-line",
+      "family": "GLE",
+      "year": "26MY",
+      "trim": "GLE 450 4MATIC AMG Line"
+    },
+    {
+      "id": "gle-coupe-26my-gle-450-d-4matic-coupe-amg-line",
+      "family": "GLE Coupé",
+      "year": "26MY",
+      "trim": "GLE 450 d 4MATIC Coupé AMG Line"
+    },
+    {
+      "id": "gle-coupe-26my-gle-450-4matic-coupe-amg-line",
+      "family": "GLE Coupé",
+      "year": "26MY",
+      "trim": "GLE 450 4MATIC Coupé AMG Line"
+    },
+    {
+      "id": "gls-26my-gls-450-4matic-amg-line-premium",
+      "family": "GLS",
+      "year": "26MY",
+      "trim": "GLS 450 4MATIC AMG Line Premium"
+    },
+    {
+      "id": "gls-26my-gls-580-4matic-amg-line",
+      "family": "GLS",
+      "year": "26MY",
+      "trim": "GLS 580 4MATIC AMG Line"
+    },
+    {
+      "id": "g-class-27my-g-450-d",
+      "family": "G-Class",
+      "year": "27MY",
+      "trim": "G 450 d"
+    },
+    {
+      "id": "g-class-27my-g-450-d-manufaktur",
+      "family": "G-Class",
+      "year": "27MY",
+      "trim": "G 450 d MANUFAKTUR"
+    },
+    {
+      "id": "cla-electric-27my-cla-200-electric-essential",
+      "family": "CLA Electric",
+      "year": "27MY",
+      "trim": "CLA 200 Electric Essential"
+    },
+    {
+      "id": "cla-electric-27my-cla-200-electric-advanced",
+      "family": "CLA Electric",
+      "year": "27MY",
+      "trim": "CLA 200 Electric Advanced"
+    },
+    {
+      "id": "cla-electric-27my-cla-200-electric-amg-line",
+      "family": "CLA Electric",
+      "year": "27MY",
+      "trim": "CLA 200 Electric AMG Line"
+    },
+    {
+      "id": "cla-electric-27my-cla-250-plus-electric",
+      "family": "CLA Electric",
+      "year": "27MY",
+      "trim": "CLA 250+ Electric"
+    },
+    {
+      "id": "cla-electric-27my-cla-250-plus-electric-amg-line",
+      "family": "CLA Electric",
+      "year": "27MY",
+      "trim": "CLA 250+ Electric AMG Line"
+    },
+    {
+      "id": "eqa-27my-eqa-250-progressive",
+      "family": "EQA",
+      "year": "27MY",
+      "trim": "EQA 250 Progressive"
+    },
+    {
+      "id": "eqa-27my-eqa-250-amg-line",
+      "family": "EQA",
+      "year": "27MY",
+      "trim": "EQA 250 AMG Line"
+    },
+    {
+      "id": "eqb-26my-eqb-300-4matic-progressive",
+      "family": "EQB",
+      "year": "26MY",
+      "trim": "EQB 300 4MATIC Progressive"
+    },
+    {
+      "id": "eqb-26my-eqb-300-4matic-amg-line",
+      "family": "EQB",
+      "year": "26MY",
+      "trim": "EQB 300 4MATIC AMG Line"
+    },
+    {
+      "id": "eqe-26my-eqe-350",
+      "family": "EQE",
+      "year": "26MY",
+      "trim": "EQE 350"
+    },
+    {
+      "id": "eqe-suv-26my-eqe-350-suv",
+      "family": "EQE SUV",
+      "year": "26MY",
+      "trim": "EQE 350 SUV"
+    },
+    {
+      "id": "eqe-suv-26my-eqe-500-4matic-suv",
+      "family": "EQE SUV",
+      "year": "26MY",
+      "trim": "EQE 500 4MATIC SUV"
+    },
+    {
+      "id": "eqs-suv-26my-eqs-450-4matic-suv",
+      "family": "EQS SUV",
+      "year": "26MY",
+      "trim": "EQS 450 4MATIC SUV"
+    },
+    {
+      "id": "eqs-suv-26my-eqs-580-4matic-suv",
+      "family": "EQS SUV",
+      "year": "26MY",
+      "trim": "EQS 580 4MATIC SUV"
+    },
+    {
+      "id": "g-580-eq-27my-g-580-with-eq-technology",
+      "family": "G 580 EQ",
+      "year": "27MY",
+      "trim": "G 580 with EQ Technology"
+    },
+    {
+      "id": "g-580-eq-27my-g-580-with-eq-technology-manufaktur",
+      "family": "G 580 EQ",
+      "year": "27MY",
+      "trim": "G 580 with EQ Technology MANUFAKTUR"
+    },
+    {
+      "id": "amg-a-class-26my-mercedes-amg-a-45-s-4matic-plus",
+      "family": "AMG A-Class",
+      "year": "26MY",
+      "trim": "Mercedes-AMG A 45 S 4MATIC+"
+    },
+    {
+      "id": "amg-a-class-27my-mercedes-amg-a-45-s-4matic-plus",
+      "family": "AMG A-Class",
+      "year": "27MY",
+      "trim": "Mercedes-AMG A 45 S 4MATIC+"
+    },
+    {
+      "id": "amg-cla-26my-mercedes-amg-cla-45-s-4matic-plus",
+      "family": "AMG CLA",
+      "year": "26MY",
+      "trim": "Mercedes-AMG CLA 45 S 4MATIC+"
+    },
+    {
+      "id": "amg-cla-26my-mercedes-amg-cla-45-s-4matic-plus-final-edition",
+      "family": "AMG CLA",
+      "year": "26MY",
+      "trim": "Mercedes-AMG CLA 45 S 4MATIC+ Final Edition"
+    },
+    {
+      "id": "amg-e-class-26my-mercedes-amg-e-53-hybrid-4matic-plus",
+      "family": "AMG E-Class",
+      "year": "26MY",
+      "trim": "Mercedes-AMG E 53 HYBRID 4MATIC+"
+    },
+    {
+      "id": "amg-s-class-26my-mercedes-amg-s-63-e-performance",
+      "family": "AMG S-Class",
+      "year": "26MY",
+      "trim": "Mercedes-AMG S 63 E Performance"
+    },
+    {
+      "id": "amg-cle-27my-mercedes-amg-cle-53-4matic-plus-coupe",
+      "family": "AMG CLE",
+      "year": "27MY",
+      "trim": "Mercedes-AMG CLE 53 4MATIC+ Coupé"
+    },
+    {
+      "id": "amg-cle-27my-mercedes-amg-cle-53-4matic-plus-cabriolet",
+      "family": "AMG CLE",
+      "year": "27MY",
+      "trim": "Mercedes-AMG CLE 53 4MATIC+ Cabriolet"
+    },
+    {
+      "id": "amg-glb-26my-mercedes-amg-glb-35-4matic",
+      "family": "AMG GLB",
+      "year": "26MY",
+      "trim": "Mercedes-AMG GLB 35 4MATIC"
+    },
+    {
+      "id": "amg-glc-26my-mercedes-amg-glc-43-4matic",
+      "family": "AMG GLC",
+      "year": "26MY",
+      "trim": "Mercedes-AMG GLC 43 4MATIC"
+    },
+    {
+      "id": "amg-glc-coupe-26my-mercedes-amg-glc-43-4matic-coupe",
+      "family": "AMG GLC Coupé",
+      "year": "26MY",
+      "trim": "Mercedes-AMG GLC 43 4MATIC Coupé"
+    },
+    {
+      "id": "amg-gle-26my-mercedes-amg-gle-53-4matic-plus",
+      "family": "AMG GLE",
+      "year": "26MY",
+      "trim": "Mercedes-AMG GLE 53 4MATIC+"
+    },
+    {
+      "id": "amg-gle-coupe-26my-mercedes-amg-gle-53-4matic-plus-coupe",
+      "family": "AMG GLE Coupé",
+      "year": "26MY",
+      "trim": "Mercedes-AMG GLE 53 4MATIC+ Coupé"
+    },
+    {
+      "id": "amg-gls-26my-mercedes-amg-gls-63-4matic-plus",
+      "family": "AMG GLS",
+      "year": "26MY",
+      "trim": "Mercedes-AMG GLS 63 4MATIC+"
+    },
+    {
+      "id": "amg-g-63-27my-mercedes-amg-g-63",
+      "family": "AMG G 63",
+      "year": "27MY",
+      "trim": "Mercedes-AMG G 63"
+    },
+    {
+      "id": "amg-g-63-27my-mercedes-amg-g-63-manufaktur",
+      "family": "AMG G 63",
+      "year": "27MY",
+      "trim": "Mercedes-AMG G 63 MANUFAKTUR"
+    },
+    {
+      "id": "amg-gt-26my-mercedes-amg-gt-43-4matic-plus-4-door",
+      "family": "AMG GT",
+      "year": "26MY",
+      "trim": "Mercedes-AMG GT 43 4MATIC+ 4-Door"
+    },
+    {
+      "id": "amg-gt-27my-mercedes-amg-gt-43",
+      "family": "AMG GT",
+      "year": "27MY",
+      "trim": "Mercedes-AMG GT 43"
+    },
+    {
+      "id": "amg-gt-27my-mercedes-amg-gt-55-4matic-plus",
+      "family": "AMG GT",
+      "year": "27MY",
+      "trim": "Mercedes-AMG GT 55 4MATIC+"
+    },
+    {
+      "id": "amg-gt-26my-mercedes-amg-gt-63-s-e-performance",
+      "family": "AMG GT",
+      "year": "26MY",
+      "trim": "Mercedes-AMG GT 63 S E Performance"
+    },
+    {
+      "id": "amg-sl-27my-mercedes-amg-sl-43",
+      "family": "AMG SL",
+      "year": "27MY",
+      "trim": "Mercedes-AMG SL 43"
+    },
+    {
+      "id": "amg-sl-26my-mercedes-amg-sl-63-4matic-plus",
+      "family": "AMG SL",
+      "year": "26MY",
+      "trim": "Mercedes-AMG SL 63 4MATIC+"
+    },
+    {
+      "id": "maybach-s-class-27my-mercedes-maybach-s-580",
+      "family": "Maybach S-Class",
+      "year": "27MY",
+      "trim": "Mercedes-Maybach S 580"
+    },
+    {
+      "id": "maybach-s-class-27my-mercedes-maybach-s-580-manufaktur",
+      "family": "Maybach S-Class",
+      "year": "27MY",
+      "trim": "Mercedes-Maybach S 580 MANUFAKTUR"
+    },
+    {
+      "id": "maybach-s-class-27my-mercedes-maybach-s-680",
+      "family": "Maybach S-Class",
+      "year": "27MY",
+      "trim": "Mercedes-Maybach S 680"
+    },
+    {
+      "id": "maybach-gls-26my-mercedes-maybach-gls-600",
+      "family": "Maybach GLS",
+      "year": "26MY",
+      "trim": "Mercedes-Maybach GLS 600"
+    },
+    {
+      "id": "maybach-gls-26my-mercedes-maybach-gls-600-manufaktur",
+      "family": "Maybach GLS",
+      "year": "26MY",
+      "trim": "Mercedes-Maybach GLS 600 MANUFAKTUR"
+    },
+    {
+      "id": "maybach-eqs-suv-26my-mercedes-maybach-eqs-680-suv",
+      "family": "Maybach EQS SUV",
+      "year": "26MY",
+      "trim": "Mercedes-Maybach EQS 680 SUV"
+    },
+    {
+      "id": "maybach-sl-26my-mercedes-maybach-sl-680",
+      "family": "Maybach SL",
+      "year": "26MY",
+      "trim": "Mercedes-Maybach SL 680"
+    },
+    {
+      "id": "v-class-27my-v-300-d-4matic-exclusive",
+      "family": "V-Class",
+      "year": "27MY",
+      "trim": "V 300 d 4MATIC Exclusive"
+    },
+    {
+      "id": "cle-coupe-27my-cle-200-coupe",
+      "family": "CLE Coupé",
+      "year": "27MY",
+      "trim": "CLE 200 Coupé"
+    },
+    {
+      "id": "cle-coupe-27my-cle-450-4matic-coupe",
+      "family": "CLE Coupé",
+      "year": "27MY",
+      "trim": "CLE 450 4MATIC Coupé"
+    },
+    {
+      "id": "cle-cabriolet-27my-cle-200-cabriolet",
+      "family": "CLE Cabriolet",
+      "year": "27MY",
+      "trim": "CLE 200 Cabriolet"
+    },
+    {
+      "id": "cle-cabriolet-27my-cle-450-4matic-cabriolet",
+      "family": "CLE Cabriolet",
+      "year": "27MY",
+      "trim": "CLE 450 4MATIC Cabriolet"
+    },
+    {
+      "id": "glb-electric-27my-the-all-new-electric-glb",
+      "family": "GLB Electric",
+      "year": "27MY",
+      "trim": "The all-new electric GLB"
+    },
+    {
+      "id": "glc-electric-27my-the-all-new-electric-glc",
+      "family": "GLC Electric",
+      "year": "27MY",
+      "trim": "The all-new electric GLC"
+    },
+    {
+      "id": "eqs-27my-eqs-400-facelift",
+      "family": "EQS",
+      "year": "27MY",
+      "trim": "EQS 400 Facelift"
+    }
+  ]
+}
