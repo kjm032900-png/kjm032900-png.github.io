@@ -52,3 +52,11 @@ a{color:inherit}button,select{font:inherit}.container{width:min(1120px,calc(100%
 .combined-option .meta{font-size:11px;margin:3px 0 0}
 @media(max-width:760px){.combined-body{grid-template-columns:1fr}.combined-options{padding:12px 15px 16px}.combined-option{padding:9px 0}.combined-head{padding:13px 15px}.combined-title{font-size:15px}}
 @media(max-width:520px){.combined-head{align-items:flex-start}.combined-caption{font-size:11px}.combined-count{font-size:10px;padding:4px 7px}.combined-option-name{font-size:12px}}
+
+/* Colour guide: direct return to selected model and share controls. */
+.nav-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:8px}
+.action-button{color:var(--text);background:transparent;cursor:pointer;line-height:inherit}
+.action-button:hover{background:#273c4e}
+.share-feedback{margin:0 0 16px;padding:11px 14px;background:#193346;border:1px solid #7197b3;border-radius:8px;font-size:13px;color:#f5f7f9}
+.share-feedback[hidden]{display:none}
+@media(max-width:620px){.topbar-inner{align-items:flex-start;padding-top:12px;padding-bottom:12px;flex-direction:column}.brand{font-size:14px}.brand span{font-size:11px}.nav-actions{width:100%;justify-content:flex-start}.nav-actions .back-link{font-size:12px;padding:8px 9px}}
