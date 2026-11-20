@@ -39,6 +39,18 @@ try {
   await page.locator('#dialogTable tbody tr').filter({ hasText: 'GLE 450 4MATIC AMG Line' }).locator('input[data-share-id]').check();
   await page.locator('#closeDialog').click();
   assert.match(await page.locator('#shareToolbarCount').innerText(), /2대/);
+  await page.evaluate(() => {
+    Object.defineProperty(navigator, 'clipboard', {
+      configurable: true,
+      value: { writeText: async (text) => { window.__copiedShareUrl = text; } }
+    });
+  });
+  await page.locator('#shareCopy').click();
+  await page.waitForFunction(() => Boolean(window.__copiedShareUrl));
+  const copiedUrl = new URL(await page.evaluate(() => window.__copiedShareUrl));
+  assert.equal(copiedUrl.pathname, '/share.html');
+  assert.deepEqual(Array.from(copiedUrl.searchParams.keys()), ['ids']);
+  assert.equal(copiedUrl.searchParams.get('ids').split(',').length, 2);
   const newPage = desktop.waitForEvent('page');
   await page.locator('#sharePreview').click();
   const sharePage = await newPage;
