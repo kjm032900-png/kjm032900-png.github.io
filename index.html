@@ -224,17 +224,47 @@ function render(){
       fallback.textContent='대표 사진 확인 중';parent.replaceChildren(fallback);}
   }));
 }
-$('filters').innerHTML=cats.map(x=>`<button type="button" class="filter ${x===cat?'active':''}" data-cat="${x}">${x}</button>`).join('');$('filters').addEventListener('click',e=>{const b=e.target.closest('[data-cat]');if(!b)return;cat=b.dataset.cat;[...$('filters').children].forEach(c=>c.classList.toggle('active',c.dataset.cat===cat));render()});$('search').addEventListener('input',e=>{query=e.target.value.trim().toLowerCase();render()});document.querySelectorAll('[data-find]').forEach(a=>a.addEventListener('click',()=>{cat='전체';query=a.dataset.find.toLowerCase();$('search').value=a.dataset.find;[...$('filters').children].forEach(c=>c.classList.toggle('active',c.dataset.cat==='전체'));render()}));const dlg=$('modelDialog');function openModel(f){const rr=groupRows(f);$('dialogTitle').textContent=f;$('dialogColorsLink').href='colors.html?model='+encodeURIComponent(f);const imageUrl=modelImageUrl(f);$('dialogImage').hidden=!imageUrl;if(imageUrl){$('dialogImage').src=imageUrl;$('dialogImage').alt=f+' 해당 모델의 차량 대표 사진'}else{$('dialogImage').removeAttribute('src');$('dialogImage').alt=f+' 차량 이미지 확인 중'}$('dialogTable').innerHTML='<table class="price-table"><thead><tr><th>트림</th><th>연식</th><th>공식 판매가격</th></tr></thead><tbody>'+rr.map(r=>`<tr><td>${escape(r.trim)}</td><td>${escape(r.year)}</td><td>${won(r.price)}</td></tr>`).join('')+'</tbody></table><p class="dialog-note">'+escape(text('dialog_price_note'))+'</p><p class="dialog-note">가격 출처: '+escape([...new Set(rr.map(r=>r.source))].join(', '))+'</p>';dlg.showModal();window.VehicleShareUI?.decorateDialog(f,rr)}$('closeDialog').addEventListener('click',()=>dlg.close());dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});render();
+$('filters').innerHTML=cats.map(x=>`<button type="button" class="filter ${x===cat?'active':''}" data-cat="${x}">${x}</button>`).join('');$('filters').addEventListener('click',e=>{const b=e.target.closest('[data-cat]');if(!b)return;cat=b.dataset.cat;[...$('filters').children].forEach(c=>c.classList.toggle('active',c.dataset.cat===cat));render()});$('search').addEventListener('input',e=>{query=e.target.value.trim().toLowerCase();render()});document.querySelectorAll('[data-find]').forEach(a=>a.addEventListener('click',()=>{cat='전체';query=a.dataset.find.toLowerCase();$('search').value=a.dataset.find;[...$('filters').children].forEach(c=>c.classList.toggle('active',c.dataset.cat==='전체'));render()}));const dlg=$('modelDialog');function openModel(f){const rr=groupRows(f);$('dialogTitle').textContent=f;$('dialogColorsLink').href='colors.html?model='+encodeURIComponent(f);const imageUrl=modelImageUrl(f);$('dialogImage').hidden=!imageUrl;if(imageUrl){$('dialogImage').src=imageUrl;$('dialogImage').alt=f+' 해당 모델의 차량 대표 사진'}else{$('dialogImage').removeAttribute('src');$('dialogImage').alt=f+' 차량 이미지 확인 중'}$('dialogTable').innerHTML='<table class="price-table"><thead><tr><th>트림</th><th>연식</th><th>공식 판매가격</th></tr></thead><tbody>'+rr.map(r=>`<tr><td>${escape(r.trim)}</td><td>${escape(r.year)}</td><td>${won(r.price)}</td></tr>`).join('')+'</tbody></table><p class="dialog-note">'+escape(text('dialog_price_note'))+'</p><p class="dialog-note">가격 출처: '+escape([...new Set(rr.map(r=>r.source))].join(', '))+'</p>';dlg.showModal();window.VehicleShareUI?.decorateDialog(f,rr)}$('closeDialog').addEventListener('click',()=>dlg.close());dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+// Save the true current view before leaving for the colour guide.
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href*="colors.html"]');
+  if(!a || !new URL(a.href,location.href).pathname.endsWith('/colors.html'))return;
+  try{sessionStorage.setItem('mb-color-origin-v1',JSON.stringify({
+    originPath:location.pathname,scrollY:window.scrollY,
+    modalOpen:dlg.open,family:dlg.open?$('dialogTitle').textContent:'',
+    cat,query
+  }))}catch(_){}
+});
+window.__restoreVehicleView=()=>{
+  try{
+    if(sessionStorage.getItem('mb-color-return-request-v1')!=='1')return;
+    sessionStorage.removeItem('mb-color-return-request-v1');
+    const saved=JSON.parse(sessionStorage.getItem('mb-color-origin-v1')||'null');
+    if(!saved||saved.originPath!==location.pathname)return;
+    if(cats.includes(saved.cat))cat=saved.cat;
+    query=typeof saved.query==='string'?saved.query:'';
+    $('search').value=query;
+    [...$('filters').children].forEach(el=>el.classList.toggle('active',el.dataset.cat===cat));
+    render();
+    if(saved.modalOpen&&families.includes(saved.family)){
+      if(!dlg.open)openModel(saved.family);
+    }else if(dlg.open)dlg.close();
+    const y=Number.isFinite(saved.scrollY)?Math.max(0,saved.scrollY):0;
+    requestAnimationFrame(()=>{window.scrollTo(0,y);requestAnimationFrame(()=>window.scrollTo(0,y))});
+  }catch(err){console.warn('Previous vehicle view restoration:',err)}
+};
+render();
 }
 const status=document.getElementById('content-status');
 const search=document.getElementById('search');
 search.disabled=true;
+window.addEventListener('pageshow',()=>window.__restoreVehicleView?.());
 const controller=new AbortController();
 const timeout=setTimeout(()=>controller.abort(),10000);
 fetch('./content.json',{cache:'no-cache',signal:controller.signal})
   .then(response=>{if(!response.ok)throw new Error('Content HTTP '+response.status);return response.json()})
   .then(validate)
-  .then(data=>{initialize(data);window.VehicleShareUI?.init(data);search.disabled=false;status.hidden=true;status.textContent='';const requestedModel=new URLSearchParams(location.search).get('openModel');if(requestedModel&&families.includes(requestedModel)){openModel(requestedModel)}})
+  .then(data=>{initialize(data);window.VehicleShareUI?.init(data);search.disabled=false;status.hidden=true;status.textContent='';const requestedModel=new URLSearchParams(location.search).get('openModel');if(requestedModel&&families.includes(requestedModel)){openModel(requestedModel)}window.__restoreVehicleView?.()})
   .catch(error=>{
     ['promos','modelGrid','filters','benefitsGrid','count','dialogTable'].forEach(id=>document.getElementById(id).replaceChildren());
     document.querySelectorAll('[data-card-price]').forEach(el=>el.textContent='가격 확인 중');
