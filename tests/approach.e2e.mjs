@@ -98,6 +98,7 @@ try {
   }
   await page.goto(base+'approach/#family=E-Class',{waitUntil:'domcontentloaded'});
   await page.locator('.family-book-action').click();
+  await page.waitForFunction(()=>document.querySelector('.detail-heading')?.textContent.includes('E-Class 통합 어프로치북'),{timeout:15000});
   assert.match(await page.locator('.detail-heading').innerText(),/E-Class 통합 어프로치북/);
   await page.locator('.book-reader-actions a[href*="mode=scroll"]').click();
   await page.locator('.book-scroll-all .book-sheet').first().waitFor({timeout:15000});
@@ -106,6 +107,7 @@ try {
     await page.goto(base+'approach/#family='+encodeURIComponent(f.name),{waitUntil:'domcontentloaded'});
     await page.locator('.family-book-action').waitFor({timeout:10000});
     await page.locator('.family-book-action').click();
+    await page.locator('.book-reader-actions option').first().waitFor({timeout:15000});
     const count=await page.locator('.book-reader-actions option').count();
     assert.equal(count,f.pages.length,'Integrated book page count '+f.name);
     await page.locator('.book-reader-actions a[href*="mode=scroll"]').click();
