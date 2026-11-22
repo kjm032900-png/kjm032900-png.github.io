@@ -23,7 +23,7 @@ assert.match(kr1.specNotice,/초기 물량/);
 assert.equal(kr1.variants.length,1);
 assert.equal((glc.priceReview||[]).length,0);
 const home=readFileSync('index.html','utf8');
-assert.equal((home.match(/전 차종 어프로치북/g)||[]).length,1);
+assert.equal((home.match(/<a class="btn" href="approach\/"/g)||[]).length,1);
 assert.ok(home.includes('href="approach/"'));
 for(const part of [...html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g)])if(part[1].trim())new vm.Script(part[1]);
 console.log('PASS: 66 source pages, 38 family entries, 128 verified images, KR1 distinction and homepage-only button');
