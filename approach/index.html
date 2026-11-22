@@ -71,6 +71,19 @@
 .book-sheet{background:#fff;border:1px solid #d1dfe7;border-radius:13px;padding:16px;margin:0 0 18px;overflow:hidden}
 .book-sheet>a{display:block;text-align:center}
 .book-sheet img{display:block;width:100%;height:auto;max-width:1100px;margin:0 auto;border:1px solid #d7e0e6}
+/* G-Class pages 47–50: two half-page reading panels at twice the rendered text size. */
+.g-page-readable{display:grid;gap:16px;margin:12px auto 0;max-width:1100px}
+.g-page-readable figure{margin:0;min-width:0;border:1px solid #d1dfe7;border-radius:8px;overflow:hidden;background:#fff}
+.g-page-readable figcaption{background:#e8f1f7;padding:9px 13px;color:#173e57;font-size:13px;font-weight:800}
+.g-page-half{width:100%;overflow:hidden;position:relative}
+.book-sheet .g-page-half img{display:block;width:200%;max-width:none;height:auto;margin:0;border:0;transform:none}
+.book-sheet .g-page-half.right img{transform:translateX(-50%)}
+.g-full-page{margin-top:14px;border:1px solid #bfd1dc;border-radius:9px;padding:12px;background:#f7fafc}
+.g-full-page summary{cursor:pointer;font-weight:800;color:#245a78;font-size:14px}
+.g-full-page a{display:block;margin-top:12px}
+.g-read-hint{font-size:13px;line-height:1.6;color:#3b5a6e;margin:8px 0 12px}
+@media(max-width:700px){.g-page-readable{gap:12px}.g-page-readable figcaption{font-size:12px}}
+
 .book-sheet-heading{display:flex;align-items:center;flex-wrap:wrap;gap:9px 15px;margin:0 0 14px}
 .book-sheet-heading h2{font-size:17px;line-height:1.5;flex:1;min-width:150px;margin:0}
 .book-sheet-heading a{font-size:13px;font-weight:800;color:#155e8b}
@@ -191,9 +204,18 @@
   const jumpOptions=listing.map((p,i)=>`<option value="${esc(p.id)}" ${selected.id===p.id?'selected':''}>${i+1}. ${esc(p.year)} · ${esc(p.variants.map(v=>v.trim).filter(Boolean).join(' / ')||p.title)}</option>`).join('');
   const menu=`<div class="book-reader-actions"><a href="${bookLink(f.name,selected.id,'pages')}" class="btn ${mode==='pages'?'btn-primary':''}" aria-current="${mode==='pages'?'page':'false'}">페이지별 보기</a><a href="${bookLink(f.name,'','scroll')}" class="btn ${mode==='scroll'?'btn-primary':''}" aria-current="${mode==='scroll'?'page':'false'}">전체 연속 보기</a><label for="bookJump">트림 바로 이동</label><select id="bookJump" aria-label="어프로치북 자료 바로 이동">${jumpOptions}</select></div>`;
   const common=(p,i)=>`<div class="book-sheet-heading"><span class="page-year">${esc(pageYearLabel(p))} · 원본 ${p.page}페이지</span><h2>${i+1}. ${esc(p.variants.map(v=>v.trim).filter(Boolean).join(' / ')||p.title)}</h2><a href="${pageLink(p.id)}">이 자료 제원·옵션 상세 보기 ↗</a></div>${specNoticeMarkup(p)}${priceWarningMarkup(p)}`;
+  const bookPageImageMarkup=(p,isCurrent=false)=>{
+    const src=esc(p.preview),alt=esc(p.title),lazy=isCurrent?'':' loading="lazy"';
+    if(p.page<47||p.page>50)return `<a href="${src}" target="_blank" rel="noopener noreferrer" aria-label="${alt} 크게 보기"><img${isCurrent?' class="reader-current-image"':''} src="${src}" alt="${alt} 어프로치북 원본 ${p.page}페이지"${lazy} decoding="async"></a>`;
+    return `<p class="g-read-hint">작은 글씨를 읽기 쉽게 원본 페이지의 왼쪽과 오른쪽을 각각 두 배 크기로 표시합니다. 아래에서 전체 페이지도 확인할 수 있습니다.</p>
+      <div class="g-page-readable" aria-label="${alt} 확대 보기">
+      <figure><figcaption>왼쪽 · 제원 및 차량 이미지</figcaption><div class="g-page-half left"><img src="${src}" alt="${alt} 원본 왼쪽 확대" ${lazy} decoding="async"></div></figure>
+      <figure><figcaption>오른쪽 · 트림별 옵션 및 사양</figcaption><div class="g-page-half right"><img src="${src}" alt="${alt} 원본 오른쪽 확대" ${lazy} decoding="async"></div></figure></div>
+      <details class="g-full-page"><summary>원본 한 페이지 전체 보기</summary><a href="${src}" target="_blank" rel="noopener noreferrer" aria-label="${alt} 원본 확대"><img src="${src}" alt="${alt} 전체 원본 페이지" loading="lazy" decoding="async"></a></details>`;
+  };
   const main=mode==='scroll'
-    ? `<div class="book-scroll-all">${listing.map((p,i)=>`<article class="book-sheet" id="source-${esc(p.id)}">${common(p,i)}<a href="${esc(p.preview)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(p.title)} 크게 보기"><img src="${esc(p.preview)}" alt="${esc(p.title)} 어프로치북 원본 ${p.page}페이지" loading="lazy" decoding="async"></a></article>`).join('')}</div>`
-    : `<article class="book-sheet">${common(selected,index)}<a href="${esc(selected.preview)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(selected.title)} 크게 보기"><img class="reader-current-image" src="${esc(selected.preview)}" alt="${esc(selected.title)} 어프로치북 원본 ${selected.page}페이지" decoding="async"></a></article>
+    ? `<div class="book-scroll-all">${listing.map((p,i)=>`<article class="book-sheet" id="source-${esc(p.id)}">${common(p,i)}${bookPageImageMarkup(p)}</article>`).join('')}</div>`
+    : `<article class="book-sheet">${common(selected,index)}${bookPageImageMarkup(selected,true)}</article>
       <nav class="reader-pager" aria-label="어프로치북 페이지 이동"><a class="btn" ${index===0?'aria-disabled="true"':`href="${bookLink(f.name,listing[index-1].id)}"`}>← 이전 페이지</a><strong>${index+1} / ${listing.length}</strong><a class="btn" ${index===listing.length-1?'aria-disabled="true"':`href="${bookLink(f.name,listing[index+1].id)}"`}>다음 페이지 →</a></nav>`;
   return `<section class="detail"><nav class="crumbs" aria-label="현재 위치"><a href="#">전 차종</a><span class="sep">/</span><a href="${familyLink(f.name)}">${esc(f.name)}</a><span class="sep">/</span><span>통합 어프로치북</span></nav>
   <p class="eyebrow" style="color:#57778c">MODEL APPROACH BOOK</p><h1 class="detail-heading">${esc(f.name)} 통합 어프로치북</h1>
