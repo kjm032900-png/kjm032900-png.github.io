@@ -250,7 +250,7 @@
       <p class="color-guide-hint">새 탭에서 열립니다. 컬러를 확인한 뒤 탭을 닫으면 <strong>현재 보고 있는 어프로치북 차량 화면으로 그대로 돌아옵니다.</strong> 표시된 색상이 모든 트림에서 주문 가능한 것은 아니며, 연식별 실제 적용 여부는 별도로 확인해 주세요.</p>
     </section>`;
   }
-  const TABS=[['specs','차량 제원'],['options','트림별 옵션'],['source','어프로치북']];
+  // Original brochure only: redundant derived specification and option tabs removed.
   function sourceStatus(p,kind){
     const txt=kind==='specs'?p.review.specification:p.review.options;
     return `<div class="review-strip"><span class="review-dot"></span><strong>원본 대조 상태</strong><span>${esc(txt)}</span><button type="button" data-tab="source" class="review-source">어프로치북 확인 ↗</button></div>`;
@@ -320,14 +320,14 @@
     if(!sectionCount)html+='<p class="panel-hint">차이가 표시된 행이 없습니다. 전체 옵션으로 다시 전환해 주세요.</p>';
     return html+'</section>';
   }
-  function originalMarkup(p){return `<section class="content-panel"><h2>${esc(p.family)} 어프로치북 · 원본 ${p.page}페이지</h2><p class="panel-hint">원본 내용을 가볍게 변환한 이미지입니다. 확대가 필요한 경우 ‘원본 이미지 열기’를 사용하세요. 원본 PDF 전체를 매번 내려받지 않습니다.</p><div class="source-action"><a href="${esc(p.preview)}" target="_blank" rel="noopener" class="btn btn-primary">${esc(p.family)} 어프로치북 크게 보기 ↗</a><button type="button" class="btn" id="printPage">현재 자료 인쇄</button></div><img class="source-image" src="${esc(p.preview)}" alt="원본 어프로치북 ${p.page}쪽 전체 페이지" loading="lazy" decoding="async"><details><summary style="cursor:pointer;font-weight:800;color:#244b66">원문 추출 텍스트 확인</summary><pre class="source-text">${esc(p.sourceText)}</pre></details></section>`;}
-  function sideMarkup(p){return `<aside class="info-sidebar"><div class="side-card"><h3>원본 자료 위치</h3><span class="page-source-number">${p.page}<small style="font-size:14px"> / ${DATA.info.sourcePages}쪽</small></span><p>${esc(p.title)}<br>원본과 항목별 대조가 가능합니다.</p><button type="button" class="btn" data-tab="source">${esc(p.family)} 어프로치북</button></div><div class="side-card"><h3>빠른 이동</h3><a href="${familyLink(p.family)}" class="btn" data-back>← 뒤로가기</a><a href="#" class="btn">← 전체 차종 목록</a><button type="button" class="btn" id="copyLink">현재 페이지 주소 복사</button></div><div class="side-card"><h3>검토 유의사항</h3><p>제원과 옵션은 원본에 수록된 자료입니다. 실제 차량의 옵션·가격·재고와 상이할 수 있으므로 계약 전 재검증이 필요합니다.</p>${p.notes.length?`<ul class="side-list">${p.notes.map(n=>`<li>${esc(n)} 원문 있음</li>`).join('')}</ul>`:''}</div></aside>`;}
+  function originalMarkup(p){return `<section id="sourcePanel" class="content-panel"><h2>${esc(p.family)} 어프로치북 · 원본 ${p.page}페이지</h2><p class="panel-hint">원본 내용을 가볍게 변환한 이미지입니다. 확대가 필요한 경우 ‘원본 이미지 열기’를 사용하세요. 원본 PDF 전체를 매번 내려받지 않습니다.</p><div class="source-action"><a href="${esc(p.preview)}" target="_blank" rel="noopener" class="btn btn-primary">${esc(p.family)} 어프로치북 크게 보기 ↗</a><button type="button" class="btn" id="printPage">현재 자료 인쇄</button></div><img class="source-image" src="${esc(p.preview)}" alt="원본 어프로치북 ${p.page}쪽 전체 페이지" loading="lazy" decoding="async"><details><summary style="cursor:pointer;font-weight:800;color:#244b66">원문 추출 텍스트 확인</summary><pre class="source-text">${esc(p.sourceText)}</pre></details></section>`;}
+  function sideMarkup(p){return `<aside class="info-sidebar"><div class="side-card"><h3>원본 자료 위치</h3><span class="page-source-number">${p.page}<small style="font-size:14px"> / ${DATA.info.sourcePages}쪽</small></span><p>${esc(p.title)}<br>원본과 항목별 대조가 가능합니다.</p><a class="btn" href="#sourcePanel" data-scroll-source>${esc(p.family)} 어프로치북</a></div><div class="side-card"><h3>빠른 이동</h3><a href="${familyLink(p.family)}" class="btn" data-back>← 뒤로가기</a><a href="#" class="btn">← 전체 차종 목록</a><button type="button" class="btn" id="copyLink">현재 페이지 주소 복사</button></div><div class="side-card"><h3>검토 유의사항</h3><p>제원과 옵션은 원본에 수록된 자료입니다. 실제 차량의 옵션·가격·재고와 상이할 수 있으므로 계약 전 재검증이 필요합니다.</p>${p.notes.length?`<ul class="side-list">${p.notes.map(n=>`<li>${esc(n)} 원문 있음</li>`).join('')}</ul>`:''}</div></aside>`;}
   function pageMarkup(p){
-    return `<section class="detail">${breadcrumbs(p)}<div class="detail-layout"><div class="detail-main">${summaryMarkup(p)}${colorGuideMarkup(p)}<div class="tabs" role="tablist" aria-label="어프로치북 상세 정보">${TABS.map(([id,label])=>`<button class="tab" data-tab="${id}" role="tab" aria-selected="${state.tab===id}" aria-controls="detailPanel">${label}</button>`).join('')}</div><div id="detailPanel" role="tabpanel">${state.tab==='specs'?specMarkup(p):state.tab==='options'?optionsMarkup(p):originalMarkup(p)}</div><div class="source-action"><a class="btn" href="${familyLink(p.family)}" data-back>← 뒤로가기</a><button class="btn" id="copyLinkBottom">링크 복사</button></div></div>${sideMarkup(p)}</div></section>`;
+    return `<section class="detail">${breadcrumbs(p)}<div class="detail-layout"><div class="detail-main">${summaryMarkup(p)}${colorGuideMarkup(p)}<div id="detailPanel">${originalMarkup(p)}</div><div class="source-action"><a class="btn" href="${familyLink(p.family)}" data-back>← 뒤로가기</a><button class="btn" id="copyLinkBottom">링크 복사</button></div></div>${sideMarkup(p)}</div></section>`;
   }
   function render(opts={}){
     const r=route();const changed=r.kind!==currentView||r.key!==currentKey;
-    if(changed){state.tab='specs';state.diff=false}
+    if(changed){state.tab='source';state.diff=false}
     currentView=r.kind;currentKey=r.key;
     const app=$('app');
     if(!DATA||pages.length!==DATA.info.vehiclePages){app.innerHTML='<div class="error">어프로치북 데이터를 읽지 못했습니다. 파일 구성을 확인해 주세요.</div>';return}
@@ -350,6 +350,7 @@
     }}
   });
   document.addEventListener('click',async e=>{
+    if(e.target.closest('[data-scroll-source]')){e.preventDefault();document.getElementById('sourcePanel')?.scrollIntoView({behavior:'smooth',block:'start'});return}
     if(e.target.closest('#backButton')||e.target.closest('[data-back]')){e.preventDefault();backToPrevious();return}
     const chip=e.target.closest('[data-cat]');
     if(chip){state.cat=chip.dataset.cat;document.querySelectorAll('[data-cat]').forEach(x=>x.setAttribute('aria-pressed',String(x===chip)));renderFamilyGrid();return}
