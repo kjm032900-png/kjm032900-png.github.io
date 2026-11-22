@@ -54,7 +54,11 @@ try {
   await page.goto(base+'approach/',{waitUntil:'domcontentloaded'});
   await page.locator('.family-card').first().waitFor();
   for(let i=2;i<=67;i++){
-    await page.evaluate(n=>{location.hash='#page=p'+n},i);
+    await page.evaluate(n=>{
+      const item=window.APPROACH_DATA.pages.find(row=>row.page===n);
+      if(!item)throw Error('Missing source page '+n);
+      location.hash='#page='+encodeURIComponent(item.id);
+    },i);
     try {
       await page.waitForFunction(n=>document.querySelector('.summary-banner .eyebrow')?.textContent.includes('원본 '+n+'쪽'),i,{timeout:10000});
     } catch (e) {
