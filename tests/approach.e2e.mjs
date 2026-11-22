@@ -107,7 +107,7 @@ try {
     await page.goto(base+'approach/#family='+encodeURIComponent(f.name),{waitUntil:'domcontentloaded'});
     await page.locator('.family-book-action').waitFor({timeout:10000});
     await page.locator('.family-book-action').click();
-    await page.locator('.book-reader-actions option').first().waitFor({timeout:15000});
+    await page.locator('.book-reader-actions option').first().waitFor({state:'attached',timeout:15000});
     const count=await page.locator('.book-reader-actions option').count();
     assert.equal(count,f.pages.length,'Integrated book page count '+f.name);
     await page.locator('.book-reader-actions a[href*="mode=scroll"]').click();
