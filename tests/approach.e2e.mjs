@@ -44,7 +44,7 @@ try {
     const dims=await page.evaluate(()=>({width:innerWidth,body:document.documentElement.scrollWidth}));
     assert.ok(dims.body<=dims.width+1,'Horizontal overflow '+JSON.stringify(dims));
     await page.locator('a[href="#family=GLC%20Coup%C3%A9"]').first().click();
-    assert.ok(await page.locator('.family-page-grid').isVisible());
+    await page.locator('.family-page-grid').waitFor({state:'visible',timeout:15000});
     assert.deepEqual(errors,[]);
     checks.push(width);
     await ctx.close();
