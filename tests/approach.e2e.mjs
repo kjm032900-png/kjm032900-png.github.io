@@ -63,5 +63,5 @@ try {
   }
   assert.deepEqual(errors,[]);
   await ctx.close();
-  console.log('PASS approach E2E: homepage navigation, 3 viewports '+checks.join('/'), 66/66 pages, 132 colour actions and GLC KR1 distinctions');
+  console.log('PASS approach E2E: homepage navigation, viewports '+checks.join('/')+', 66/66 pages, 132 color actions and GLC KR1 distinctions');
 } finally {if(browser)await browser.close();server.kill();}
