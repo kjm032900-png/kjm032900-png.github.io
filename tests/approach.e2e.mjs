@@ -69,7 +69,7 @@ try{
    assert.ok(urls[1].includes('tab=seats'));
    await page.locator('.summary-hero img').scrollIntoViewIfNeeded();
    await page.waitForFunction(()=>document.querySelector('.summary-hero img')?.naturalWidth>50,{timeout:15000});
-   await page.locator('[data-tab="source"]').click();
+   await page.getByRole('tab', {name:'원본 페이지'}).click();
    await page.locator('.source-image').scrollIntoViewIfNeeded();
    await page.waitForFunction(()=>document.querySelector('.source-image')?.naturalWidth>100,{timeout:15000});
    assert.deepEqual(errors,[],width+'px Javascript runtime errors');
