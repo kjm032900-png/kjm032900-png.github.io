@@ -26,7 +26,8 @@ try {
     // Latest GLC EV page 33 original and integrated reader remain synchronized.
     await page.goto(base+'approach/#page=p33',{waitUntil:'domcontentloaded'});
     await page.locator('.source-image').waitFor();
-    assert.match(await page.locator('.source-image').getAttribute('src'),/glc-ev-p33-final\.svg/);
+    await page.locator('.source-image').scrollIntoViewIfNeeded();
+    assert.match(await page.locator('.source-image').getAttribute('src'),/glc-ev-p33-original-extracted\.webp/);
     await page.waitForFunction(()=>document.querySelector('.source-image')?.complete&&document.querySelector('.source-image')?.naturalWidth>0,{timeout:15000});
     assert.equal(await page.locator('.tabs').count(),0,'No duplicate source/spec/options tabs');
     await page.goto(base+'approach/#book=GLC%20Electric&mode=scroll',{waitUntil:'domcontentloaded'});
@@ -50,6 +51,7 @@ try {
     assert.equal(await page.locator('.tabs').count(),0);
     assert.equal(await page.locator('#detailPanel .source-image').count(),1);
     await page.locator('.source-image').waitFor();
+    await page.locator('.source-image').scrollIntoViewIfNeeded();
     await page.waitForFunction(()=>document.querySelector('.source-image')?.complete&&document.querySelector('.source-image')?.naturalWidth>0,{timeout:15000});
     const dims=await page.evaluate(()=>({width:innerWidth,body:document.documentElement.scrollWidth}));
     assert.ok(dims.body<=dims.width+1,'Horizontal overflow '+JSON.stringify(dims));
