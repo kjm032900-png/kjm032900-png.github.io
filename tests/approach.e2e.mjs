@@ -55,7 +55,12 @@ try {
   await page.locator('.family-card').first().waitFor();
   for(let i=2;i<=67;i++){
     await page.evaluate(n=>{location.hash='#page=p'+n},i);
-    await page.waitForFunction(n=>document.querySelector('.summary-banner .eyebrow')?.textContent.includes('원본 '+n+'쪽'),i,{timeout:10000});
+    try {
+      await page.waitForFunction(n=>document.querySelector('.summary-banner .eyebrow')?.textContent.includes('원본 '+n+'쪽'),i,{timeout:10000});
+    } catch (e) {
+      const details=await page.evaluate(()=>({hash:location.hash,screen:document.querySelector('#app')?.textContent.slice(0,160),headline:document.querySelector('.summary-banner .eyebrow')?.textContent}));
+      throw Error('Approach page '+i+' failed to render: '+JSON.stringify(details)+'; '+e.message);
+    }
     await page.locator('.color-action').first().waitFor({timeout:10000});
     assert.equal(await page.locator('.color-action').count(),2,'Color actions '+i);
     assert.ok(await page.locator('.summary-hero img').getAttribute('src'),'Hero photo '+i);
