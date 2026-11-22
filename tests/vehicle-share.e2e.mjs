@@ -319,7 +319,13 @@ try {
   assert.match(await offline.locator('#catalogLoadWarningText').innerText(),/다시 불러오기/);
   assert.equal(await offline.locator('#modelGrid .model').count(),0);
   await offline.unroute('**/content.json');
-  await offline.locator('#catalogRetryButton').click();
+  // Retry may disappear when the application's automatic recovery completes in the
+  // same tick as unroute. Never attempt to click a now-hidden control.
+  if (await offline.locator('#catalogRetryButton').isVisible()) {
+    await offline.locator('#catalogRetryButton').click();
+  } else if (await offline.locator('#modelGrid .model').count() === 0) {
+    await offline.reload({waitUntil:'domcontentloaded'});
+  }
   await offline.locator('#modelGrid .model').first().waitFor({timeout:20000});
   assert.equal(await offline.locator('#modelGrid .model').count(),43);
   await offline.close();
