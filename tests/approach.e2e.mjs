@@ -55,6 +55,7 @@ try {
     await page.locator('#bookJump').selectOption('p31');
     assert.match(page.url(),/item=p31/);
     await page.locator('.book-reader-actions a[href*="mode=scroll"]').click();
+    await page.locator('.book-scroll-all .book-sheet').first().waitFor({timeout:15000});
     assert.equal(await page.locator('.book-scroll-all .book-sheet').count(),2);
     assert.equal(await page.locator('.book-scroll-all img[loading="lazy"]').count(),2);
     await page.locator('.book-sheet-heading a[href="#page=p31"]').click();
@@ -99,6 +100,7 @@ try {
   await page.locator('.family-book-action').click();
   assert.match(await page.locator('.detail-heading').innerText(),/E-Class 통합 어프로치북/);
   await page.locator('.book-reader-actions a[href*="mode=scroll"]').click();
+  await page.locator('.book-scroll-all .book-sheet').first().waitFor({timeout:15000});
   assert.equal(await page.locator('.book-scroll-all .book-sheet').count(),7,'E-Class must have 7 original pages');
   for(const f of await page.evaluate(()=>window.APPROACH_DATA.families)){
     await page.goto(base+'approach/#family='+encodeURIComponent(f.name),{waitUntil:'domcontentloaded'});
@@ -107,6 +109,7 @@ try {
     const count=await page.locator('.book-reader-actions option').count();
     assert.equal(count,f.pages.length,'Integrated book page count '+f.name);
     await page.locator('.book-reader-actions a[href*="mode=scroll"]').click();
+    await page.locator('.book-scroll-all .book-sheet').first().waitFor({timeout:15000});
     assert.equal(await page.locator('.book-scroll-all .book-sheet').count(),f.pages.length,'Continuous reader '+f.name);
     assert.equal(await page.locator('.reader-bottom [data-back]').count(),1);
   }
