@@ -45,6 +45,30 @@ try {
     assert.ok(dims.body<=dims.width+1,'Horizontal overflow '+JSON.stringify(dims));
     await page.locator('a[href="#family=GLC%20Coup%C3%A9"]').first().click();
     await page.locator('.family-page-grid').waitFor({state:'visible',timeout:15000});
+    assert.equal(await page.locator('.family-book-action').count(),1);
+    await page.locator('.family-book-action').click();
+    await page.locator('.book-sheet').first().waitFor({timeout:15000});
+    assert.equal(await page.locator('.book-sheet').count(),1);
+    assert.match(await page.locator('.detail-heading').innerText(),/GLC Coupé 통합 어프로치북/);
+    await page.locator('.reader-pager a[href*="item="]').last().click();
+    assert.match(page.url(),/item=p32/);
+    await page.locator('#bookJump').selectOption('p31');
+    assert.match(page.url(),/item=p31/);
+    await page.locator('.book-reader-actions a[href*="mode=scroll"]').click();
+    assert.equal(await page.locator('.book-scroll-all .book-sheet').count(),2);
+    assert.equal(await page.locator('.book-scroll-all img[loading="lazy"]').count(),2);
+    await page.locator('.book-sheet-heading a[href="#page=p31"]').click();
+    await page.locator('.tabs [data-tab="source"]').click();
+    assert.equal(await page.locator('.tabs [data-tab="source"]').innerText(),'어프로치북');
+    assert.match(await page.locator('#detailPanel h2').innerText(),/GLC Coupé 어프로치북/);
+    assert.equal(await page.locator('.info-sidebar [data-tab="source"]').first().innerText(),'GLC Coupé 어프로치북');
+    await page.locator('#backButton').click();
+    assert.match(page.url(),/book=GLC/);
+    await page.locator('#backButton').click();
+    assert.match(page.url(),/family=GLC/);
+    await page.locator('#backButton').click();
+    await page.locator('.family-card').first().waitFor();
+
     assert.deepEqual(errors,[]);
     checks.push(width);
     await ctx.close();
@@ -70,6 +94,21 @@ try {
     assert.ok(await page.locator('.summary-hero img').getAttribute('src'),'Hero photo '+i);
     await page.locator('[data-tab="options"]').click();
     assert.ok(await page.locator('.review-strip').isVisible(),'Source review '+i);
+  }
+  await page.goto(base+'approach/#family=E-Class',{waitUntil:'domcontentloaded'});
+  await page.locator('.family-book-action').click();
+  assert.match(await page.locator('.detail-heading').innerText(),/E-Class 통합 어프로치북/);
+  await page.locator('.book-reader-actions a[href*="mode=scroll"]').click();
+  assert.equal(await page.locator('.book-scroll-all .book-sheet').count(),7,'E-Class must have 7 original pages');
+  for(const f of await page.evaluate(()=>window.APPROACH_DATA.families)){
+    await page.goto(base+'approach/#family='+encodeURIComponent(f.name),{waitUntil:'domcontentloaded'});
+    await page.locator('.family-book-action').waitFor({timeout:10000});
+    await page.locator('.family-book-action').click();
+    const count=await page.locator('.book-reader-actions option').count();
+    assert.equal(count,f.pages.length,'Integrated book page count '+f.name);
+    await page.locator('.book-reader-actions a[href*="mode=scroll"]').click();
+    assert.equal(await page.locator('.book-scroll-all .book-sheet').count(),f.pages.length,'Continuous reader '+f.name);
+    assert.equal(await page.locator('.reader-bottom [data-back]').count(),1);
   }
   assert.deepEqual(errors,[]);
   await ctx.close();
