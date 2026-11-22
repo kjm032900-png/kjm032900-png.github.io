@@ -11,10 +11,19 @@ assert.equal(data.families.length,38);
 assert.deepEqual(data.pages.map(p=>p.page).sort((a,b)=>a-b),Array.from({length:66},(_,i)=>i+2));
 assert.equal(new Set(data.pages.map(p=>p.id)).size,66);
 const images=[...new Set([...html.matchAll(/assets\/img-\d{3}\.webp/g)].map(m=>m[0]))];
-assert.equal(images.length,128);
+assert.equal(images.length,127); // One GLC EV preview is now a source-preserving SVG
+assert.equal(data.pages.filter(p=>p.preview.endsWith('.svg')).length,1);
 assert.equal(readdirSync('approach/assets').filter(f=>f.endsWith('.webp')).length,128);
 for(const name of images){assert.ok(existsSync('approach/'+name));const buf=readFileSync('approach/'+name);assert.equal(buf.toString('ascii',0,4),'RIFF');assert.equal(buf.toString('ascii',8,12),'WEBP');}
-for(const p of data.pages){for(const kind of ['hero','preview']){assert.match(p[kind],/^assets\/img-\d{3}\.webp$/);assert.ok(existsSync('approach/'+p[kind]));}assert.ok(p.review?.specification&&p.review?.options);}
+for(const p of data.pages){for(const kind of ['hero','preview']){assert.match(p[kind],p.page===33&&kind==='preview'?/^assets\/glc-ev-p33-final\.svg$/:/^assets\/img-\d{3}\.webp$/);assert.ok(existsSync('approach/'+p[kind]));}assert.ok(p.review?.specification&&p.review?.options);}
+const glcEv=data.pages.find(p=>p.page===33);
+assert.equal(glcEv.family,'GLC Electric');
+assert.deepEqual(glcEv.variants.map(v=>v.price),['9,000만원','9,480만원']);
+assert.match(glcEv.options.find(s=>s.name==='드라이빙 옵션').rows.flat().join(' '),/AIRMATIC/);
+assert.match(glcEv.options.find(s=>s.name==='외장 옵션').rows.flat().join(' '),/AMG 10 스포크/);
+const p33Svg=readFileSync('approach/assets/glc-ev-p33-final.svg','utf8');
+assert.match(p33Svg,/<svg/);assert.match(p33Svg,/AIRMATIC/);assert.match(p33Svg,/glc-ev-final-option-replacement/);
+
 const glc=data.pages.find(p=>p.page===31),kr1=data.pages.find(p=>p.page===32);
 assert.match(glc.specNotice,/9,790만원/);
 assert.match(glc.specNotice,/9,690만원/);

@@ -23,6 +23,21 @@ try {
     await page.locator('#modelSearch').fill('GLC');
     assert.ok(await page.locator('.family-card').count()>0);
     await page.locator('#modelSearch').fill('');
+    // Latest GLC EV page 33 original and integrated reader remain synchronized.
+    await page.goto(base+'approach/#page=p33',{waitUntil:'domcontentloaded'});
+    await page.locator('.tabs [data-tab="source"]').click();
+    await page.locator('.source-image').waitFor();
+    assert.match(await page.locator('.source-image').getAttribute('src'),/glc-ev-p33-final\.svg/);
+    await page.waitForFunction(()=>document.querySelector('.source-image')?.complete&&document.querySelector('.source-image')?.naturalWidth>0,{timeout:15000});
+    await page.locator('.tabs [data-tab="options"]').click();
+    assert.match(await page.locator('#detailPanel').innerText(),/AIRMATIC/);
+    assert.match(await page.locator('#detailPanel').innerText(),/Comfort 서스펜션/);
+    assert.match(await page.locator('#detailPanel').innerText(),/AMG 10 스포크/);
+    await page.goto(base+'approach/#book=GLC%20Electric&mode=scroll',{waitUntil:'domcontentloaded'});
+    await page.locator('.book-scroll-all .book-sheet').first().waitFor();
+    assert.equal(await page.locator('img[src="assets/glc-ev-p33-final.svg"]').count(),1);
+    await page.goto(base+'approach/',{waitUntil:'domcontentloaded'});
+    await page.locator('.family-card').first().waitFor({timeout:15000});
     await page.locator('a[href="#family=GLC%20Coup%C3%A9"]').first().click();
     await page.locator('a[href="#page=p31"]').click();
     await page.locator('.color-action').first().waitFor();
