@@ -1,0 +1,26 @@
+name: Digital Approach Book QA
+on:
+  pull_request:
+    paths:
+      - 'approach/**'
+      - 'index.html'
+      - 'tests/approach.e2e.mjs'
+      - '.github/workflows/approach-check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  approach-desktop-and-galaxy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser runner
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Validate complete approach book and mobile navigation
+        run: node tests/approach.e2e.mjs
