@@ -31,7 +31,7 @@ try {
     assert.equal(await page.locator('.tabs').count(),0,'No duplicate source/spec/options tabs');
     await page.goto(base+'approach/#book=GLC%20Electric&mode=scroll',{waitUntil:'domcontentloaded'});
     await page.locator('.book-scroll-all .book-sheet').first().waitFor();
-    assert.equal(await page.locator('img[src="assets/glc-ev-p33-final.svg"]').count(),1);
+    assert.equal(await page.locator('img[src="assets/glc-ev-p33-original-extracted.webp"]').count(),1);
     await page.goto(base+'approach/',{waitUntil:'domcontentloaded'});
     await page.locator('.family-card').first().waitFor({timeout:15000});
     await page.locator('a[href="#family=GLC%20Coup%C3%A9"]').first().click();
