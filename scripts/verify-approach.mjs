@@ -31,7 +31,11 @@ assert.match(glc.specNotice,/4\.5°/);
 assert.match(kr1.specNotice,/초기 물량/);
 assert.equal(kr1.variants.length,1);
 assert.equal((glc.priceReview||[]).length,0);
-assert.ok(html.includes("['source','어프로치북']"),'Source tab is called 어프로치북');
+assert.ok(!html.includes('const TABS='),'All three redundant detailed tabs are removed');
+assert.ok(!html.includes('class="tabs" role="tablist"'),'No spec/options/source tabs in the detailed view');
+assert.ok(html.includes('id="detailPanel">${originalMarkup(p)}'),'Original brochure opens directly for all 66 pages');
+assert.ok(html.includes('id="sourcePanel"'),'Source anchor exists');
+assert.ok(html.includes('data-scroll-source'),'Sidebar brochure link scrolls directly to original');
 assert.ok(html.includes('function familyBookMarkup')&&html.includes('id="bookJump"'),
   'Model reader must include both modes and direct trim jump');
 assert.ok(html.includes('id="backButton"')&&html.includes('function backToPrevious'),
