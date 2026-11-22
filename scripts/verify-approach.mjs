@@ -11,18 +11,20 @@ assert.equal(data.families.length,38);
 assert.deepEqual(data.pages.map(p=>p.page).sort((a,b)=>a-b),Array.from({length:66},(_,i)=>i+2));
 assert.equal(new Set(data.pages.map(p=>p.id)).size,66);
 const images=[...new Set([...html.matchAll(/assets\/img-\d{3}\.webp/g)].map(m=>m[0]))];
-assert.equal(images.length,127); // One GLC EV preview is now a source-preserving SVG
-assert.equal(data.pages.filter(p=>p.preview.endsWith('.svg')).length,1);
-assert.equal(readdirSync('approach/assets').filter(f=>f.endsWith('.webp')).length,128);
+assert.equal(images.length,127); // 127 existing source images plus one directly rendered GLC EV WebP
+assert.equal(data.pages.filter(p=>p.preview==='assets/glc-ev-p33-original-extracted.webp').length,1);
+assert.equal(readdirSync('approach/assets').filter(f=>f.endsWith('.webp')).length,129);
 for(const name of images){assert.ok(existsSync('approach/'+name));const buf=readFileSync('approach/'+name);assert.equal(buf.toString('ascii',0,4),'RIFF');assert.equal(buf.toString('ascii',8,12),'WEBP');}
-for(const p of data.pages){for(const kind of ['hero','preview']){assert.match(p[kind],p.page===33&&kind==='preview'?/^assets\/glc-ev-p33-final\.svg$/:/^assets\/img-\d{3}\.webp$/);assert.ok(existsSync('approach/'+p[kind]));}assert.ok(p.review?.specification&&p.review?.options);}
+for(const p of data.pages){for(const kind of ['hero','preview']){assert.match(p[kind],p.page===33&&kind==='preview'?/^assets\/glc-ev-p33-original-extracted\.webp$/:/^assets\/img-\d{3}\.webp$/);assert.ok(existsSync('approach/'+p[kind]));}assert.ok(p.review?.specification&&p.review?.options);}
 const glcEv=data.pages.find(p=>p.page===33);
 assert.equal(glcEv.family,'GLC Electric');
 assert.deepEqual(glcEv.variants.map(v=>v.price),['9,000만원','9,480만원']);
 assert.match(glcEv.options.find(s=>s.name==='드라이빙 옵션').rows.flat().join(' '),/AIRMATIC/);
 assert.match(glcEv.options.find(s=>s.name==='외장 옵션').rows.flat().join(' '),/AMG 10 스포크/);
-const p33Svg=readFileSync('approach/assets/glc-ev-p33-final.svg','utf8');
-assert.match(p33Svg,/<svg/);assert.match(p33Svg,/AIRMATIC/);assert.match(p33Svg,/glc-ev-final-option-replacement/);
+const p33Image=readFileSync('approach/assets/glc-ev-p33-original-extracted.webp');
+assert.equal(p33Image.toString('ascii',0,4),'RIFF');
+assert.equal(p33Image.toString('ascii',8,12),'WEBP');
+assert.equal(p33Image.length,164474,'Exact directly rendered page asset has correct byte count');
 
 const glc=data.pages.find(p=>p.page===31),kr1=data.pages.find(p=>p.page===32);
 assert.match(glc.specNotice,/9,790만원/);
@@ -31,7 +33,11 @@ assert.match(glc.specNotice,/4\.5°/);
 assert.match(kr1.specNotice,/초기 물량/);
 assert.equal(kr1.variants.length,1);
 assert.equal((glc.priceReview||[]).length,0);
-assert.ok(html.includes("['source','어프로치북']"),'Source tab is called 어프로치북');
+assert.ok(!html.includes('const TABS='),'All three redundant detailed tabs are removed');
+assert.ok(!html.includes('class="tabs" role="tablist"'),'No spec/options/source tabs in the detailed view');
+assert.ok(html.includes('id="detailPanel">${originalMarkup(p)}'),'Original brochure opens directly for all 66 pages');
+assert.ok(html.includes('id="sourcePanel"'),'Source anchor exists');
+assert.ok(html.includes('data-scroll-source'),'Sidebar brochure link scrolls directly to original');
 assert.ok(html.includes('function familyBookMarkup')&&html.includes('id="bookJump"'),
   'Model reader must include both modes and direct trim jump');
 assert.ok(html.includes('id="backButton"')&&html.includes('function backToPrevious'),

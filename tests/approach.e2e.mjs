@@ -25,17 +25,14 @@ try {
     await page.locator('#modelSearch').fill('');
     // Latest GLC EV page 33 original and integrated reader remain synchronized.
     await page.goto(base+'approach/#page=p33',{waitUntil:'domcontentloaded'});
-    await page.locator('.tabs [data-tab="source"]').click();
     await page.locator('.source-image').waitFor();
-    assert.match(await page.locator('.source-image').getAttribute('src'),/glc-ev-p33-final\.svg/);
+    await page.locator('.source-image').scrollIntoViewIfNeeded();
+    assert.match(await page.locator('.source-image').getAttribute('src'),/glc-ev-p33-original-extracted\.webp/);
     await page.waitForFunction(()=>document.querySelector('.source-image')?.complete&&document.querySelector('.source-image')?.naturalWidth>0,{timeout:15000});
-    await page.locator('.tabs [data-tab="options"]').click();
-    assert.match(await page.locator('#detailPanel').innerText(),/AIRMATIC/);
-    assert.match(await page.locator('#detailPanel').innerText(),/Comfort 서스펜션/);
-    assert.match(await page.locator('#detailPanel').innerText(),/AMG 10 스포크/);
+    assert.equal(await page.locator('.tabs').count(),0,'No duplicate source/spec/options tabs');
     await page.goto(base+'approach/#book=GLC%20Electric&mode=scroll',{waitUntil:'domcontentloaded'});
     await page.locator('.book-scroll-all .book-sheet').first().waitFor();
-    assert.equal(await page.locator('img[src="assets/glc-ev-p33-final.svg"]').count(),1);
+    assert.equal(await page.locator('img[src="assets/glc-ev-p33-original-extracted.webp"]').count(),1);
     await page.goto(base+'approach/',{waitUntil:'domcontentloaded'});
     await page.locator('.family-card').first().waitFor({timeout:15000});
     await page.locator('a[href="#family=GLC%20Coup%C3%A9"]').first().click();
@@ -51,10 +48,10 @@ try {
       assert.equal(url.searchParams.get('tab'),tab);
       assert.equal(url.searchParams.get('model'),'GLC Coupé');
     }
-    await page.locator('[data-tab="options"]').click();
-    assert.ok(await page.locator('.review-strip').isVisible());
-    await page.locator('.tabs [data-tab="source"]').click();
+    assert.equal(await page.locator('.tabs').count(),0);
+    assert.equal(await page.locator('#detailPanel .source-image').count(),1);
     await page.locator('.source-image').waitFor();
+    await page.locator('.source-image').scrollIntoViewIfNeeded();
     await page.waitForFunction(()=>document.querySelector('.source-image')?.complete&&document.querySelector('.source-image')?.naturalWidth>0,{timeout:15000});
     const dims=await page.evaluate(()=>({width:innerWidth,body:document.documentElement.scrollWidth}));
     assert.ok(dims.body<=dims.width+1,'Horizontal overflow '+JSON.stringify(dims));
@@ -74,10 +71,9 @@ try {
     assert.equal(await page.locator('.book-scroll-all .book-sheet').count(),2);
     assert.equal(await page.locator('.book-scroll-all img[loading="lazy"]').count(),2);
     await page.locator('.book-sheet-heading a[href="#page=p31"]').click();
-    await page.locator('.tabs [data-tab="source"]').click();
-    assert.equal(await page.locator('.tabs [data-tab="source"]').innerText(),'어프로치북');
+    assert.equal(await page.locator('.tabs').count(),0);
     assert.match(await page.locator('#detailPanel h2').innerText(),/GLC Coupé 어프로치북/);
-    assert.equal(await page.locator('.info-sidebar [data-tab="source"]').first().innerText(),'GLC Coupé 어프로치북');
+    assert.equal(await page.locator('.info-sidebar [data-scroll-source]').first().innerText(),'GLC Coupé 어프로치북');
     await page.locator('#backButton').click();
     assert.match(page.url(),/book=GLC/);
     await page.locator('#backButton').click();
@@ -108,8 +104,8 @@ try {
     await page.locator('.color-action').first().waitFor({timeout:10000});
     assert.equal(await page.locator('.color-action').count(),2,'Color actions '+i);
     assert.ok(await page.locator('.summary-hero img').getAttribute('src'),'Hero photo '+i);
-    await page.locator('[data-tab="options"]').click();
-    assert.ok(await page.locator('.review-strip').isVisible(),'Source review '+i);
+    assert.equal(await page.locator('.tabs').count(),0,'No duplicate tabs '+i);
+    assert.equal(await page.locator('.source-image').count(),1,'Direct brochure '+i);
   }
   await page.goto(base+'approach/#family=E-Class',{waitUntil:'domcontentloaded'});
   await page.locator('.family-book-action').click();

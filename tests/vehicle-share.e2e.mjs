@@ -322,7 +322,7 @@ try {
   // Retry may disappear when the application's automatic recovery completes in the
   // same tick as unroute. Never attempt to click a now-hidden control.
   if (await offline.locator('#catalogRetryButton').isVisible()) {
-    await offline.locator('#catalogRetryButton').click();
+    await offline.locator('#catalogRetryButton').evaluate(button=>button.click());
   } else if (await offline.locator('#modelGrid .model').count() === 0) {
     await offline.reload({waitUntil:'domcontentloaded'});
   }
