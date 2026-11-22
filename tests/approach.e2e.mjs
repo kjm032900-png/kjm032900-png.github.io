@@ -55,6 +55,7 @@ try {
   await page.locator('.family-card').first().waitFor();
   for(let i=2;i<=67;i++){
     await page.evaluate(n=>{location.hash='#page=p'+n},i);
+    await page.waitForFunction(n=>document.querySelector('.summary-banner .eyebrow')?.textContent.includes('원본 '+n+'쪽'),i,{timeout:10000});
     await page.locator('.color-action').first().waitFor({timeout:10000});
     assert.equal(await page.locator('.color-action').count(),2,'Color actions '+i);
     assert.ok(await page.locator('.summary-hero img').getAttribute('src'),'Hero photo '+i);
