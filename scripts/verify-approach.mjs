@@ -22,6 +22,12 @@ assert.match(glc.specNotice,/4\.5°/);
 assert.match(kr1.specNotice,/초기 물량/);
 assert.equal(kr1.variants.length,1);
 assert.equal((glc.priceReview||[]).length,0);
+assert.ok(html.includes("['source','어프로치북']"),'Source tab is called 어프로치북');
+assert.ok(html.includes('function familyBookMarkup')&&html.includes('id="bookJump"'),
+  'Model reader must include both modes and direct trim jump');
+assert.ok(html.includes('id="backButton"')&&html.includes('function backToPrevious'),
+  'Header back control and fallback navigation must exist');
+assert.equal((data.families.flatMap(f=>f.pages)).length,66,'Every original PDF page must belong to a model reader');
 const home=readFileSync('index.html','utf8');
 assert.equal((home.match(/<a class="btn" href="approach\/"/g)||[]).length,1);
 assert.ok(home.includes('href="approach/"'));

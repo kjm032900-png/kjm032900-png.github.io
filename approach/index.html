@@ -57,6 +57,31 @@
 .price-alert-item b{width:100%}
 .price-alert-item span{font-variant-numeric:tabular-nums}
 .price-alert-item small{width:100%;color:#744725}
+
+/* Integrated approach-book reader */
+.nav-home[type=button]{font-family:inherit;font-size:13px;font-weight:700;color:inherit;background:transparent;cursor:pointer}.nav-home[type=button]:disabled{opacity:.5;cursor:default}
+.family-reader-banner{display:grid;gap:12px;grid-template-columns:minmax(0,1fr) auto;align-items:center}
+.family-book-action{display:flex;flex-direction:column;align-items:center;gap:3px;text-align:center;font-size:14px;min-height:56px;border-color:#193d56}
+.family-book-action small{font-size:11px;font-weight:500;color:#d1e6f4}
+.family-back-link{grid-column:1/-1;justify-self:start}
+.reader-toolbar{background:#fff;border:1px solid #cadbe6;border-radius:12px;padding:14px;margin:16px 0}
+.book-reader-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.book-reader-actions label{font-weight:800;font-size:13px;color:#32536b}
+.book-reader-actions select{padding:11px;border:1px solid #8ba1b2;border-radius:8px;min-height:44px;background:#fff;color:#193348;font:inherit;flex:1;min-width:190px;max-width:420px}
+.book-sheet{background:#fff;border:1px solid #d1dfe7;border-radius:13px;padding:16px;margin:0 0 18px;overflow:hidden}
+.book-sheet>a{display:block;text-align:center}
+.book-sheet img{display:block;width:100%;height:auto;max-width:1100px;margin:0 auto;border:1px solid #d7e0e6}
+.book-sheet-heading{display:flex;align-items:center;flex-wrap:wrap;gap:9px 15px;margin:0 0 14px}
+.book-sheet-heading h2{font-size:17px;line-height:1.5;flex:1;min-width:150px;margin:0}
+.book-sheet-heading a{font-size:13px;font-weight:800;color:#155e8b}
+.book-scroll-all .book-sheet{scroll-margin-top:95px}
+.reader-pager{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:18px 0 24px}
+.reader-pager .btn{flex:1}.reader-pager strong{min-width:56px;text-align:center;font-size:14px}
+.reader-pager a[aria-disabled=true]{opacity:.4;pointer-events:none}
+.reader-bottom{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+@media(max-width:700px){.family-reader-banner{grid-template-columns:1fr}.family-back-link{grid-column:1}.book-reader-actions>a{flex:1;text-align:center}.book-reader-actions label{width:100%}.book-reader-actions select{max-width:none;min-width:0;width:100%}.book-sheet{padding:8px}.book-sheet-heading{padding:7px}.book-sheet-heading h2{width:100%}.reader-pager .btn{font-size:12px;padding:10px 6px}}
+@media(max-width:540px){.nav-home[type=button]{font-size:12px}.header-links{gap:7px}.header-inner{gap:8px}.nav-home{padding:8px 7px}}
+@media print{.reader-toolbar,.reader-pager,.reader-bottom,.family-book-action{display:none!important}.book-sheet{break-inside:avoid}}
 </style>
 </head>
 <body>
@@ -65,7 +90,7 @@
   <header class="topbar">
     <div class="frame header-inner">
       <a class="brand" href="#" aria-label="어프로치북 첫 화면"><span class="brand-main">Mercedes-Benz</span><span class="brand-sub">DIGITAL APPROACH BOOK</span></a>
-      <div class="header-links"><span class="source-note">사용자 제공 원본 67페이지 기준</span><a class="nav-home" href="../index.html">← 홈페이지</a><a class="nav-home" href="#" id="homeLink">차종 목록</a></div>
+      <div class="header-links"><span class="source-note">사용자 제공 원본 67페이지 기준</span><button class="nav-home" id="backButton" type="button">← 뒤로가기</button><a class="nav-home" href="../index.html">⌂ 홈페이지</a></div>
     </div>
   </header>
   <main id="main" class="frame" tabindex="-1">
@@ -91,22 +116,31 @@
   const categories=['전체',...new Set(families.map(f=>f.category))];
   let currentView=''; let currentKey='';
   const savedScrolls=new Map();
+  const originForPage=new Map();
   let currentRouteKey=location.hash||'#home';
 
 
   function route(){
     const qs=new URLSearchParams(location.hash.replace(/^#/,''));
     const id=qs.get('page');if(id&&pageById.has(id))return{kind:'page',key:id};
+    const book=qs.get('book');if(book&&familyByName.has(book))return{kind:'book',key:book,item:qs.get('item'),mode:qs.get('mode')==='scroll'?'scroll':'pages'};
     const family=qs.get('family');if(family&&familyByName.has(family))return{kind:'family',key:family};
     return{kind:'home',key:''};
   }
   const pageLink=id=>'#page='+encodeURIComponent(id);
   const familyLink=name=>'#family='+encodeURIComponent(name);
+  const bookLink=(name,item='',mode='pages')=>'#book='+encodeURIComponent(name)+(item?'&item='+encodeURIComponent(item):'')+(mode==='scroll'?'&mode=scroll':'');
   function pageYearLabel(p){return p.year==='연식 미상'?'원본 연식 확인':p.year}
   function numericYear(p){const m=String(p.year).match(/MY(\d\d)/);return m?'20'+m[1]+'년식':'연식 확인 필요'}
   function toast(message){const t=$('toast');t.textContent=message;t.hidden=false;clearTimeout(toast.timer);toast.timer=setTimeout(()=>{t.hidden=true},3400)}
   function renderChrome(){
-    $('homeLink').textContent=route().kind==='home'?'차종 목록':'← 전체 차종';
+    $('backButton').disabled=route().kind==='home';
+  }
+  function backToPrevious(){
+    const r=route();if(r.kind==='home')return;
+    if(r.kind==='page')location.hash=originForPage.get(r.key)||familyLink(pageById.get(r.key).family);
+    else if(r.kind==='book')location.hash=familyLink(r.key);
+    else location.hash='#';
   }
   function heroStats(){return `<div class="stats"><div class="stat"><b>${families.length}</b><span>모델 분류</span></div><div class="stat"><b>${pages.length}</b><span>차량별 자료 페이지</span></div><div class="stat"><b>${DATA.info.sourcePages}</b><span>원본 PDF 전체 페이지</span></div></div>`;}
   function homeMarkup(){
@@ -134,11 +168,42 @@
     }).join(''):`<div class="empty" style="grid-column:1/-1"><b>검색 결과가 없습니다.</b><p>다른 차종명 또는 연식을 선택해 주세요.</p><button type="button" class="btn" id="resetSearch">전체 차종 다시 보기</button></div>`;
   }
   function familyMarkup(f){
-    const listing=f.pages.map(id=>pageById.get(id)).filter(Boolean);
-    const years=[...new Set(listing.map(p=>p.year))].sort();
-    return `<section class="detail"><nav class="crumbs" aria-label="현재 위치"><a href="#">전 차종</a><span class="sep">/</span><span>${esc(f.name)}</span></nav><p class="eyebrow" style="color:#57778c">${esc(f.category)} · 모델별 어프로치북</p><h1 class="detail-heading">${esc(f.name)}</h1><p class="detail-sub">${esc(years.join(' · '))} 자료 ${listing.length}페이지 · 원하는 연식과 트림을 선택하면 해당 페이지의 제원표, 옵션표와 원본 화면을 확인할 수 있습니다.</p><div class="color-guide-family-hint">원하시는 연식·트림을 선택하면 <strong>외장 컬러</strong>와 <strong>실내 시트</strong>를 바로 확인할 수 있습니다.</div><div class="family-page-grid">${listing.map(p=>`<a class="page-picker" href="${pageLink(p.id)}"><img class="page-thumb" src="${esc(p.hero)}" loading="lazy" alt="${esc(p.family)} ${esc(p.year)} 차량"><div class="page-labels"><span class="page-year">${esc(pageYearLabel(p))} · 원본 ${p.page}쪽</span><h3>${esc(p.variants.map(v=>v.trim).filter(Boolean).join(' / ')||p.title)}</h3><p>${esc(p.variants.map(v=>v.price).filter(Boolean).join(' · '))}</p></div><span aria-hidden="true">›</span></a>`).join('')}</div><p class="notice">원본에 있는 가격과 연식 표기를 그대로 옮긴 참고 자료입니다. 고객에게 안내하거나 계약을 진행하기 전 공식 판매가격·사양을 다시 확인해 주세요.</p></section>`;
-  }
-  function breadcrumbs(p){return `<nav class="crumbs" aria-label="현재 위치"><a href="#">전 차종</a><span class="sep">/</span><a href="${familyLink(p.family)}">${esc(p.family)}</a><span class="sep">/</span><span>${esc(p.year)} · 원본 ${p.page}쪽</span></nav>`;}
+  const listing=f.pages.map(id=>pageById.get(id)).filter(Boolean);
+  const years=[...new Set(listing.map(p=>p.year))].sort();
+  return `<section class="detail">
+  <nav class="crumbs" aria-label="현재 위치"><a href="#">전 차종</a><span class="sep">/</span><span>${esc(f.name)}</span></nav>
+  <p class="eyebrow" style="color:#57778c">${esc(f.category)} · 모델별 어프로치북</p>
+  <h1 class="detail-heading">${esc(f.name)}</h1>
+  <p class="detail-sub">${esc(years.join(' · '))} 자료 ${listing.length}페이지 · 원하는 연식과 트림을 선택하면 제원과 옵션을 확인할 수 있습니다.</p>
+  <div class="color-guide-family-hint family-reader-banner">
+    <p>원하시는 연식·트림을 선택하면 <strong>외장 컬러</strong>와 <strong>실내 시트</strong>를 바로 확인할 수 있습니다.</p>
+    <a class="btn btn-primary family-book-action" href="${bookLink(f.name)}" aria-label="${esc(f.name)} 통합 어프로치북 ${listing.length}개 자료 보기">▤ ${esc(f.name)} 통합 어프로치북 <small>${listing.length}개 자료 · 연속 보기 · 페이지 넘기기</small> →</a>
+    <a href="#" class="family-back-link btn" data-back>← 뒤로가기</a>
+  </div>
+  <div class="family-page-grid">${listing.map(p=>`<a class="page-picker" href="${pageLink(p.id)}"><img class="page-thumb" src="${esc(p.hero)}" loading="lazy" alt="${esc(p.family)} ${esc(p.year)} 차량"><div class="page-labels"><span class="page-year">${esc(pageYearLabel(p))} · 원본 ${p.page}쪽</span><h3>${esc(p.variants.map(v=>v.trim).filter(Boolean).join(' / ')||p.title)}</h3><p>${esc(p.variants.map(v=>v.price).filter(Boolean).join(' · '))}</p></div><span aria-hidden="true">›</span></a>`).join('')}</div>
+  <p class="notice">원본에 있는 가격과 연식 표기를 그대로 옮긴 참고 자료입니다. 고객에게 안내하거나 계약을 진행하기 전 공식 판매가격·사양을 다시 확인해 주세요.</p></section>`;
+}
+  function familyBookMarkup(f,r){
+  const listing=f.pages.map(id=>pageById.get(id)).filter(Boolean);
+  const mode=r.mode;
+  const selected=listing.find(p=>p.id===r.item)||listing[0];
+  const index=listing.indexOf(selected);
+  const jumpOptions=listing.map((p,i)=>`<option value="${esc(p.id)}" ${selected.id===p.id?'selected':''}>${i+1}. ${esc(p.year)} · ${esc(p.variants.map(v=>v.trim).filter(Boolean).join(' / ')||p.title)}</option>`).join('');
+  const menu=`<div class="book-reader-actions"><a href="${bookLink(f.name,selected.id,'pages')}" class="btn ${mode==='pages'?'btn-primary':''}" aria-current="${mode==='pages'?'page':'false'}">페이지별 보기</a><a href="${bookLink(f.name,'','scroll')}" class="btn ${mode==='scroll'?'btn-primary':''}" aria-current="${mode==='scroll'?'page':'false'}">전체 연속 보기</a><label for="bookJump">트림 바로 이동</label><select id="bookJump" aria-label="어프로치북 자료 바로 이동">${jumpOptions}</select></div>`;
+  const common=(p,i)=>`<div class="book-sheet-heading"><span class="page-year">${esc(pageYearLabel(p))} · 원본 ${p.page}페이지</span><h2>${i+1}. ${esc(p.variants.map(v=>v.trim).filter(Boolean).join(' / ')||p.title)}</h2><a href="${pageLink(p.id)}">이 자료 제원·옵션 상세 보기 ↗</a></div>${specNoticeMarkup(p)}${priceWarningMarkup(p)}`;
+  const main=mode==='scroll'
+    ? `<div class="book-scroll-all">${listing.map((p,i)=>`<article class="book-sheet" id="source-${esc(p.id)}">${common(p,i)}<a href="${esc(p.preview)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(p.title)} 크게 보기"><img src="${esc(p.preview)}" alt="${esc(p.title)} 어프로치북 원본 ${p.page}페이지" loading="lazy" decoding="async"></a></article>`).join('')}</div>`
+    : `<article class="book-sheet">${common(selected,index)}<a href="${esc(selected.preview)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(selected.title)} 크게 보기"><img class="reader-current-image" src="${esc(selected.preview)}" alt="${esc(selected.title)} 어프로치북 원본 ${selected.page}페이지" decoding="async"></a></article>
+      <nav class="reader-pager" aria-label="어프로치북 페이지 이동"><a class="btn" ${index===0?'aria-disabled="true"':`href="${bookLink(f.name,listing[index-1].id)}"`}>← 이전 페이지</a><strong>${index+1} / ${listing.length}</strong><a class="btn" ${index===listing.length-1?'aria-disabled="true"':`href="${bookLink(f.name,listing[index+1].id)}"`}>다음 페이지 →</a></nav>`;
+  return `<section class="detail"><nav class="crumbs" aria-label="현재 위치"><a href="#">전 차종</a><span class="sep">/</span><a href="${familyLink(f.name)}">${esc(f.name)}</a><span class="sep">/</span><span>통합 어프로치북</span></nav>
+  <p class="eyebrow" style="color:#57778c">MODEL APPROACH BOOK</p><h1 class="detail-heading">${esc(f.name)} 통합 어프로치북</h1>
+  <p class="detail-sub">${listing.length}개 자료 · 페이지별 보기 또는 아래로 내리면서 연속 비교할 수 있습니다.</p>
+  <div class="reader-toolbar">${menu}</div>
+  ${main}
+  <div class="reader-bottom"><a href="${familyLink(f.name)}" class="btn" data-back>← 뒤로가기</a><a href="#" class="btn">전 차종 보기</a></div>
+  <p class="notice">제원·옵션·판매가격은 사용자가 제공한 어프로치북의 원문 자료입니다. 실제 주문 가능 사양과 현재 공식 판매가격은 계약 전 별도로 확인해 주세요.</p></section>`;
+}
+    function breadcrumbs(p){return `<nav class="crumbs" aria-label="현재 위치"><a href="#">전 차종</a><span class="sep">/</span><a href="${familyLink(p.family)}">${esc(p.family)}</a><span class="sep">/</span><span>${esc(p.year)} · 원본 ${p.page}쪽</span></nav>`;}
   function trimMarkup(p){return p.variants.map(v=>`<div class="trim-price"><b>${esc(v.trim||p.title)}</b><span class="amount ${!(/\d+(?:,\d{3})*\s*만\s*원|\d+\s*억/.test(v.price))?'unknown':''}">${esc(v.price||'가격 확인 필요')}</span></div>`).join('')||`<p class="notice">원문 가격 및 트림 정보가 자동 분리되지 않았습니다. 하단의 원본 페이지로 확인해 주세요.</p>`;}
   function priceWarningMarkup(p){
     if(!p.priceReview?.length)return '';
@@ -185,10 +250,10 @@
       <p class="color-guide-hint">새 탭에서 열립니다. 컬러를 확인한 뒤 탭을 닫으면 <strong>현재 보고 있는 어프로치북 차량 화면으로 그대로 돌아옵니다.</strong> 표시된 색상이 모든 트림에서 주문 가능한 것은 아니며, 연식별 실제 적용 여부는 별도로 확인해 주세요.</p>
     </section>`;
   }
-  const TABS=[['specs','차량 제원'],['options','트림별 옵션'],['source','원본 페이지']];
+  const TABS=[['specs','차량 제원'],['options','트림별 옵션'],['source','어프로치북']];
   function sourceStatus(p,kind){
     const txt=kind==='specs'?p.review.specification:p.review.options;
-    return `<div class="review-strip"><span class="review-dot"></span><strong>원본 대조 상태</strong><span>${esc(txt)}</span><button type="button" data-tab="source" class="review-source">원본 확인 ↗</button></div>`;
+    return `<div class="review-strip"><span class="review-dot"></span><strong>원본 대조 상태</strong><span>${esc(txt)}</span><button type="button" data-tab="source" class="review-source">어프로치북 확인 ↗</button></div>`;
   }
   function specMarkup(p){
     const data=p.specs;
@@ -255,10 +320,10 @@
     if(!sectionCount)html+='<p class="panel-hint">차이가 표시된 행이 없습니다. 전체 옵션으로 다시 전환해 주세요.</p>';
     return html+'</section>';
   }
-  function originalMarkup(p){return `<section class="content-panel"><h2>원본 PDF ${p.page}쪽 대조</h2><p class="panel-hint">원본 내용을 가볍게 변환한 이미지입니다. 확대가 필요한 경우 ‘원본 이미지 열기’를 사용하세요. 원본 PDF 전체를 매번 내려받지 않습니다.</p><div class="source-action"><a href="${esc(p.preview)}" target="_blank" rel="noopener" class="btn btn-primary">원본 페이지 이미지 크게 보기 ↗</a><button type="button" class="btn" id="printPage">현재 자료 인쇄</button></div><img class="source-image" src="${esc(p.preview)}" alt="원본 어프로치북 ${p.page}쪽 전체 페이지" loading="lazy" decoding="async"><details><summary style="cursor:pointer;font-weight:800;color:#244b66">원문 추출 텍스트 확인</summary><pre class="source-text">${esc(p.sourceText)}</pre></details></section>`;}
-  function sideMarkup(p){return `<aside class="info-sidebar"><div class="side-card"><h3>원본 자료 위치</h3><span class="page-source-number">${p.page}<small style="font-size:14px"> / ${DATA.info.sourcePages}쪽</small></span><p>${esc(p.title)}<br>원본과 항목별 대조가 가능합니다.</p><button type="button" class="btn" data-tab="source">원본 이미지 확인</button></div><div class="side-card"><h3>빠른 이동</h3><a href="${familyLink(p.family)}" class="btn">← ${esc(p.family)} 트림 목록</a><a href="#" class="btn">← 전체 차종 목록</a><button type="button" class="btn" id="copyLink">현재 페이지 주소 복사</button></div><div class="side-card"><h3>검토 유의사항</h3><p>제원과 옵션은 원본에 수록된 자료입니다. 실제 차량의 옵션·가격·재고와 상이할 수 있으므로 계약 전 재검증이 필요합니다.</p>${p.notes.length?`<ul class="side-list">${p.notes.map(n=>`<li>${esc(n)} 원문 있음</li>`).join('')}</ul>`:''}</div></aside>`;}
+  function originalMarkup(p){return `<section class="content-panel"><h2>${esc(p.family)} 어프로치북 · 원본 ${p.page}페이지</h2><p class="panel-hint">원본 내용을 가볍게 변환한 이미지입니다. 확대가 필요한 경우 ‘원본 이미지 열기’를 사용하세요. 원본 PDF 전체를 매번 내려받지 않습니다.</p><div class="source-action"><a href="${esc(p.preview)}" target="_blank" rel="noopener" class="btn btn-primary">${esc(p.family)} 어프로치북 크게 보기 ↗</a><button type="button" class="btn" id="printPage">현재 자료 인쇄</button></div><img class="source-image" src="${esc(p.preview)}" alt="원본 어프로치북 ${p.page}쪽 전체 페이지" loading="lazy" decoding="async"><details><summary style="cursor:pointer;font-weight:800;color:#244b66">원문 추출 텍스트 확인</summary><pre class="source-text">${esc(p.sourceText)}</pre></details></section>`;}
+  function sideMarkup(p){return `<aside class="info-sidebar"><div class="side-card"><h3>원본 자료 위치</h3><span class="page-source-number">${p.page}<small style="font-size:14px"> / ${DATA.info.sourcePages}쪽</small></span><p>${esc(p.title)}<br>원본과 항목별 대조가 가능합니다.</p><button type="button" class="btn" data-tab="source">${esc(p.family)} 어프로치북</button></div><div class="side-card"><h3>빠른 이동</h3><a href="${familyLink(p.family)}" class="btn" data-back>← 뒤로가기</a><a href="#" class="btn">← 전체 차종 목록</a><button type="button" class="btn" id="copyLink">현재 페이지 주소 복사</button></div><div class="side-card"><h3>검토 유의사항</h3><p>제원과 옵션은 원본에 수록된 자료입니다. 실제 차량의 옵션·가격·재고와 상이할 수 있으므로 계약 전 재검증이 필요합니다.</p>${p.notes.length?`<ul class="side-list">${p.notes.map(n=>`<li>${esc(n)} 원문 있음</li>`).join('')}</ul>`:''}</div></aside>`;}
   function pageMarkup(p){
-    return `<section class="detail">${breadcrumbs(p)}<div class="detail-layout"><div class="detail-main">${summaryMarkup(p)}${colorGuideMarkup(p)}<div class="tabs" role="tablist" aria-label="어프로치북 상세 정보">${TABS.map(([id,label])=>`<button class="tab" data-tab="${id}" role="tab" aria-selected="${state.tab===id}" aria-controls="detailPanel">${label}</button>`).join('')}</div><div id="detailPanel" role="tabpanel">${state.tab==='specs'?specMarkup(p):state.tab==='options'?optionsMarkup(p):originalMarkup(p)}</div><div class="source-action"><a class="btn" href="${familyLink(p.family)}">← ${esc(p.family)} 목록으로</a><button class="btn" id="copyLinkBottom">링크 복사</button></div></div>${sideMarkup(p)}</div></section>`;
+    return `<section class="detail">${breadcrumbs(p)}<div class="detail-layout"><div class="detail-main">${summaryMarkup(p)}${colorGuideMarkup(p)}<div class="tabs" role="tablist" aria-label="어프로치북 상세 정보">${TABS.map(([id,label])=>`<button class="tab" data-tab="${id}" role="tab" aria-selected="${state.tab===id}" aria-controls="detailPanel">${label}</button>`).join('')}</div><div id="detailPanel" role="tabpanel">${state.tab==='specs'?specMarkup(p):state.tab==='options'?optionsMarkup(p):originalMarkup(p)}</div><div class="source-action"><a class="btn" href="${familyLink(p.family)}" data-back>← 뒤로가기</a><button class="btn" id="copyLinkBottom">링크 복사</button></div></div>${sideMarkup(p)}</div></section>`;
   }
   function render(opts={}){
     const r=route();const changed=r.kind!==currentView||r.key!==currentKey;
@@ -268,6 +333,7 @@
     if(!DATA||pages.length!==DATA.info.vehiclePages){app.innerHTML='<div class="error">어프로치북 데이터를 읽지 못했습니다. 파일 구성을 확인해 주세요.</div>';return}
     if(r.kind==='home'){app.innerHTML=homeMarkup();renderFamilyGrid()}
     else if(r.kind==='family')app.innerHTML=familyMarkup(familyByName.get(r.key));
+    else if(r.kind==='book')app.innerHTML=familyBookMarkup(familyByName.get(r.key),r);
     else app.innerHTML=pageMarkup(pageById.get(r.key));
     renderChrome();
     if(changed&&!opts.keepScroll)window.scrollTo({top:0,behavior:'instant'});
@@ -278,8 +344,13 @@
   document.addEventListener('change',e=>{
     if(e.target.id==='yearSelect'){state.year=e.target.value;renderFamilyGrid()}
     if(e.target.id==='differenceOnly'){state.diff=e.target.checked;const prev=window.scrollY;render({keepScroll:true});window.scrollTo(0,prev)}
+    if(e.target.id==='bookJump'){const r=route();if(r.kind==='book'){
+      if(r.mode==='scroll')document.getElementById('source-'+e.target.value)?.scrollIntoView({behavior:'smooth',block:'start'});
+      else location.hash=bookLink(r.key,e.target.value);
+    }}
   });
   document.addEventListener('click',async e=>{
+    if(e.target.closest('#backButton')||e.target.closest('[data-back]')){e.preventDefault();backToPrevious();return}
     const chip=e.target.closest('[data-cat]');
     if(chip){state.cat=chip.dataset.cat;document.querySelectorAll('[data-cat]').forEach(x=>x.setAttribute('aria-pressed',String(x===chip)));renderFamilyGrid();return}
     if(e.target.closest('#resetSearch')){state.cat='전체';state.year='전체';state.query='';render();return}
@@ -300,7 +371,11 @@
   });
   document.addEventListener('click',event=>{
     const anchor=event.target.closest('a[href^="#"]');
-    if(anchor&&anchor.getAttribute('href')!=='#main')savedScrolls.set(currentRouteKey,window.scrollY);
+    if(anchor&&anchor.getAttribute('href')!=='#main'){
+      savedScrolls.set(currentRouteKey,window.scrollY);
+      const destination=new URLSearchParams(anchor.getAttribute('href').replace(/^#/,''));
+      const destPage=destination.get('page');if(destPage&&pageById.has(destPage))originForPage.set(destPage,currentRouteKey);
+    }
   },true);
   window.addEventListener('pageshow',event=>{if(event.persisted)render({keepScroll:true})});
   render();
