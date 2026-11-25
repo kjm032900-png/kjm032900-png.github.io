@@ -8,8 +8,9 @@ if(html.includes('location.replace("'+privateEndpoint+'/book/")')){
   assert.ok(html.includes('content="noindex, nofollow, noarchive"'),'Legacy entry must discourage indexing');
   assert.ok(!html.includes('window.APPROACH_DATA='),'Public entry must not embed protected vehicle data');
   assert.ok(!existsSync('approach/assets'),'All formerly public approach assets must be removed');
-  assert.equal((home.match(/href="approach\\/"/g)||[]).length,0,'No homepage link may expose public approach entry');
-  assert.equal((home.match(/href="https:\\/\\/kjm-approach-auth\\.kjm032900\\.workers\\.dev\\/"/g)||[]).length,1,
+  assert.ok(!home.includes('href="approach/"'),'No homepage link may expose public approach entry');
+  assert.equal(home.split('href="'+privateEndpoint+'/admin"').length-1,0,'Admin should use the authenticated homepage');
+  assert.equal(home.split('href="'+privateEndpoint+'/"').length-1,1,
     'Exactly one protected admin entry link is expected');
   assert.ok(home.includes('관리자 모드 🔒'),'Protected link must be visibly labelled');
   console.log('PASS: Protected approach cutover: redirect only, no public vehicle data or assets, homepage admin link');
