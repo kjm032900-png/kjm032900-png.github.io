@@ -2,6 +2,21 @@ import assert from 'node:assert/strict';
 import {readFileSync,existsSync,readdirSync} from 'node:fs';
 import vm from 'node:vm';
 const html=readFileSync('approach/index.html','utf8');
+const privateEndpoint='https://kjm-approach-auth.kjm032900.workers.dev';
+if(html.includes('location.replace("'+privateEndpoint+'/book/")')){
+  const home=readFileSync('index.html','utf8');
+  assert.ok(html.includes('content="noindex, nofollow, noarchive"'),'Legacy entry must discourage indexing');
+  assert.ok(!html.includes('window.APPROACH_DATA='),'Public entry must not embed protected vehicle data');
+  assert.ok(!existsSync('approach/assets'),'All formerly public approach assets must be removed');
+  assert.ok(!home.includes('href="approach/"'),'No homepage link may expose public approach entry');
+  assert.equal(home.split('href="'+privateEndpoint+'/admin"').length-1,0,'Admin should use the authenticated homepage');
+  assert.equal(home.split('href="'+privateEndpoint+'/"').length-1,1,
+    'Exactly one protected admin entry link is expected');
+  assert.ok(home.includes('관리자 모드 🔒'),'Protected link must be visibly labelled');
+  console.log('PASS: Protected approach cutover: redirect only, no public vehicle data or assets, homepage admin link');
+  process.exit(0);
+}
+
 const begin=html.indexOf('window.APPROACH_DATA='),end=html.indexOf(';</script>',begin);
 assert.ok(begin>0&&end>begin);
 const data=JSON.parse(html.slice(begin+'window.APPROACH_DATA='.length,end));

@@ -2,6 +2,40 @@ import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';
 import {chromium} from 'playwright';
 const base='http://127.0.0.1:8777/';
+const isProtected=(await import('node:fs')).readFileSync('approach/index.html','utf8').includes('location.replace("https://kjm-approach-auth.kjm032900.workers.dev/book/")');
+if(isProtected){
+  const {existsSync,readFileSync}=await import('node:fs');
+  const home=readFileSync('index.html','utf8'), legacy=readFileSync('approach/index.html','utf8');
+  const auth='https://kjm-approach-auth.kjm032900.workers.dev/';
+  assert.ok(!existsSync('approach/assets'),'Public approach images must be absent');
+  assert.ok(!legacy.includes('window.APPROACH_DATA='),'Old public entry must not embed vehicle content');
+  assert.ok(legacy.includes('location.replace("'+auth+'book/")'),'Legacy URL redirects to protected viewer');
+  assert.ok(home.includes('href="'+auth+'" aria-label="관리자 모드 및 어프로치북 접근 인증">관리자 모드 🔒</a>'));
+  const server=spawn('python3',['-m','http.server','8777','--bind','127.0.0.1'],{stdio:'ignore'});
+  let browser;
+  try{
+    for(let i=0;i<60;i++){try{if((await fetch(base+'index.html')).ok)break;}catch(_){}await new Promise(resolve=>setTimeout(resolve,250))}
+    browser=await chromium.launch({headless:true});
+    for(const width of [1440,390,360]){
+      const context=await browser.newContext({viewport:{width,height:width===1440?900:844}});
+      const page=await context.newPage();
+      await page.goto(base+'index.html',{waitUntil:'domcontentloaded'});
+      assert.equal(await page.locator('.hero .btns a[href="'+auth+'"]').count(),1,'Protected admin entry '+width);
+      assert.equal(await page.locator('.hero .btns a[href="approach/"]').count(),0,'Old public entry must disappear '+width);
+      const a=page.locator('.hero .btns a[href="'+auth+'"]');
+      assert.match(await a.innerText(),/관리자 모드/);
+      const old=await context.request.get(base+'approach/',{maxRedirects:0});
+      assert.equal(old.status(),200,'Legacy URL redirect document available');
+      assert.ok((await old.text()).includes(auth+'book/'));
+      const asset=await context.request.get(base+'approach/assets/img-001.webp');
+      assert.equal(asset.status(),404,'Public approach image must be removed');
+      await context.close();
+    }
+    console.log('PASS protected approach E2E: public homepage admin button, old URL redirect, public image 404, desktop/mobile');
+  }finally{if(browser)await browser.close();server.kill();}
+  process.exit(0);
+}
+
 const server=spawn('python3',['-m','http.server','8777','--bind','127.0.0.1'],{stdio:'ignore'});
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 let browser;
